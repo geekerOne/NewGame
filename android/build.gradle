@@ -48,8 +48,6 @@ android {
 	buildToolsVersion '29.0.3'
 	defaultConfig {
 		applicationId 'org.ppsspp.ppsspp'
-        versionName androidGitVersion.name()
-        versionCode androidGitVersion.code()
 		minSdkVersion 9
 		targetSdkVersion 29
 
