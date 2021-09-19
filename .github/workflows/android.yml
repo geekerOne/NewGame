@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: get repo and subs
-        run: git clone --recurse-submodules https://github.com/SohrabIranpak/ppsspp.git
+        run: git clone --recurse-submodules https://github.com/hrydgard/ppsspp.git
       - name: Install NDK
         run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=$ANDROID_SDK_ROOT
 
