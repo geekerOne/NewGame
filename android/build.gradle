@@ -48,24 +48,11 @@ android {
 	buildToolsVersion '29.0.3'
 	defaultConfig {
 		applicationId 'org.ppsspp.ppsspp'
-		if (androidGitVersion.name() != "unknown" && androidGitVersion.code() >= 14000000) {
-			// Start using automatic Android version numbers from version 1.4.
-			println "Overriding Android Version Name, Code: " + androidGitVersion.name() + " " + androidGitVersion.code();
-			versionName androidGitVersion.name()
-			versionCode androidGitVersion.code()
-		} else {
-			println "(not using these:) Android Version Name, Code: " + androidGitVersion.name() + " " + androidGitVersion.code();
-		}
-
-		new File("versionname.txt").write(androidGitVersion.name())
-		new File("versioncode.txt").write(androidGitVersion.code().toString())
-
+        versionName androidGitVersion.name()
+        versionCode androidGitVersion.code()
 		minSdkVersion 9
 		targetSdkVersion 29
-		if (project.hasProperty("ANDROID_VERSION_CODE") && project.hasProperty("ANDROID_VERSION_NAME")) {
-			versionCode ANDROID_VERSION_CODE
-			versionName ANDROID_VERSION_NAME
-		}
+
 		ndk {
 			abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
 		}
