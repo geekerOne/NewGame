@@ -17,7 +17,9 @@ jobs:
          run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=$ANDROID_SDK_ROOT
 
        - name: Build Release APK
-         run: ./gradlew build --stacktrace
+         run: |
+          chmod +x ./gradlew
+          ./gradlew assembleRelease
 
           
        - name: Get Date
@@ -40,5 +42,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./app/build/outputs/apk/release/app-release.apk
           asset_name: ludere.apk
           asset_content_type: application/apk
