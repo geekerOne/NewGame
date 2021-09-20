@@ -32,17 +32,13 @@ android {
 		}
 
 		// Set these in a system global (or project local, but not checked in) gradle.properties .
-		if (project.hasProperty("RELEASE_STORE_FILE")) {
-			release {
-				storeFile file(RELEASE_STORE_FILE)
-				storePassword RELEASE_STORE_PASSWORD
-				keyAlias RELEASE_KEY_ALIAS
-				keyPassword RELEASE_KEY_PASSWORD
-			}
-		} else {
-			release {
-			}
-		}
+        release {
+            storeFile file("${rootProject.projectDir}/ludere.jks")
+            storePassword 'ludere'
+            keyAlias 'key0'
+            keyPassword 'ludere'
+        }
+	
 	}
 	compileSdkVersion 29
 	buildToolsVersion '29.0.3'
