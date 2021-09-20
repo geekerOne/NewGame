@@ -52,6 +52,11 @@ android {
 		}
 		signingConfig signingConfigs.debug
 	}
+
+        lintOptions {
+            abortOnError false
+        }
+
 	buildTypes {
 		debug {
 			minifyEnabled = false
