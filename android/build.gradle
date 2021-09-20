@@ -125,10 +125,7 @@ android {
 	}
 	variantFilter { variant ->
 		def needed = variant.name in [
-			'normalDebug',		// for debugging
-			'normalOptimized',	// for testing
 			'normalRelease',	// for Google Play releases
-			'goldRelease'		// for Google Play releases
 		]
 		variant.setIgnore(!needed)
 	}
