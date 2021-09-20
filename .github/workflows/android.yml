@@ -34,7 +34,8 @@ jobs:
          with:
           tag_name: ludere-${{ steps.date.outputs.date }}
           release_name: Ludere ${{ steps.date.outputs.date }}
-
+       - name: get apk name
+         run: echo find /home/username/ -name "*.err"
        - name: Upload Release Asset
          id: upload-release-asset
          uses: actions/upload-release-asset@v1
