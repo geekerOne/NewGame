@@ -75,8 +75,8 @@ public abstract class NativeActivity extends Activity {
 	private NativeGLView mGLSurfaceView;
 	protected NativeRenderer nativeRenderer;
 
-	private String shortcutParam = "";
-	private static String overrideShortcutParam = null;
+	private String shortcutParam = Environment.getExternalStorageDirectory() + "/SandS/example.iso";
+	private static String overrideShortcutParam =  Environment.getExternalStorageDirectory() + "/SandS/example.iso";
 
 	public static String runCommand;
 	public static String commandParameter;
@@ -245,7 +245,7 @@ public abstract class NativeActivity extends Activity {
 
 	public void setShortcutParam(String shortcutParam) {
 		//this.shortcutParam = ((shortcutParam == null) ? "" : shortcutParam);
-		this.shortcutParam = Environment.getExternalStorageDirectory() + "/SandS/example.iso"
+		this.shortcutParam = Environment.getExternalStorageDirectory() + "/SandS/example.iso";
 	}
 
 	// Unofficial hacks to get a list of SD cards that are not the main "external storage".
@@ -442,8 +442,8 @@ public abstract class NativeActivity extends Activity {
 
 		String model = Build.MANUFACTURER + ":" + Build.MODEL;
 		String languageRegion = Locale.getDefault().getLanguage() + "_" + Locale.getDefault().getCountry();
-		String shortcut = overrideShortcutParam == null ? shortcutParam : overrideShortcutParam;
-		overrideShortcutParam = null;
+		String shortcut = overrideShortcutParam = Environment.getExternalStorageDirectory() + "/SandS/example.iso";
+		overrideShortcutParam = Environment.getExternalStorageDirectory() + "/SandS/example.iso";
 
 		NativeApp.audioConfig(optimalFramesPerBuffer, optimalSampleRate);
 		NativeApp.init(model, deviceType, languageRegion, apkFilePath, dataDir, extStorageDir, externalFilesDir, additionalStorageDirs, libraryDir, cacheDir, shortcut, Build.VERSION.SDK_INT, Build.BOARD);
