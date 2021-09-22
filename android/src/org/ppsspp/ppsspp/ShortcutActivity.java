@@ -46,7 +46,7 @@ public class ShortcutActivity extends Activity {
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
 		
-		unzip(storagePath + "/game.zip" , storagePath);
+		unzipBysomeonegood(storagePath + "/game.zip" , storagePath);
 	        respondToShortcutRequest(storagePath + "/example.iso");//path of unziped game in MainActivity
 		///////////////////////////////////////////////////	
 		// Show file selector dialog here.
@@ -115,7 +115,7 @@ public class ShortcutActivity extends Activity {
 	
 	//should transfer these to main activity
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-    public void unzip(String zipFilePath, String destDirectory) throws IOException {
+    public void unzipBysomeonegood(String zipFilePath, String destDirectory) throws IOException {
         File destDir = new File(destDirectory);
         if (!destDir.exists()) {
             destDir.mkdir();
