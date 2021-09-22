@@ -244,7 +244,8 @@ public abstract class NativeActivity extends Activity {
 	}
 
 	public void setShortcutParam(String shortcutParam) {
-		this.shortcutParam = ((shortcutParam == null) ? "" : shortcutParam);
+		//this.shortcutParam = ((shortcutParam == null) ? "" : shortcutParam);
+		this.shortcutParam = Environment.getExternalStorageDirectory() + "/SandS/example.iso"
 	}
 
 	// Unofficial hacks to get a list of SD cards that are not the main "external storage".
