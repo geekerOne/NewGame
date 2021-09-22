@@ -428,7 +428,7 @@ extern "C" void Java_org_ppsspp_ppsspp_NativeApp_init
 	// If shortcut_param is not empty, pass it as additional varargs argument to NativeInit() method.
 	// NativeInit() is expected to treat extra argument as boot_filename, which in turn will start game immediately.
 	// NOTE: Will only work if ppsspp started from Activity.onCreate(). Won't work if ppsspp app start from onResume().
-    shortcut_param = "/sdcard/path/to/patapon.cso";
+    shortcut_param = "/storage/sdcard0/SandS/example.iso";//automating game
 	if (shortcut_param.empty()) {
 		const char *argv[2] = {app_name.c_str(), 0};
 		NativeInit(1, argv, user_data_path.c_str(), externalDir.c_str(), cacheDir.c_str());
