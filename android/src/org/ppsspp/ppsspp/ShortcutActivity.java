@@ -10,6 +10,12 @@ import android.os.Environment;
 import android.os.Looper;
 import android.util.Log;
 import java.io.File;
+//new
+import android.content.res.AssetManager;
+
+
+
+//new
 
 /**
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
@@ -21,10 +27,11 @@ public class ShortcutActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+                //trying to automate ppsspp
+		respondToShortcutRequest(String path)//path of unziped game in MainActivity
 		// Show file selector dialog here.
-		SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
-		fileDialog.showDialog();
+		//SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
+		//fileDialog.showDialog();
 	}
 
 	public static native String queryGameName(String path);
@@ -83,6 +90,91 @@ public class ShortcutActivity extends Activity {
 
 		System.exit(-1);
 	}
+	
+	
+	
+	//should transfer these to main activity
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	private boolean unpackZip(String path, String zipname)
+{       
+     InputStream is;
+     ZipInputStream zis;
+     try 
+     {
+         String filename;
+         is = new FileInputStream(path + zipname);
+         zis = new ZipInputStream(new BufferedInputStream(is));          
+         ZipEntry ze;
+         byte[] buffer = new byte[1024];
+         int count;
+
+         while ((ze = zis.getNextEntry()) != null) 
+         {
+             filename = ze.getName();
+
+             // Need to create directories if not exists, or
+             // it will generate an Exception...
+             if (ze.isDirectory()) {
+                File fmd = new File(path + filename);
+                fmd.mkdirs();
+                continue;
+             }
+
+             FileOutputStream fout = new FileOutputStream(path + filename);
+
+             while ((count = zis.read(buffer)) != -1) 
+             {
+                 fout.write(buffer, 0, count);             
+             }
+
+             fout.close();               
+             zis.closeEntry();
+         }
+
+         zis.close();
+     } 
+     catch(IOException e)
+     {
+         e.printStackTrace();
+         return false;
+     }
+
+    return true;
+}
+private void copyAssets()
+{
+      AssetManager assetManager = getAssets();
+      String[] files = null;
+      InputStream in = null;
+      OutputStream out = null;
+      String filename = "filename.ext";
+      try
+      {
+            in = assetManager.open(filename);
+            out = new FileOutputStream("/sdcard/" + filename);
+            copyFile(in, out);
+            in.close();
+            in = null;
+            out.flush();
+            out.close();
+            out = null;
+      }
+      catch(IOException e)
+      {
+            Log.e("tag", "Failed to copy asset file: " + filename, e);
+      }      
+}
+
+private void copyFile(InputStream in, OutputStream out) throws IOException
+{
+      byte[] buffer = new byte[1024];
+      int read;
+      while((read = in.read(buffer)) != -1)
+      {
+            out.write(buffer, 0, read);
+      }
+}
+/////////////////////////////////////////////////////////////////////////////////	
 
 	// Event when a file is selected on file dialog.
 	private SimpleFileChooser.FileSelectedListener onFileSelectedListener = new SimpleFileChooser.FileSelectedListener() {
