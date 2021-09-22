@@ -46,7 +46,11 @@ public class ShortcutActivity extends Activity {
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
 		
+		try {
 		unzipBysomeonegood(storagePath + "/game.zip" , storagePath);
+             } catch (IOException e) {
+             System.out.println("Can't unzip"); // Or something more intellegent
+             }
 	        respondToShortcutRequest(storagePath + "/example.iso");//path of unziped game in MainActivity
 		///////////////////////////////////////////////////	
 		// Show file selector dialog here.
