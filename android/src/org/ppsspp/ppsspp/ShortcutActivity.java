@@ -41,7 +41,7 @@ public class ShortcutActivity extends Activity {
 		copyAssets();
 		
                 String storagePath  = "";
-		if (context.getExternalFilesDir(null).getAbsolutePath() != null)
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
 			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
@@ -162,7 +162,7 @@ private void copyAssets()
       OutputStream out = null;
       String filename = "game.zip";
       String storagePath  = "";
-		if (context.getExternalFilesDir(null).getAbsolutePath() != null)
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
 			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();           
