@@ -38,6 +38,7 @@ public class ShortcutActivity extends Activity {
 		super.onCreate(savedInstanceState);
                 //trying to automate ppsspp
 		///////////////////////////////////////////////////
+		/*
 		copyAssets();
 		
                 String storagePath  = "";
@@ -52,10 +53,11 @@ public class ShortcutActivity extends Activity {
              System.out.println("Can't unzip"); // Or something more intellegent
              }
 	        respondToShortcutRequest(storagePath + "/example.iso");//path of unziped game in MainActivity
+		*/
 		///////////////////////////////////////////////////	
 		// Show file selector dialog here.
-		//SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
-		//fileDialog.showDialog();
+		SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
+		fileDialog.showDialog();
 	}
 
 	public static native String queryGameName(String path);
