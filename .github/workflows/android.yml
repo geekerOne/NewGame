@@ -19,7 +19,7 @@ jobs:
       
        - name: Fetch Assets
          run: |
-          mkdir -p ./app/src/main/assets/
+          mkdir -p /home/runner/work/ppsspp/ppsspp/android/assets/
           curl -L# "${{ github.event.inputs.romURL }}" > /home/runner/work/ppsspp/ppsspp/android/assets/game.zip
       
        - name: Build Release APK
