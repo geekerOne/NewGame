@@ -12,9 +12,17 @@ import android.util.Log;
 import java.io.File;
 //new
 import android.content.res.AssetManager;
-
-
-
+import java.io.*;
+import java.util.zip.ZipFile;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 //new
 
 /**
@@ -23,12 +31,18 @@ import android.content.res.AssetManager;
  */
 public class ShortcutActivity extends Activity {
 	private static final String TAG = "PPSSPP";
-
+        private static final int BUFFER_SIZE = 4096;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
                 //trying to automate ppsspp
-		respondToShortcutRequest(String path)//path of unziped game in MainActivity
+		///////////////////////////////////////////////////
+		copyAssets();
+                String storagePath  = (context.getExternalFilesDir(null) ?: context.filesDir).path;    
+                unzip(storagePath + "/game.zip" , storagePath);
+	        respondToShortcutRequest(storagePath + "/example.iso");//path of unziped game in MainActivity
+		///////////////////////////////////////////////////	
 		// Show file selector dialog here.
 		//SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
 		//fileDialog.showDialog();
@@ -95,63 +109,57 @@ public class ShortcutActivity extends Activity {
 	
 	//should transfer these to main activity
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	private boolean unpackZip(String path, String zipname)
-{       
-     InputStream is;
-     ZipInputStream zis;
-     try 
-     {
-         String filename;
-         is = new FileInputStream(path + zipname);
-         zis = new ZipInputStream(new BufferedInputStream(is));          
-         ZipEntry ze;
-         byte[] buffer = new byte[1024];
-         int count;
-
-         while ((ze = zis.getNextEntry()) != null) 
-         {
-             filename = ze.getName();
-
-             // Need to create directories if not exists, or
-             // it will generate an Exception...
-             if (ze.isDirectory()) {
-                File fmd = new File(path + filename);
-                fmd.mkdirs();
-                continue;
-             }
-
-             FileOutputStream fout = new FileOutputStream(path + filename);
-
-             while ((count = zis.read(buffer)) != -1) 
-             {
-                 fout.write(buffer, 0, count);             
-             }
-
-             fout.close();               
-             zis.closeEntry();
-         }
-
-         zis.close();
-     } 
-     catch(IOException e)
-     {
-         e.printStackTrace();
-         return false;
-     }
-
-    return true;
-}
+    public void unzip(String zipFilePath, String destDirectory) throws IOException {
+        File destDir = new File(destDirectory);
+        if (!destDir.exists()) {
+            destDir.mkdir();
+        }
+        ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFilePath));
+        ZipEntry entry = zipIn.getNextEntry();
+        // iterates over entries in the zip file
+        while (entry != null) {
+            String filePath = destDirectory + File.separator + entry.getName();
+            if (!entry.isDirectory()) {
+                // if the entry is a file, extracts it
+                extractFile(zipIn, filePath);
+            } else {
+                // if the entry is a directory, make the directory
+                File dir = new File(filePath);
+                dir.mkdirs();
+            }
+            zipIn.closeEntry();
+            entry = zipIn.getNextEntry();
+        }
+        zipIn.close();
+    }
+    /**
+     * Extracts a zip entry (file entry)
+     * @param zipIn
+     * @param filePath
+     * @throws IOException
+     */
+    private void extractFile(ZipInputStream zipIn, String filePath) throws IOException {
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
+        byte[] bytesIn = new byte[BUFFER_SIZE];
+        int read = 0;
+        while ((read = zipIn.read(bytesIn)) != -1) {
+            bos.write(bytesIn, 0, read);
+        }
+        bos.close();
+    }
+	
 private void copyAssets()
 {
       AssetManager assetManager = getAssets();
       String[] files = null;
       InputStream in = null;
       OutputStream out = null;
-      String filename = "filename.ext";
+      String filename = "game.zip";
+      String storagePath  = (context.getExternalFilesDir(null) ?: context.filesDir).path;             
       try
       {
             in = assetManager.open(filename);
-            out = new FileOutputStream("/sdcard/" + filename);
+            out = new FileOutputStream(storagePath + "/game.zip");
             copyFile(in, out);
             in.close();
             in = null;
