@@ -42,9 +42,9 @@ public class ShortcutActivity extends Activity {
 		
                 String storagePath  = "";
 		if (context.getExternalFilesDir(null).getAbsolutePath() != null)
-			storagePath = context.getExternalFilesDir(null).getAbsolutePath();
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
 		else
-                        storagePath = context.getFilesDir().getAbsolutePath();
+                        storagePath = this.getFilesDir().getAbsolutePath();
 		
 		unzip(storagePath + "/game.zip" , storagePath);
 	        respondToShortcutRequest(storagePath + "/example.iso");//path of unziped game in MainActivity
@@ -163,9 +163,9 @@ private void copyAssets()
       String filename = "game.zip";
       String storagePath  = "";
 		if (context.getExternalFilesDir(null).getAbsolutePath() != null)
-			storagePath = context.getExternalFilesDir(null).getAbsolutePath();
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
 		else
-                        storagePath = context.getFilesDir().getAbsolutePath();           
+                        storagePath = this.getFilesDir().getAbsolutePath();           
       try
       {
             in = assetManager.open(filename);
