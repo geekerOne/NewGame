@@ -39,8 +39,14 @@ public class ShortcutActivity extends Activity {
                 //trying to automate ppsspp
 		///////////////////////////////////////////////////
 		copyAssets();
-                String storagePath  = (context.getExternalFilesDir(null) ?: context.filesDir).path;    
-                unzip(storagePath + "/game.zip" , storagePath);
+		
+                String storagePath  = "";
+		if (context.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = context.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = context.getFilesDir().getAbsolutePath();
+		
+		unzip(storagePath + "/game.zip" , storagePath);
 	        respondToShortcutRequest(storagePath + "/example.iso");//path of unziped game in MainActivity
 		///////////////////////////////////////////////////	
 		// Show file selector dialog here.
@@ -155,7 +161,11 @@ private void copyAssets()
       InputStream in = null;
       OutputStream out = null;
       String filename = "game.zip";
-      String storagePath  = (context.getExternalFilesDir(null) ?: context.filesDir).path;             
+      String storagePath  = "";
+		if (context.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = context.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = context.getFilesDir().getAbsolutePath();           
       try
       {
             in = assetManager.open(filename);
