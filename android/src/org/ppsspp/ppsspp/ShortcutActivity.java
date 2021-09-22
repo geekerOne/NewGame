@@ -37,7 +37,7 @@ public class ShortcutActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
                 //trying to automate ppsspp
-		///////////////////////////////////////////////////
+		///////////////////////////////////////////////////   sdcard0/SandS/example.iso
 		/*
 		copyAssets();
 		
