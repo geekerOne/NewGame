@@ -105,8 +105,8 @@ public class PpssppActivity extends NativeActivity {
 		}
 		super.onCreate(savedInstanceState);
 		
-	Intent Myintent = new Intent(this, ShortcutActivity.class);
-        startActivity(Myintent);
+//	Intent Myintent = new Intent(this, ShortcutActivity.class);
+   //     startActivity(Myintent);
 		
 	}
 
