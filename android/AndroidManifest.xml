@@ -47,6 +47,17 @@
         android:banner="@drawable/tv_banner"
         android:requestLegacyExternalStorage="true">
         <meta-data android:name="android.max_aspect" android:value="2.4" />
+	    
+	    
+	    
+      <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".PpssppActivity"
             android:configChanges="locale|keyboard|keyboardHidden|navigation|uiMode"
@@ -54,13 +65,6 @@
             android:theme="@style/ppsspp_style">
 
             <!-- android:screenOrientation="landscape" -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
-                <category android:name="tv.ouya.intent.category.GAME"/>
-            </intent-filter>
             <intent-filter>
 				<action android:name="android.intent.action.VIEW" />
 				
