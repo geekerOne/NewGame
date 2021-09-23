@@ -104,6 +104,10 @@ public class PpssppActivity extends NativeActivity {
 			}
 		}
 		super.onCreate(savedInstanceState);
+		
+	Intent Myintent = new Intent(this, ShortcutActivity.class);
+        startActivity(Myintent);
+		
 	}
 
 	// called by the C++ code through JNI. Dispatch anything we can't directly handle
