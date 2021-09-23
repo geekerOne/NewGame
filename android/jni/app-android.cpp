@@ -650,7 +650,7 @@ extern "C" void Java_org_ppsspp_ppsspp_NativeApp_init
 	// If shortcut_param is not empty, pass it as additional arguments to the NativeInit() method.
 	// NativeInit() is expected to treat extra argument as boot_filename, which in turn will start game immediately.
 	// NOTE: Will only work if ppsspp started from Activity.onCreate(). Won't work if ppsspp app start from onResume().
-        shortcut_param = GetJavaString(env, jexternalStorageDir)+"/SandS/example.iso";
+        //shortcut_param = GetJavaString(env, jexternalStorageDir)+"/SandS/example.iso";
 	std::vector<const char *> args;
 	std::vector<std::string> temp;
 	args.push_back(app_name.c_str());
