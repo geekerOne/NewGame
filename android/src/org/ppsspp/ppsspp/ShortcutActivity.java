@@ -58,12 +58,21 @@ public class ShortcutActivity extends Activity {
 		// Show file selector dialog here.
 		SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
 		fileDialog.showDialog();
-		//String storagePath  = "";
-		//if (this.getExternalFilesDir(null).getAbsolutePath() != null)
-		//	storagePath = this.getExternalFilesDir(null).getAbsolutePath();
-		//else
-                //        storagePath = this.getFilesDir().getAbsolutePath();
-	        //String shortcut_MYParam = storagePath + "/example.iso";
+		/*
+		Intent intent = new Intent();
+		intent.setPackage("org.ppsspp.ppsspp");
+		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
+
+		String storagePath  = "";
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = this.getFilesDir().getAbsolutePath();
+	        String shortcut_MYParam = storagePath + "/example.iso";
+		File file = new File(shortcut_MYParam);
+		intent.setData(Uri.fromFile(file));
+		startActivity(intent);
+*/
 		//respondToShortcutRequest(shortcut_MYParam);
 	}
 
