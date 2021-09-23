@@ -56,8 +56,15 @@ public class ShortcutActivity extends Activity {
 		*/
 		///////////////////////////////////////////////////	
 		// Show file selector dialog here.
-		SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
-		fileDialog.showDialog();
+		//SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
+		//fileDialog.showDialog();
+		String storagePath  = "";
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = this.getFilesDir().getAbsolutePath();
+	        String shortcut_MYParam = storagePath + "/example.iso";
+		respondToShortcutRequest(shortcut_MYParam);
 	}
 
 	public static native String queryGameName(String path);
