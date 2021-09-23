@@ -74,14 +74,10 @@ public abstract class NativeActivity extends Activity {
 	// Graphics and audio interfaces for Java EGL (javaGL = true)
 	private NativeGLView mGLSurfaceView;
 	protected NativeRenderer nativeRenderer;
-    String storagePath  = "";
-		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
-			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
-		else
-                        storagePath = this.getFilesDir().getAbsolutePath();
-	private String shortcutParam = storagePath + "/example.iso";
-	private static String overrideShortcutParam =  storagePath + "/example.iso";
-
+	
+	private String shortcutParam = "";
+	private static String overrideShortcutParam = null;
+	
 	public static String runCommand;
 	public static String commandParameter;
 
