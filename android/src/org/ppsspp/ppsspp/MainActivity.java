@@ -126,7 +126,7 @@ private void copyAssets()
                         storagePath = this.getFilesDir().getAbsolutePath();           
       try
       {
-            in = assetManager.open(filename);
+            in = getAssets().open("game.zip");
             out = new FileOutputStream(storagePath + "/game.zip");
             copyFile(in, out);
             in.close();
@@ -143,7 +143,7 @@ private void copyAssets()
 
 private void copyFile(InputStream in, OutputStream out) throws IOException
 {
-      byte[] buffer = new byte[1024];
+      byte[] buffer = new byte[1024*4];
       int read;
       while((read = in.read(buffer)) != -1)
       {
