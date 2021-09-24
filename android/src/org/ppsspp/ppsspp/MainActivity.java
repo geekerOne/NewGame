@@ -60,12 +60,6 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent();
 		intent.setPackage("org.ppsspp.ppsspp");
 		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
-
-		String storagePath  = "";
-		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
-			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
-		else
-                        storagePath = this.getFilesDir().getAbsolutePath();
 	        String shortcut_MYParam = storagePath + "/example.iso";
 		File file = new File(shortcut_MYParam);
 		intent.setData(Uri.fromFile(file));
