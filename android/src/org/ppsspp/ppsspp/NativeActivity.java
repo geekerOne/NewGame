@@ -711,14 +711,14 @@ if(file.exists()){
 }else{
 //////////////	
 	File checkfile = new File(storagePath, "check.txt");
-	
+	try {
 			try {
 FileOutputStream stream = new FileOutputStream(checkfile);
 				} catch (FileNotFoundException e) {
              System.out.println("Can't find"); // Or something more intellegent
              }
 
-try {
+
     stream.write("text-to-write".getBytes());
     stream.close();
 }catch (IOException e) {
