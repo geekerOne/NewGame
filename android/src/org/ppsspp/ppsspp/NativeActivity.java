@@ -692,9 +692,9 @@ public abstract class NativeActivity extends Activity {
                         storagePath = this.getFilesDir().getAbsolutePath();
 				
 File file = new File(storagePath + "/check.txt");
-if(file.exists())      
+if(file.exists()){      
 //Do something
-else{
+}else{
 //////////////	
 	File checkfile = new File(storagePath, "check.txt");
 	
@@ -705,7 +705,7 @@ try {
     stream.close();
 }
 //////////////	
-this.recreate()
+this.recreate();
 	
 }	
 	         ////////restart if its first time
