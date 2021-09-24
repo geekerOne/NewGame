@@ -665,6 +665,36 @@ public abstract class NativeActivity extends Activity {
 			Log.i(TAG, "setcontentview after");
 			ensureRenderLoop();
 		}
+		
+		
+		////////restart if its first time
+		String storagePath  = "";
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = this.getFilesDir().getAbsolutePath();
+				
+File file = new File(storagePath + "/check.txt");
+if(file.exists())      
+//Do something
+else{
+//////////////	
+	File checkfile = new File(storagePath, "check.txt");
+	
+FileOutputStream stream = new FileOutputStream(checkfile);
+try {
+    stream.write("text-to-write".getBytes());
+} finally {
+    stream.close();
+}
+//////////////	
+this.recreate()
+	
+}	
+	         ////////restart if its first time
+	
+
+		
 	}
 
 	@Override
