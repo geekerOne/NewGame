@@ -52,6 +52,20 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+//new
+import android.content.res.AssetManager;
+import java.io.*;
+import java.util.zip.ZipFile;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+//new
 
 @SuppressWarnings("ConstantConditions")
 public abstract class NativeActivity extends Activity {
