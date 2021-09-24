@@ -73,9 +73,10 @@ public class MainActivity extends Activity {
 
 		//respondToShortcutRequest(shortcut_MYParam);
 	}
-}
-
-
+	
+	
+	
+	
 	//should transfer these to main activity
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
     public void unzipBysomeonegood(String zipFilePath, String destDirectory) throws IOException {
@@ -156,6 +157,11 @@ private void copyFile(InputStream in, OutputStream out) throws IOException
       }
 }
 /////////////////////////////////////////////////////////////////////////////////	
+
+	
+	
+}
+
 
 
 
