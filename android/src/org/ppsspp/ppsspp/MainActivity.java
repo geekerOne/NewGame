@@ -1,15 +1,57 @@
 package org.ppsspp.ppsspp;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.UiModeManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.Intent.ShortcutIconResource;
+import android.content.pm.ActivityInfo;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.ConfigurationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Configuration;
+import android.database.Cursor;
+import android.graphics.PixelFormat;
+import android.media.AudioManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Looper;
+import android.os.PowerManager;
+import android.os.Vibrator;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
+import androidx.documentfile.provider.DocumentFile;
+import android.text.InputType;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.HapticFeedbackConstants;
+import android.view.InputDevice;
+import android.view.InputEvent;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.Surface;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 import java.io.File;
+import java.lang.reflect.Field;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 //new
 import android.content.res.AssetManager;
 import java.io.*;
@@ -23,7 +65,9 @@ import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+import com.jakewharton.processphoenix.ProcessPhoenix;
 //new
+
 
 /**
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
