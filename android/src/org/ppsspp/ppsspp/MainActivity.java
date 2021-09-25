@@ -67,22 +67,33 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import com.jakewharton.processphoenix.ProcessPhoenix;
 //new
-
+//new 2
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+//new 2
 
 /**
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
  * Register this class in AndroidManifest.xml.
  */
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 	private static final String TAG = "PPSSPP";
         private static final int BUFFER_SIZE = 4096;
+	
+    // Defining Permission codes.
+    // We can give any value
+    // but unique for each permission.
+    private static final int STORAGE_PERMISSION_CODE = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
                 //trying to automate ppsspp
 		///////////////////////////////////////////////////   sdcard0/SandS/example.iso
-		
+		checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+
 		copyAssets();
 		
                 String storagePath  = "";
@@ -114,43 +125,48 @@ public class MainActivity extends Activity {
 	
 	
 	
+    // Function to check and request permission.
+    public void checkPermission(String permission, int requestCode)
+    {
+        if (ContextCompat.checkSelfPermission(MainActivity.this, permission) == PackageManager.PERMISSION_DENIED) {
+ 
+            // Requesting the permission
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] { permission }, requestCode);
+        }
+        else {
+            Toast.makeText(MainActivity.this, "Permission already granted", Toast.LENGTH_SHORT).show();
+        }
+    }
+ 
 	
 	
 	
 	
+
 	
-	
-	@Override
-	public void onRequestPermissionsResult(int requestCode, String [] permissions, int[] grantResults) {
-		switch (requestCode) {
-		case REQUEST_CODE_STORAGE_PERMISSION:
-			if (permissionsGranted(permissions, grantResults)) {
+    // This function is called when the user accepts or decline the permission.
+    // Request Code is used to check which permission called this function.
+    // This request code is provided when the user is prompt for permission.
+ 
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                        @NonNull String[] permissions,
+                                        @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode,
+                                        permissions,
+                                        grantResults);
+ 
+ if (requestCode == STORAGE_PERMISSION_CODE) {
+            if (grantResults.length > 0
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 				NativeApp.sendMessage("permission_granted", "storage");
-			} else {
+            } else {
 				NativeApp.sendMessage("permission_denied", "storage");
-			}
-			break;
-		case REQUEST_CODE_LOCATION_PERMISSION:
-			if (permissionsGranted(permissions, grantResults)) {
-				mLocationHelper.startLocationUpdates();
-			}
-			break;
-		case REQUEST_CODE_CAMERA_PERMISSION:
-			if (mCameraHelper != null && permissionsGranted(permissions, grantResults)) {
-				mCameraHelper.startCamera();
-			}
-			break;
-		case REQUEST_CODE_MICROPHONE_PERMISSION:
-			if (permissionsGranted(permissions, grantResults)) {
-				NativeApp.audioRecording_Start();
-			}
-			break;
-		default:
-		}
-	}
-	
-	
-	
+            }
+        }
+    }
+
 	
 	
 	
