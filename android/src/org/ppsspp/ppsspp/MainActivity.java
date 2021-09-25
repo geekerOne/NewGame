@@ -80,7 +80,9 @@ public class MainActivity extends Activity {
     // We can give any value
     // but unique for each permission.
     private static final int STORAGE_PERMISSION_CODE = 1;
-	
+	private static final String[] permissionsForStorage = {
+		Manifest.permission.WRITE_EXTERNAL_STORAGE,
+	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -125,7 +127,7 @@ public class MainActivity extends Activity {
         if (this.checkSelfPermission(permission) == PackageManager.PERMISSION_DENIED) {
  
             // Requesting the permission
-            this.requestPermissions(permission , requestCode);
+            this.requestPermissions(permissionsForStorage , requestCode);
         }
         else {
             Toast.makeText(MainActivity.this, "Permission already granted", Toast.LENGTH_SHORT).show();
