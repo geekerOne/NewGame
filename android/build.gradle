@@ -18,8 +18,7 @@ dependencies {
 	// Convenient wrapper around DocumentContract. Might look into writing our own
 	// to see if there's some performance to squeeze at some point, but doubt it.
 	implementation "androidx.documentfile:documentfile:1.0.1"
-	implementation "com.jakewharton:process-phoenix:2.0.0" //for restarting
-
+	implementation "com.jakewharton:process-phoenix:2.1.2" //for restarting
 
 }
 
