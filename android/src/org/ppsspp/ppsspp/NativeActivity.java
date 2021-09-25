@@ -65,6 +65,7 @@ import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+import com.jakewharton.processphoenix.ProcessPhoenix;
 //new
 
 @SuppressWarnings("ConstantConditions")
@@ -726,8 +727,9 @@ try {
 
 
 //////////////	
-this.recreate();
-	
+//this.recreate();
+	                ProcessPhoenix.triggerRebirth(getApplicationContext());
+
 }	
 	         ////////restart if its first time
 		
