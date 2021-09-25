@@ -71,6 +71,49 @@ public class MainActivity extends Activity {
 	
 	
 	
+	
+	
+	
+	
+	
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String [] permissions, int[] grantResults) {
+		switch (requestCode) {
+		case REQUEST_CODE_STORAGE_PERMISSION:
+			if (permissionsGranted(permissions, grantResults)) {
+				NativeApp.sendMessage("permission_granted", "storage");
+			} else {
+				NativeApp.sendMessage("permission_denied", "storage");
+			}
+			break;
+		case REQUEST_CODE_LOCATION_PERMISSION:
+			if (permissionsGranted(permissions, grantResults)) {
+				mLocationHelper.startLocationUpdates();
+			}
+			break;
+		case REQUEST_CODE_CAMERA_PERMISSION:
+			if (mCameraHelper != null && permissionsGranted(permissions, grantResults)) {
+				mCameraHelper.startCamera();
+			}
+			break;
+		case REQUEST_CODE_MICROPHONE_PERMISSION:
+			if (permissionsGranted(permissions, grantResults)) {
+				NativeApp.audioRecording_Start();
+			}
+			break;
+		default:
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//should transfer these to main activity
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
     public void unzipBysomeonegood(String zipFilePath, String destDirectory) throws IOException {
