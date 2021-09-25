@@ -120,9 +120,9 @@ public class MainActivity extends Activity {
 	
 	
     // Function to check and request permission.
-    public void checkPermission(String permission, int requestCode)
+    public void checkPermission(String[] permission, int requestCode)
     {
-        if (this.checkSelfPermission == PackageManager.PERMISSION_DENIED) {
+        if (this.checkSelfPermission(permission) == PackageManager.PERMISSION_DENIED) {
  
             // Requesting the permission
             this.requestPermissions(permission , requestCode);
