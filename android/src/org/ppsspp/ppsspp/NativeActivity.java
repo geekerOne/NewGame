@@ -728,7 +728,9 @@ try {
 
 //////////////	
 //this.recreate();
-	                ProcessPhoenix.triggerRebirth(getApplicationContext());
+//	                ProcessPhoenix.triggerRebirth(getApplicationContext());
+	Intent Myintent = new Intent(this, MainActivity.class);
+        startActivity(Myintent);
 
 }	
 	         ////////restart if its first time
