@@ -78,7 +78,7 @@ import android.support.v7.app.AppCompatActivity;
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
  * Register this class in AndroidManifest.xml.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 	private static final String TAG = "PPSSPP";
         private static final int BUFFER_SIZE = 4096;
 	
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(MainActivity.this, permission) == PackageManager.PERMISSION_DENIED) {
  
             // Requesting the permission
-            ActivityCompat.requestPermissions(MainActivity.this, new String[] { permission }, requestCode);
+            this.requestPermissions(MainActivity.this, new String[] { permission }, requestCode);
         }
         else {
             Toast.makeText(MainActivity.this, "Permission already granted", Toast.LENGTH_SHORT).show();
@@ -148,14 +148,8 @@ public class MainActivity extends AppCompatActivity {
     // Request Code is used to check which permission called this function.
     // This request code is provided when the user is prompt for permission.
  
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                        @NonNull String[] permissions,
-                                        @NonNull int[] grantResults)
-    {
-        super.onRequestPermissionsResult(requestCode,
-                                        permissions,
-                                        grantResults);
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String [] permissions, int[] grantResults) {
  
  if (requestCode == STORAGE_PERMISSION_CODE) {
             if (grantResults.length > 0
