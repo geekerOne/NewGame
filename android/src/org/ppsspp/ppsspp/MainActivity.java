@@ -67,12 +67,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import com.jakewharton.processphoenix.ProcessPhoenix;
 //new
-//new 2
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-//new 2
 
 /**
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
