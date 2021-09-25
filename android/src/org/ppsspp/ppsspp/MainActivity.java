@@ -150,7 +150,7 @@ public class MainActivity extends Activity {
  if (requestCode == STORAGE_PERMISSION_CODE) {
             if (grantResults.length > 0
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-				NativeApp.sendMessage("permission_granted", "storage");
+		//		NativeApp.sendMessage("permission_granted", "storage");
 		    
 		    
 		                    String storagePath  = "";
