@@ -108,13 +108,13 @@ public class MainActivity extends Activity {
 		// Show file selector dialog here.
 	//	SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
 	//	fileDialog.showDialog();
-		Intent intent = new Intent();
-		intent.setPackage("org.ppsspp.ppsspp");
-		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
-	        String shortcut_MYParam = storagePath + "/example.iso";
-		File file = new File(shortcut_MYParam);
-		intent.setData(Uri.fromFile(file));
-		startActivity(intent);
+		//Intent intent = new Intent();
+		//intent.setPackage("org.ppsspp.ppsspp");
+		//intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
+	        //String shortcut_MYParam = storagePath + "/example.iso";
+		//File file = new File(shortcut_MYParam);
+		//intent.setData(Uri.fromFile(file));
+		//startActivity(intent);
 
 		//respondToShortcutRequest(shortcut_MYParam);
 	}
@@ -151,6 +151,16 @@ public class MainActivity extends Activity {
             if (grantResults.length > 0
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 				NativeApp.sendMessage("permission_granted", "storage");
+		    
+		Intent intent = new Intent();
+		intent.setPackage("org.ppsspp.ppsspp");
+		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
+	        String shortcut_MYParam = storagePath + "/example.iso";
+		File file = new File(shortcut_MYParam);
+		intent.setData(Uri.fromFile(file));
+		startActivity(intent);
+
+		    
             } else {
 				NativeApp.sendMessage("permission_denied", "storage");
             }
