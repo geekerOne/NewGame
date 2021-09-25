@@ -152,6 +152,14 @@ public class MainActivity extends Activity {
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 				NativeApp.sendMessage("permission_granted", "storage");
 		    
+		    
+		                    String storagePath  = "";
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = this.getFilesDir().getAbsolutePath();
+		
+		    
 		Intent intent = new Intent();
 		intent.setPackage("org.ppsspp.ppsspp");
 		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
