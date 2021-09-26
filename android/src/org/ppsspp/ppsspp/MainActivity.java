@@ -86,42 +86,136 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
                 //trying to automate ppsspp
 		///////////////////////////////////////////////////   sdcard0/SandS/example.iso
 		checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-
-		copyAssets();
-		
-                String storagePath  = "";
-		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
-			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
-		else
-                        storagePath = this.getFilesDir().getAbsolutePath();
-		
-		try {
-		unzipBysomeonegood(storagePath + "/game.zip" , storagePath);
-             } catch (IOException e) {
-             System.out.println("Can't unzip"); // Or something more intellegent
-             }
-		
-		///////////////////////////////////////////////////	
-		// Show file selector dialog here.
-	//	SimpleFileChooser fileDialog = new SimpleFileChooser(this, Environment.getExternalStorageDirectory(), onFileSelectedListener);
-	//	fileDialog.showDialog();
-		//Intent intent = new Intent();
-		//intent.setPackage("org.ppsspp.ppsspp");
-		//intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
-	        //String shortcut_MYParam = storagePath + "/example.iso";
-		//File file = new File(shortcut_MYParam);
-		//intent.setData(Uri.fromFile(file));
-		//startActivity(intent);
-
-		//respondToShortcutRequest(shortcut_MYParam);
 	}
 	
 	
 	
-    // Function to check and request permission.
+	
+	
+	
+	
+	
+//all button codes/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void start(view: View) {
+	    
+	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
+        val cfile = File(storagePath + "/example.nds")//diffrent for each game
+        var fileExists = cfile.exists()
+    val bfile = File(storagePath + "/system/PPSSPP/example.zip")
+        var fileExistscheck = bfile.exists()
+	 val dfile = File(storagePath + "/game.zip")
+        var fileExistscheck2 = dfile.exists()
+            
+    if(fileExists){
+            if(fileExistscheck){
+              bfile.delete()
+              }
+	                if(fileExistscheck2){
+                 dfile.delete()
+              }
+    
+    
+	
+	    startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
+          //          startActivity(Intent(this@MainActivity, GameActivity::class.java))
+
+    
+    
+    } else {
+
+	    
+        // Do something in response to button click
+        val start_the_game_button = findViewById(R.id.start_the_game_button) as Button
+        start_the_game_button.isEnabled = false
+        start_the_game_button.visibility = View.INVISIBLE
+        val comments = findViewById(R.id.comments) as Button
+        comments.isEnabled = false
+        comments.visibility = View.GONE
+        val game_page = findViewById(R.id.game_page) as Button
+        game_page.isEnabled = false
+        game_page.visibility = View.GONE
+        val exit_button = findViewById(R.id.exit_button) as Button
+        exit_button.isEnabled = false
+        exit_button.visibility = View.GONE
+        val send_email = findViewById(R.id.send_email) as Button
+        send_email.isEnabled = false
+        send_email.visibility = View.GONE
+        val relative = findViewById(R.id.relative) as RelativeLayout
+        relative.setBackgroundResource(0)
+        relative.setBackgroundColor(Color.parseColor("#000000"))
+        
+			
+
+				        someTask(this,this).execute()
+		
+        }
+    }
+
+    public void sendMsg(view: View) {
+	
+	/*myket*/
+	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
+        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.captainTusbasanewKickOff")
+        
+	/*bazar*/
+	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
+        //openURL.setPackage("com.farsitel.bazaar")
+	
+	
+        startActivity(openURL)
+    }
+
+    public void sendingEmail(view: View) {
+
+        val intent = Intent(Intent.ACTION_SENDTO)
+        
+	    
+	/*myket*/
+	intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
+        /*bazar*/
+        //intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
+	
+	    
+	    
+	intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی")
+        startActivity(intent)
+
+    }
+
+    public void goToPage(view: View) {
+        
+	//for both
+	val openURL = Intent(android.content.Intent.ACTION_VIEW)
+	
+	
+	/*myket*/
+        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.captainTusbasanewKickOff")
+	
+	/*bazar*/
+        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
+        //openURL.setPackage("com.farsitel.bazaar")
+	    
+	    
+	startActivity(openURL)
+    }
+
+    public void exit_game(view: View) {
+        this@MainActivity.finish()
+        exitProcess(0)
+    }
+//all button codes/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+		
+	
+//###################################################################	
+	
+	
+// Function to check and request permission.//////////////////////////////////////////////////////////////////////////////////////
     public void checkPermission(String permission, int requestCode)
     {
         if (this.checkSelfPermission(permission) == PackageManager.PERMISSION_DENIED) {
@@ -135,14 +229,6 @@ public class MainActivity extends Activity {
     }
  
 	
-	
-	
-	
-
-	
-    // This function is called when the user accepts or decline the permission.
-    // Request Code is used to check which permission called this function.
-    // This request code is provided when the user is prompt for permission.
  
 	@Override
 	public void onRequestPermissionsResult(int requestCode, String [] permissions, int[] grantResults) {
@@ -175,16 +261,14 @@ public class MainActivity extends Activity {
             }
         }
     }
-
+// Function to check and request permission.//////////////////////////////////////////////////////////////////////////////////////
 	
 	
 	
+//###################################################################	
 	
 	
-	
-	
-	//should transfer these to main activity
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+///copy and unzip assets///////////////////////////////////////////////////////////////////////////////////////////////////////////	
     public void unzipBysomeonegood(String zipFilePath, String destDirectory) throws IOException {
         File destDir = new File(destDirectory);
         if (!destDir.exists()) {
@@ -262,7 +346,7 @@ private void copyFile(InputStream in, OutputStream out) throws IOException
             out.write(buffer, 0, read);
       }
 }
-/////////////////////////////////////////////////////////////////////////////////	
+///copy and unzip assets///////////////////////////////////////////////////////////////////////////////////////////////////////////		
 
 	
 	
