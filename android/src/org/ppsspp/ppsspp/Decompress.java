@@ -113,6 +113,15 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 		Log.i(TAG, "Completed. Total size: "+result);
 		if(myProgressDialog != null && myProgressDialog.isShowing()){
 			myProgressDialog.dismiss();
+	
+		//for test 
+		Intent intent = new Intent();
+		intent.setPackage("org.ppsspp.ppsspp");
+		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
+		intent.setData(Uri.fromFile(GameFile));
+		startActivity(intent);
+	        //for test
+			
 		}
 	}
 	
