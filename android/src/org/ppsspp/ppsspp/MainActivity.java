@@ -114,18 +114,20 @@ public class MainActivity extends Activity {
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
 	    
-	    File checkGameFileExist = new File(storagePath + "/example.iso");
-            
-if(file.exists()){  
-	if(fileExistscheck){
-              bfile.delete()
-              }
-	if(fileExistscheck2){
-                 dfile.delete()
+	    File GameFile = new File(storagePath + "/example.iso");
+	    File GameFileZip = new File(storagePath / "/game.zip");
+
+if(GameFile.exists()){  
+	if(GameFileZip.exists()){  
+              GameFileZip.delete();
               }
     
-          //for test
-	
+          //for test 
+		Intent intent = new Intent();
+		intent.setPackage("org.ppsspp.ppsspp");
+		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
+		intent.setData(Uri.fromFile(GameFile));
+		startActivity(intent);
 	  //for test
 	  
 	
@@ -233,7 +235,7 @@ if(file.exists()){
             this.requestPermissions(permissionsForStorage , requestCode);
         }
         else {
-            Toast.makeText(MainActivity.this, "Permission already granted", Toast.LENGTH_SHORT).show();
+            //continue (nothing)
         }
     }
  
@@ -245,26 +247,7 @@ if(file.exists()){
  if (requestCode == STORAGE_PERMISSION_CODE) {
             if (grantResults.length > 0
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-		//		NativeApp.sendMessage("permission_granted", "storage");
-		    
-	 Toast.makeText(MainActivity.this, "Permission granted", Toast.LENGTH_SHORT).show();
-   
-		                    String storagePath  = "";
-		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
-			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
-		else
-                        storagePath = this.getFilesDir().getAbsolutePath();
-		
-		    
-		Intent intent = new Intent();
-		intent.setPackage("org.ppsspp.ppsspp");
-		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
-	        String shortcut_MYParam = storagePath + "/example.iso";
-		File file = new File(shortcut_MYParam);
-		intent.setData(Uri.fromFile(file));
-		startActivity(intent);
-
-		    
+            //continue (nothing)
             } else {
             //exit the Game!
 	    }
