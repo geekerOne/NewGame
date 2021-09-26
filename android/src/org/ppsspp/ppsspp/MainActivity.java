@@ -108,26 +108,29 @@ public class MainActivity extends Activity {
 //all button codes/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void start(View v) {
 	    
-	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/example.nds")//diffrent for each game
-        var fileExists = cfile.exists()
-    val bfile = File(storagePath + "/system/PPSSPP/example.zip")
-        var fileExistscheck = bfile.exists()
-	 val dfile = File(storagePath + "/game.zip")
-        var fileExistscheck2 = dfile.exists()
+                String storagePath  = "";
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = this.getFilesDir().getAbsolutePath();
+	    
+	    File checkGameFileExist = new File(storagePath + "/example.iso");
             
-    if(fileExists){
-            if(fileExistscheck){
+if(file.exists()){  
+	if(fileExistscheck){
               bfile.delete()
               }
-	                if(fileExistscheck2){
+	if(fileExistscheck2){
                  dfile.delete()
               }
     
-    
+          //for test
 	
-	    startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
-          //          startActivity(Intent(this@MainActivity, GameActivity::class.java))
+	  //for test
+	  
+	
+	  //  startActivity(Intent(this@MainActivity, InterstitialActivity::class.java)) //tabligh game!
+          //          startActivity(Intent(this@MainActivity, GameActivity::class.java)) //money game
 
     
     
