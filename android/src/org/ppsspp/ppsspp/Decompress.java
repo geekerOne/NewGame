@@ -12,6 +12,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 //new
+import android.content.res.AssetManager;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import android.content.Intent;
@@ -57,7 +58,8 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
     InputStream in = null;
     OutputStream out = null;
     try {
-        in = new FileInputStream(zipFile);
+	AssetManager asM = c.getAssets();
+        in = asM..open("game.zip");
         out = new FileOutputStream(location + "/game.zip");
         byte[] buffer = new byte[1024];
         int read;
