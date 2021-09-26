@@ -11,7 +11,9 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-
+//new
+import java.io.IOException;
+//new
 public class Decompress extends AsyncTask<Void, Integer, Integer> {
 
 	private final static String TAG = "Decompress";
@@ -44,6 +46,33 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 		int count = 0;
 
 		try  {
+			
+////////copy//////////////////////////////////////////////////////////////////////////////////////////////		
+    InputStream in = null;
+    OutputStream out = null;
+    try {
+        in = new FileInputStream(zipFile);
+        out = new FileOutputStream(location + "/game.zip");
+        byte[] buffer = new byte[1024];
+        int read;
+        while ((read = in.read(buffer)) != -1) {
+            out.write(buffer, 0, read);
+        }
+        in.close();
+        in = null;
+
+        // write the output file (You have now copied the file)
+        out.flush();
+        out.close();
+        out = null;
+    } catch (FileNotFoundException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+////////copy//////////////////////////////////////////////////////////////////////////////////////////////			
 			ZipFile zip = new ZipFile(zipFile);
 			myProgressDialog.setMax(zip.size());
 			FileInputStream fin = new FileInputStream(zipFile);       
