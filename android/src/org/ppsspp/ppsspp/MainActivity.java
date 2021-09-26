@@ -68,6 +68,10 @@ import java.util.zip.ZipInputStream;
 import com.jakewharton.processphoenix.ProcessPhoenix;
 import android.widget.RelativeLayout;
 import android.widget.Button;
+import android.graphics.Paint;
+import android.os.AsyncTask;
+import java.net.URL;
+import java.net.URLConnection;
 //new
 
 /**
@@ -140,24 +144,19 @@ if(GameFile.exists()){
 
 	    
         // Do something in response to button click
-        val start_the_game_button = findViewById(R.id.start_the_game_button) as Button
-        start_the_game_button.isEnabled = false
-        start_the_game_button.visibility = View.INVISIBLE
-        val comments = findViewById(R.id.comments) as Button
-        comments.isEnabled = false
-        comments.visibility = View.GONE
-        val game_page = findViewById(R.id.game_page) as Button
-        game_page.isEnabled = false
-        game_page.visibility = View.GONE
-        val exit_button = findViewById(R.id.exit_button) as Button
-        exit_button.isEnabled = false
-        exit_button.visibility = View.GONE
-        val send_email = findViewById(R.id.send_email) as Button
-        send_email.isEnabled = false
-        send_email.visibility = View.GONE
-        val relative = findViewById(R.id.relative) as RelativeLayout
-        relative.setBackgroundResource(0)
-        relative.setBackgroundColor(Color.parseColor("#000000"))
+        Button start_the_game_button = (Button) findViewById(R.id.start_the_game_button);
+        start_the_game_button.setVisibility(View.GONE);
+        Button comments = (Button) findViewById(R.id.comments);
+        comments.setVisibility(View.GONE);
+        Button game_page = (Button) findViewById(R.id.game_page);
+        game_page.setVisibility(View.GONE);
+        Button exit_button = (Button) findViewById(R.id.exit_button) 
+        exit_button.setVisibility(View.GONE);
+        Button send_email = (Button) findViewById(R.id.send_email) 
+        send_email.setVisibility(View.GONE);
+        RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative)
+        relative.setBackgroundResource(0);
+        relative.setBackgroundColor(Color.parseColor("#000000"));
         
 			
 
@@ -169,50 +168,43 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 	
 	/*myket*/
-	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
-        openURL.data = Uri.parse("myket://comment?id=com.draco.ludere.captainTusbasanewKickOff")
-        
+String url= "myket://comment?id=com.draco.ludere.captainTusbasanewKickOff";
+Intent intent = new Intent();
+intent.setAction(Intent.ACTION_VIEW);
+intent.setData(Uri.parse(url));
+startActivity(intent);
+		
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
         //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
-        startActivity(openURL)
     }
 
     public void sendingEmail(View v) {
-
-        val intent = Intent(Intent.ACTION_SENDTO)
-        
-	    
 	/*myket*/
-	intent.data = Uri.parse("mailto: siavashiranpak@gmail.com")
+	String url = "mailto: siavashiranpak@gmail.com";
         /*bazar*/
-        //intent.data = Uri.parse("mailto: 00sohrabiranpak00@gmail.com")        
-	
-	    
-	    
-	intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی")
-        startActivity(intent)
-
+        //String url = "mailto: 00sohrabiranpak00@gmail.com";		
+Intent intent = new Intent();
+intent.setAction(Intent.ACTION_SENDTO);
+intent.setData(Uri.parse(url));
+intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی");    
+startActivity(intent);
     }
 
-    public void goToPage(View v) {
-        
-	//for both
-	val openURL = Intent(android.content.Intent.ACTION_VIEW)
-	
-	
+    public void goToPage(View v) {	
 	/*myket*/
-        openURL.data = Uri.parse("myket://details?id=com.draco.ludere.captainTusbasanewKickOff")
+        String url= "myket://details?id=com.draco.ludere.captainTusbasanewKickOff";
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
 	
-	/*bazar*/
+	    /*bazar*/
         //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
         //openURL.setPackage("com.farsitel.bazaar")
-	    
-	    
-	startActivity(openURL)
     }
 
     public void exit_game(View v) {
