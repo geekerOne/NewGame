@@ -152,7 +152,8 @@ public class MainActivity extends Activity {
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 		//		NativeApp.sendMessage("permission_granted", "storage");
 		    
-		    
+	 Toast.makeText(MainActivity.this, "Permission granted", Toast.LENGTH_SHORT).show();
+   
 		                    String storagePath  = "";
 		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
 			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
