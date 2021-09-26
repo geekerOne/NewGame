@@ -208,7 +208,7 @@ startActivity(intent);
     }
 
     public void exit_game(View v) {
-	this@MainActivity.finishAndRemoveTask();	
+	this.finishAffinity();	
     }
 //all button codes/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -241,7 +241,7 @@ startActivity(intent);
             //continue (nothing)
             } else {
             //exit the Game!
-	    this@MainActivity.finishAndRemoveTask();	    
+	    this.finishAffinity();	    
 	    }
         }
     }
