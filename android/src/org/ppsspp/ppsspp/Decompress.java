@@ -121,6 +121,13 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 			myProgressDialog.dismiss();
 	
 		//for test 
+		String storagePath  = "";
+		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = ctx.getFilesDir().getAbsolutePath();
+	    
+	        File GameFile = new File(storagePath + "/example.iso");	
 		Intent intent = new Intent();
 		intent.setPackage("org.ppsspp.ppsspp");
 		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
