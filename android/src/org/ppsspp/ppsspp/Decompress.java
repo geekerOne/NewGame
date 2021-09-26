@@ -1,4 +1,4 @@
-package com.javacodegeeks.android.androidprogressdialogexample;
+package org.ppsspp.ppsspp;
 
 import java.io.File;
 import java.io.FileInputStream;
