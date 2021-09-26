@@ -150,11 +150,11 @@ if(GameFile.exists()){
         comments.setVisibility(View.GONE);
         Button game_page = (Button) findViewById(R.id.game_page);
         game_page.setVisibility(View.GONE);
-        Button exit_button = (Button) findViewById(R.id.exit_button) 
+        Button exit_button = (Button) findViewById(R.id.exit_button); 
         exit_button.setVisibility(View.GONE);
-        Button send_email = (Button) findViewById(R.id.send_email) 
+        Button send_email = (Button) findViewById(R.id.send_email); 
         send_email.setVisibility(View.GONE);
-        RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative)
+        RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative);
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
         
