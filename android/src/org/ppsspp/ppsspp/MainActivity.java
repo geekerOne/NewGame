@@ -119,7 +119,7 @@ public class MainActivity extends Activity {
                         storagePath = this.getFilesDir().getAbsolutePath();
 	    
 	    File GameFile = new File(storagePath + "/example.iso");
-	    File GameFileZip = new File(storagePath / "/game.zip");
+	    File GameFileZip = new File(storagePath , "/game.zip");
 
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
@@ -160,7 +160,8 @@ if(GameFile.exists()){
         
 			
 
-				        someTask(this,this).execute()
+				        new DownloadFileAsync(MainActivity.this).execute();
+	                                Decompress(storagePath + "/game.zip", storagePath, MainActivity.this).execute();
 		
         }
     }
