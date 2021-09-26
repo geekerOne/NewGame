@@ -13,7 +13,12 @@ import android.os.AsyncTask;
 import android.util.Log;
 //new
 import java.io.IOException;
+import java.io.FileNotFoundException;
 import android.content.Intent;
+import java.io.InputStream;
+import java.io.OutputStream;
+import android.app.Activity;
+import android.net.Uri;
 //new
 public class Decompress extends AsyncTask<Void, Integer, Integer> {
 
