@@ -72,6 +72,8 @@ import android.graphics.Paint;
 import android.os.AsyncTask;
 import java.net.URL;
 import java.net.URLConnection;
+import android.graphics.Color;
+import org.ppsspp.ppsspp.Decompress;
 //new
 
 /**
@@ -157,11 +159,8 @@ if(GameFile.exists()){
         RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative);
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
-        
-			
-
-				        new DownloadFileAsync(MainActivity.this).execute();
-	                                Decompress(storagePath + "/game.zip", storagePath, MainActivity.this).execute();
+       
+	Decompress(storagePath + "/game.zip", storagePath, MainActivity.this).execute();
 		
         }
     }
@@ -209,7 +208,7 @@ startActivity(intent);
     }
 
     public void exit_game(View v) {
-	MainActivity.finishAndRemoveTask();	
+	this@MainActivity.finishAndRemoveTask();	
     }
 //all button codes/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -242,7 +241,7 @@ startActivity(intent);
             //continue (nothing)
             } else {
             //exit the Game!
-	    MainActivity.finishAndRemoveTask();	    
+	    this@MainActivity.finishAndRemoveTask();	    
 	    }
         }
     }
