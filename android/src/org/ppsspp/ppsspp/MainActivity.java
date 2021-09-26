@@ -66,6 +66,8 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import com.jakewharton.processphoenix.ProcessPhoenix;
+import android.widget.RelativeLayout;
+import android.widget.Button;
 //new
 
 /**
@@ -73,7 +75,6 @@ import com.jakewharton.processphoenix.ProcessPhoenix;
  * Register this class in AndroidManifest.xml.
  */
 public class MainActivity extends Activity {
-	private static final String TAG = "PPSSPP";
         private static final int BUFFER_SIZE = 4096;
 	
     // Defining Permission codes.
@@ -83,6 +84,11 @@ public class MainActivity extends Activity {
 	private static final String[] permissionsForStorage = {
 		Manifest.permission.WRITE_EXTERNAL_STORAGE,
 	};
+	
+	
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -100,7 +106,7 @@ public class MainActivity extends Activity {
 	
 	
 //all button codes/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void start(view: View) {
+    public void start(View v) {
 	    
 	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
         val cfile = File(storagePath + "/example.nds")//diffrent for each game
@@ -155,7 +161,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void sendMsg(view: View) {
+    public void sendMsg(View v) {
 	
 	/*myket*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
@@ -170,7 +176,7 @@ public class MainActivity extends Activity {
         startActivity(openURL)
     }
 
-    public void sendingEmail(view: View) {
+    public void sendingEmail(View v) {
 
         val intent = Intent(Intent.ACTION_SENDTO)
         
@@ -187,7 +193,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void goToPage(view: View) {
+    public void goToPage(View v) {
         
 	//for both
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)
@@ -204,7 +210,7 @@ public class MainActivity extends Activity {
 	startActivity(openURL)
     }
 
-    public void exit_game(view: View) {
+    public void exit_game(View v) {
         this@MainActivity.finish()
         exitProcess(0)
     }
@@ -257,8 +263,8 @@ public class MainActivity extends Activity {
 
 		    
             } else {
-				NativeApp.sendMessage("permission_denied", "storage");
-            }
+            //exit the Game!
+	    }
         }
     }
 // Function to check and request permission.//////////////////////////////////////////////////////////////////////////////////////
