@@ -132,7 +132,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 		intent.setPackage("org.ppsspp.ppsspp");
 		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
 		intent.setData(Uri.fromFile(GameFile));
-		startActivity(intent);
+		ctx.startActivity(intent);
 	        //for test
 			
 		}
