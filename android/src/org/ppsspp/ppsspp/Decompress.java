@@ -60,6 +60,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
     try {
 	AssetManager asM = ctx.getAssets();
         in = asM.open("game.zip");
+	in = ctx.getResources().openRawResource(R.raw.game);    
         out = new FileOutputStream(location + "/game.zip");
         byte[] buffer = new byte[1024];
         int read;
