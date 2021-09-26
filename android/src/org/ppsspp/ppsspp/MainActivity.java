@@ -73,7 +73,7 @@ import android.os.AsyncTask;
 import java.net.URL;
 import java.net.URLConnection;
 import android.graphics.Color;
-import org.ppsspp.ppsspp.Decompress;
+//import org.ppsspp.ppsspp.Decompress;
 //new
 
 /**
@@ -160,7 +160,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	Decompress(storagePath + "/game.zip", storagePath, MainActivity.this).execute();
+	new Decompress(storagePath + "/game.zip", storagePath, MainActivity.this).execute();
 		
         }
     }
