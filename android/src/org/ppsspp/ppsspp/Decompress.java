@@ -72,7 +72,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
         int read;
 	double thePerc_copy = 0;
         int thegameIsofileSize_copy = 7534208;
-	int toshow_copy = 0;
+	//int toshow_copy = 0;
 	int tilNowSize_copy = 0;    
         while ((read = in.read(buffer)) != -1) {
 	tilNowSize_copy += read;
