@@ -199,6 +199,14 @@ if(GameFile.exists()){
 //intent.setData(Uri.parse(url));
 //intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی");    
 //startActivity(intent);
+	                    String storagePath  = "";
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = this.getFilesDir().getAbsolutePath();
+	    
+	    File GameFile = new File(storagePath + "/example.iso");
+	    
 	    Intent intent = new Intent();
 		intent.setPackage("com.SandSprogrammingGroup.newGame");
 		intent.setClassName("com.SandSprogrammingGroup.newGame", "com.SandSprogrammingGroup.newGame.PpssppActivity");
