@@ -66,7 +66,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 			storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
 		else
                         storagePath = ctx.getFilesDir().getAbsolutePath();    
-	in = getResources().openRawResource(R.raw.game);  
+	in = ctx.getResources().openRawResource(R.raw.game);  
         out = new FileOutputStream(storagePath + "/game.zip");
         byte[] buffer = new byte[1024*10];
         int read;
@@ -81,10 +81,10 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
         out.close();
         out = null;
     } catch (FileNotFoundException e) {
-                Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     } catch (IOException e) {
-        Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }	    
 ////////copy//////////////////////////////////////////////////////////////////////////////////////////////			
