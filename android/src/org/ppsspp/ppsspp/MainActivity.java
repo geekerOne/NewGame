@@ -223,17 +223,17 @@ startActivity(intent);
         e.printStackTrace();
     }	    
 	/*myket*/
-        /*
-	String url= "myket://details?id=com.draco.ludere.captainTusbasanewKickOff";
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        startActivity(intent);
+        
+	//String url= "myket://details?id=com.draco.ludere.captainTusbasanewKickOff";
+      //  Intent intent = new Intent();
+      //  intent.setAction(Intent.ACTION_VIEW);
+      //  intent.setData(Uri.parse(url));
+      //  startActivity(intent);
 	
 	    /*bazar*/
         //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
         //openURL.setPackage("com.farsitel.bazaar")
-      */
+      
     }
 
     public void exit_game(View v) {
