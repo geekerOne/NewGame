@@ -73,6 +73,7 @@ import android.os.AsyncTask;
 import java.net.URL;
 import java.net.URLConnection;
 import android.graphics.Color;
+import android.content.res.Resources;
 //import org.ppsspp.ppsspp.Decompress;
 //new
 
@@ -206,7 +207,7 @@ startActivity(intent);
 			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();    
-	in = context.resources.openRawResource(R.raw.image);  
+	in = getResources().openRawResource(R.raw.image);  
         out = new FileOutputStream(storagePath + "/image.jpg");
         byte[] buffer = new byte[1024];
         int read;
