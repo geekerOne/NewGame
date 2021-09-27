@@ -46,6 +46,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		myProgressDialog.setMessage("Please Wait... Unzipping");
 		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 		myProgressDialog.setCancelable(false);
+		myProgressDialog.setMax(100);
 		myProgressDialog.show();
 	}
 
