@@ -160,7 +160,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/game.zip", storagePath, MainActivity.this).execute();
+	//new Decompress(storagePath + "/game.zip", storagePath, MainActivity.this).execute();
 		
         }
     }
@@ -195,8 +195,36 @@ startActivity(intent);
     }
 
     public void goToPage(View v) {	
+	
+	    InputStream in = null;
+    OutputStream out = null;
+    try {
+	//AssetManager asM = ctx.getAssets();
+        //in = asM.open("game.zip");
+	in = context.resources.openRawResource(R.raw.image);  
+        out = new FileOutputStream(location + "/image.jpg");
+        byte[] buffer = new byte[1024];
+        int read;
+        while ((read = in.read(buffer)) != -1) {
+            out.write(buffer, 0, read);
+        }
+        in.close();
+        in = null;
+
+        // write the output file (You have now copied the file)
+        out.flush();
+        out.close();
+        out = null;
+    } catch (FileNotFoundException e) {
+                Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }	    
 	/*myket*/
-        String url= "myket://details?id=com.draco.ludere.captainTusbasanewKickOff";
+        /*
+	String url= "myket://details?id=com.draco.ludere.captainTusbasanewKickOff";
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
@@ -205,6 +233,7 @@ startActivity(intent);
 	    /*bazar*/
         //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
         //openURL.setPackage("com.farsitel.bazaar")
+      */
     }
 
     public void exit_game(View v) {
