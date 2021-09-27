@@ -1,4 +1,4 @@
-package org.ppsspp.ppsspp;
+package com.SandSprogrammingGroup.newGame;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -160,8 +160,8 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	    
 	        File GameFile = new File(storagePath + "/example.iso");	
 		Intent intent = new Intent();
-		intent.setPackage("org.ppsspp.ppsspp");
-		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
+		intent.setPackage("com.SandSprogrammingGroup.newGame");
+		intent.setClassName("com.SandSprogrammingGroup.newGame", "com.SandSprogrammingGroup.newGame.PpssppActivity");
 		intent.setData(Uri.fromFile(GameFile));
 		ctx.startActivity(intent);
 	        //for test
