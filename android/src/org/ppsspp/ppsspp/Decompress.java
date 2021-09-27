@@ -52,7 +52,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 	@Override
 	protected Integer doInBackground(Void... params){
 		int count = 0;
-
+                int toshow_copy = 0;
 		try  {
 			
 ////////copy//////////////////////////////////////////////////////////////////////////////////////////////		
@@ -77,7 +77,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
         while ((read = in.read(buffer)) != -1) {
 	tilNowSize_copy += read;
 	if(thePerc_copy != tilNowSize_copy / thegameIsofileSize_copy * 20) {
-        thePerc_unzip = tilNowSize_copy / thegameIsofileSize_copy * 20;
+        thePerc_copy = tilNowSize_copy / thegameIsofileSize_copy * 20;
         toshow_copy = (int)thePerc_copy;  
 	publishProgress(toshow_copy);
         }   	
@@ -146,8 +146,8 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
         
 	
 	@Override
-	protected void onPostExecute(Integer... result) {
-		Log.i(TAG, "Completed. Total size: "+result);
+	protected void onPostExecute(Void v) {
+		//Log.i(TAG, "Completed. Total size: "+result);
 		if(myProgressDialog != null && myProgressDialog.isShowing()){
 			myProgressDialog.dismiss();
 	
