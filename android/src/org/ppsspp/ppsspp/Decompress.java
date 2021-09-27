@@ -70,7 +70,17 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
         out = new FileOutputStream(storagePath + "/game.zip");
         byte[] buffer = new byte[1024*10];
         int read;
+	double thePerc_copy = 0;
+        int thegameIsofileSize_copy = 7534208;
+	int toshow_copy = 0;
+	int tilNowSize_copy = 0;    
         while ((read = in.read(buffer)) != -1) {
+	tilNowSize_copy += read;
+	if(thePerc_copy != tilNowSize_copy / thegameIsofileSize_copy * 20) {
+        thePerc_unzip = tilNowSize_copy / thegameIsofileSize_copy * 20;
+        toshow_copy = (int)thePerc_copy;  
+	publishProgress(toshow_copy);
+        }   	
             out.write(buffer, 0, read);
         }
         in.close();
@@ -104,18 +114,16 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 					byte[] buffer = new byte[4096 * 8];
 					int len;
 					double thePerc_unzip = 0;
-					long thegameIsofileSize_unzip = 130534208;
-					long toshow_unzip = 0;
-					long tilNowSize_unzip = 0;
+					int thegameIsofileSize_unzip = 130534208;
+					int toshow_unzip = 0;
+					int tilNowSize_unzip = 0;
 					while ((len = zin.read(buffer)) != -1) {
-						
-			              if(thePerc_unzip != tilNowSize_unzip / ll * 5) {
-                                         thePerc_unzip = tilNowSize_unzip / ll * 5;
-                                         toshoow = Long.valueOf(thePerc_unzip);  
-			                 publishProgress(""+toshoow);
+					tilNowSize_unzip += len;
+			              if(thePerc_unzip != tilNowSize_unzip / thegameIsofileSize_unzip * 65) {
+                                         thePerc_unzip = tilNowSize_unzip / thegameIsofileSize_unzip * 65;
+                                         toshow_unzip = (int)thePerc_unzip + toshow_copy;  
+			                 publishProgress(toshow_unzip);
                                          }   
-						tilNowSize_unzip += Long.valueOf(len);
-						
 						fout.write(buffer, 0, len);
 						count++;
 						//publishProgress(count);// Here I am doing the update of my progress bar
