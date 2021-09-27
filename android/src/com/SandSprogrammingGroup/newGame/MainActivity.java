@@ -130,11 +130,16 @@ if(GameFile.exists()){
               }
     
           //for test 
-		Intent intent = new Intent();
-		intent.setPackage("com.SandSprogrammingGroup.newGame");
-		intent.setClassName("com.SandSprogrammingGroup.newGame", "com.SandSprogrammingGroup.newGame.PpssppActivity");
-		intent.setData(Uri.fromFile(GameFile));
-		startActivity(intent);
+		//Intent intent = new Intent();
+		//intent.setPackage("com.SandSprogrammingGroup.newGame");
+		//intent.setClassName("com.SandSprogrammingGroup.newGame", "com.SandSprogrammingGroup.newGame.PpssppActivity");
+		//intent.setData(Uri.fromFile(GameFile));
+		//startActivity(intent);
+	
+		Intent Myintent = new Intent(this, PpssppActivity.class);
+                startActivity(Myintent);
+	
+	
 	  //for test
 	  
 	
