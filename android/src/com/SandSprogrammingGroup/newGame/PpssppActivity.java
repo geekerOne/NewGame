@@ -1,4 +1,4 @@
-package org.ppsspp.ppsspp;
+package com.SandSprogrammingGroup.newGame;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -17,9 +17,9 @@ import java.io.File;
 public class PpssppActivity extends NativeActivity {
 	private static final String TAG = "PpssppActivity";
 	// Key used by shortcut.
-	public static final String SHORTCUT_EXTRA_KEY = "org.ppsspp.ppsspp.Shortcuts";
+	public static final String SHORTCUT_EXTRA_KEY = "com.SandSprogrammingGroup.newGame.Shortcuts";
 	// Key used for debugging.
-	public static final String ARGS_EXTRA_KEY = "org.ppsspp.ppsspp.Args";
+	public static final String ARGS_EXTRA_KEY = "com.SandSprogrammingGroup.newGame.Args";
 
 	private static boolean m_hasUnsupportedABI = false;
 	private static boolean m_hasNoNativeBinary = false;
