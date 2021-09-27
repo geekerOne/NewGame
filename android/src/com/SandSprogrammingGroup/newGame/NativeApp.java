@@ -1,4 +1,4 @@
-package org.ppsspp.ppsspp;
+package com.SandSprogrammingGroup.newGame;
 
 // Note that the display* methods are in NativeRenderer.java
 
