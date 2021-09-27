@@ -20,6 +20,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import android.app.Activity;
 import android.net.Uri;
+import android.content.res.Resources;
 //new
 public class Decompress extends AsyncTask<Void, Integer, Integer> {
 
@@ -55,13 +56,18 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 		try  {
 			
 ////////copy//////////////////////////////////////////////////////////////////////////////////////////////		
-    InputStream in = null;
+	    InputStream in = null;
     OutputStream out = null;
     try {
-	AssetManager asM = ctx.getAssets();
-        in = asM.open("game.zip");
-	in = ctx.getResources().openRawResource(R.raw.game);    
-        out = new FileOutputStream(location + "/game.zip");
+	//AssetManager asM = ctx.getAssets();
+        //in = asM.open("game.zip");
+	                String storagePath  = "";
+		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = ctx.getFilesDir().getAbsolutePath();    
+	in = getResources().openRawResource(R.raw.game);  
+        out = new FileOutputStream(storagePath + "/game.zip");
         byte[] buffer = new byte[1024];
         int read;
         while ((read = in.read(buffer)) != -1) {
@@ -75,12 +81,12 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
         out.close();
         out = null;
     } catch (FileNotFoundException e) {
-        // TODO Auto-generated catch block
+                Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     } catch (IOException e) {
-        // TODO Auto-generated catch block
+        Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
-    }
+    }	    
 ////////copy//////////////////////////////////////////////////////////////////////////////////////////////			
 			ZipFile zip = new ZipFile(zipFile);
 			myProgressDialog.setMax(zip.size());
