@@ -18,7 +18,7 @@
  *
  * Authors: Paul Lamb
  */
-package org.ppsspp.ppsspp;
+package com.SandSprogrammingGroup.newGame;
 
 import android.content.ComponentName;
 import android.content.Context;
