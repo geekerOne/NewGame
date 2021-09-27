@@ -45,7 +45,7 @@ android {
 	compileSdkVersion 29
 	buildToolsVersion '29.0.3'
 	defaultConfig {
-		applicationId 'org.ppsspp.ppsspp'
+		applicationId 'com.SandSprogrammingGroup.newGame'
 		minSdkVersion 11
 		targetSdkVersion 29
 
@@ -99,7 +99,7 @@ android {
 	}
 	productFlavors {
 		normal {
-			applicationId 'org.ppsspp.ppsspp'
+			applicationId 'com.SandSprogrammingGroup.newGame'
 			dimension "variant"
 			externalNativeBuild {
 				cmake {
@@ -114,7 +114,7 @@ android {
 			}
 		}
 		gold {
-			applicationId 'org.ppsspp.ppssppgold'
+			applicationId 'com.SandSprogrammingGroup.newGame'
 			dimension "variant"
 			externalNativeBuild {
 				cmake {
