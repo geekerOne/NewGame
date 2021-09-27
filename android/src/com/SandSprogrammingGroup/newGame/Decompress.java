@@ -74,7 +74,9 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         int thegameIsofileSize_copy = 7534208;
 	//int toshow_copy = 0;
 	int tilNowSize_copy = 0;    
-        while ((read = in.read(buffer)) != -1) {
+	    
+	    read = in.read(buffer);//for better progressbar update
+        while (read > 0) {
 	tilNowSize_copy += read;
 	if(thePerc_copy != tilNowSize_copy / thegameIsofileSize_copy * 20) {
         thePerc_copy = tilNowSize_copy / thegameIsofileSize_copy * 20;
@@ -82,6 +84,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	publishProgress(toshow_copy);
         }   	
             out.write(buffer, 0, read);
+	    read = in.read(buffer);
         }
         in.close();
         in = null;
@@ -117,7 +120,8 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					int thegameIsofileSize_unzip = 130534208;
 					int toshow_unzip = 0;
 					int tilNowSize_unzip = 0;
-					while ((len = zin.read(buffer)) != -1) {
+					len = zin.read(buffer);
+					while (len > 0) {
 					tilNowSize_unzip += len;
 			              if(thePerc_unzip != tilNowSize_unzip / thegameIsofileSize_unzip * 65) {
                                          thePerc_unzip = tilNowSize_unzip / thegameIsofileSize_unzip * 65;
@@ -126,6 +130,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                                          }   
 						fout.write(buffer, 0, len);
 						count++;
+						len = zin.read(buffer);
 						//publishProgress(count);// Here I am doing the update of my progress bar
 					}
 					fout.close();
