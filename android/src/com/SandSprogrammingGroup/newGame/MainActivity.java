@@ -174,12 +174,13 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 	
 	/*myket*/
-String url= "myket://comment?id=com.draco.ludere.captainTusbasanewKickOff";
-Intent intent = new Intent();
-intent.setAction(Intent.ACTION_VIEW);
-intent.setData(Uri.parse(url));
-startActivity(intent);
-		
+//String url= "myket://comment?id=com.draco.ludere.captainTusbasanewKickOff";
+//Intent intent = new Intent();
+//intent.setAction(Intent.ACTION_VIEW);
+//intent.setData(Uri.parse(url));
+//startActivity(intent);
+		Intent Myintent = new Intent(this, PpssppActivity.class);
+                startActivity(Myintent);
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
         //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
@@ -190,14 +191,19 @@ startActivity(intent);
 
     public void sendingEmail(View v) {
 	/*myket*/
-	String url = "mailto: siavashiranpak@gmail.com";
+//	String url = "mailto: siavashiranpak@gmail.com";
         /*bazar*/
         //String url = "mailto: 00sohrabiranpak00@gmail.com";		
-Intent intent = new Intent();
-intent.setAction(Intent.ACTION_SENDTO);
-intent.setData(Uri.parse(url));
-intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی");    
-startActivity(intent);
+//Intent intent = new Intent();
+//intent.setAction(Intent.ACTION_SENDTO);
+//intent.setData(Uri.parse(url));
+//intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی");    
+//startActivity(intent);
+	    Intent intent = new Intent();
+		intent.setPackage("com.SandSprogrammingGroup.newGame");
+		intent.setClassName("com.SandSprogrammingGroup.newGame", "com.SandSprogrammingGroup.newGame.PpssppActivity");
+		intent.setData(Uri.fromFile(GameFile));
+		startActivity(intent);
     }
 
     public void goToPage(View v) {	
