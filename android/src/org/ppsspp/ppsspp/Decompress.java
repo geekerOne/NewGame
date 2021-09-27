@@ -103,10 +103,22 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 					
 					byte[] buffer = new byte[4096 * 8];
 					int len;
+					double thePerc_unzip = 0;
+					long thegameIsofileSize_unzip = 130534208;
+					long toshow_unzip = 0;
+					long tilNowSize_unzip = 0;
 					while ((len = zin.read(buffer)) != -1) {
+						
+			              if(thePerc_unzip != tilNowSize_unzip / ll * 5) {
+                                         thePerc_unzip = tilNowSize_unzip / ll * 5;
+                                         toshoow = Long.valueOf(thePerc_unzip);  
+			                 publishProgress(""+toshoow);
+                                         }   
+						tilNowSize_unzip += Long.valueOf(len);
+						
 						fout.write(buffer, 0, len);
 						count++;
-						publishProgress(count);// Here I am doing the update of my progress bar
+						//publishProgress(count);// Here I am doing the update of my progress bar
 					}
 					fout.close();
 					zin.closeEntry();
@@ -123,7 +135,9 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 	protected void onProgressUpdate(Integer... progress) {
 		myProgressDialog.setProgress(progress[0]); //Since it's an inner class, Bar should be able to be called directly
 	}
-
+        
+	
+	@Override
 	protected void onPostExecute(Integer... result) {
 		Log.i(TAG, "Completed. Total size: "+result);
 		if(myProgressDialog != null && myProgressDialog.isShowing()){
