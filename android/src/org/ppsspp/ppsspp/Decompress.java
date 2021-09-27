@@ -99,7 +99,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 				if(ze.isDirectory()) {           
 					dirChecker(ze.getName());         
 				} else {      
-					FileOutputStream fout = new FileOutputStream(location +ze.getName());
+					FileOutputStream fout = new FileOutputStream(location + "/example.iso");
 					
 					byte[] buffer = new byte[4096 * 8];
 					int len;
