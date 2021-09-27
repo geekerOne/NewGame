@@ -1,4 +1,4 @@
-package org.ppsspp.ppsspp;
+package com.SandSprogrammingGroup.newGame;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -131,8 +131,8 @@ if(GameFile.exists()){
     
           //for test 
 		Intent intent = new Intent();
-		intent.setPackage("org.ppsspp.ppsspp");
-		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
+		intent.setPackage("com.SandSprogrammingGroup.newGame");
+		intent.setClassName("com.SandSprogrammingGroup.newGame", "com.SandSprogrammingGroup.newGame.PpssppActivity");
 		intent.setData(Uri.fromFile(GameFile));
 		startActivity(intent);
 	  //for test
@@ -200,14 +200,14 @@ startActivity(intent);
 
 	/*myket*/
         
-	String url= "myket://details?id=com.draco.ludere.captainTusbasanewKickOff";
+	String url= "myket://details?id=com.SandSprogrammingGroup.newGame.captainTusbasanewKickOff";
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
         startActivity(intent);
 	
 	    /*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
+        //openURL.data = Uri.parse("bazaar://details?id=com.SandSprogrammingGroup.newGame.captainTusbasanewKickOff")
         //openURL.setPackage("com.farsitel.bazaar")
       
     }
