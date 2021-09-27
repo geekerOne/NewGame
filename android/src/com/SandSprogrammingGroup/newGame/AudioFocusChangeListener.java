@@ -1,4 +1,4 @@
-package org.ppsspp.ppsspp;
+package com.SandSprogrammingGroup.newGame;
 
 import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
