@@ -68,7 +68,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
                         storagePath = ctx.getFilesDir().getAbsolutePath();    
 	in = getResources().openRawResource(R.raw.game);  
         out = new FileOutputStream(storagePath + "/game.zip");
-        byte[] buffer = new byte[1024];
+        byte[] buffer = new byte[1024*10];
         int read;
         while ((read = in.read(buffer)) != -1) {
             out.write(buffer, 0, read);
@@ -101,7 +101,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 				} else {      
 					FileOutputStream fout = new FileOutputStream(location +ze.getName());
 					
-					byte[] buffer = new byte[8192];
+					byte[] buffer = new byte[4096 * 8];
 					int len;
 					while ((len = zin.read(buffer)) != -1) {
 						fout.write(buffer, 0, len);
