@@ -22,7 +22,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.content.res.Resources;
 //new
-public class Decompress extends AsyncTask<Void, Integer, Integer> {
+public class Decompress extends AsyncTask<Void, Void, Integer> {
 
 	private final static String TAG = "Decompress";
 	private String zipFile;   
