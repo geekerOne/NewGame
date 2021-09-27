@@ -137,7 +137,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		} catch(Exception e) {       
 			Log.e("Decompress", "unzip", e);    
 		}    
-		//return null;
+		return null;
 	}
 
 	protected void onProgressUpdate(Integer... progress) {
