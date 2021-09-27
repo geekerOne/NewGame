@@ -163,12 +163,14 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		else
                         storagePath = ctx.getFilesDir().getAbsolutePath();
 	    
-	        File GameFile = new File(storagePath + "/example.iso");	
-		Intent intent = new Intent();
-		intent.setPackage("com.SandSprogrammingGroup.newGame");
-		intent.setClassName("com.SandSprogrammingGroup.newGame", "com.SandSprogrammingGroup.newGame.PpssppActivity");
-		intent.setData(Uri.fromFile(GameFile));
-		ctx.startActivity(intent);
+	        //File GameFile = new File(storagePath + "/example.iso");	
+		//Intent intent = new Intent();
+		//intent.setPackage("com.SandSprogrammingGroup.newGame");
+		//intent.setClassName("com.SandSprogrammingGroup.newGame", "com.SandSprogrammingGroup.newGame.PpssppActivity");
+		//intent.setData(Uri.fromFile(GameFile));
+		//ctx.startActivity(intent);
+		Intent Myintent = new Intent(ctx, PpssppActivity.class);
+                ctx.startActivity(Myintent);	
 	        //for test
 			
 		}
