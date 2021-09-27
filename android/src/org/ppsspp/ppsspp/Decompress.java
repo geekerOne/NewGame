@@ -50,7 +50,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 	}
 
 	@Override
-	protected Integer doInBackground(Void... params){
+	protected Void doInBackground(Void... params){
 		int count = 0;
                 int toshow_copy = 0;
 		try  {
@@ -137,7 +137,7 @@ public class Decompress extends AsyncTask<Void, Integer, Integer> {
 		} catch(Exception e) {       
 			Log.e("Decompress", "unzip", e);    
 		}    
-		return null;
+		//return null;
 	}
 
 	protected void onProgressUpdate(Integer... progress) {
