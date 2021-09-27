@@ -1,4 +1,4 @@
-package org.ppsspp.ppsspp;
+package com.SandSprogrammingGroup.newGame;
 
 // Touch- and sensor-enabled GLSurfaceView.
 // Used when javaGL = true.
