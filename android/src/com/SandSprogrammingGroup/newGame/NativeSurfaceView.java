@@ -1,4 +1,4 @@
-package org.ppsspp.ppsspp;
+package com.SandSprogrammingGroup.newGame;
 
 // Touch- and sensor-enabled SurfaceView.
 // Supports simple multitouch and pressure.
