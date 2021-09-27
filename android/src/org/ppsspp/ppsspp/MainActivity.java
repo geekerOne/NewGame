@@ -201,8 +201,13 @@ startActivity(intent);
     try {
 	//AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
+	                String storagePath  = "";
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = this.getFilesDir().getAbsolutePath();    
 	in = context.resources.openRawResource(R.raw.image);  
-        out = new FileOutputStream(location + "/image.jpg");
+        out = new FileOutputStream(storagePath + "/image.jpg");
         byte[] buffer = new byte[1024];
         int read;
         while ((read = in.read(buffer)) != -1) {
