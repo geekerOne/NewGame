@@ -92,7 +92,7 @@ public class InterstitialActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
     
-	     String responseId;
+	     String responseId = " ";
 	     String invertize = " "; //invertize is var that is randomly video or banner id Records
 
 	  	String storagePath  = "";
@@ -104,26 +104,28 @@ public class InterstitialActivity extends Activity {
 File file = new File(storagePath + "/Records.txt");
 if(file.exists()){      
 //records.txt exists////////////////////////////////////////////////////////////////
+try {
 BufferedReader brTest = new BufferedReader(new FileReader(file));
 String text = brTest.readLine();
             if(text.equals("0")){//video               
                   invertize = "610ecc7d260bc85635a14601";
 //next time banner  
 FileOutputStream stream = new FileOutputStream(file);
-try {
+
     stream.write("1".getBytes());
     stream.close();
-}catch (IOException e) {
+}catch (IOException | FileNotFoundException e) {
              System.out.println("Can't write"); // Or something more intellegent
 }
             }else{//banner
                  invertize = "610ed8bc35114c6ff3a596ee";
-                 //next time video
+	//next time video
+	try {
 FileOutputStream stream = new FileOutputStream(file);
-try {
+
     stream.write("0".getBytes());
     stream.close();
-}catch (IOException e) {
+}catch (IOException | FileNotFoundException e) {
              System.out.println("Can't write"); // Or something more intellegent
 }
 
