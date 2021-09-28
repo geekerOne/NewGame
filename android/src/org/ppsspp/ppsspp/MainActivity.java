@@ -78,6 +78,10 @@ import android.content.res.Resources;
 //new
 //tapsell
 import ir.tapsell.plus.TapsellPlus;
+import ir.tapsell.plus.AdRequestCallback;
+import ir.tapsell.plus.AdShowListener;
+import ir.tapsell.plus.model.TapsellPlusAdModel;
+import ir.tapsell.plus.model.TapsellPlusErrorModel;
 //tapsell
 /**
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
