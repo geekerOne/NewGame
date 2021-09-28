@@ -171,16 +171,8 @@ if(GameFile.exists()){
 	if(GameFileZip.exists()){  
               GameFileZip.delete();
               }
-    
-          //for test 
-		//Intent intent = new Intent();
-		//intent.setPackage("org.ppsspp.ppsspp");
-		//intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
-		//intent.setData(Uri.fromFile(GameFile));
-		//startActivity(intent);
-	  //for test
-	
-	  Intent Myintent = new Intent(this, PpssppActivity.class);
+  
+	  Intent Myintent = new Intent(this, InterstitialActivity.class);
           startActivity(Myintent);
 	
 	  //  startActivity(Intent(this@MainActivity, InterstitialActivity::class.java)) //tabligh game!
