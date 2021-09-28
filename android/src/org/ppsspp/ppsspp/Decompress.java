@@ -151,7 +151,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(myProgressDialog != null && myProgressDialog.isShowing()){
 			myProgressDialog.dismiss();
 //for test
-	Intent Myintent = new Intent(ctx, PpssppActivity.class);
+	Intent Myintent = new Intent(ctx, InterstitialActivity.class);
         ctx.startActivity(Myintent);
 //for test should change to load interstitial activity			
 		}
