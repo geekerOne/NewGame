@@ -29,16 +29,15 @@ import java.io.BufferedReader;
 import com.jakewharton.processphoenix.ProcessPhoenix;
 //new
 
-class InterstitialActivity extends Activity {
+public class InterstitialActivity extends Activity {
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
     
 	    private String responseId;
 	    private String invertize = " "; //invertize is var that is randomly video or banner id Records
-
-        super.onCreate(savedInstanceState);
 
 	  	String storagePath  = "";
 		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
