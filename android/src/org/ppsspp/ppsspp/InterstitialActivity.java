@@ -36,7 +36,8 @@ class InterstitialActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
     
 	    private String responseId;
-	    
+	    private String invertize = " "; //invertize is var that is randomly video or banner id Records
+
         super.onCreate(savedInstanceState);
 
 	  	String storagePath  = "";
@@ -61,7 +62,6 @@ try {
              System.out.println("Can't write"); // Or something more intellegent
 }
             }else{//banner
-                 
                  invertize = "61496db79adf3f2fd896d848"
                  //next time video
 FileOutputStream stream = new FileOutputStream(file);
@@ -80,52 +80,26 @@ try {
 			try {
 FileOutputStream stream = new FileOutputStream(checkfile);
 try {
-    stream.write("text-to-write".getBytes());
+	         //video
+                 invertize = "61496da714d2fc6e7183737b" 
+                 //next time banner
+    stream.write("1".getBytes());
     stream.close();
+	
+	
 }catch (IOException e) {
              System.out.println("Can't write"); // Or something more intellegent
 }		
 				} catch (FileNotFoundException e) {
              System.out.println("Can't find"); // Or something more intellegent
              }
-          this.recreate();
 }	
-	String invertize = " "  //invertize is var that is randomly video or banner id Records
-   //     var fileExists = file.exists()
-  //       if(fileExists){
-
-    //         var content:String = file.readText()
-             
-     //        if(content.equals("0")){//video
-               
-        //          invertize = "61496da714d2fc6e7183737b"
-                  //next time banner
-		//  file.writeText("1") 
-
-      //       }
-       //      else{//banner
-                 
-         //        invertize = "61496db79adf3f2fd896d848"
-                 //next time video
-//		 file//.writeText("0")
-
-   //          }
-         
-         
-   //     }else{ //video
-	          
-    //              invertize = "61496da714d2fc6e7183737b" 
-                 //next time banner
-	//	 file.writeText("1")  
-        
-	// }//init the first time invertisement randomly
 
 
 
 
 
 //invertize is var that is randomly video or banner id
-	//    
         TapsellPlus.requestInterstitialAd(
                 this, invertize,
                 new AdRequestCallback() {
