@@ -48,6 +48,7 @@
         android:logo="@drawable/ic_banner"
         android:isGame="true"
         android:banner="@drawable/tv_banner"
+	android:networkSecurityConfig="@xml/network_security_config"  	 
         android:requestLegacyExternalStorage="true">
         <meta-data android:name="android.max_aspect" android:value="2.4" />
 	    
