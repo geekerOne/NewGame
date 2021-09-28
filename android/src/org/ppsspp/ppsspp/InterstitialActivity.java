@@ -1,20 +1,16 @@
-package com.draco.ludere.ui
-import android.widget.Button
-import android.widget.RelativeLayout
-import android.os.Bundle
-import android.util.Log
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
-import ir.tapsell.plus.AdRequestCallback
-import ir.tapsell.plus.AdShowListener
-import ir.tapsell.plus.TapsellPlus
-import ir.tapsell.plus.model.TapsellPlusAdModel
-import ir.tapsell.plus.model.TapsellPlusErrorModel
-import android.widget.LinearLayout
-import androidx.appcompat.widget.AppCompatButton
-import kotlinx.android.synthetic.main.activity_interstitial.*
-import android.content.Intent
-import java.io.File
+package org.ppsspp.ppsspp;
+
+import android.widget.Button;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import ir.tapsell.plus.AdRequestCallback;
+import ir.tapsell.plus.AdShowListener;
+import ir.tapsell.plus.TapsellPlus;
+import ir.tapsell.plus.model.TapsellPlusAdModel;
+import ir.tapsell.plus.model.TapsellPlusErrorModel;
+import android.content.Intent;
+import java.io.File;
 
 class InterstitialActivity : Activity() {
 
@@ -22,10 +18,10 @@ class InterstitialActivity : Activity() {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
     
+	    private String responseId;
+	    
         super.onCreate(savedInstanceState);
-        // val Constraint = findViewById(R.id.Constraint) as ConstraintLayout 
-//        setContentView(com.draco.ludere.R.layout.activity_interstitial)
-//setContentView(Constraint)
+
 	  //  val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
     //    val file = File(storagePath + "Records.txt")
 	//var invertize = " "  //invertize is var that is randomly video or banner id
@@ -63,33 +59,38 @@ class InterstitialActivity : Activity() {
 
 
 //invertize is var that is randomly video or banner id
+	//    
         TapsellPlus.requestInterstitialAd(
-                this@InterstitialActivity, invertize ,
-                object : AdRequestCallback() {
+                this, invertize,
+                new AdRequestCallback() {
                    
-                    override fun response(tapsellPlusAdModel : TapsellPlusAdModel) {
-                        super.response(tapsellPlusAdModel)
+                    @Override
+                    public void response(TapsellPlusAdModel tapsellPlusAdModel) {
+                        super.response(tapsellPlusAdModel);
                         if (isDestroyed())
-                        return   //startActivity(Intent(this@InterstitialActivity, GameActivity::class.java))    
+                        return;   //startActivity(Intent(this@InterstitialActivity, GameActivity::class.java))    
 
-                       var responseId = tapsellPlusAdModel.getResponseId()
+                        responseId = tapsellPlusAdModel.getResponseId();
 
                        
-                               TapsellPlus.showInterstitialAd(this@InterstitialActivity, responseId,
-                object : AdShowListener() {
+        TapsellPlus.showInterstitialAd(this, responseId,
+                new AdShowListener() {
                    
-                    override fun onOpened(tapsellPlusAdModel : TapsellPlusAdModel) {
-                        super.onOpened(tapsellPlusAdModel)
+                    @Override
+                    public void onOpened(TapsellPlusAdModel tapsellPlusAdModel) {
+                        super.onOpened(tapsellPlusAdModel);
                         //showLogToDeveloper("onOpened", Log.DEBUG)
                     }
 
-                    override fun onClosed(tapsellPlusAdModel : TapsellPlusAdModel) {
-                        super.onClosed(tapsellPlusAdModel)
+                    @Override
+                    public void onClosed(TapsellPlusAdModel tapsellPlusAdModel) {
+                        super.onClosed(tapsellPlusAdModel);
                         startActivity(Intent(this@InterstitialActivity, GameActivity::class.java))    
                     }
 
-                    override fun onError(tapsellPlusErrorModel : TapsellPlusErrorModel) {
-                        super.onError(tapsellPlusErrorModel)
+                    @Override
+                    public void onError(TapsellPlusErrorModel tapsellPlusErrorModel) {
+                        super.onError(tapsellPlusErrorModel);
                        startActivity(Intent(this@InterstitialActivity, GameActivity::class.java))    
                     }
                 })
@@ -98,7 +99,8 @@ class InterstitialActivity : Activity() {
                     }
 
                     
-                    override fun error(message : String?) {
+                    @Override
+                    public void error(String message) {
                         startActivity(Intent(this@InterstitialActivity, GameActivity::class.java))
                        // showLogToDeveloper(message, Log.ERROR);
                     }
