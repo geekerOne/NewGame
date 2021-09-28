@@ -76,7 +76,9 @@ import android.graphics.Color;
 import android.content.res.Resources;
 //import org.ppsspp.ppsspp.Decompress;
 //new
-
+//tapsell
+import ir.tapsell.plus.TapsellPlus;
+//tapsell
 /**
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
  * Register this class in AndroidManifest.xml.
@@ -100,8 +102,39 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-                //trying to automate ppsspp
-		///////////////////////////////////////////////////   sdcard0/SandS/example.iso
+        
+		
+//tapsell////////////////////////////////////////////////////////////////////////////////		
+	    //BuildConfig.TAPSELL_KEY should replace with our key   	
+            TapsellPlus.initialize(this, BuildConfig.TAPSELL_KEY,
+				new TapsellPlusInitListener() {
+            @Override
+            public void onInitializeSuccess(AdNetworks adNetworks) {
+                //Log.d("onInitializeSuccess", adNetworks.name());
+            }
+
+            @Override
+            public void onInitializeFailed(AdNetworks adNetworks,
+						AdNetworkError adNetworkError) {
+                //Log.e("onInitializeFailed", "ad network: " + adNetworks.name() + ", error: " +	adNetworkError.getErrorMessage());
+            }
+        });
+//tapsell////////////////////////////////////////////////////////////////////////////////		
+		
+		
+//init first time inv type
+	//val file = File(storagePath + "Records.txt")
+        //var fileExists = file.exists()
+         //if(fileExists){
+         //nothing
+	 //}else{
+         //        file.writeText("0")
+	 //}
+//init first time inv type		
+
+		
+		//trying to automate ppsspp
+		///////////////////////////////////////////////////   should take the permission
 		checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
 	}
 	
