@@ -52,7 +52,7 @@ if(file.exists()){
 BufferedReader brTest = new BufferedReader(new FileReader(myTextFile));
 String text = brTest.readLine();
             if(content.equals("0")){//video               
-                  invertize = "61496da714d2fc6e7183737b";
+                  invertize = "610ecc7d260bc85635a14601";
 //next time banner  
 FileOutputStream stream = new FileOutputStream(file);
 try {
@@ -62,7 +62,7 @@ try {
              System.out.println("Can't write"); // Or something more intellegent
 }
             }else{//banner
-                 invertize = "61496db79adf3f2fd896d848"
+                 invertize = "610ed8bc35114c6ff3a596ee"
                  //next time video
 FileOutputStream stream = new FileOutputStream(file);
 try {
@@ -81,7 +81,7 @@ try {
 FileOutputStream stream = new FileOutputStream(checkfile);
 try {
 	         //video
-                 invertize = "61496da714d2fc6e7183737b" 
+                 invertize = "610ecc7d260bc85635a14601" 
                  //next time banner
     stream.write("1".getBytes());
     stream.close();
