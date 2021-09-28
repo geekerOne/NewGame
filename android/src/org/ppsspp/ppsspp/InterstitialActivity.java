@@ -116,7 +116,7 @@ FileOutputStream stream = new FileOutputStream(file);
     stream.write("0".getBytes());
     stream.close();
 }
-}catch (IOException | FileNotFoundException e) {
+}catch (IOException e) {//| FileNotFoundException
              System.out.println("Can't write"); // Or something more intellegent
 }
 
