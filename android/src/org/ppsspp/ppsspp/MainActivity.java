@@ -130,13 +130,15 @@ if(GameFile.exists()){
               }
     
           //for test 
-		Intent intent = new Intent();
-		intent.setPackage("org.ppsspp.ppsspp");
-		intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
-		intent.setData(Uri.fromFile(GameFile));
-		startActivity(intent);
+		//Intent intent = new Intent();
+		//intent.setPackage("org.ppsspp.ppsspp");
+		//intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
+		//intent.setData(Uri.fromFile(GameFile));
+		//startActivity(intent);
 	  //for test
-	  
+	
+	  Intent Myintent = new Intent(this, PpssppActivity.class);
+          startActivity(Myintent);
 	
 	  //  startActivity(Intent(this@MainActivity, InterstitialActivity::class.java)) //tabligh game!
           //          startActivity(Intent(this@MainActivity, GameActivity::class.java)) //money game
