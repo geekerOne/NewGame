@@ -105,8 +105,8 @@ public class MainActivity extends Activity {
         
 		
 //tapsell////////////////////////////////////////////////////////////////////////////////		
-	    //BuildConfig.TAPSELL_KEY should replace with our key   	
-            TapsellPlus.initialize(this, BuildConfig.TAPSELL_KEY,
+	    //inserting tapsell Key  	
+            TapsellPlus.initialize(this, "ssfskoqkojqmpdtfpbiidrbamjjitdfhhepjrhepprfppatigbpgrhdnqfgiciefntdahq",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
