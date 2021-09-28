@@ -104,9 +104,9 @@ public class InterstitialActivity extends Activity {
 File file = new File(storagePath + "/Records.txt");
 if(file.exists()){      
 //records.txt exists////////////////////////////////////////////////////////////////
-BufferedReader brTest = new BufferedReader(new FileReader(myTextFile));
+BufferedReader brTest = new BufferedReader(new FileReader(file));
 String text = brTest.readLine();
-            if(content.equals("0")){//video               
+            if(text.equals("0")){//video               
                   invertize = "610ecc7d260bc85635a14601";
 //next time banner  
 FileOutputStream stream = new FileOutputStream(file);
@@ -156,7 +156,7 @@ try {
 
 //invertize is var that is randomly video or banner id
         TapsellPlus.requestInterstitialAd(
-                this, invertize,
+                InterstitialActivity.this, invertize,
                 new AdRequestCallback() {
                    
                     @Override
@@ -168,7 +168,7 @@ try {
                         responseId = tapsellPlusAdModel.getResponseId();
 
                        
-        TapsellPlus.showInterstitialAd(this, responseId,
+        TapsellPlus.showInterstitialAd(InterstitialActivity.this, responseId,
                 new AdShowListener() {
                    
                     @Override
@@ -180,14 +180,14 @@ try {
                     @Override
                     public void onClosed(TapsellPlusAdModel tapsellPlusAdModel) {
                         super.onClosed(tapsellPlusAdModel);
-                       	  Intent Myintent = new Intent(this, PpssppActivity.class);
+                       	  Intent Myintent = new Intent(InterstitialActivity.this, PpssppActivity.class);
                           startActivity(Myintent);   
                     }
 
                     @Override
                     public void onError(TapsellPlusErrorModel tapsellPlusErrorModel) {
                         super.onError(tapsellPlusErrorModel);
-                       	  Intent Myintent = new Intent(this, PpssppActivity.class);
+                       	  Intent Myintent = new Intent(InterstitialActivity.this, PpssppActivity.class);
                           startActivity(Myintent);   
                     }
                 });
@@ -198,7 +198,7 @@ try {
                     
                     @Override
                     public void error(String message) {
-                       	  Intent Myintent = new Intent(this, PpssppActivity.class);
+                       	  Intent Myintent = new Intent(InterstitialActivity.this, PpssppActivity.class);
                           startActivity(Myintent);   
                        // showLogToDeveloper(message, Log.ERROR);
                     }
