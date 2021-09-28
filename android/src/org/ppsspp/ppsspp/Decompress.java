@@ -150,24 +150,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		//Log.i(TAG, "Completed. Total size: "+result);
 		if(myProgressDialog != null && myProgressDialog.isShowing()){
 			myProgressDialog.dismiss();
-	
-		//for test 
-		String storagePath  = "";
-		//if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
-		//	storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
-		//else
-               //         storagePath = ctx.getFilesDir().getAbsolutePath();
-	    //
-	      //  File GameFile = new File(storagePath + "/example.iso");	
-		//Intent intent = new Intent();
-		//intent.setPackage("org.ppsspp.ppsspp");
-		//intent.setClassName("org.ppsspp.ppsspp", "org.ppsspp.ppsspp.PpssppActivity");
-		//intent.setData(Uri.fromFile(GameFile));
-		//ctx.startActivity(intent);
-	        //for test
+//for test
 	Intent Myintent = new Intent(ctx, PpssppActivity.class);
         ctx.startActivity(Myintent);
+//for test should change to load interstitial activity			
 		}
+		
 	}
 	
 	private void dirChecker(String dir)
