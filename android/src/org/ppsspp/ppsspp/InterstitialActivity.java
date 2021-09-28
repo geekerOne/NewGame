@@ -1,12 +1,5 @@
 package org.ppsspp.ppsspp;
 
-
-
-
-
-
-
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -114,22 +107,20 @@ FileOutputStream stream = new FileOutputStream(file);
 
     stream.write("1".getBytes());
     stream.close();
-}catch (IOException | FileNotFoundException e) {
-             System.out.println("Can't write"); // Or something more intellegent
-}
             }else{//banner
                  invertize = "610ed8bc35114c6ff3a596ee";
 	//next time video
-	try {
+	
 FileOutputStream stream = new FileOutputStream(file);
 
     stream.write("0".getBytes());
     stream.close();
+}
 }catch (IOException | FileNotFoundException e) {
              System.out.println("Can't write"); // Or something more intellegent
 }
 
-             }
+          
 //records.txt exists////////////////////////////////////////////////////////////////
 }else{
 
