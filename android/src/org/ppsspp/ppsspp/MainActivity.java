@@ -123,13 +123,23 @@ public class MainActivity extends Activity {
 		
 		
 //init first time inv type
-	//val file = File(storagePath + "Records.txt")
-        //var fileExists = file.exists()
-         //if(fileExists){
-         //nothing
-	 //}else{
-         //        file.writeText("0")
-	 //}
+File file = new File(storagePath + "/Records.txt");
+if(file.exists()){      
+//nothing
+}else{
+	File checkfile = new File(storagePath, "Records.txt");
+			try {
+FileOutputStream stream = new FileOutputStream(checkfile);
+try {
+    stream.write("0".getBytes());
+    stream.close();
+}catch (IOException e) {
+             System.out.println("Can't write"); // Or something more intellegent
+}		
+				} catch (FileNotFoundException e) {
+             System.out.println("Can't find"); // Or something more intellegent
+             }
+}	
 //init first time inv type		
 
 		
