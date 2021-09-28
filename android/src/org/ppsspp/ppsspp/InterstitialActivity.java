@@ -22,9 +22,32 @@ class InterstitialActivity : Activity() {
 	    
         super.onCreate(savedInstanceState);
 
-	  //  val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-    //    val file = File(storagePath + "Records.txt")
-	//var invertize = " "  //invertize is var that is randomly video or banner id
+	  	String storagePath  = "";
+		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = this.getFilesDir().getAbsolutePath();
+	    
+File file = new File(storagePath + "/check.txt");
+if(file.exists()){      
+//Do something
+}else{
+
+	File checkfile = new File(storagePath, "check.txt");
+			try {
+FileOutputStream stream = new FileOutputStream(checkfile);
+try {
+    stream.write("text-to-write".getBytes());
+    stream.close();
+}catch (IOException e) {
+             System.out.println("Can't write"); // Or something more intellegent
+}		
+				} catch (FileNotFoundException e) {
+             System.out.println("Can't find"); // Or something more intellegent
+             }
+          this.recreate();
+}	
+	String invertize = " "  //invertize is var that is randomly video or banner id Records
    //     var fileExists = file.exists()
   //       if(fileExists){
 
