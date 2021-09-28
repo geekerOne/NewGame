@@ -11,8 +11,25 @@ import ir.tapsell.plus.model.TapsellPlusAdModel;
 import ir.tapsell.plus.model.TapsellPlusErrorModel;
 import android.content.Intent;
 import java.io.File;
+//new
+import android.content.res.AssetManager;
+import java.io.*;
+import java.util.zip.ZipFile;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+import java.io.BufferedReader;
 
-class InterstitialActivity : Activity() {
+import com.jakewharton.processphoenix.ProcessPhoenix;
+//new
+
+class InterstitialActivity extends Activity {
 
 
     @Override
@@ -28,12 +45,38 @@ class InterstitialActivity : Activity() {
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
 	    
-File file = new File(storagePath + "/check.txt");
+File file = new File(storagePath + "/Records.txt");
 if(file.exists()){      
-//Do something
+//records.txt exists////////////////////////////////////////////////////////////////
+BufferedReader brTest = new BufferedReader(new FileReader(myTextFile));
+String text = brTest.readLine();
+            if(content.equals("0")){//video               
+                  invertize = "61496da714d2fc6e7183737b";
+//next time banner  
+FileOutputStream stream = new FileOutputStream(file);
+try {
+    stream.write("1".getBytes());
+    stream.close();
+}catch (IOException e) {
+             System.out.println("Can't write"); // Or something more intellegent
+}
+            }else{//banner
+                 
+                 invertize = "61496db79adf3f2fd896d848"
+                 //next time video
+FileOutputStream stream = new FileOutputStream(file);
+try {
+    stream.write("0".getBytes());
+    stream.close();
+}catch (IOException e) {
+             System.out.println("Can't write"); // Or something more intellegent
+}
+
+             }
+//records.txt exists////////////////////////////////////////////////////////////////
 }else{
 
-	File checkfile = new File(storagePath, "check.txt");
+	File checkfile = new File(storagePath, "Records.txt");
 			try {
 FileOutputStream stream = new FileOutputStream(checkfile);
 try {
