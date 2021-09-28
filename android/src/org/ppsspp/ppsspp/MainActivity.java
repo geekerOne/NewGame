@@ -110,23 +110,29 @@ public class MainActivity extends Activity {
 		
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(this, "ssfskoqkojqmpdtfpbiidrbamjjitdfhhepjrhepprfppatigbpgrhdnqfgiciefntdahq",
+            TapsellPlus.initialize(MainActivity.this, "ssfskoqkojqmpdtfpbiidrbamjjitdfhhepjrhepprfppatigbpgrhdnqfgiciefntdahq",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
-                //Log.d("onInitializeSuccess", adNetworks.name());
+                Log.d("onInitializeSuccess", adNetworks.name());
             }
 
             @Override
             public void onInitializeFailed(AdNetworks adNetworks,
 						AdNetworkError adNetworkError) {
-                //Log.e("onInitializeFailed", "ad network: " + adNetworks.name() + ", error: " +	adNetworkError.getErrorMessage());
+                Log.e("onInitializeFailed", "ad network: " + adNetworks.name() + ", error: " +	adNetworkError.getErrorMessage());
             }
         });
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 		
 		
 //init first time inv type
+String storagePath  = "";
+if (this.getExternalFilesDir(null).getAbsolutePath() != null)
+storagePath = this.getExternalFilesDir(null).getAbsolutePath();
+else
+storagePath = this.getFilesDir().getAbsolutePath();	
+		
 File file = new File(storagePath + "/Records.txt");
 if(file.exists()){      
 //nothing
