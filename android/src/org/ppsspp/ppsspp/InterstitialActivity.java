@@ -125,13 +125,15 @@ try {
                     @Override
                     public void onClosed(TapsellPlusAdModel tapsellPlusAdModel) {
                         super.onClosed(tapsellPlusAdModel);
-                        startActivity(Intent(this@InterstitialActivity, GameActivity::class.java))    
+                       	  Intent Myintent = new Intent(this, PpssppActivity.class);
+                          startActivity(Myintent);   
                     }
 
                     @Override
                     public void onError(TapsellPlusErrorModel tapsellPlusErrorModel) {
                         super.onError(tapsellPlusErrorModel);
-                       startActivity(Intent(this@InterstitialActivity, GameActivity::class.java))    
+                       	  Intent Myintent = new Intent(this, PpssppActivity.class);
+                          startActivity(Myintent);   
                     }
                 })
                        
@@ -141,7 +143,8 @@ try {
                     
                     @Override
                     public void error(String message) {
-                        startActivity(Intent(this@InterstitialActivity, GameActivity::class.java))
+                       	  Intent Myintent = new Intent(this, PpssppActivity.class);
+                          startActivity(Myintent);   
                        // showLogToDeveloper(message, Log.ERROR);
                     }
                 })
