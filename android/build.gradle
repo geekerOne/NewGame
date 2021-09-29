@@ -79,12 +79,7 @@ android {
 			signingConfig android.buildTypes.debug.signingConfig
 		}
 		release {
-		        //org
-			//minifyEnabled = false
-			//signingConfig signingConfigs.release
-			minifyEnabled true
-			shrinkResources true
-                        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			minifyEnabled = false
 			signingConfig signingConfigs.release
 		}
 	}
