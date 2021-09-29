@@ -46,6 +46,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		myProgressDialog.setMessage("Please Wait... Unzipping");
 		myProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 		myProgressDialog.setCancelable(false);
+		myProgressDialog.setMax(100);
 		myProgressDialog.show();
 	}
 
@@ -117,14 +118,17 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					int thegameIsofileSize_unzip = 130534208;
 					int toshow_unzip = 0;
 					int tilNowSize_unzip = 0;
-					while ((len = zin.read(buffer)) != -1) {
+					len = zin.read(buffer);
+					while (len > 0) {
 					tilNowSize_unzip += len;
-			              if(thePerc_unzip != tilNowSize_unzip / thegameIsofileSize_unzip * 65) {
-                                         thePerc_unzip = tilNowSize_unzip / thegameIsofileSize_unzip * 65;
-                                         toshow_unzip = (int)thePerc_unzip + toshow_copy;  
+			              if(thePerc_unzip != (tilNowSize_unzip / thegameIsofileSize_unzip) * 65) {
+                                         thePerc_unzip = (tilNowSize_unzip / thegameIsofileSize_unzip) * 65;
+                                         toshow_unzip = (int)thePerc_unzip;
+					 toshow_unzip += toshow_copy;  
 			                 publishProgress(toshow_unzip);
                                          }   
 						fout.write(buffer, 0, len);
+						tilNowSize_unzip += len;
 						count++;
 						//publishProgress(count);// Here I am doing the update of my progress bar
 					}
