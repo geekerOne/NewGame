@@ -56,7 +56,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                 int toshow_copy = 0;
 		try  {
 			
-////////copy//////////////////////////////////////////////////////////////////////////////////////////////		
+////////copy//////////////////////////////////////////////////////////////////////////////////////////////	Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file	
 	    InputStream in = null;
     OutputStream out = null;
     try {
