@@ -85,7 +85,6 @@ public class InterstitialActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
     
-	     String responseId = " ";
 	     String invertize = " "; //invertize is var that is randomly video or banner id Records
 
 	  	String storagePath  = "";
@@ -158,7 +157,7 @@ try {
                         if (isDestroyed())
                         return;   //startActivity(Intent(this@InterstitialActivity, GameActivity::class.java))    
 
-                        responseId = tapsellPlusAdModel.getResponseId();
+                      String responseId = tapsellPlusAdModel.getResponseId();
 
                        
         TapsellPlus.showInterstitialAd(InterstitialActivity.this, responseId,
