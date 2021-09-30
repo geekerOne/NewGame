@@ -178,8 +178,10 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 			Log.e("Decompress", "unzip", e);    
 		}    
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+
+    try{
 ////////copy two//////////////////////////////////////////////////////////////////////////////////////////////	Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file	
-	    InputStream in_copy2 = null;
+    InputStream in_copy2 = null;
     OutputStream out_copy2 = null;
     try {
 	//AssetManager asM = ctx.getAssets();
