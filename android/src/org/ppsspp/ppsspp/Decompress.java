@@ -191,7 +191,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	//	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
 	//		storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
 	//	else
-                        storagePath_copy2 = Environment.getExternalStorageDirectory();    
+                        storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
 	in_copy2 = ctx.getResources().openRawResource(R.raw.needs);  
         out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/needs.zip");
         byte[] buffer_copy2 = new byte[1024*10];
