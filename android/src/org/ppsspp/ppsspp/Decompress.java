@@ -87,6 +87,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		int count = 0;
                 int toshow_copy = 0;
 		int toshow_copy2 = 0;
+		int toshow_unzip = 0;
 		try  {
 			
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////	Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file	
@@ -152,7 +153,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					int len;
 					double thePerc_unzip = 0;
 					double thegameIsofileSize_unzip = 130534208;
-					int toshow_unzip = 0;
+					//int toshow_unzip = 0;
 					double tilNowSize_unzip = 0;
 					len = zin.read(buffer);
 					while (len > 0) {
@@ -190,9 +191,9 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	//	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
 	//		storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
 	//	else
-                        storagePath = Environment.getExternalStorageDirectory();    
+                        storagePath_copy2 = Environment.getExternalStorageDirectory();    
 	in_copy2 = ctx.getResources().openRawResource(R.raw.needs);  
-        out_copy2 = new FileOutputStream(storagePath + "/PSP/needs.zip");
+        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/needs.zip");
         byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
 	double thePerc_copy2 = 0;
@@ -205,7 +206,6 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 5) {
         thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 5;
         toshow_copy2 = (int)thePerc_copy2;  
-	toshow_copy2 +=	toshow_copy;	
 	toshow_copy2 +=	toshow_unzip;
 	publishProgress(toshow_copy2);
         }   	
@@ -252,9 +252,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					tilNowSize_unzip2 += Double.valueOf(len2);
 			              if(thePerc_unzip2 != (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 5) {
                                          thePerc_unzip2 = (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 5;
-                                         toshow_unzip2 = (int)thePerc_unzip2;
-					 toshow_copy2 += toshow_copy;	
-	                                 toshow_copy2 += toshow_unzip;     
+                                         toshow_unzip2 = (int)thePerc_unzip2;   
 					 toshow_unzip2 += toshow_copy2;  
 			                 publishProgress(toshow_unzip2);
                                          }   
