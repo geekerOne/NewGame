@@ -177,7 +177,7 @@ try {
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
 	    
-	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
+	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP/";
 	    
 	    File GameFile = new File(storagePath + "/example.iso");
 	    File GameFileZip = new File(storagePath , "/game.zip");
