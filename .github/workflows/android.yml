@@ -34,8 +34,8 @@ jobs:
        - name: Build Release APK
          run: |
           chmod +x ./gradlew
-          ./gradlew assembleRelease
-
+          ./gradlew bundleRelease
+       
           
        - name: Get Date
          id: date
