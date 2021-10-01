@@ -138,7 +138,55 @@ storagePath = this.getFilesDir().getAbsolutePath();
 		
 File file = new File(storagePath + "/Records.txt");
 if(file.exists()){      
-//nothing
+/////copy ppsspp.ini if its not the first time app runs!
+    InputStream in_copy2 = null;
+    OutputStream out_copy2 = null;
+    try {
+	//AssetManager asM = ctx.getAssets();
+        //in = asM.open("game.zip");
+	                String storagePath_copy2  = "";
+	//	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
+	//		storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
+	//	else               
+	                            File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
+                                    directory.mkdirs();
+                        storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
+	in_copy2 = ctx.getResources().openRawResource(R.raw.ppsspp);  
+        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/SYSTEM/ppsspp.ini");
+        byte[] buffer_copy2 = new byte[1024*10];
+        int read_copy2;
+	double thePerc_copy2 = 0;
+        double thegameIsofileSize_copy2 = 7534208;
+	//int toshow_copy = 0;
+	double tilNowSize_copy2 = 0;  
+	read_copy2 = in_copy2.read(buffer_copy2);    
+        while (read_copy2 > 0) {
+	tilNowSize_copy2 += Double.valueOf(read_copy2);
+	if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 5) {
+        thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 5;
+        toshow_copy2 = (int)thePerc_copy2;  
+	toshow_copy2 +=	toshow_unzip;
+	publishProgress(toshow_copy2);
+        }   	
+            out_copy2.write(buffer_copy2, 0, read_copy2);
+	    read_copy2 = in_copy2.read(buffer_copy2);    
+
+        }
+        in_copy2.close();
+        in_copy2 = null;
+
+        // write the output file (You have now copied the file)
+        out_copy2.flush();
+        out_copy2.close();
+        out_copy2 = null;
+    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }	 	
+/////copy ppsspp.ini if its not the first time app runs!	
 }else{
 	File checkfile = new File(storagePath, "Records.txt");
 			try {
