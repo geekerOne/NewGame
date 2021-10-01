@@ -52,7 +52,7 @@ android {
 	compileSdkVersion 29
 	buildToolsVersion '29.0.3'
 	defaultConfig {
-		applicationId 'com.draco.ludere.Test'
+		applicationId 'com.SandSprogrammingGroup.gowChains'
 		minSdkVersion 23
 		targetSdkVersion 29
 
@@ -106,7 +106,7 @@ android {
 	}
 	productFlavors {
 		normal {
-			applicationId 'com.draco.ludere.Test'
+			applicationId 'com.SandSprogrammingGroup.gowChains'
 			dimension "variant"
 			externalNativeBuild {
 				cmake {
@@ -121,7 +121,7 @@ android {
 			}
 		}
 		gold {
-			applicationId 'com.draco.ludere.Test'
+			applicationId 'com.SandSprogrammingGroup.gowChains'
 			dimension "variant"
 			externalNativeBuild {
 				cmake {
