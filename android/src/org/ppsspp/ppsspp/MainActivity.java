@@ -151,26 +151,14 @@ if(file.exists()){
 	                            File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
                                     directory.mkdirs();
                         storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
-	in_copy2 = ctx.getResources().openRawResource(R.raw.ppsspp);  
+	in_copy2 = getResources().openRawResource(R.raw.ppsspp);  
         out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/SYSTEM/ppsspp.ini");
         byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
-	double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 7534208;
-	//int toshow_copy = 0;
-	double tilNowSize_copy2 = 0;  
 	read_copy2 = in_copy2.read(buffer_copy2);    
         while (read_copy2 > 0) {
-	tilNowSize_copy2 += Double.valueOf(read_copy2);
-	if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 5) {
-        thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 5;
-        toshow_copy2 = (int)thePerc_copy2;  
-	toshow_copy2 +=	toshow_unzip;
-	publishProgress(toshow_copy2);
-        }   	
             out_copy2.write(buffer_copy2, 0, read_copy2);
 	    read_copy2 = in_copy2.read(buffer_copy2);    
-
         }
         in_copy2.close();
         in_copy2 = null;
