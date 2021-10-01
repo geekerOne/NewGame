@@ -34,7 +34,11 @@ jobs:
        - name: Build Release APK
          run: |
           chmod +x ./gradlew
-          ./gradlew bundleRelease
+          ./gradlew assembleRelease
+          
+          
+          #./gradlew bundleRelease
+          #./gradlew assembleRelease
        
           
        - name: Get Date
@@ -61,9 +65,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: /home/runner/work/NewGame/NewGame/android/build/outputs/apk/normal/release/android-normal-release.apk
+          asset_name: ludere.apk
+          asset_content_type: application/apk
+
+
        #   asset_path: /home/runner/work/NewGame/NewGame/android/build/outputs/apk/normal/release/android-normal-release.apk
        #for apk upload
        #   asset_path: /home/runner/work/NewGame/NewGame/android/build/outputs/bundle/normalRelease/android-normal-release.aab
        #for aab upload
-          asset_name: ludere.apk
-          asset_content_type: application/apk
+
