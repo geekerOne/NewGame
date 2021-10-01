@@ -257,7 +257,7 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 	
 	/*myket*/
-String url= "myket://comment?id=com.draco.ludere.captainTusbasanewKickOff";
+        String url= "myket://comment?id=com.SandSprogrammingGroup.gowChains";
 Intent intent = new Intent();
 intent.setAction(Intent.ACTION_VIEW);
 intent.setData(Uri.parse(url));
@@ -265,7 +265,7 @@ startActivity(intent);
 		
 	/*bazar*/
 	//val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
+        //openURL.data = Uri.parse("bazaar://details?id=com.SandSprogrammingGroup.gowChains")
         //openURL.setPackage("com.farsitel.bazaar")
 	
 	
@@ -288,14 +288,14 @@ startActivity(intent);
 
 	/*myket*/
         
-	String url= "myket://details?id=com.draco.ludere.captainTusbasanewKickOff";
+	String url= "myket://details?id=com.SandSprogrammingGroup.gowChains";
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
         startActivity(intent);
 	
 	    /*bazar*/
-        //openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.captainTusbasanewKickOff")
+        //openURL.data = Uri.parse("bazaar://details?id=com.SandSprogrammingGroup.gowChains")
         //openURL.setPackage("com.farsitel.bazaar")
       
     }
