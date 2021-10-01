@@ -241,7 +241,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 				if(ze2.isDirectory()) {           
 					dirChecker(ze2.getName());         
 				} else {      
-					FileOutputStream fout2 = new FileOutputStream(location2 + ze2.getName());
+					FileOutputStream fout2 = new FileOutputStream(location2 + ile.separator + ze2.getName());
 					
 					byte[] buffer2 = new byte[4096 * 8];
 					int len2;
@@ -298,7 +298,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	
 	private void dirChecker(String dir)
 	{
-		File f = new File(location + dir);
+		File f = new File(location + File.separator + dir);
 		if(!f.isDirectory())
 		{
 			f.mkdirs();
