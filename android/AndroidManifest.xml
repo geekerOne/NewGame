@@ -67,7 +67,7 @@
         </activity>
 
 	    
-	    <activity android:name=".InterstitialActivity" />
+	    <activity android:name=".InterstitialActivity" android:screenOrientation="landscape" tools:ignore="LockedOrientationActivity" />
 	    
 	    
         <activity
