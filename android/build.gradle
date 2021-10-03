@@ -33,13 +33,6 @@ android {
 	flavorDimensions "variant"
 
 	signingConfigs {
-		debug {
-			storeFile file("debug.keystore")
-		}
-		optimized {
-			storeFile file("debug.keystore")
-		}
-
 		// Set these in a system global (or project local, but not checked in) gradle.properties .
         release {
             storeFile file("${rootProject.projectDir}/ludere.jks")
@@ -68,17 +61,6 @@ android {
         }
 
 	buildTypes {
-		debug {
-			minifyEnabled = false
-			jniDebuggable true
-			signingConfig signingConfigs.debug
-		}
-		optimized {
-			// Debug signed but optimized.
-			minifyEnabled = false
-			jniDebuggable true
-			signingConfig android.buildTypes.debug.signingConfig
-		}
 		release {
 			minifyEnabled = false
 			signingConfig signingConfigs.release
