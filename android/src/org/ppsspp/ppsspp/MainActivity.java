@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 		
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "gdhdcjmeonsolnrimlkjmbdpkpachdldtlmnqpqjmsikrhthebmcqdfdjtkfobgcharrds",
+            TapsellPlus.initialize(MainActivity.this, "mtskeagfpqjkbehrjfhmirhfcdslngtmropeaprkpkgbskjhsepcqibthromgkbjqtimfl",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -257,7 +257,7 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 	
 	/*myket*/
- String url= "myket://comment?id=com.SandSprogrammingGroup.gowChains";
+ String url= "myket://comment?id=com.SandSprogrammingGroup.gowGhost";
 Intent intent = new Intent();
 intent.setAction(Intent.ACTION_VIEW);
 intent.setData(Uri.parse(url));
@@ -265,7 +265,7 @@ startActivity(intent);
 		
 	/*bazar*/
 //Intent intent = new Intent(Intent.ACTION_EDIT); 
-//intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
+//intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowGhost")); 
 //intent.setPackage("com.farsitel.bazaar"); 
 //startActivity(intent);
 	
@@ -287,7 +287,7 @@ startActivity(intent);
     public void goToPage(View v) {	
 	
 	/*myket*/  
-	String url= "myket://details?id=com.SandSprogrammingGroup.gowChains";
+	String url= "myket://details?id=com.SandSprogrammingGroup.gowGhost";
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
@@ -295,7 +295,7 @@ startActivity(intent);
 	
 	    /*bazar*/
 //Intent intent = new Intent(Intent.ACTION_VIEW); 
-//intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
+//intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowGhost")); 
 //intent.setPackage("com.farsitel.bazaar"); 
 //startActivity(intent); 
       
