@@ -257,26 +257,26 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 	
 	/*myket*/
- //String url= "myket://comment?id=com.SandSprogrammingGroup.gowChains";
-//Intent intent = new Intent();
-//intent.setAction(Intent.ACTION_VIEW);
-//intent.setData(Uri.parse(url));
-//startActivity(intent);
+ String url= "myket://comment?id=com.SandSprogrammingGroup.gowChains";
+Intent intent = new Intent();
+intent.setAction(Intent.ACTION_VIEW);
+intent.setData(Uri.parse(url));
+startActivity(intent);
 		
 	/*bazar*/
-Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
-intent.setPackage("com.farsitel.bazaar"); 
-startActivity(intent);
+//Intent intent = new Intent(Intent.ACTION_EDIT); 
+//intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
+//intent.setPackage("com.farsitel.bazaar"); 
+//startActivity(intent);
 	
 	
     }
 
     public void sendingEmail(View v) {
 	/*myket*/
-	//String url = "mailto: siavashiranpak@gmail.com";
+	String url = "mailto: siavashiranpak@gmail.com";
         /*bazar*/
-        String url = "mailto: 00sohrabiranpak00@gmail.com";		
+        //String url = "mailto: 00sohrabiranpak00@gmail.com";		
 Intent intent = new Intent();
 intent.setAction(Intent.ACTION_SENDTO);
 intent.setData(Uri.parse(url));
@@ -287,17 +287,17 @@ startActivity(intent);
     public void goToPage(View v) {	
 	
 	/*myket*/  
-	//String url= "myket://details?id=com.SandSprogrammingGroup.gowChains";
-        //Intent intent = new Intent();
-        //intent.setAction(Intent.ACTION_VIEW);
-        //intent.setData(Uri.parse(url));
-        //startActivity(intent);
+	String url= "myket://details?id=com.SandSprogrammingGroup.gowChains";
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
 	
 	    /*bazar*/
-Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
-intent.setPackage("com.farsitel.bazaar"); 
-startActivity(intent); 
+//Intent intent = new Intent(Intent.ACTION_VIEW); 
+//intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
+//intent.setPackage("com.farsitel.bazaar"); 
+//startActivity(intent); 
       
     }
 
