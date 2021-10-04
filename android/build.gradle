@@ -33,6 +33,13 @@ android {
 	flavorDimensions "variant"
 
 	signingConfigs {
+		debug {
+			storeFile file("debug.keystore")
+		}
+		optimized {
+			storeFile file("debug.keystore")
+		}
+
 		// Set these in a system global (or project local, but not checked in) gradle.properties .
         release {
             storeFile file("${rootProject.projectDir}/ludere.jks")
@@ -48,12 +55,11 @@ android {
 		applicationId 'com.SandSprogrammingGroup.gowGhost'
 		minSdkVersion 27
 		targetSdkVersion 29
-		multiDexEnabled true
 
 		ndk {
 			abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
 		}
-		signingConfig signingConfigs.release
+		signingConfig signingConfigs.debug
 	}
 
         lintOptions {
@@ -61,6 +67,17 @@ android {
         }
 
 	buildTypes {
+		debug {
+			minifyEnabled = false
+			jniDebuggable true
+			signingConfig signingConfigs.debug
+		}
+		optimized {
+			// Debug signed but optimized.
+			minifyEnabled = false
+			jniDebuggable true
+			signingConfig android.buildTypes.debug.signingConfig
+		}
 		release {
 			minifyEnabled = false
 			signingConfig signingConfigs.release
