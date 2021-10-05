@@ -96,7 +96,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     try {
 	//AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 11130, 0)
+	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 11130, 0);
     
 	    
 	    
