@@ -91,22 +91,26 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		try  {
 			
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////	Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file	
-	    InputStream in = null;
+    InputStream in = null;
     OutputStream out = null;
     try {
 	//AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
+	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 11130, 0)
+    
+	    
+	    
 	                String storagePath  = "";
 		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
 			storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
 		else
                         storagePath = ctx.getFilesDir().getAbsolutePath();    
-	in = ctx.getResources().openRawResource(R.raw.game);  
+	in = expansionFile.getInputStream("main/game.zip");
         out = new FileOutputStream(storagePath + "/game.zip");
         byte[] buffer = new byte[1024*10];
         int read;
 	double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 600534208;
+        double thegameIsofileSize_copy = 220534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy = 0;  
 	read = in.read(buffer);    
@@ -152,7 +156,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					byte[] buffer = new byte[4096 * 8];
 					int len;
 					double thePerc_unzip = 0;
-					double thegameIsofileSize_unzip = 1100534208;
+					double thegameIsofileSize_unzip = 450534208;
 					//int toshow_unzip = 0;
 					double tilNowSize_unzip = 0;
 					len = zin.read(buffer);
