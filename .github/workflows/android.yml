@@ -2,11 +2,7 @@ name: android
 
 on:
   workflow_dispatch: 
-   inputs:
-      romURL:
-        description: 'Direct URL to ROM'
-      configURL:
-        description: 'Direct URL to Psp Folder'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,19 +13,6 @@ jobs:
          run: git submodule update --init --recursive
        - name: Install NDK
          run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=$ANDROID_SDK_ROOT
-      
-       - name: Fetch Rom
-         run: |
-          mkdir -p /home/runner/work/NewGame/NewGame/android/res/raw/
-          curl -L# "${{ github.event.inputs.romURL }}" > /home/runner/work/NewGame/NewGame/android/res/raw/game.zip
-          
-       - name: Fetch Psp Folder
-         run: |
-          mkdir -p /home/runner/work/NewGame/NewGame/android/res/raw/
-          curl -L# "${{ github.event.inputs.configURL }}" > /home/runner/work/NewGame/NewGame/android/res/raw/needs.zip          
-      
-       - name: check assets location
-         run: find /home/runner/work/ -name "*.zip"
       
        - name: Build Release APK
          run: |
