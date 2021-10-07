@@ -292,6 +292,24 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		//Log.i(TAG, "Completed. Total size: "+result);
 		if(myProgressDialog != null && myProgressDialog.isShowing()){
 			myProgressDialog.dismiss();
+		
+			
+			
+	        String storagePath  = "";
+		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = ctx.getFilesDir().getAbsolutePath();
+
+		File GameFileZip = new File(storagePath , "/game.zip");	
+		if(GameFileZip.exists()){  
+                GameFileZip.delete();
+                }
+		File obbFile = new File(getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb");
+		if(obbFile.exists()){  
+                obbFile.delete();
+                }	
+			
 //for test
 	Intent Myintent = new Intent(ctx, InterstitialActivity.class);
         ctx.startActivity(Myintent);
