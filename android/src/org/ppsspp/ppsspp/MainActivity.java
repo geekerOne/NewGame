@@ -245,6 +245,8 @@ if(GameFile.exists()){
         exit_button.setVisibility(View.GONE);
         Button send_email = (Button) findViewById(R.id.send_email); 
         send_email.setVisibility(View.GONE);
+	Button group_games_page = (Button) findViewById(R.id.group_games_page); 
+        group_games_page.setVisibility(View.GONE);
         RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative);
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
@@ -279,7 +281,15 @@ intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gow
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
-
+	
+public void goToGamesPage(View v) {	
+/*bazar*/
+Intent intent = new Intent(Intent.ACTION_VIEW); 
+intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + 230310009713)); 
+intent.setPackage("com.farsitel.bazaar"); 
+startActivity(intent);   
+    }
+	
     public void exit_game(View v) {
 	this.finishAffinity();	
     }
