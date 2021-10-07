@@ -66,6 +66,8 @@
     android:text="بازی های دیگر ما"
     android:layout_toRightOf="@id/start_the_game_button"    
     android:layout_below="@id/game_page"		
+    android:textColor="@color/red"
+    android:background="@color/white"
     android:onClick="goToGamesPage" />
 	
     
