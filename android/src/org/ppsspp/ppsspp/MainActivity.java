@@ -285,7 +285,7 @@ startActivity(intent);
 public void goToGamesPage(View v) {	
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + 230310009713)); 
+intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + "230310009713")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);   
     }
