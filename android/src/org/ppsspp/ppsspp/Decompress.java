@@ -305,7 +305,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-		File obbFile = new File(getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb");
+		File obbFile = new File(ctx.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb");
 		if(obbFile.exists()){  
                 obbFile.delete();
                 }	
