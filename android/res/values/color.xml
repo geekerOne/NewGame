@@ -1,5 +1,5 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <color name="red">#FF0000</color>
     <color name="white">#FFFFFF</color>
-	<color name="black">#000000</color>
+	<color name="Myblack">#000000</color>
 </resources>
