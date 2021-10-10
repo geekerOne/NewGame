@@ -217,7 +217,7 @@ try {
 	    
 	    File GameFile = new File(storagePath + "/example.iso");
 	    File GameFileZip = new File(storagePath , "/game.zip");
-            File obbFile = new File(this.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb");
+            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowGhost.obb");
 
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
@@ -262,7 +262,7 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChainsCafeBazaar")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowGhost")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -280,7 +280,7 @@ startActivity(intent);
 public void goToPage(View v) {	
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChainsCafeBazaar")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowGhost")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
