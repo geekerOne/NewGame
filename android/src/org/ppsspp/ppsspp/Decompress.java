@@ -96,7 +96,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     try {
 	//AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
+	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
     
 	    
 	    
@@ -110,7 +110,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         byte[] buffer = new byte[1024*10];
         int read;
 	double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 220534208;
+        double thegameIsofileSize_copy = 600534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy = 0;  
 	read = in.read(buffer);    
@@ -156,7 +156,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					byte[] buffer = new byte[4096 * 8];
 					int len;
 					double thePerc_unzip = 0;
-					double thegameIsofileSize_unzip = 450534208;
+					double thegameIsofileSize_unzip = 1100534208;
 					//int toshow_unzip = 0;
 					double tilNowSize_unzip = 0;
 					len = zin.read(buffer);
@@ -305,7 +305,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-		File obbFile = new File(ctx.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb");
+		File obbFile = new File(ctx.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowGhost.obb");
 		if(obbFile.exists()){  
                 obbFile.delete();
                 }	
