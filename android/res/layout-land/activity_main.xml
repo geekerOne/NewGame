@@ -49,6 +49,18 @@
     android:layout_below="@id/start_the_game_button"    
     android:onClick="exit_game" />
     
+	
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/start_the_game_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="ما HUB"
+    android:layout_centerHorizontal="true"       
+    android:layout_centerVertical="true"
+    android:layout_above="@id/exit_button"	    
+    android:layout_below="@id/start_the_game_button"  	    
+    android:onClick="ourHub" />
+	
     <Button xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/second_start"
     android:layout_width="wrap_content"
