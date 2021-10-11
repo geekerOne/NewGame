@@ -110,7 +110,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         byte[] buffer = new byte[1024*10];
         int read;
 	double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 600534208;
+        double thegameIsofileSize_copy = 760534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy = 0;  
 	read = in.read(buffer);    
@@ -156,7 +156,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					byte[] buffer = new byte[4096 * 8];
 					int len;
 					double thePerc_unzip = 0;
-					double thegameIsofileSize_unzip = 1100534208;
+					double thegameIsofileSize_unzip = 1000534208;
 					//int toshow_unzip = 0;
 					double tilNowSize_unzip = 0;
 					len = zin.read(buffer);
@@ -305,7 +305,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-		File obbFile = new File(ctx.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowGhost.obb");
+		File obbFile = new File(ctx.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.pes2021.obb");
 		if(obbFile.exists()){  
                 obbFile.delete();
                 }	
