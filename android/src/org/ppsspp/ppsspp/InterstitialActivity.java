@@ -100,14 +100,14 @@ try {
 BufferedReader brTest = new BufferedReader(new FileReader(file));
 String text = brTest.readLine();
             if(text.equals("0")){//video               
-                  invertize = "615a756c000ba26ce4465f9e";
+                  invertize = "613413d01238e259aa722136";
 //next time banner  
 FileOutputStream stream = new FileOutputStream(file);
 
     stream.write("1".getBytes());
     stream.close();
             }else{//banner
-                 invertize = "615a757e7439d67a5b832d02";
+                 invertize = "61401430bd8cde0f884b00be";
 	//next time video
 	
 FileOutputStream stream = new FileOutputStream(file);
@@ -128,7 +128,7 @@ FileOutputStream stream = new FileOutputStream(file);
 FileOutputStream stream = new FileOutputStream(checkfile);
 try {
 	         //video
-                 invertize = "615a756c000ba26ce4465f9e";
+                 invertize = "613413d01238e259aa722136";
                  //next time banner
     stream.write("1".getBytes());
     stream.close();
