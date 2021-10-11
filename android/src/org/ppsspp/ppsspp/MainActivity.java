@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 		
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "mtskeagfpqjkbehrjfhmirhfcdslngtmropeaprkpkgbskjhsepcqibthromgkbjqtimfl",
+            TapsellPlus.initialize(MainActivity.this, "kjpdeciqcfqggjeeoohefidldfbqiitjcqdlejgmpbqinaaknkmnklspiftrjrjrfqajai",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -153,7 +153,7 @@ if(file.exists()){
                         storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
 	in_copy2 = getResources().openRawResource(R.raw.ppsspp);  
         out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/SYSTEM/ppsspp.ini");
-        byte[] buffer_copy2 = new byte[1024*10];
+        byte[] buffer_copy2 = new byte[1024*2];
         int read_copy2;
 	read_copy2 = in_copy2.read(buffer_copy2);    
         while (read_copy2 > 0) {
@@ -217,7 +217,7 @@ try {
 	    
 	    File GameFile = new File(storagePath + "/example.iso");
 	    File GameFileZip = new File(storagePath , "/game.zip");
-            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowGhost.obb");
+            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.pes2021.obb");
 
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
@@ -262,7 +262,7 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowGhost")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2021")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -280,7 +280,7 @@ startActivity(intent);
 public void goToPage(View v) {	
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowGhost")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2021")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
