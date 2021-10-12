@@ -68,7 +68,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		this.zipFile2 = zipFile2;     
 		this.location2 = location2;
 		this.ctx = ctx;
-		dirChecker("");   
+		dirChecker("","");   
 	}
 	
 	@Override
@@ -150,9 +150,9 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 
 				Log.v("Decompress", "Unzipping " + ze.getName());          
 				if(ze.isDirectory()) {           
-					dirChecker(ze.getName());         
+					dirChecker(ze.getName(),location);         
 				} else {      
-					FileOutputStream fout = new FileOutputStream(location + ze.getName());
+					FileOutputStream fout = new FileOutputStream(location +File.separator+ ze.getName());
 					
 					byte[] buffer = new byte[4096 * 8];
 					int len;
@@ -180,6 +180,11 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 				}                
 			}       
 	zin.close();    
+			
+			
+					} catch(Exception e) {       
+			Log.e("Decompress", "unzip", e);    
+		}    
 	
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 
@@ -202,7 +207,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	//in_copy2 = ctx.getResources().openRawResource(R.raw.ppsspp);  
 	    in_copy2 = expansionFile.getInputStream("main/psp.zip");
        // out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/SYSTEM/ppsspp.ini");
-        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP");		    
+        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");		    
         byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
 	double thePerc_copy2 = 0;
@@ -247,9 +252,9 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 
 				Log.v("Decompress", "Unzipping " + ze2.getName());          
 				if(ze2.isDirectory()) {           
-					dirChecker(ze2.getName());         
+					dirChecker(ze2.getName(),location2);         
 				} else {      
-					FileOutputStream fout2 = new FileOutputStream(location2 + ze2.getName());
+					FileOutputStream fout2 = new FileOutputStream(location2 +File.separator+ ze2.getName());
 					
 					byte[] buffer2 = new byte[4096 * 8];
 					int len2;
@@ -335,9 +340,9 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		
 	}
 	
-	private void dirChecker(String dir)
+	private void dirChecker(String dir , String loc)
 	{
-		File f = new File(location + dir);
+		File f = new File(loc +File.separator+ dir);
 		if(!f.isDirectory())
 		{
 			f.mkdirs();
