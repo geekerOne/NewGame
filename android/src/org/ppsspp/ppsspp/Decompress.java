@@ -313,6 +313,10 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(obbFile.exists()){  
                 obbFile.delete();
                 }	
+		File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP"  , "/psp.zip");	
+		if(pspFileZip.exists()){  
+                pspFileZip.delete();
+                }	
 			
 //for tabligh
 	//Intent Myintent = new Intent(ctx, InterstitialActivity.class);
