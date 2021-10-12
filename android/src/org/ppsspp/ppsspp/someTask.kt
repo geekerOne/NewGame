@@ -382,14 +382,14 @@ import ir.tapsell.plus.model.AdNetworks
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
         // showDialog("Downloaded " + values + " bytes");   
         // ...
-//	        val intent = Intent(context, GameActivity::class.java)
-   //     context.startActivity(intent)
+	        val intent = Intent(context, PpssppActivity::class.java)
+        context.startActivity(intent)
    /*
            second_start.isEnabled = true
         second_start.visibility = View.VISIBLE
     */
     //roootView.recreate()
-    ProcessPhoenix.triggerRebirth(context)
+   // ProcessPhoenix.triggerRebirth(context)
 
     }
 }
