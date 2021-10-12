@@ -1,5 +1,5 @@
 package org.ppsspp.ppsspp;
-
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -190,11 +190,11 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         ZipEntry entry = zipIn.getNextEntry();
         // iterates over entries in the zip file
         while (entry != null) {
-            String filePath = destDirectory + File.separator + entry.getName();
+            String filePath = location + File.separator + entry.getName();
             if (!entry.isDirectory()) {
                 // if the entry is a file, extracts it
         BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
-        byte[] bytesIn = new byte[BUFFER_SIZE];
+        byte[] bytesIn = new byte[4096];
         int read = 0;
         while ((read = zipIn.read(bytesIn)) != -1) {
             bos.write(bytesIn, 0, read);
@@ -321,11 +321,11 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         ZipEntry entry = zipIn.getNextEntry();
         // iterates over entries in the zip file
         while (entry != null) {
-            String filePath = destDirectory + File.separator + entry.getName();
+            String filePath = location2 + File.separator + entry.getName();
             if (!entry.isDirectory()) {
                 // if the entry is a file, extracts it
         BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
-        byte[] bytesIn = new byte[BUFFER_SIZE];
+        byte[] bytesIn = new byte[4096];
         int read = 0;
         while ((read = zipIn.read(bytesIn)) != -1) {
             bos.write(bytesIn, 0, read);
