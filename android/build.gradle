@@ -2,6 +2,8 @@ plugins {
 	id 'com.gladed.androidgitversion' version '0.4.5'
 }
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 androidGitVersion {
 	codeFormat = "MNNPPBBBB"
