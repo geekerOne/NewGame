@@ -35,22 +35,10 @@ import android.os.Bundle
 import android.view.*
 import android.widget.FrameLayout
 import android.widget.Button
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import com.draco.ludere.R
-import com.draco.ludere.gamepad.GamePad
-import com.draco.ludere.gamepad.GamePadConfig
-//import com.draco.ludere.input.ControllerInput
-//import com.draco.ludere.retroview.RetroView
-import com.draco.ludere.utils.RetroViewUtils
-import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.*
 import android.graphics.Color
 import android.content.pm.ActivityInfo
-import ir.tapsell.plus.TapsellPlus;
-import ir.tapsell.plus.TapsellPlusInitListener
-import ir.tapsell.plus.model.AdNetworkError
-import ir.tapsell.plus.model.AdNetworks
+
         
         /*asynctask new
         */
@@ -395,4 +383,4 @@ import ir.tapsell.plus.model.AdNetworks
 }
          /*asynctask new
         */     
-        }
+        
