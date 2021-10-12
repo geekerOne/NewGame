@@ -215,9 +215,9 @@ try {
 	    
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
-	    File GameFile = new File(storagePath + "/example.iso");
+	    File GameFile = new File(storagePath + "/PSP_GAME");
 	    File GameFileZip = new File(storagePath , "/game.zip");
-            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.pes2021.obb");
+            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.pes2022.obb");
 
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
@@ -226,12 +226,13 @@ if(GameFile.exists()){
         if(obbFile.exists()){  
               obbFile.delete();
               }
-	  Intent Myintent = new Intent(this, InterstitialActivity.class);
-          startActivity(Myintent);
+	 // Intent Myintent = new Intent(this, InterstitialActivity.class);
+        //  startActivity(Myintent);
+	//tabligh
 	
-	  //  startActivity(Intent(this@MainActivity, InterstitialActivity::class.java)) //tabligh game!
-          //          startActivity(Intent(this@MainActivity, GameActivity::class.java)) //money game
-
+	Intent Myintent = new Intent(MainActivity.this, PpssppActivity.class);
+                          startActivity(Myintent); 
+//money
     
     
     } else {
@@ -256,7 +257,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/game.zip", storagePath, storagePath2 + "/needs.zip" , storagePath2 , MainActivity.this).execute();
+	new Decompress(storagePath + "/game.zip", storagePath, storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this).execute();
 		
         }
     }
@@ -264,7 +265,7 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2021")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2022")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -282,7 +283,7 @@ startActivity(intent);
 public void goToPage(View v) {	
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2021")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2022")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
