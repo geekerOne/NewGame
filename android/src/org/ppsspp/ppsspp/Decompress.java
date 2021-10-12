@@ -110,7 +110,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         byte[] buffer = new byte[1024*10];
         int read;
 	double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 760534208;
+        double thegameIsofileSize_copy = 660534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy = 0;  
 	read = in.read(buffer);    
@@ -151,12 +151,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 				if(ze.isDirectory()) {           
 					dirChecker(ze.getName());         
 				} else {      
-					FileOutputStream fout = new FileOutputStream(location + "/example.iso");
+					FileOutputStream fout = new FileOutputStream(location + File.separator + ze2.getName());
 					
 					byte[] buffer = new byte[4096 * 8];
 					int len;
 					double thePerc_unzip = 0;
-					double thegameIsofileSize_unzip = 1000534208;
+					double thegameIsofileSize_unzip = 660534208;
 					//int toshow_unzip = 0;
 					double tilNowSize_unzip = 0;
 					len = zin.read(buffer);
@@ -195,15 +195,19 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	//	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
 	//		storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
 	//	else               
-	                            File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
-                                    directory.mkdirs();
+	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+	                          //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
+                               File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");
+	                          directory.mkdirs();
                         storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
-	in_copy2 = ctx.getResources().openRawResource(R.raw.ppsspp);  
-        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/SYSTEM/ppsspp.ini");
+	//in_copy2 = ctx.getResources().openRawResource(R.raw.ppsspp);  
+	    in_copy2 = expansionFile.getInputStream("main/psp.zip");
+       // out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/SYSTEM/ppsspp.ini");
+        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP");		    
         byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
 	double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 7534208;
+        double thegameIsofileSize_copy2 = 550534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy2 = 0;  
 	read_copy2 = in_copy2.read(buffer_copy2);    
@@ -250,7 +254,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					byte[] buffer2 = new byte[4096 * 8];
 					int len2;
 					double thePerc_unzip2 = 0;
-					double thegameIsofileSize_unzip2 = 130534208;
+					double thegameIsofileSize_unzip2 = 550534208;
 					int toshow_unzip2 = 0;
 					double tilNowSize_unzip2 = 0;
 					len2 = zin2.read(buffer2);
