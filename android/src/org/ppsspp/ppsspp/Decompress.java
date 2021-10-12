@@ -314,10 +314,17 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                 obbFile.delete();
                 }	
 			
-//for test
-	Intent Myintent = new Intent(ctx, InterstitialActivity.class);
+//for tabligh
+	//Intent Myintent = new Intent(ctx, InterstitialActivity.class);
+        //ctx.startActivity(Myintent);
+//for tabligh
+	
+		//for money
+	Intent Myintent = new Intent(ctx, PpssppActivity.class);
         ctx.startActivity(Myintent);
-//for test should change to load interstitial activity			
+		//for money	
+			
+			
 		}
 		
 	}
