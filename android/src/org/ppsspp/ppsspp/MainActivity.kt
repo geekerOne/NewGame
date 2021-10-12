@@ -1,3 +1,4 @@
+package org.ppsspp.ppsspp
 import com.jakewharton.processphoenix.ProcessPhoenix
 import android.content.pm.PackageManager
 import android.content.pm.PackageInfo
@@ -36,12 +37,6 @@ import android.widget.FrameLayout
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.draco.ludere.R
-import com.draco.ludere.gamepad.GamePad
-import com.draco.ludere.gamepad.GamePadConfig
-//import com.draco.ludere.input.ControllerInput
-//import com.draco.ludere.retroview.RetroView
-import com.draco.ludere.utils.RetroViewUtils
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.*
 import android.graphics.Color
