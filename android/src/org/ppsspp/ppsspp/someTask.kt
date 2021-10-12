@@ -128,8 +128,8 @@ import android.content.pm.ActivityInfo
     while (length    > 0 )
     {
 	    current_copy += length.toDouble()
-	    		if(prev_copy != current_copy / ll * 5) {
-                           prev_copy = current_copy / ll * 5
+	    		if(prev_copy != current_copy / ll * 20) {
+                           prev_copy = current_copy / ll * 20
                            toshoow = prev_copy.toInt()    
 			   publishProgress(""+toshoow)
                            }   
@@ -154,8 +154,8 @@ import android.content.pm.ActivityInfo
     while (length2    > 0 )
     {
 	    current_copy2 += length2.toDouble()
-	    		if(prev_copy2 != current_copy2 / ll2 * 30) {
-                           prev_copy2 = current_copy2 / ll2 * 30
+	    		if(prev_copy2 != current_copy2 / ll2 * 20) {
+                           prev_copy2 = current_copy2 / ll2 * 20
                            toshoow = prev_copy2.toInt() + prev_copy.toInt()
 			   publishProgress(""+toshoow)
                            }   
@@ -189,8 +189,8 @@ import android.content.pm.ActivityInfo
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
 			   current += read.toDouble()
-			   if(prev != current / ll_zip * 5) {
-                           prev = current / ll_zip * 5
+			   if(prev != current / ll_zip * 20) {
+                           prev = current / ll_zip * 20
                            toshoow = prev_copy.toInt() + prev.toInt() + prev_copy2.toInt()     
 			   publishProgress(""+toshoow)
                            }   
@@ -282,8 +282,8 @@ import android.content.pm.ActivityInfo
                             var read2: Int
                            while (input.read(bytesIn2).also { read2 = it } != -1) {
 			   current2 += read2.toDouble()
-			   if(prev2 != current2 / ll_zip2 * 40) {
-                           prev2 = current2 / ll_zip2 * 40
+			   if(prev2 != current2 / ll_zip2 * 20) {
+                           prev2 = current2 / ll_zip2 * 20
                            toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt() //+ prev_download.toInt()   
 			   publishProgress(""+toshoow)
                            }   
