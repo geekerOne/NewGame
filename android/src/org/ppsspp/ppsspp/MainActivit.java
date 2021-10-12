@@ -90,7 +90,7 @@ import ir.tapsell.plus.model.AdNetworks;
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
  * Register this class in AndroidManifest.xml.
  */
-public class MainActivity extends Activity {
+public class MainActivit extends Activity {
         private static final int BUFFER_SIZE = 4096;
 	
     // Defining Permission codes.
