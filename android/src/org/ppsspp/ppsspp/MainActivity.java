@@ -128,7 +128,7 @@ public class MainActivity extends Activity {
         });
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 		
-		
+/*		
 //init first time inv type
 String storagePath  = "";
 if (this.getExternalFilesDir(null).getAbsolutePath() != null)
@@ -190,7 +190,7 @@ try {
              }
 }	
 //init first time inv type		
-
+*/
 		
 		//trying to automate ppsspp
 		///////////////////////////////////////////////////   should take the permission
