@@ -575,7 +575,7 @@ startActivity(intent);
         second_start.visibility = View.VISIBLE
     */
     //roootView.recreate()
-    //ProcessPhoenix.triggerRebirth(context)
+    ProcessPhoenix.triggerRebirth(context)
 
     }
 }
