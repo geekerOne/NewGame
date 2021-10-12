@@ -131,7 +131,8 @@ f2.mkdir()
         var fileExistscheck = bfile.exists()
 	 val dfile = File(storagePath + "/game.zip")
         var fileExistscheck2 = dfile.exists()
-	val gfile = File(this.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
+	var iuy : CoroutineContext = this
+	val gfile = File(iuy.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
 	var fileExistscheck3 = gfile.exists()
 
             
@@ -545,8 +546,8 @@ f2.mkdir()
             if(fileExistscheck3){
               dfile.delete()
               }
-	    
-    val gfile = File(context.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
+	    var iuy : CoroutineContext = context
+    val gfile = File(iuy.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
 	    var fileExistscheck4 = gfile.exists()
             if(fileExistscheck4){
               gfile.delete()
