@@ -162,8 +162,8 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					len = zin.read(buffer);
 					while (len > 0) {
 					tilNowSize_unzip += Double.valueOf(len);
-			              if(thePerc_unzip != (tilNowSize_unzip / thegameIsofileSize_unzip) * 55) {
-                                         thePerc_unzip = (tilNowSize_unzip / thegameIsofileSize_unzip) * 55;
+			              if(thePerc_unzip != (tilNowSize_unzip / thegameIsofileSize_unzip) * 20) {
+                                         thePerc_unzip = (tilNowSize_unzip / thegameIsofileSize_unzip) * 20;
                                          toshow_unzip = (int)thePerc_unzip;
 					 toshow_unzip += toshow_copy;  
 			                 publishProgress(toshow_unzip);
@@ -209,8 +209,8 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	read_copy2 = in_copy2.read(buffer_copy2);    
         while (read_copy2 > 0) {
 	tilNowSize_copy2 += Double.valueOf(read_copy2);
-	if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 5) {
-        thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 5;
+	if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 20) {
+        thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 20;
         toshow_copy2 = (int)thePerc_copy2;  
 	toshow_copy2 +=	toshow_unzip;
 	publishProgress(toshow_copy2);
@@ -256,8 +256,8 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					len2 = zin2.read(buffer2);
 					while (len2 > 0) {
 					tilNowSize_unzip2 += Double.valueOf(len2);
-			              if(thePerc_unzip2 != (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 5) {
-                                         thePerc_unzip2 = (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 5;
+			              if(thePerc_unzip2 != (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 20) {
+                                         thePerc_unzip2 = (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 20;
                                          toshow_unzip2 = (int)thePerc_unzip2;   
 					 toshow_unzip2 += toshow_copy2;  
 			                 publishProgress(toshow_unzip2);
@@ -305,7 +305,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-		File obbFile = new File(ctx.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.pes2021.obb");
+		File obbFile = new File(ctx.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.pes2022.obb");
 		if(obbFile.exists()){  
                 obbFile.delete();
                 }	
