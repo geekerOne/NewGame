@@ -218,6 +218,7 @@ try {
 	    File GameFile = new File(storagePath + "/PSP_GAME");
 	    File GameFileZip = new File(storagePath , "/game.zip");
             File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.pes2022.obb");
+            File pspFile = new File(storagePath2 , "/psp.zip");
 
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
@@ -225,6 +226,9 @@ if(GameFile.exists()){
               }
         if(obbFile.exists()){  
               obbFile.delete();
+              }
+	if(pspFile.exists()){  
+              pspFile.delete();
               }
 	 // Intent Myintent = new Intent(this, InterstitialActivity.class);
         //  startActivity(Myintent);
