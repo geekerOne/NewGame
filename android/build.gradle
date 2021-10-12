@@ -14,7 +14,7 @@ androidGitVersion {
 
 dependencies {
 	def appcompat_version = "1.2.0"
-
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
 	implementation "androidx.appcompat:appcompat:$appcompat_version"
 
 	// Convenient wrapper around DocumentContract. Might look into writing our own
@@ -22,11 +22,12 @@ dependencies {
 	implementation "androidx.documentfile:documentfile:1.0.1"
 	implementation "com.jakewharton:process-phoenix:2.1.2" //for restarting
         implementation 'ir.tapsell.plus:tapsell-plus-sdk-android:2.1.3'
-        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3'
-        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3'
 	implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
         implementation 'androidx.core:core-ktx:1.3.2'
         implementation 'androidx.preference:preference-ktx:1.1.1'
+	implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3'
+        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3'
 }
 
 android {
