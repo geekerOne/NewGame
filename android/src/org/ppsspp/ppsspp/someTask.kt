@@ -35,14 +35,13 @@ import android.os.Bundle
 import android.view.*
 import android.widget.FrameLayout
 import android.widget.Button
-import kotlinx.coroutines.*
 import android.graphics.Color
 import android.content.pm.ActivityInfo
 
         
         /*asynctask new
         */
-        class someTask( context:Context , mainActivity: MainActivity ) : AsyncTask<Void, String, String>() {
+        class someTask( val context:Context , val mainActivity: MainActivity ) : AsyncTask<Void, String, String>() {
     
             var context: Context = context 
             val roootView = mainActivity
