@@ -10,6 +10,7 @@ import android.app.ProgressDialog
 import android.util.Log
 import android.view.ViewGroup
 import android.os.AsyncTask
+import android.os.Environment
 import android.content.Context
 import android.widget.Toast  
 import android.graphics.Paint
@@ -315,6 +316,7 @@ startActivity(intent);
 	
      	val expansionFile =
         APKExpansionSupport.getAPKExpansionZipFile(context, 111030000, 0)		    
+    
     
 		    //copy1
     var inStream: InputStream? = null
