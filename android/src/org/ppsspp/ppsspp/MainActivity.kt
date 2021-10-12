@@ -132,7 +132,7 @@ f2.mkdir()
 	 val dfile = File(storagePath + "/game.zip")
         var fileExistscheck2 = dfile.exists()
 	//var iuy : CoroutineContext = this
-	//val gfile = File(iuy.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
+	val gfile = File(getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
 	//var fileExistscheck3 = gfile.exists()
 
             
@@ -148,8 +148,8 @@ f2.mkdir()
              // }
     
 	
-	    startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
-          //          startActivity(Intent(this@MainActivity, GameActivity::class.java))
+	    //startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
+                  startActivity(Intent(this@MainActivity, PpssppActivity::class.java))
 
     
     
@@ -189,7 +189,7 @@ f2.mkdir()
     fun sendMsg(view: View) {
 	/*bazar*/	
 	val openURL = Intent(android.content.Intent.ACTION_EDIT)
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
+        openURL.data = Uri.parse("bazaar://details?id=com.SandSprogrammingGroup.pes2022")
         openURL.setPackage("com.farsitel.bazaar")
         startActivity(openURL)
     }
@@ -205,7 +205,7 @@ f2.mkdir()
     fun goToPage(view: View) {
 	/*bazar*/
 	val openURL = Intent(android.content.Intent.ACTION_VIEW)
-        openURL.data = Uri.parse("bazaar://details?id=com.draco.ludere.fourXfour")
+        openURL.data = Uri.parse("bazaar://details?id=com.SandSprogrammingGroup.pes2022")
         openURL.setPackage("com.farsitel.bazaar")
 	startActivity(openURL)
     }
@@ -219,7 +219,12 @@ f2.mkdir()
 	startActivity(openURL)
     }
     
-    
+   fun ourHub(view: View) {	
+val openURL = Intent(android.content.Intent.ACTION_VIEW)	    
+openURL.data = Uri.parse("http://sandsbros.ctcin.bio")
+startActivity(intent);
+    }	
+	
     
     fun exit_game(view: View) {
         this@MainActivity.finish()
@@ -262,18 +267,18 @@ f2.mkdir()
 	
 	var prev_download : Double = -1.0
 		val storagePath: String = (context.getExternalFilesDir(null) ?: context.filesDir).path             
-			var ll = 7816696 
-		        var ll2 = 55534208 
-		        var ll_zip = 7816696
-	            	var ll_zip2 = 200534208
+			var ll = 490816696 
+		        var ll2 = 550534208 
+		        var ll_zip = 500816696
+	            	var ll_zip2 = 700534208
 		
 		
 	 	         var ll_download = 1100000000
 				        
 
             var toshoow = 0
-		val zipFilePath = File(storagePath + "/system/PPSSPP/example.zip")
-            val destDirectory = storagePath + "/system/PPSSPP/"
+		val zipFilePath = File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP/psp.zip")
+            val destDirectory = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP/"
 	
 		//new zip2
 	val zipFilePath2 = File(storagePath + "/game.zip")
@@ -305,20 +310,21 @@ f2.mkdir()
             
             override fun doInBackground(vararg params: Void):String? {
 	
-		    
+     	val expansionFile =
+        APKExpansionSupport.getAPKExpansionZipFile(context, 111030000, 0)		    
     
 		    //copy1
     var inStream: InputStream? = null
     var outStream: OutputStream? = null
-    inStream = afile       
+    inStream = expansionFile.getInputStream("main/psp.zip")
     outStream = FileOutputStream(bfile)
     val buffer = ByteArray(1024*10)
     var length = inStream.read(buffer)
     while (length    > 0 )
     {
 	    current_copy += length.toDouble()
-	    		if(prev_copy != current_copy / ll * 5) {
-                           prev_copy = current_copy / ll * 5
+	    		if(prev_copy != current_copy / ll * 20) {
+                           prev_copy = current_copy / ll * 20
                            toshoow = prev_copy.toInt()    
 			   publishProgress(""+toshoow)
                            }   
@@ -333,9 +339,7 @@ f2.mkdir()
     
     
     
-           //for testing obb
-   	val expansionFile =
-        APKExpansionSupport.getAPKExpansionZipFile(context, 6, 0)
+        
 
     		    //copy2
     var inStream2: InputStream? = null
@@ -348,8 +352,8 @@ f2.mkdir()
     while (length2    > 0 )
     {
 	    current_copy2 += length2.toDouble()
-	    		if(prev_copy2 != current_copy2 / ll2 * 30) {
-                           prev_copy2 = current_copy2 / ll2 * 30
+	    		if(prev_copy2 != current_copy2 / ll2 * 20) {
+                           prev_copy2 = current_copy2 / ll2 * 20
                            toshoow = prev_copy2.toInt() + prev_copy.toInt()
 			   publishProgress(""+toshoow)
                            }   
@@ -383,8 +387,8 @@ f2.mkdir()
                             var read: Int
                            while (input.read(bytesIn).also { read = it } != -1) {
 			   current += read.toDouble()
-			   if(prev != current / ll_zip * 5) {
-                           prev = current / ll_zip * 5
+			   if(prev != current / ll_zip * 20) {
+                           prev = current / ll_zip * 20
                            toshoow = prev_copy.toInt() + prev.toInt() + prev_copy2.toInt()     
 			   publishProgress(""+toshoow)
                            }   
@@ -476,8 +480,8 @@ f2.mkdir()
                             var read2: Int
                            while (input.read(bytesIn2).also { read2 = it } != -1) {
 			   current2 += read2.toDouble()
-			   if(prev2 != current2 / ll_zip2 * 40) {
-                           prev2 = current2 / ll_zip2 * 40
+			   if(prev2 != current2 / ll_zip2 * 20) {
+                           prev2 = current2 / ll_zip2 * 20
                            toshoow = prev_copy.toInt() + prev_copy2.toInt() + prev.toInt() + prev2.toInt() //+ prev_download.toInt()   
 			   publishProgress(""+toshoow)
                            }   
@@ -535,7 +539,7 @@ f2.mkdir()
 			myProgressDialog.dismiss()
 		}
        
-    val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
+    val bfile = File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP/psp.zip")	
             var fileExistscheck = bfile.exists()
             if(fileExistscheck){
               bfile.delete()
@@ -564,14 +568,14 @@ f2.mkdir()
                Toast.makeText(context,"عملیات تکمیل شد...از صبر شما متشکریم",Toast.LENGTH_LONG).show()  
         // showDialog("Downloaded " + values + " bytes");   
         // ...
-//	        val intent = Intent(context, GameActivity::class.java)
-   //     context.startActivity(intent)
+	//  val intent = Intent(context, GameActivity::class.java)
+        //  context.startActivity(intent)
    /*
            second_start.isEnabled = true
         second_start.visibility = View.VISIBLE
     */
     //roootView.recreate()
-    ProcessPhoenix.triggerRebirth(context)
+    //ProcessPhoenix.triggerRebirth(context)
 
     }
 }
