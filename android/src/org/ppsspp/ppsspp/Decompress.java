@@ -141,6 +141,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     }	    
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////						
 ////////unzip one///////////////////////////////////////////////////////////////////////////////////////////////////			
+			/*
 			ZipFile zip = new ZipFile(zipFile);
 			FileInputStream fin = new FileInputStream(zipFile);       
 			ZipInputStream zin = new ZipInputStream(fin);
@@ -178,8 +179,40 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					
 				}                
 			}       
-			zin.close();    
-		} catch(Exception e) {       
+	zin.close();    
+	*/
+			
+			        File destDir = new File(location);
+        if (!destDir.exists()) {
+            destDir.mkdir();
+        }
+        ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFile));
+        ZipEntry entry = zipIn.getNextEntry();
+        // iterates over entries in the zip file
+        while (entry != null) {
+            String filePath = destDirectory + File.separator + entry.getName();
+            if (!entry.isDirectory()) {
+                // if the entry is a file, extracts it
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
+        byte[] bytesIn = new byte[BUFFER_SIZE];
+        int read = 0;
+        while ((read = zipIn.read(bytesIn)) != -1) {
+            bos.write(bytesIn, 0, read);
+        }
+        bos.close();
+		    
+            } else {
+                // if the entry is a directory, make the directory
+                File dir = new File(filePath);
+                dir.mkdir();
+            }
+            zipIn.closeEntry();
+            entry = zipIn.getNextEntry();
+        }
+        zipIn.close();
+			
+			
+	} catch(Exception e) {       
 			Log.e("Decompress", "unzip", e);    
 		}    
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
@@ -239,7 +272,8 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     }	    
 ////////copy two//////////////////////////////////////////////////////////////////////////////////////////////				
 ////////unzip two///////////////////////////////////////////////////////////////////////////////////////////////////			
-			ZipFile zip2 = new ZipFile(zipFile2);
+		/*
+	    ZipFile zip2 = new ZipFile(zipFile2);
 			FileInputStream fin2 = new FileInputStream(zipFile2);       
 			ZipInputStream zin2 = new ZipInputStream(fin2);
 			ZipEntry ze2 = null;       
@@ -276,7 +310,38 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					
 				}                
 			}       
-			zin2.close();    
+		zin2.close();    
+		*/
+	    			
+			        File destDir = new File(location2);
+        if (!destDir.exists()) {
+            destDir.mkdir();
+        }
+        ZipInputStream zipIn = new ZipInputStream(new FileInputStream(zipFile2));
+        ZipEntry entry = zipIn.getNextEntry();
+        // iterates over entries in the zip file
+        while (entry != null) {
+            String filePath = destDirectory + File.separator + entry.getName();
+            if (!entry.isDirectory()) {
+                // if the entry is a file, extracts it
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
+        byte[] bytesIn = new byte[BUFFER_SIZE];
+        int read = 0;
+        while ((read = zipIn.read(bytesIn)) != -1) {
+            bos.write(bytesIn, 0, read);
+        }
+        bos.close();
+		    
+            } else {
+                // if the entry is a directory, make the directory
+                File dir = new File(filePath);
+                dir.mkdir();
+            }
+            zipIn.closeEntry();
+            entry = zipIn.getNextEntry();
+        }
+        zipIn.close();
+		
 		} catch(Exception e) {       
 			Log.e("Decompress", "unzip", e);    
 		}    
