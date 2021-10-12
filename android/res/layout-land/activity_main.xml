@@ -46,7 +46,7 @@
     android:layout_height="wrap_content"
     android:text="خروج"
     android:layout_centerHorizontal="true"        
-    android:layout_below="@id/start_the_game_button"    
+    android:layout_below="@id/start_the_hub"    
     android:onClick="exit_game" />
     
 	
@@ -56,8 +56,6 @@
     android:layout_height="wrap_content"
     android:text="ما HUB"
     android:layout_centerHorizontal="true"       
-    android:layout_centerVertical="true"
-    android:layout_above="@id/exit_button"	    
     android:layout_below="@id/start_the_game_button"  	    
     android:onClick="ourHub" />
 	
