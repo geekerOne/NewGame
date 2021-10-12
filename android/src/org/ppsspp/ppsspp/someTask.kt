@@ -1,5 +1,6 @@
 package org.ppsspp.ppsspp
 import android.os.Environment
+import kotlinx.coroutines.*
 import com.jakewharton.processphoenix.ProcessPhoenix
 import android.content.pm.PackageManager
 import android.content.pm.PackageInfo
