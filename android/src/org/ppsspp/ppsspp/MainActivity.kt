@@ -125,15 +125,15 @@ f2.mkdir()
     fun start(view: View) {
 	    
 	   val storagePath: String = (this.getExternalFilesDir(null) ?: this.filesDir).path
-        val cfile = File(storagePath + "/example.iso")//diffrent for each game
+        val cfile = File(storagePath + "/PSP_GAME")//diffrent for each game
         var fileExists = cfile.exists()
-    val bfile = File(storagePath + "/system/PPSSPP/example.zip")
+    val bfile = File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP/psp.zip")
         var fileExistscheck = bfile.exists()
 	 val dfile = File(storagePath + "/game.zip")
         var fileExistscheck2 = dfile.exists()
 	//var iuy : CoroutineContext = this
 	val gfile = File(getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
-	//var fileExistscheck3 = gfile.exists()
+	var fileExistscheck3 = gfile.exists()
 
             
     if(fileExists){
@@ -143,9 +143,9 @@ f2.mkdir()
 	    if(fileExistscheck2){
                  dfile.delete()
               }
-          //  if(fileExistscheck3){
-            //     gfile.delete()
-             // }
+            if(fileExistscheck3){
+                 gfile.delete()
+              }
     
 	
 	    //startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
@@ -175,6 +175,9 @@ f2.mkdir()
 	val group_games_page = findViewById(R.id.group_games_page) as Button
         group_games_page.isEnabled = false
         group_games_page.visibility = View.GONE    
+	val start_the_hub = findViewById(R.id.start_the_hub) as Button
+        start_the_hub.isEnabled = false
+        start_the_hub.visibility = View.GONE      
         val relative = findViewById(R.id.relative) as RelativeLayout
         relative.setBackgroundResource(0)
         relative.setBackgroundColor(Color.parseColor("#000000"))
@@ -287,9 +290,9 @@ startActivity(intent);
 		
 	        val myProgressDialog = ProgressDialog(context)
 //for copy
-    val afile = context.assets.open( "example.zip" )
+   // val afile = context.assets.open( "example.zip" )
     //    val afile2 = context.assets.open( "game.zip" )
-    val bfile = File(storagePath + "/system/PPSSPP/example.zip")	
+    val bfile = File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP/psp.zip")	
     val dfile = File(storagePath + "/game.zip")	
             
      override fun onPreExecute() {
@@ -551,11 +554,11 @@ startActivity(intent);
               dfile.delete()
               }
 //	    var iuy : CoroutineContext = context
-  //  val gfile = File(iuy.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
-	//    var fileExistscheck4 = gfile.exists()
-          //  if(fileExistscheck4){
-            //  gfile.delete()
-              //}    
+    val gfile = File(getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
+	    var fileExistscheck4 = gfile.exists()
+            if(fileExistscheck4){
+              gfile.delete()
+              }    
 	    
 
 	    /*
