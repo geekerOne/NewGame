@@ -132,8 +132,8 @@ f2.mkdir()
 	 val dfile = File(storagePath + "/game.zip")
         var fileExistscheck2 = dfile.exists()
 	var iuy : CoroutineContext = this
-	val gfile = File(iuy.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
-	var fileExistscheck3 = gfile.exists()
+	//val gfile = File(iuy.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
+	//var fileExistscheck3 = gfile.exists()
 
             
     if(fileExists){
@@ -143,9 +143,9 @@ f2.mkdir()
 	    if(fileExistscheck2){
                  dfile.delete()
               }
-            if(fileExistscheck3){
-                 gfile.delete()
-              }
+          //  if(fileExistscheck3){
+            //     gfile.delete()
+             // }
     
 	
 	    startActivity(Intent(this@MainActivity, InterstitialActivity::class.java))
@@ -546,12 +546,12 @@ f2.mkdir()
             if(fileExistscheck3){
               dfile.delete()
               }
-	    var iuy : CoroutineContext = context
-    val gfile = File(iuy.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
-	    var fileExistscheck4 = gfile.exists()
-            if(fileExistscheck4){
-              gfile.delete()
-              }    
+//	    var iuy : CoroutineContext = context
+  //  val gfile = File(iuy.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
+	//    var fileExistscheck4 = gfile.exists()
+          //  if(fileExistscheck4){
+            //  gfile.delete()
+              //}    
 	    
 
 	    /*
