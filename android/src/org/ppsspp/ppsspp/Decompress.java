@@ -151,7 +151,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 				if(ze.isDirectory()) {           
 					dirChecker(ze.getName());         
 				} else {      
-					FileOutputStream fout = new FileOutputStream(location + File.separator + ze2.getName());
+					FileOutputStream fout = new FileOutputStream(location + File.separator + ze.getName());
 					
 					byte[] buffer = new byte[4096 * 8];
 					int len;
