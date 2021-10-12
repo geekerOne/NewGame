@@ -131,7 +131,7 @@ f2.mkdir()
         var fileExistscheck = bfile.exists()
 	 val dfile = File(storagePath + "/game.zip")
         var fileExistscheck2 = dfile.exists()
-	var iuy : CoroutineContext = this
+	//var iuy : CoroutineContext = this
 	//val gfile = File(iuy.getObbDir() + "/main.111030000.com.SandSprogrammingGroup.gowChainsCafeBazaar.obb")    
 	//var fileExistscheck3 = gfile.exists()
 
