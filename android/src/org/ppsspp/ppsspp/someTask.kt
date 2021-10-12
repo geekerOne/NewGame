@@ -1,4 +1,5 @@
 package org.ppsspp.ppsspp
+import android.os.Environment
 import com.jakewharton.processphoenix.ProcessPhoenix
 import android.content.pm.PackageManager
 import android.content.pm.PackageInfo
