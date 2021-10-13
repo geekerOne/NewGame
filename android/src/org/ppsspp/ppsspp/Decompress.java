@@ -319,7 +319,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         out_extra = new FileOutputStream(storagePath + "/UMD_DATA.BIN");
         byte[] buffer_extra = new byte[1024*10];
         int read_extra;
-	read_extra = in.read(buffer_extra);    
+	read_extra = in_extra.read(buffer_extra);    
         while (read_extra > 0) {
             out_extra.write(buffer_extra, 0, read_extra);
 	    read_extra = in_extra.read(buffer_extra);    
