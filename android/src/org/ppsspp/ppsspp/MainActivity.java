@@ -261,7 +261,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath , "/PSP_GAME/game.zip", storagePath , "/PSP_GAME", storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this).execute();
+	new Decompress(storagePath + "/PSP_GAME/game.zip", storagePath + "/PSP_GAME", storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this).execute();
 	  //new someTask(this,this).execute()	
         }
     }
