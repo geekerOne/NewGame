@@ -216,7 +216,7 @@ try {
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
 	    File GameFile = new File(storagePath + "/PSP_GAME");
-	    File GameFileZip = new File(storagePath , "/game.zip");
+	    File GameFileZip = new File(storagePath , "/PSP_GAME/game.zip");
             File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.pes2022.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
 
@@ -261,7 +261,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/game.zip", storagePath, storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this).execute();
+	new Decompress(storagePath , "/PSP_GAME/game.zip", storagePath , "/PSP_GAME", storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this).execute();
 	  //new someTask(this,this).execute()	
         }
     }
