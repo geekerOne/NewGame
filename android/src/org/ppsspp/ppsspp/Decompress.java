@@ -301,7 +301,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		}    
 ////////unzip two////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 
-////////copy one//////////////////////////////////////////////////////////////////////////////////////////////	
+////////copy three//////////////////////////////////////////////////////////////////////////////////////////////	
     InputStream in = null;
     OutputStream out = null;
     try {
@@ -316,7 +316,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                         storagePath = ctx.getFilesDir().getAbsolutePath();
 	    
 	in_extra = expansionFile.getInputStream("extra/UMD_DATA.BIN");
-        out_extra = new FileOutputStream(storagePath + "/PSP_GAME/UMD_DATA.BIN");
+        out_extra = new FileOutputStream(storagePath + "/UMD_DATA.BIN");
         byte[] buffer_extra = new byte[1024*10];
         int read_extra;
 	read_extra = in.read(buffer_extra);    
