@@ -128,7 +128,7 @@ public class MainActivity extends Activity {
         });
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 		
-/*		
+		
 //init first time inv type
 String storagePath  = "";
 if (this.getExternalFilesDir(null).getAbsolutePath() != null)
@@ -217,7 +217,7 @@ try {
 	    
 	    File GameFile = new File(storagePath + "/PSP_GAME");
 	    File GameFileZip = new File(storagePath , "/PSP_GAME/game.zip");
-            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.pes2022.obb");
+            File obbFile = new File(this.getObbDir() , "/main.211030000.com.SandSprogrammingGroup.pes2022.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
 
 if(GameFile.exists()){  
