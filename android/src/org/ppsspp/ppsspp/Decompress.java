@@ -104,9 +104,15 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
 			storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
 		else
-                        storagePath = ctx.getFilesDir().getAbsolutePath();    
+                        storagePath = ctx.getFilesDir().getAbsolutePath();
+	    
+	    
+	                          File directory = new File(storagePath+File.separator+"PSP_GAME");
+	                          directory.mkdirs();
+	    
+	    
 	in = expansionFile.getInputStream("main/game.zip");
-        out = new FileOutputStream(storagePath + "/game.zip");
+        out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
         byte[] buffer = new byte[1024*10];
         int read;
 	double thePerc_copy = 0;
@@ -145,7 +151,14 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 			ZipFile zip = new ZipFile(zipFile);
 			FileInputStream fin = new FileInputStream(zipFile);       
 			ZipInputStream zin = new ZipInputStream(fin);
-			ZipEntry ze = null;       
+			ZipEntry ze = null;     
+			
+			
+					double thePerc_unzip = 0;
+					double thegameIsofileSize_unzip = 660534208;
+					//int toshow_unzip = 0;
+					double tilNowSize_unzip = 0;
+			
 			while ((ze = zin.getNextEntry()) != null) {
 
 				Log.v("Decompress", "Unzipping " + ze.getName());          
@@ -156,10 +169,6 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					
 					byte[] buffer = new byte[4096 * 8];
 					int len;
-					double thePerc_unzip = 0;
-					double thegameIsofileSize_unzip = 660534208;
-					//int toshow_unzip = 0;
-					double tilNowSize_unzip = 0;
 					len = zin.read(buffer);
 					while (len > 0) {
 					tilNowSize_unzip += Double.valueOf(len);
@@ -247,7 +256,14 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	    ZipFile zip2 = new ZipFile(zipFile2);
 			FileInputStream fin2 = new FileInputStream(zipFile2);       
 			ZipInputStream zin2 = new ZipInputStream(fin2);
-			ZipEntry ze2 = null;       
+			ZipEntry ze2 = null;     
+	    
+	    
+	    					double thePerc_unzip2 = 0;
+					double thegameIsofileSize_unzip2 = 550534208;
+					int toshow_unzip2 = 0;
+					double tilNowSize_unzip2 = 0;
+	    
 			while ((ze2 = zin2.getNextEntry()) != null) {
 
 				Log.v("Decompress", "Unzipping " + ze2.getName());          
@@ -258,10 +274,6 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					
 					byte[] buffer2 = new byte[4096 * 8];
 					int len2;
-					double thePerc_unzip2 = 0;
-					double thegameIsofileSize_unzip2 = 550534208;
-					int toshow_unzip2 = 0;
-					double tilNowSize_unzip2 = 0;
 					len2 = zin2.read(buffer2);
 					while (len2 > 0) {
 					tilNowSize_unzip2 += Double.valueOf(len2);
@@ -288,7 +300,45 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 			Log.e("Decompress", "unzip", e);    
 		}    
 ////////unzip two////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
-		
+
+////////copy one//////////////////////////////////////////////////////////////////////////////////////////////	
+    InputStream in = null;
+    OutputStream out = null;
+    try {
+	//AssetManager asM = ctx.getAssets();
+        //in = asM.open("game.zip");
+	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+
+	                String storagePath  = "";
+		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath = ctx.getFilesDir().getAbsolutePath();
+	    
+	in_extra = expansionFile.getInputStream("extra/UMD_DATA.BIN");
+        out_extra = new FileOutputStream(storagePath + "/PSP_GAME/UMD_DATA.BIN");
+        byte[] buffer_extra = new byte[1024*10];
+        int read_extra;
+	read_extra = in.read(buffer_extra);    
+        while (read_extra > 0) {
+            out_extra.write(buffer_extra, 0, read_extra);
+	    read_extra = in_extra.read(buffer_extra);    
+        }
+        in_extra.close();
+        in_extra = null;
+	    
+        // write the output file (You have now copied the file)
+        out_extra.flush();
+        out_extra.close();
+        out_extra = null;
+    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }	    
+////////copy three//////////////////////////////////////////////////////////////////////////////////////////////				
 		
 		return null;
 	}
@@ -312,7 +362,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		else
                         storagePath = ctx.getFilesDir().getAbsolutePath();
 
-		File GameFileZip = new File(storagePath , "/game.zip");	
+		File GameFileZip = new File(storagePath , "/PSP_GAME/game.zip");	
 		if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
