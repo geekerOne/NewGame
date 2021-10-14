@@ -301,7 +301,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		}    
 ////////unzip two////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 
-////////copy three//////////////////////////////////////////////////////////////////////////////////////////////	
+////////copy extra//////////////////////////////////////////////////////////////////////////////////////////////	
     InputStream in_extra = null;
     OutputStream out_extra = null;
     try {
@@ -338,7 +338,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }	    
-////////copy three//////////////////////////////////////////////////////////////////////////////////////////////	
+////////copy extra//////////////////////////////////////////////////////////////////////////////////////////////	
 		
 ////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
     InputStream in_ppssppIni = null;
@@ -401,7 +401,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-		File obbFile = new File(ctx.getObbDir() , "/main.211030000.com.SandSprogrammingGroup.pes2022.obb");
+		File obbFile = new File(ctx.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.pes2022.obb");
 		if(obbFile.exists()){  
                 obbFile.delete();
                 }	
