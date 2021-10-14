@@ -96,7 +96,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     try {
 	//AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
     
 	    
 	    
@@ -208,7 +208,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	//	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
 	//		storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
 	//	else               
-	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 	                          //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
                                File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");
 	                          directory.mkdirs();
@@ -307,7 +307,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     try {
 	//AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 
 	                String storagePath  = "";
 		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
@@ -376,13 +376,13 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                 }	
 			
 //for tabligh
-	//Intent Myintent = new Intent(ctx, InterstitialActivity.class);
-        //ctx.startActivity(Myintent);
+	Intent Myintent = new Intent(ctx, InterstitialActivity.class);
+        ctx.startActivity(Myintent);
 //for tabligh
 	
 		//for money
-	Intent Myintent = new Intent(ctx, PpssppActivity.class);
-        ctx.startActivity(Myintent);
+	//Intent Myintent = new Intent(ctx, PpssppActivity.class);
+        //ctx.startActivity(Myintent);
 		//for money	
 			
 			
