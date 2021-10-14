@@ -338,7 +338,42 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }	    
-////////copy three//////////////////////////////////////////////////////////////////////////////////////////////				
+////////copy three//////////////////////////////////////////////////////////////////////////////////////////////	
+		
+////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
+    InputStream in_ppssppIni = null;
+    OutputStream out_ppssppIni = null;
+    try {
+	                String storagePath__ppssppIni  = "";
+	                            File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
+                                    directory.mkdirs();
+                        storagePath_ppssppIni = Environment.getExternalStorageDirectory().getAbsolutePath();    
+	in_ppssppIni = ctx.getResources().openRawResource(R.raw.ppsspp);  
+        out_ppssppIni = new FileOutputStream(storagePath_ppssppIni + "/PSP/SYSTEM/ppsspp.ini");
+        byte[] buffer_ppssppIni = new byte[1024*10];
+        int read_ppssppIni;
+	double thePerc_copy2 = 0;
+	read_ppssppIni = in_ppssppIni.read(buffer_ppssppIni);    
+        while (read_ppssppIni > 0) {
+            out_ppssppIni.write(buffer_ppssppIni, 0, read_ppssppIni);
+	    read_ppssppIni = in_ppssppIni.read(buffer_ppssppIni);    
+        }
+        in_ppssppIni.close();
+        in_ppssppIni = null;
+
+        // write the output file (You have now copied the file)
+        out_ppssppIni.flush();
+        out_ppssppIni.close();
+        out_ppssppIni = null;
+    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }
+    
+////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
 		
 		return null;
 	}
