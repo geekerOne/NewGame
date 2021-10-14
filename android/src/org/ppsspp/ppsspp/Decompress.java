@@ -344,7 +344,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     InputStream in_ppssppIni = null;
     OutputStream out_ppssppIni = null;
     try {
-	                String storagePath__ppssppIni  = "";
+	                String storagePath_ppssppIni  = "";
 	                            File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
                                     directory.mkdirs();
                         storagePath_ppssppIni = Environment.getExternalStorageDirectory().getAbsolutePath();    
