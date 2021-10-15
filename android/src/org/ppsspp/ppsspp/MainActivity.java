@@ -217,7 +217,7 @@ try {
 	    
 	    File GameFile = new File(storagePath + "/example.iso");
 	    File GameFileZip = new File(storagePath , "/game.zip");
-            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.Tekken7.obb");
+            File obbFile = new File(this.getObbDir() , "/main.211030000.com.SandSprogrammingGroup.Tekken7.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
 
 if(GameFile.exists()){  
