@@ -213,7 +213,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
 	double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 380534208;
+        double thegameIsofileSize_copy2 = 720534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy2 = 0;  
 	read_copy2 = in_copy2.read(buffer_copy2);    
