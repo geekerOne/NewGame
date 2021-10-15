@@ -253,7 +253,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	    
 	    
 	    					double thePerc_unzip2 = 0;
-					double thegameIsofileSize_unzip2 = 4700534208;
+					double thegameIsofileSize_unzip2 = 470534208;
 					int toshow_unzip2 = 0;
 					double tilNowSize_unzip2 = 0;
 	    
