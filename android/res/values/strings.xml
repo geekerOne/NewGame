@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, PpssppActivity!</string>
-    <string name="app_name">تیکن 7</string>
+    <string name="app_name">تیکن 7 اصلی</string>
     <string name="shortcut_name">PPSSPP game</string>
 
 	<string name="bad_disc_title">Unsupported disc</string>
