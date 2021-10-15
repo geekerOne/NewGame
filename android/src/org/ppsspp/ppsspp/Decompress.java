@@ -116,7 +116,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         byte[] buffer = new byte[1024*10];
         int read;
 	double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 200534208;
+        double thegameIsofileSize_copy = 380534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy = 0;  
 	read = in.read(buffer);    
@@ -155,7 +155,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 			
 			
 					double thePerc_unzip = 0;
-					double thegameIsofileSize_unzip = 270534208;
+					double thegameIsofileSize_unzip = 510534208;
 					//int toshow_unzip = 0;
 					double tilNowSize_unzip = 0;
 			
@@ -213,7 +213,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
 	double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 350534208;
+        double thegameIsofileSize_copy2 = 380534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy2 = 0;  
 	read_copy2 = in_copy2.read(buffer_copy2);    
@@ -253,7 +253,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	    
 	    
 	    					double thePerc_unzip2 = 0;
-					double thegameIsofileSize_unzip2 = 470534208;
+					double thegameIsofileSize_unzip2 = 800534208;
 					int toshow_unzip2 = 0;
 					double tilNowSize_unzip2 = 0;
 	    
