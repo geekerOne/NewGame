@@ -96,7 +96,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     try {
 	//AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
+	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
     
 	    
 	    
@@ -107,16 +107,16 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                         storagePath = ctx.getFilesDir().getAbsolutePath();
 	    
 	    
-	                          File directory = new File(storagePath+File.separator+"PSP_GAME");
-	                          directory.mkdirs();
+	                        //  File directory = new File(storagePath+File.separator+"PSP_GAME");
+	                        //  directory.mkdirs();
 	    
 	    
 	in = expansionFile.getInputStream("main/game.zip");
-        out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
+        out = new FileOutputStream(storagePath + "/game.zip");
         byte[] buffer = new byte[1024*10];
         int read;
 	double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 660534208;
+        double thegameIsofileSize_copy = 200534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy = 0;  
 	read = in.read(buffer);    
@@ -155,7 +155,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 			
 			
 					double thePerc_unzip = 0;
-					double thegameIsofileSize_unzip = 660534208;
+					double thegameIsofileSize_unzip = 270534208;
 					//int toshow_unzip = 0;
 					double tilNowSize_unzip = 0;
 			
@@ -202,25 +202,18 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     InputStream in_copy2 = null;
     OutputStream out_copy2 = null;
     try {
-	//AssetManager asM = ctx.getAssets();
-        //in = asM.open("game.zip");
 	                String storagePath_copy2  = "";
-	//	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
-	//		storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
-	//	else               
-	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
+	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
 	                          //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
                                File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");
 	                          directory.mkdirs();
                         storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
-	//in_copy2 = ctx.getResources().openRawResource(R.raw.ppsspp);  
 	    in_copy2 = expansionFile.getInputStream("main/psp.zip");
-       // out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/SYSTEM/ppsspp.ini");
         out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");		    
         byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
 	double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 550534208;
+        double thegameIsofileSize_copy2 = 350534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy2 = 0;  
 	read_copy2 = in_copy2.read(buffer_copy2);    
@@ -260,7 +253,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	    
 	    
 	    					double thePerc_unzip2 = 0;
-					double thegameIsofileSize_unzip2 = 550534208;
+					double thegameIsofileSize_unzip2 = 4700534208;
 					int toshow_unzip2 = 0;
 					double tilNowSize_unzip2 = 0;
 	    
@@ -302,12 +295,13 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 ////////unzip two////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 
 ////////copy extra//////////////////////////////////////////////////////////////////////////////////////////////	
+ /*
     InputStream in_extra = null;
     OutputStream out_extra = null;
     try {
 	//AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
+	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
 
 	                String storagePath  = "";
 		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
@@ -338,6 +332,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }	    
+*/
 ////////copy extra//////////////////////////////////////////////////////////////////////////////////////////////	
 		
 ////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
@@ -397,11 +392,11 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		else
                         storagePath = ctx.getFilesDir().getAbsolutePath();
 
-		File GameFileZip = new File(storagePath , "/PSP_GAME/game.zip");	
+		File GameFileZip = new File(storagePath , "/game.zip");	
 		if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-		File obbFile = new File(ctx.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.pes2022.obb");
+		File obbFile = new File(ctx.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.Tekken7.obb");
 		if(obbFile.exists()){  
                 obbFile.delete();
                 }	
