@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 		
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "breqfqpifcjggtaiqbiekkprincofdsdhslptrtlcdsjsdjkkbkolhmgalaeraihkqagke",
+            TapsellPlus.initialize(MainActivity.this, "ditrekhikdqnljjolfordhbcbqiegglspmmcoeqgmkmqrmmieebdkprnkcofdhthoddekg",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -215,9 +215,9 @@ try {
 	    
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
-	    File GameFile = new File(storagePath + "/PSP_GAME");
-	    File GameFileZip = new File(storagePath , "/PSP_GAME/game.zip");
-            File obbFile = new File(this.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.pes2022.obb");
+	    File GameFile = new File(storagePath + "/example.iso");
+	    File GameFileZip = new File(storagePath , "/game.zip");
+            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.Tekken7.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
 
 if(GameFile.exists()){  
@@ -261,7 +261,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/PSP_GAME/game.zip", storagePath + "/PSP_GAME", storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this).execute();
+	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this).execute();
 	  //new someTask(this,this).execute()	
         }
     }
@@ -269,7 +269,7 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2022")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.Tekken7")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -287,7 +287,7 @@ startActivity(intent);
 public void goToPage(View v) {	
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2022")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.Tekken7")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
