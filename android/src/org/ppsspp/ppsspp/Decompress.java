@@ -228,7 +228,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         //if have unzip
 	//toshow_copy2 += toshow_unzip; 
 	//if have'nt unzip
-	toshow_copy2 += toshow_copy	
+	toshow_copy2 += toshow_copy;	
 	publishProgress(toshow_copy2);
         }   	
             out_copy2.write(buffer_copy2, 0, read_copy2);
