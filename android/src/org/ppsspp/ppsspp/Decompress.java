@@ -110,9 +110,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	                        //  File directory = new File(storagePath+File.separator+"PSP_GAME");
 	                        //  directory.mkdirs();
 	    
-	    
-	in = expansionFile.getInputStream("main/game.zip");
-        out = new FileOutputStream(storagePath + "/game.zip");
+	//with unzip after    
+	//in = expansionFile.getInputStream("main/game.zip");
+        //out = new FileOutputStream(storagePath + "/game.zip");
+        //without unzip after    
+	in = expansionFile.getInputStream("main/example.iso");
+        out = new FileOutputStream(storagePath + "/example.iso");    
         byte[] buffer = new byte[1024*10];
         int read;
 	double thePerc_copy = 0;
