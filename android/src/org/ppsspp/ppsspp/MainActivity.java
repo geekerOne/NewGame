@@ -217,7 +217,7 @@ try {
 	    
 	    File GameFile = new File(storagePath + "/example.iso");
 	    File GameFileZip = new File(storagePath , "/game.zip");
-            File obbFile = new File(this.getObbDir() , "/main.211030000.com.SandSprogrammingGroup.Tekken7.obb");
+            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.FIFA2022.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
 
 if(GameFile.exists()){  
@@ -230,12 +230,12 @@ if(GameFile.exists()){
 	if(pspFile.exists()){  
               pspFile.delete();
               }
-	  Intent Myintent = new Intent(this, InterstitialActivity.class);
-          startActivity(Myintent);
+	//  Intent Myintent = new Intent(this, InterstitialActivity.class);
+        //  startActivity(Myintent);
 	//tabligh
 	
-	//Intent Myintent = new Intent(MainActivity.this, PpssppActivity.class);
-          //                startActivity(Myintent); 
+	Intent Myintent = new Intent(MainActivity.this, PpssppActivity.class);
+        startActivity(Myintent); 
 //money
     
     
@@ -269,7 +269,7 @@ if(GameFile.exists()){
     public void sendMsg(View v) {
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.Tekken7")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.FIFA2022")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -287,7 +287,7 @@ startActivity(intent);
 public void goToPage(View v) {	
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.Tekken7")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.FIFA2022")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
