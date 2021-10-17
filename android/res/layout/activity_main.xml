@@ -54,7 +54,7 @@
     android:id="@+id/start_the_hub"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="ما HUB"
+    android:text="HUB ما"
     android:layout_centerHorizontal="true"       
     android:layout_below="@id/start_the_game_button"  	    
     android:onClick="ourHub" />
