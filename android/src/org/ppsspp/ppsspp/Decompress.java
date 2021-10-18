@@ -271,7 +271,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 				} else {      
 					FileOutputStream fout2 = new FileOutputStream(location2 +File.separator+ ze2.getName());
 					
-					byte[] buffer2 = new byte[4096 * 8];
+					byte[] buffer2 = new byte[2048];
 					int len2;
 					while ((len2 = zin2.read(buffer2)) != -1) {
 					tilNowSize_unzip2 += Double.valueOf(len2);
