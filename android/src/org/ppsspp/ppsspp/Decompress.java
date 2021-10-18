@@ -271,7 +271,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 					
 					byte[] buffer2 = new byte[4096 * 8];
 					int len2;
-					while ((len = zin.read(buffer)) != -1) {
+					while ((len2 = zin2.read(buffer2)) != -1) {
 					tilNowSize_unzip2 += Double.valueOf(len2);
 			              if(thePerc_unzip2 != (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 20) {
                                          thePerc_unzip2 = (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 20;
