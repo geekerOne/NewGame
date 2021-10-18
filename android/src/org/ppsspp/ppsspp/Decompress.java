@@ -205,12 +205,14 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     try {
 	                String storagePath_copy2  = "";
 	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
-	                          //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
-                               File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");
-	                          directory.mkdirs();
+//normal use	                        
+//  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
+//specific use	          ->    "/TEXTURES/ULUS10112/psp.zip"	          
+  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+"ULUS10112");	
+	    directory.mkdirs();
                         storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
 	    in_copy2 = expansionFile.getInputStream("main/psp.zip");
-        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");		    
+        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/TEXTURES/ULUS10112/psp.zip");		    
         byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
 	double thePerc_copy2 = 0;
@@ -402,7 +404,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(obbFile.exists()){  
                 obbFile.delete();
                 }	
-		File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP"  , "/psp.zip");	
+		File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP/TEXTURES/ULUS10112"  , "/psp.zip");	
 		if(pspFileZip.exists()){  
                 pspFileZip.delete();
                 }	
