@@ -698,44 +698,6 @@ public abstract class NativeActivity extends Activity {
 		
 		
 		
-		
-				////////restart if its first time
-		String storagePath  = "";
-		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
-			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
-		else
-                        storagePath = this.getFilesDir().getAbsolutePath();
-				
-File file = new File(storagePath + "/check.txt");
-if(file.exists()){      
-//Do something
-}else{
-//////////////	
-	File checkfile = new File(storagePath, "check.txt");
-			try {
-FileOutputStream stream = new FileOutputStream(checkfile);
-try {
-    stream.write("text-to-write".getBytes());
-    stream.close();
-}catch (IOException e) {
-             System.out.println("Can't write"); // Or something more intellegent
-}
-				
-				} catch (FileNotFoundException e) {
-             System.out.println("Can't find"); // Or something more intellegent
-             }
-
-
-//////////////	
-          this.recreate();
-	  //ProcessPhoenix.triggerRebirth(getApplicationContext());
-	//Intent Myintent = new Intent(this, MainActivity.class);
-      //  startActivity(Myintent);
-
-}	
-	         ////////restart if its first time
-		
-		
 	}
 
 	@Override
