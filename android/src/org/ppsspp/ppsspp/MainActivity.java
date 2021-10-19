@@ -220,7 +220,7 @@ try {
             File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.FIFA2022.obb");
             File pspFile = new File(storagePath2 , "/TEXTURES/ULUS10112/psp.zip");
 	    File pspFile2 = new File(storagePath2 , "/TEXTURES/ULUS10112/psp2.zip");
-            File pspFile3 = new File(storagePath2 , "/TEXTURES/ULUS10112/Faces.zip");
+            File pspFile3 = new File(storagePath2 , "/TEXTURES/ULUS10112/Faces/Faces.zip");
 
 
 if(GameFile.exists()){  
@@ -270,7 +270,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/ULUS10112/psp.zip" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112/psp2.zip" , storagePath2 + "/TEXTURES/ULUS10112" , MainActivity.this).execute();
+	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/ULUS10112/psp.zip" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112/psp2.zip" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112/Faces/Faces.zip" , storagePath2 + "/TEXTURES/ULUS10112/Faces" , MainActivity.this).execute();
 	  //new someTask(this,this).execute()	
         }
     }
