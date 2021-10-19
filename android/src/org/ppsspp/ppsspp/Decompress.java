@@ -595,12 +595,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 //for tabligh
 	
 		//for money
-//	Intent Myintent = new Intent(ctx, PpssppActivity.class);
- //       ctx.startActivity(Myintent);
+       Intent Myintent = new Intent(ctx, PpssppActivity.class);
+       ctx.startActivity(Myintent);
 		//for money	
 			
 //restarting the game preventing force close			
-ProcessPhoenix.triggerRebirth(ctx);			
+//ProcessPhoenix.triggerRebirth(ctx);			
 //restarting the game preventing force close			
 			
 			
