@@ -270,7 +270,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/ULUS10112/psp.zip" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112/psp2.zip" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112/Faces/Faces.zip" , storagePath2 + "/TEXTURES/ULUS10112/Faces" , MainActivity.this).execute();
+	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/ULUS10112/psp.zip" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112/psp2.zip" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112/Faces/Faces.zip" , storagePath2 + "/TEXTURES/ULUS10112/Faces" , MainActivity.this).execute();
 	  //new someTask(this,this).execute()	
         }
     }
