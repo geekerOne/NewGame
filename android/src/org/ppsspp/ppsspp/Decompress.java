@@ -513,7 +513,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	                String storagePath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP/TEXTURES/ULUS10112/Faces" ;
 
 	    
-	in_extra = expansionFile.getInputStream("extra/alex.png");
+	in_extra = expansionFile.getInputStream("main/alex.png");
         out_extra = new FileOutputStream(storagePath + "/alex.png");
         byte[] buffer_extra = new byte[1024*10];
         int read_extra;
