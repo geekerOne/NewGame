@@ -58,6 +58,10 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	private String location;
 	private String zipFile2;
 	private String location2;
+	private String zipFile3;   
+	private String location3;
+	private String zipFile4;
+	private String location4;
 	ProgressDialog myProgressDialog;
     Context ctx;
 
@@ -67,10 +71,10 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		this.location = location;
 		this.zipFile2 = zipFile2;     
 		this.location2 = location2;
-		this.zipFile = zipFile3;     
-		this.location = location3;
-		this.zipFile2 = zipFile4;     
-		this.location2 = location4;
+		this.zipFile3 = zipFile3;     
+		this.location3 = location3;
+		this.zipFile4 = zipFile4;     
+		this.location4 = location4;
 		this.ctx = ctx;
 		dirChecker("","");   
 	}
