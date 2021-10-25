@@ -116,7 +116,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     try {
 	//AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+	ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
     
 	    
 	    
@@ -224,7 +224,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     OutputStream out_copy2 = null;
     try {
 	                String storagePath_copy2  = "";
-	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
 //normal use	                        
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use	          ->    "/TEXTURES/ULUS10112/psp.zip"	          
@@ -323,7 +323,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     OutputStream out_copy3 = null;
     try {
 	                String storagePath_copy3  = "";
-	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
 //normal use	                        
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use	          ->    "/TEXTURES/ULUS10112/psp.zip"	          
@@ -422,7 +422,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     OutputStream out_copy4 = null;
     try {
 	                String storagePath_copy4  = "";
-	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+	    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
 //normal use	                        
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use	          ->    "/TEXTURES/ULUS10112/psp.zip"	          
@@ -434,7 +434,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         byte[] buffer_copy4 = new byte[1024*10];
         int read_copy4;
 	double thePerc_copy4 = 0;
-        double thegameIsofileSize_copy4 = 46534208;
+        double thegameIsofileSize_copy4 = 26534208;
 	//int toshow_copy = 0;
 	double tilNowSize_copy4 = 0;  
 	read_copy4 = in_copy4.read(buffer_copy4);    
@@ -477,7 +477,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	    
 	    
 	    					double thePerc_unzip4 = 0;
-					double thegameIsofileSize_unzip4 = 46534208;
+					double thegameIsofileSize_unzip4 = 26534208;
 					double tilNowSize_unzip4 = 0;
 	    
 			while ((ze4 = zin4.getNextEntry()) != null) {
@@ -521,7 +521,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     OutputStream out_copy5 = null;
     try {
                     String storagePath_copy5  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -576,7 +576,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         
         
                             double thePerc_unzip5 = 0;
-                    double thegameIsofileSize_unzip5 = 46534208;
+                    double thegameIsofileSize_unzip5 = 20534208;
                     double tilNowSize_unzip5 = 0;
         
             while ((ze5 = zin5.getNextEntry()) != null) {
@@ -676,7 +676,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-		File obbFile = new File(ctx.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.FIFA2022.obb");
+		File obbFile = new File(ctx.getObbDir() , "/main.211030000.com.SandSprogrammingGroup.FIFA2022.obb");
 		if(obbFile.exists()){  
                 obbFile.delete();
                 }	
