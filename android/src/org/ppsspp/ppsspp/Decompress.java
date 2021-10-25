@@ -63,10 +63,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 	private String location3;
 	private String zipFile4;
 	private String location4;
+	private String zipFile5;
+	private String location5;
 	ProgressDialog myProgressDialog;
     Context ctx;
 
-	public Decompress(String zipFile, String location, String zipFile2, String location2, String zipFile3, String location3, String zipFile4, String location4, Context ctx) {
+	public Decompress(String zipFile, String location, String zipFile2, String location2, String zipFile3, String location3, String zipFile4, String location4,String zipFile5, String location5, Context ctx) {
 		super();
 		this.zipFile = zipFile;     
 		this.location = location;
@@ -76,6 +78,8 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		this.location3 = location3;
 		this.zipFile4 = zipFile4;     
 		this.location4 = location4;
+		this.zipFile5 = zipFile5;     
+		this.location5 = location5;
 		this.ctx = ctx;
 		dirChecker("","");   
 	}
@@ -98,10 +102,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		int toshow_copy2 = 0;
 		int toshow_copy3 = 0;
 		int toshow_copy4 = 0;
+		int toshow_copy5 = 0;
 		int toshow_unzip = 0;
 		int toshow_unzip2 = 0;
 		int toshow_unzip3 = 0;
 		int toshow_unzip4 = 0;
+		int toshow_unzip5 = 0;
 	// 	try  {
 	//commenet abov try if you want to just copy and not unzip and comment unzip one		
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////	Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file	
@@ -509,6 +515,104 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		}    
 ////////unzip four////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 		
+    try{
+////////copy five////////////////////////////////////////////////////////////////////////////////////////////// Environment.getExternalStorageDirectory() copy and unzip 4 and check for zip5 after unziping for deleting file  
+    InputStream in_copy5 = null;
+    OutputStream out_copy5 = null;
+    try {
+                    String storagePath_copy5  = "";
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+//normal use                            
+//  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
+//specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
+  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+"ULUS10112"+File.separator+"Faces");    
+        directory.mkdirs();
+                        storagePath_copy5 = Environment.getExternalStorageDirectory().getAbsolutePath();    
+        in_copy5 = expansionFile.getInputStream("main/Faces2.zip");
+        out_copy5 = new FileOutputStream(storagePath_copy5 + "/PSP/TEXTURES/ULUS10112/Faces/Faces.zip");            
+        byte[] buffer_copy5 = new byte[1024*10];
+        int read_copy5;
+    double thePerc_copy5 = 0;
+        double thegameIsofileSize_copy5 = 20534208;
+    //int toshow_copy = 0;
+    double tilNowSize_copy5 = 0;  
+    read_copy5 = in_copy5.read(buffer_copy5);    
+        while (read_copy5 > 0) {
+    tilNowSize_copy5 += Double.valueOf(read_copy5);
+    if(thePerc_copy5 != (tilNowSize_copy5 / thegameIsofileSize_copy5) * 5) {
+        thePerc_copy5 = (tilNowSize_copy5 / thegameIsofileSize_copy5) * 5;
+        toshow_copy5 = (int)thePerc_copy5;  
+        //if have unzip
+    toshow_copy5 += toshow_unzip4; 
+    //if have'nt unzip
+    //toshow_copy5 += toshow_copy;  
+    publishProgress(toshow_copy5);
+        }       
+            out_copy5.write(buffer_copy5, 0, read_copy5);
+        read_copy5 = in_copy5.read(buffer_copy5);    
+
+        }
+        in_copy5.close();
+        in_copy5 = null;
+
+        // write the output file (You have now copied the file)
+        out_copy5.flush();
+        out_copy5.close();
+        out_copy5 = null;
+    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }       
+////////copy five//////////////////////////////////////////////////////////////////////////////////////////////             
+////////unzip five///////////////////////////////////////////////////////////////////////////////////////////////////           
+        
+        ZipFile zip5 = new ZipFile(zipFile5);
+            FileInputStream fin5 = new FileInputStream(zipFile5);       
+            ZipInputStream zin5 = new ZipInputStream(fin5);
+            ZipEntry ze5 = null;     
+        
+        
+                            double thePerc_unzip5 = 0;
+                    double thegameIsofileSize_unzip5 = 46534208;
+                    double tilNowSize_unzip5 = 0;
+        
+            while ((ze5 = zin5.getNextEntry()) != null) {
+
+                Log.v("Decompress", "Unzipping " + ze5.getName());          
+                if(ze5.isDirectory()) {           
+                    dirChecker(ze5.getName(),location5);         
+                } else {      
+                    FileOutputStream fout5 = new FileOutputStream(location4 +File.separator+ ze5.getName());
+                    
+                    byte[] buffer5 = new byte[2048];
+                    int len5;
+                    while ((len5 = zin5.read(buffer5)) != -1) {
+                    tilNowSize_unzip5 += Double.valueOf(len5);
+                          if(thePerc_unzip5 != (tilNowSize_unzip5 / thegameIsofileSize_unzip5) * 5) {
+                                         thePerc_unzip5 = (tilNowSize_unzip5 / thegameIsofileSize_unzip5) * 5;
+                                         toshow_unzip5 = (int)thePerc_unzip5;   
+                     toshow_unzip5 += toshow_copy5;  
+                             publishProgress(toshow_unzip5);
+                                         }   
+                        fout5.write(buffer5, 0, len5);
+                            //count++;
+                        //publishProgress(count);// Here I am doing the update of my progress bar
+                    }
+                    fout5.close();
+                    zin5.closeEntry();
+                    
+                }                
+            }       
+        zin5.close();    
+
+        
+        } catch(Exception e) {       
+            Log.e("Decompress", "unzip", e);    
+        }    
+////////unzip five////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
 		
 		
 ////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
