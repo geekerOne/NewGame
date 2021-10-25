@@ -529,7 +529,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         directory.mkdirs();
                         storagePath_copy5 = Environment.getExternalStorageDirectory().getAbsolutePath();    
         in_copy5 = expansionFile.getInputStream("main/Faces2.zip");
-        out_copy5 = new FileOutputStream(storagePath_copy5 + "/PSP/TEXTURES/ULUS10112/Faces/Faces.zip");            
+        out_copy5 = new FileOutputStream(storagePath_copy5 + "/PSP/TEXTURES/ULUS10112/Faces/Faces2.zip");            
         byte[] buffer_copy5 = new byte[1024*10];
         int read_copy5;
     double thePerc_copy5 = 0;
@@ -692,6 +692,10 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
 		if(pspFileZip3.exists()){  
                 pspFileZip3.delete();
                 }		
+		File pspFileZip4 = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP/TEXTURES/ULUS10112/Faces"  , "/Faces2.zip");	
+		if(pspFileZip4.exists()){  
+                pspFileZip4.delete();
+                }				
 			
 //for tabligh
 	//Intent Myintent = new Intent(ctx, InterstitialActivity.class);
