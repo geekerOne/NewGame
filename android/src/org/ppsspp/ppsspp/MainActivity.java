@@ -217,11 +217,11 @@ try {
 	    
 	    File GameFile = new File(storagePath + "/example.iso");
 	    File GameFileZip = new File(storagePath , "/game.zip");
-            File obbFile = new File(this.getObbDir() , "/main.211030000.com.SandSprogrammingGroup.FIFA2022.obb");
-            File pspFile = new File(storagePath2 , "/TEXTURES/ULUS10112/psp.zip");
-	    File pspFile2 = new File(storagePath2 , "/TEXTURES/ULUS10112/psp2.zip");
-            File pspFile3 = new File(storagePath2 , "/TEXTURES/ULUS10112/Faces/Faces.zip");
-            File pspFile4 = new File(storagePath2 , "/TEXTURES/ULUS10112/Faces/Faces2.zip");
+            File obbFile = new File(this.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.FIFA2022.obb");
+            File pspFile = new File(storagePath2 , "/TEXTURES/FIFA01590/psp.zip");
+	    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
+            File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
+            File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
 
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
@@ -273,7 +273,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/ULUS10112/psp.zip" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112/psp2.zip" , storagePath2 + "/TEXTURES/ULUS10112" , storagePath2 + "/TEXTURES/ULUS10112/Faces/Faces.zip" , storagePath2 + "/TEXTURES/ULUS10112/Faces" ,  storagePath2 + "/TEXTURES/ULUS10112/Faces/Faces2.zip" , storagePath2 + "/TEXTURES/ULUS10112/Faces" , MainActivity.this).execute();
+	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/FIFA01590/psp.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/psp2.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" ,  storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces2.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" , MainActivity.this).execute();
 	  //new someTask(this,this).execute()	
         }
     }
