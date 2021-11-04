@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 		
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "ditrekhikdqnljjolfordhbcbqiegglspmmcoeqgmkmqrmmieebdkprnkcofdhthoddekg",
+            TapsellPlus.initialize(MainActivity.this, "kpdlmfgnfirebifardrgtgcmsamrpsklrtrrtpknqlaocqjlhgqjndnaqfkkbmfeijhndi",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
