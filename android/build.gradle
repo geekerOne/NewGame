@@ -56,7 +56,7 @@ android {
 	buildToolsVersion '29.0.3'
 	defaultConfig {
 		applicationId 'com.SandSprogrammingGroup.FIFA2022'
-		minSdkVersion 27
+		minSdkVersion 23
 		targetSdkVersion 29
 
 		ndk {
