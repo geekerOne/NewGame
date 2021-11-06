@@ -217,11 +217,11 @@ try {
 	    
 	    File GameFile = new File(storagePath + "/example.iso");
 	    File GameFileZip = new File(storagePath , "/game.zip");
-            File obbFile = new File(this.getObbDir() , "/main.411030000.com.SandSprogrammingGroup.FIFA2022.obb");
-            File pspFile = new File(storagePath2 , "/TEXTURES/FIFA01590/psp.zip");
-	    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
-            File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
-            File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
+            File obbFile = new File(this.getObbDir() , "/main.211030000.com.SandSprogrammingGroup.pes2021.obb");
+          //  File pspFile = new File(storagePath2 , "/TEXTURES/FIFA01590/psp.zip");
+	   // File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
+        //    File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
+        //    File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
 
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
@@ -230,24 +230,24 @@ if(GameFile.exists()){
         if(obbFile.exists()){  
               obbFile.delete();
               }
-	if(pspFile.exists()){  
-              pspFile.delete();
-              }
-	if(pspFile2.exists()){  
-              pspFile2.delete();
-              }
-        if(pspFile3.exists()){  
-              pspFile3.delete();
-              }
-	if(pspFile4.exists()){  
-              pspFile4.delete();
-              }
-	//  Intent Myintent = new Intent(this, InterstitialActivity.class);
-        //  startActivity(Myintent);
+	//if(pspFile.exists()){  
+    //          pspFile.delete();
+    //          }
+	//if(pspFile2.exists()){  
+    //          pspFile2.delete();
+    //          }
+    //    if(pspFile3.exists()){  
+    //          pspFile3.delete();
+    //          }
+	//if(pspFile4.exists()){  
+    //          pspFile4.delete();
+    //          }
+	  Intent Myintent = new Intent(this, InterstitialActivity.class);
+      startActivity(Myintent);
 	//tabligh
 	
-	Intent Myintent = new Intent(MainActivity.this, PpssppActivity.class);
-        startActivity(Myintent); 
+	//Intent Myintent = new Intent(MainActivity.this, PpssppActivity.class);
+    //    startActivity(Myintent); 
 //money
     
     
@@ -273,15 +273,17 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/FIFA01590/psp.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/psp2.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" ,  storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces2.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" , MainActivity.this).execute();
-	  //new someTask(this,this).execute()	
+	//new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/FIFA01590/psp.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/psp2.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" ,  storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces2.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" , MainActivity.this).execute();
+	
+new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this).execute();
+
         }
     }
 
     public void sendMsg(View v) {
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.FIFA2022")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2021")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -299,7 +301,7 @@ startActivity(intent);
 public void goToPage(View v) {	
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.FIFA2022")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2021")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
