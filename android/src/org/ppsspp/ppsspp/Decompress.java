@@ -109,7 +109,7 @@ public Decompress(String zipFile, String location, Context ctx) {
         //int toshow_unzip3 = 0;
         //int toshow_unzip4 = 0;
         //int toshow_unzip5 = 0;
-      try  {
+   //   try  {
     //commenet abov try if you want to just copy and not unzip and comment unzip one        
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
     InputStream in = null;
@@ -146,8 +146,8 @@ public Decompress(String zipFile, String location, Context ctx) {
     read = in.read(buffer);    
         while (read > 0) {
     tilNowSize_copy += Double.valueOf(read);
-    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 40) {
-        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 40;
+    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 80) {
+        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 80;
         toshow_copy = (int)thePerc_copy;  
     publishProgress(toshow_copy);
         }       
@@ -171,7 +171,7 @@ public Decompress(String zipFile, String location, Context ctx) {
     }       
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////                      
 ////////unzip one///////////////////////////////////////////////////////////////////////////////////////////////////            
-            
+          /*  
             ZipFile zip = new ZipFile(zipFile);
             FileInputStream fin = new FileInputStream(zipFile);       
             ZipInputStream zin = new ZipInputStream(fin);
@@ -216,7 +216,7 @@ public Decompress(String zipFile, String location, Context ctx) {
                     } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-    
+    */
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
    // try{
@@ -690,7 +690,7 @@ public Decompress(String zipFile, String location, Context ctx) {
         if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() , "/main.211030000.com.SandSprogrammingGroup.pes2021.obb");
+        File obbFile = new File(ctx.getObbDir() , "/main.211030000.com.draco.ludere.TEKKEN5.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
