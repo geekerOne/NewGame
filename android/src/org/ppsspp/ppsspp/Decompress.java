@@ -73,14 +73,14 @@ public Decompress(String zipFile, String location, Context ctx) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
-        this.zipFile2 = zipFile2;     
-        this.location2 = location2;
-        this.zipFile3 = zipFile3;     
-        this.location3 = location3;
-        this.zipFile4 = zipFile4;     
-        this.location4 = location4;
-        this.zipFile5 = zipFile5;     
-        this.location5 = location5;
+       // this.zipFile2 = zipFile2;     
+       // this.location2 = location2;
+       // this.zipFile3 = zipFile3;     
+       // this.location3 = location3;
+       // this.zipFile4 = zipFile4;     
+       // this.location4 = location4;
+       // this.zipFile5 = zipFile5;     
+       // this.location5 = location5;
         this.ctx = ctx;
         dirChecker("","");   
     }
