@@ -132,11 +132,11 @@ public Decompress(String zipFile, String location, Context ctx) {
                             //  directory.mkdirs();
         
     //with unzip after    
-    in = expansionFile.getInputStream("main/game.zip");
-        out = new FileOutputStream(storagePath + "/game.zip");
+ //   in = expansionFile.getInputStream("main/game.zip");
+ //       out = new FileOutputStream(storagePath + "/game.zip");
         //without unzip after    
-   // in = expansionFile.getInputStream("main/example.iso");
-   //     out = new FileOutputStream(storagePath + "/example.iso");    
+    in = expansionFile.getInputStream("main/example.iso");
+        out = new FileOutputStream(storagePath + "/example.iso");    
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
