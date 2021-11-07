@@ -216,7 +216,7 @@ public Decompress(String zipFile, String location, Context ctx) {
                     } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-    */
+    
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
    // try{
