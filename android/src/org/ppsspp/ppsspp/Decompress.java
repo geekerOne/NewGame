@@ -51,6 +51,8 @@ import android.os.Vibrator;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 //new2
+import android.media.MediaPlayer;
+
 
 public class Decompress extends AsyncTask<Void, Integer, Void> {
 
@@ -67,9 +69,9 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     //private String location5;
     ProgressDialog myProgressDialog;
     Context ctx;
-
+    MediaPlayer mediaPlayer_menu;
     //public Decompress(String zipFile, String location, String zipFile2, String location2, String zipFile3, String location3, String zipFile4, String location4,String zipFile5, String location5, Context ctx) {
-public Decompress(String zipFile, String location, Context ctx) {
+public Decompress(String zipFile, String location, Context ctx, MediaPlayer mediaPlayer_menu) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
@@ -82,6 +84,7 @@ public Decompress(String zipFile, String location, Context ctx) {
        // this.zipFile5 = zipFile5;     
        // this.location5 = location5;
         this.ctx = ctx;
+        this.mediaPlayer_menu = mediaPlayer_menu;
         dirChecker("","");   
     }
     
@@ -117,7 +120,7 @@ public Decompress(String zipFile, String location, Context ctx) {
     try {
     //AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
     
         
         
@@ -226,7 +229,7 @@ public Decompress(String zipFile, String location, Context ctx) {
     OutputStream out_copy2 = null;
     try {
                     String storagePath_copy2  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -328,7 +331,7 @@ public Decompress(String zipFile, String location, Context ctx) {
     OutputStream out_copy3 = null;
     try {
                     String storagePath_copy3  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -430,7 +433,7 @@ public Decompress(String zipFile, String location, Context ctx) {
     OutputStream out_copy4 = null;
     try {
                     String storagePath_copy4  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -532,7 +535,7 @@ public Decompress(String zipFile, String location, Context ctx) {
     OutputStream out_copy5 = null;
     try {
                     String storagePath_copy5  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -627,7 +630,6 @@ public Decompress(String zipFile, String location, Context ctx) {
     */
 ////////unzip five////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
         
-        
 ////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////    
    
     InputStream in_ppssppIni = null;
@@ -662,7 +664,43 @@ public Decompress(String zipFile, String location, Context ctx) {
         e.printStackTrace();
     }
     
-////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////    
+////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////  
+        
+////////copy Cheats const func//////////////////////////////////////////////////////////////////////////////////////////////    
+   
+    InputStream in_Cheats = null;
+    OutputStream out_Cheats = null;
+    try {
+                    String storagePath_Cheats  = "";
+                                File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"Cheats");
+                                    directory.mkdirs();
+                        storagePath_Cheats = Environment.getExternalStorageDirectory().getAbsolutePath();    
+    in_Cheats = ctx.getResources().openRawResource(R.raw.cheat);  
+        out_Cheats = new FileOutputStream(storagePath_Cheats + "/PSP/Cheats/cheat.db");
+        byte[] buffer_Cheats = new byte[1024*10];
+        int read_Cheats;
+    double thePerc_copy2 = 0;
+    read_Cheats = in_Cheats.read(buffer_Cheats);    
+        while (read_Cheats > 0) {
+            out_Cheats.write(buffer_Cheats, 0, read_Cheats);
+        read_Cheats = in_Cheats.read(buffer_Cheats);    
+        }
+        in_Cheats.close();
+        in_Cheats = null;
+
+        // write the output file (You have now copied the file)
+        out_Cheats.flush();
+        out_Cheats.close();
+        out_Cheats = null;
+    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }
+    
+////////copy Cheats const func//////////////////////////////////////////////////////////////////////////////////////////////   
         
         return null;
     }
@@ -690,7 +728,7 @@ public Decompress(String zipFile, String location, Context ctx) {
         if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() , "/main.211030000.com.draco.ludere.TEKKEN5.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.SandSprogrammingGroup.pes2021.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
@@ -710,6 +748,9 @@ public Decompress(String zipFile, String location, Context ctx) {
       //  if(pspFileZip4.exists()){  
       //          pspFileZip4.delete();
        //         }               
+            
+            
+            mediaPlayer_menu.pause();
             
 //for tabligh
     Intent Myintent = new Intent(ctx, InterstitialActivity.class);
