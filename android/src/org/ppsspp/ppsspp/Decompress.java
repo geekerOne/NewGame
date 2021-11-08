@@ -143,7 +143,7 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 750534208;
+        double thegameIsofileSize_copy = 950534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
