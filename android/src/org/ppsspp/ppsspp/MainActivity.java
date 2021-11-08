@@ -206,7 +206,22 @@ try {
 	
 	
 	
+		        @Override
+        public void onResume(){
+                super.onResume();
+		if(!mediaPlayer_menu.isPlaying()) {
+                mediaPlayer_menu.seekTo(0);
+                mediaPlayer_menu.start();
+                }
+
+        }
 	
+	
+	
+	protected void onPause(){//for pausing the song when app pause
+        super.onPause();
+	mediaPlayer_menu.pause();//   ^^^	   
+	}
 	
 	
 	
