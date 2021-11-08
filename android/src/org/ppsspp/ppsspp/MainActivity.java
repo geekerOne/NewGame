@@ -86,12 +86,16 @@ import ir.tapsell.plus.TapsellPlusInitListener;
 import ir.tapsell.plus.model.AdNetworkError;
 import ir.tapsell.plus.model.AdNetworks;
 //tapsell
+import android.media.MediaPlayer;
 /**
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
  * Register this class in AndroidManifest.xml.
  */
 public class MainActivity extends Activity {
         private static final int BUFFER_SIZE = 4096;
+	
+		MediaPlayer mediaPlayer_menu;
+	MediaPlayer mediaPlayer_click;
 	
     // Defining Permission codes.
     // We can give any value
@@ -110,7 +114,9 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
         
-		
+		                mediaPlayer_menu = MediaPlayer.create(MainActivity.this, R.raw.menu);
+		mediaPlayer_menu.setLooping(true);
+	        mediaPlayer_click = MediaPlayer.create(MainActivity.this, R.raw.click);
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
             TapsellPlus.initialize(MainActivity.this, "kjpdeciqcfqggjeeoohefidldfbqiitjcqdlejgmpbqinaaknkmnklspiftrjrjrfqajai",
@@ -206,7 +212,8 @@ try {
 	
 //all button codes/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void start(View v) {
-	    
+	    		mediaPlayer_click.seekTo(0);	
+mediaPlayer_click.start();
                 String storagePath  = "";
 		if (this.getExternalFilesDir(null).getAbsolutePath() != null)
 			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
@@ -269,18 +276,22 @@ if(GameFile.exists()){
         group_games_page.setVisibility(View.GONE);
 	Button start_the_hub = (Button) findViewById(R.id.start_the_hub); 
         start_the_hub.setVisibility(View.GONE);
+	Button hamibash_button = (Button) findViewById(R.id.hamibash_button); 
+        hamibash_button.setVisibility(View.GONE);
         RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative);
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
 	//new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/FIFA01590/psp.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/psp2.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" ,  storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces2.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" , MainActivity.this).execute();
 	
-new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this).execute();
+new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
 
         }
     }
 
     public void sendMsg(View v) {
+	    		mediaPlayer_click.seekTo(0);	
+mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
 intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2021")); 
@@ -289,6 +300,8 @@ startActivity(intent);
     }
 
 public void sendingEmail(View v) {
+			mediaPlayer_click.seekTo(0);	
+mediaPlayer_click.start();
 /*bazar*/
 String url = "mailto: 00sohrabiranpak00@gmail.com";		
 Intent intent = new Intent();
@@ -299,6 +312,8 @@ startActivity(intent);
     }
 
 public void goToPage(View v) {	
+			mediaPlayer_click.seekTo(0);	
+mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
 intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.pes2021")); 
@@ -308,6 +323,8 @@ startActivity(intent);
 	
 public void goToGamesPage(View v) {	
 /*bazar*/
+		mediaPlayer_click.seekTo(0);	
+mediaPlayer_click.start();	
 Intent intent = new Intent(Intent.ACTION_VIEW); 
 intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + "230310009713")); 
 intent.setPackage("com.farsitel.bazaar"); 
@@ -315,13 +332,26 @@ startActivity(intent);
     }
 	
 public void ourHub(View v) {	
+		mediaPlayer_click.seekTo(0);	
+mediaPlayer_click.start();	
 Uri uri = Uri.parse("http://sandsbros.ctcin.bio");
 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 startActivity(intent);
     }	
 	
 	
+	public void hamibash(View v) {	
+		mediaPlayer_click.seekTo(0);	
+mediaPlayer_click.start();
+Uri uri = Uri.parse("https://hamibash.com/sands");
+Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+startActivity(intent);
+    }	
+		
+	
     public void exit_game(View v) {
+	    		mediaPlayer_click.seekTo(0);	
+mediaPlayer_click.start();
 	this.finishAffinity();	
     }
 //all button codes/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
