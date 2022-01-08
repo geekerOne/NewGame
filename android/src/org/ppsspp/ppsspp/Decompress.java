@@ -61,8 +61,8 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     private final static String TAG = "Decompress";
     private String zipFile;   
     private String location;
-    //private String zipFile2;
-    //private String location2;
+    private String zipFile2;
+    private String location2;
     //private String zipFile3;   
     //private String location3;
     //private String zipFile4;
