@@ -630,24 +630,60 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
     */
 ////////unzip five////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
         
-////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////    
-   
+//just for folder games		
+////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	
+    InputStream in_bin = null;
+    OutputStream out_bin = null;
+    try {
+	    
+	    	                String storagePath_bin  = "";
+		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath_bin = ctx.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath_bin = ctx.getFilesDir().getAbsolutePath();  
+
+	in_bin = ctx.getResources().openRawResource(R.raw.umd);  
+        out_bin = new FileOutputStream(storagePath_bin + "/UMD_DATA.BIN");
+        byte[] buffer_bin = new byte[1024*10];
+        int read_bin;
+	read_bin = in_bin.read(buffer_bin);    
+        while (read_bin > 0) {
+            out_bin.write(buffer_bin, 0, read_bin);
+	    read_bin = in_bin.read(buffer_bin);    
+        }
+        in_bin.close();
+        in_bin = null;
+
+        // write the output file (You have now copied the file)
+        out_bin.flush();
+        out_bin.close();
+        out_bin = null;
+    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }
+////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	
+
+////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
     InputStream in_ppssppIni = null;
     OutputStream out_ppssppIni = null;
     try {
-                    String storagePath_ppssppIni  = "";
-                                File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
+	                String storagePath_ppssppIni  = "";
+	                            File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
                                     directory.mkdirs();
                         storagePath_ppssppIni = Environment.getExternalStorageDirectory().getAbsolutePath();    
-    in_ppssppIni = ctx.getResources().openRawResource(R.raw.ppsspp);  
+	in_ppssppIni = ctx.getResources().openRawResource(R.raw.ppsspp);  
         out_ppssppIni = new FileOutputStream(storagePath_ppssppIni + "/PSP/SYSTEM/ppsspp.ini");
         byte[] buffer_ppssppIni = new byte[1024*10];
         int read_ppssppIni;
-    double thePerc_copy2 = 0;
-    read_ppssppIni = in_ppssppIni.read(buffer_ppssppIni);    
+	double thePerc_copy2 = 0;
+	read_ppssppIni = in_ppssppIni.read(buffer_ppssppIni);    
         while (read_ppssppIni > 0) {
             out_ppssppIni.write(buffer_ppssppIni, 0, read_ppssppIni);
-        read_ppssppIni = in_ppssppIni.read(buffer_ppssppIni);    
+	    read_ppssppIni = in_ppssppIni.read(buffer_ppssppIni);    
         }
         in_ppssppIni.close();
         in_ppssppIni = null;
@@ -664,8 +700,41 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
         e.printStackTrace();
     }
     
-////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////  
-        
+////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
+
+////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
+    InputStream in_controlsIni = null;
+    OutputStream out_controlsIni = null;
+    try {
+	                String storagePath_controlsIni  = "";
+	                            File directory3 = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
+                                    directory3.mkdirs();
+                        storagePath_controlsIni = Environment.getExternalStorageDirectory().getAbsolutePath();    
+	in_controlsIni = ctx.getResources().openRawResource(R.raw.controls);  
+        out_controlsIni = new FileOutputStream(storagePath_controlsIni + "/PSP/SYSTEM/controls.ini");
+        byte[] buffer_controlsIni = new byte[1024*10];
+        int read_controlsIni;
+	read_controlsIni = in_controlsIni.read(buffer_controlsIni);    
+        while (read_controlsIni > 0) {
+            out_controlsIni.write(buffer_controlsIni, 0, read_controlsIni);
+	    read_controlsIni = in_controlsIni.read(buffer_controlsIni);    
+        }
+        in_controlsIni.close();
+        in_controlsIni = null;
+
+        // write the output file (You have now copied the file)
+        out_controlsIni.flush();
+        out_controlsIni.close();
+        out_controlsIni = null;
+    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }
+////////copy controls.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
+			        
 ////////copy Cheats const func//////////////////////////////////////////////////////////////////////////////////////////////    
    
     InputStream in_Cheats = null;
@@ -779,4 +848,27 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
             f.mkdirs();
         }
     }
+	
+	
+	
+		//check connectionn
+	private boolean haveNetworkConnection() {
+    boolean haveConnectedWifi = false;
+    boolean haveConnectedMobile = false;
+
+    ConnectivityManager cm = (ConnectivityManager) ctx.getSystemService(ctx.CONNECTIVITY_SERVICE);
+    NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+    for (NetworkInfo ni : netInfo) {
+        if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+            if (ni.isConnected())
+                haveConnectedWifi = true;
+        if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+            if (ni.isConnected())
+                haveConnectedMobile = true;
+    }
+    return haveConnectedWifi || haveConnectedMobile;
+}
+
+	
+	
 }
