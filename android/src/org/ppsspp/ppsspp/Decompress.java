@@ -233,9 +233,9 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
                     String storagePath_copy2  = "";
         ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
 //normal use                            
-//  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
+  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
-  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+"FIFA01590");   
+//  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+"FIFA01590");   
         directory.mkdirs();
                         storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
         in_copy2 = expansionFile.getInputStream("main/psp.zip");
@@ -795,7 +795,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         else
                         storagePath = ctx.getFilesDir().getAbsolutePath();
 
-        File GameFileZip = new File(storagePath , "/game.zip"); 
+        File GameFileZip = new File(storagePath+"/PSP_GAME" , "/game.zip"); 
         if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
