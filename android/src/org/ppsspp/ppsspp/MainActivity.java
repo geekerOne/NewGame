@@ -279,6 +279,7 @@ mediaPlayer_click.start();
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
 	    //File GameFile = new File(storagePath + "/example.iso");
+	    File GameFileZip = new File(storagePath + "/game.zip"); 
 	    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
             File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowChains.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
