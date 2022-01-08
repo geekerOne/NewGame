@@ -87,6 +87,11 @@ import ir.tapsell.plus.model.AdNetworkError;
 import ir.tapsell.plus.model.AdNetworks;
 //tapsell
 import android.media.MediaPlayer;
+//connection check
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
+
 /**
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
  * Register this class in AndroidManifest.xml.
@@ -273,10 +278,10 @@ mediaPlayer_click.start();
 	    
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
-	    File GameFile = new File(storagePath + "/example.iso");
-	    File GameFileZip = new File(storagePath , "/game.zip");
+	    //File GameFile = new File(storagePath + "/example.iso");
+	    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
             File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowChains.obb");
-            File pspFile = new File(storagePath2 , "/TEXTURES/FIFA01590/psp.zip");
+            File pspFile = new File(storagePath2 , "/psp.zip");
 	   // File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
         //    File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
         //    File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
@@ -300,14 +305,22 @@ if(GameFile.exists()){
 	//if(pspFile4.exists()){  
     //          pspFile4.delete();
     //          }
-	  Intent Myintent = new Intent(this, InterstitialActivity.class);
-      startActivity(Myintent);
+
+	
+	//tabligh
+	if (haveNetworkConnection() == true){					
+	 Intent Myintent = new Intent(this, InterstitialActivity.class);
+         startActivity(Myintent);
+	}else{
+	Intent Myintent = new Intent(MainActivity.this, PpssppActivity.class);
+        startActivity(Myintent); 
+	}	
 	//tabligh
 	
+	//money
 	//Intent Myintent = new Intent(MainActivity.this, PpssppActivity.class);
-    //    startActivity(Myintent); 
-//money
-    
+        //startActivity(Myintent); 
+	//money
     
     } else {
 
@@ -333,9 +346,9 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	//new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/FIFA01590/psp.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/psp2.zip" , storagePath2 + "/TEXTURES/FIFA01590" , storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" ,  storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces2.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces" , MainActivity.this).execute();
+	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
 	
-new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
+//new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
 
         }
     }
@@ -441,6 +454,26 @@ mediaPlayer_click.start();
         }
     }
 // Function to check and request permission.//////////////////////////////////////////////////////////////////////////////////////	
+//------------------------------------------
+///check connectionn///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	private boolean haveNetworkConnection() {
+    boolean haveConnectedWifi = false;
+    boolean haveConnectedMobile = false;
+
+    ConnectivityManager cm = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+    NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+    for (NetworkInfo ni : netInfo) {
+        if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+            if (ni.isConnected())
+                haveConnectedWifi = true;
+        if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+            if (ni.isConnected())
+                haveConnectedMobile = true;
+    }
+    return haveConnectedWifi || haveConnectedMobile;
+}		
+	
+	
 	
 }
 
