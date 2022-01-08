@@ -133,12 +133,12 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
                         storagePath = ctx.getFilesDir().getAbsolutePath();
         
         
-                            //  File directory = new File(storagePath+File.separator+"PSP_GAME");
-                            //  directory.mkdirs();
+                              File directory = new File(storagePath+File.separator+"PSP_GAME");
+                              directory.mkdirs();
         
     //with unzip after    
        in = expansionFile.getInputStream("main/game.zip");
-       out = new FileOutputStream(storagePath + "/game.zip");
+       out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
         //without unzip after    
   //  in = expansionFile.getInputStream("main/example.iso");
   //      out = new FileOutputStream(storagePath + "/example.iso");    
