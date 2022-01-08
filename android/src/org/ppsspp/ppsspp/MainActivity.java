@@ -279,7 +279,7 @@ mediaPlayer_click.start();
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
 	    //File GameFile = new File(storagePath + "/example.iso");
-	    File GameFileZip = new File(storagePath + "/game.zip"); 
+	    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
 	    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
             File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.gowChains.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
@@ -347,7 +347,7 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
+	new Decompress(storagePath + "/PSP_GAME/game.zip", storagePath + "/PSP_GAME" , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
 	
 //new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
 
