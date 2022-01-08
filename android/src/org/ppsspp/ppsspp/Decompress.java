@@ -52,7 +52,9 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 //new2
 import android.media.MediaPlayer;
-
+//connection check
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 public class Decompress extends AsyncTask<Void, Integer, Void> {
 
@@ -71,12 +73,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     Context ctx;
     MediaPlayer mediaPlayer_menu;
     //public Decompress(String zipFile, String location, String zipFile2, String location2, String zipFile3, String location3, String zipFile4, String location4,String zipFile5, String location5, Context ctx) {
-public Decompress(String zipFile, String location, Context ctx, MediaPlayer mediaPlayer_menu) {
+public Decompress(String zipFile, String location, String zipFile2, String location2,Context ctx, MediaPlayer mediaPlayer_menu) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
-       // this.zipFile2 = zipFile2;     
-       // this.location2 = location2;
+        this.zipFile2 = zipFile2;     
+        this.location2 = location2;
        // this.zipFile3 = zipFile3;     
        // this.location3 = location3;
        // this.zipFile4 = zipFile4;     
@@ -103,16 +105,16 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
     protected Void doInBackground(Void... params){
         int count = 0;
                 int toshow_copy = 0;
-        //int toshow_copy2 = 0;
+        int toshow_copy2 = 0;
         //int toshow_copy3 = 0;
         //int toshow_copy4 = 0;
         //int toshow_copy5 = 0;
         int toshow_unzip = 0;
-        //int toshow_unzip2 = 0;
+        int toshow_unzip2 = 0;
         //int toshow_unzip3 = 0;
         //int toshow_unzip4 = 0;
         //int toshow_unzip5 = 0;
-   //   try  {
+      try  {
     //commenet abov try if you want to just copy and not unzip and comment unzip one        
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
     InputStream in = null;
@@ -120,7 +122,7 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
     try {
     //AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
+    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
     
         
         
@@ -135,22 +137,22 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
                             //  directory.mkdirs();
         
     //with unzip after    
- //   in = expansionFile.getInputStream("main/game.zip");
- //       out = new FileOutputStream(storagePath + "/game.zip");
+       in = expansionFile.getInputStream("main/game.zip");
+       out = new FileOutputStream(storagePath + "/game.zip");
         //without unzip after    
-    in = expansionFile.getInputStream("main/example.iso");
-        out = new FileOutputStream(storagePath + "/example.iso");    
+  //  in = expansionFile.getInputStream("main/example.iso");
+  //      out = new FileOutputStream(storagePath + "/example.iso");    
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 950534208;
+        double thegameIsofileSize_copy = 580534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
         while (read > 0) {
     tilNowSize_copy += Double.valueOf(read);
-    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 80) {
-        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 80;
+    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 20) {
+        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 20;
         toshow_copy = (int)thePerc_copy;  
     publishProgress(toshow_copy);
         }       
@@ -174,7 +176,7 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
     }       
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////                      
 ////////unzip one///////////////////////////////////////////////////////////////////////////////////////////////////            
-          /*  
+          
             ZipFile zip = new ZipFile(zipFile);
             FileInputStream fin = new FileInputStream(zipFile);       
             ZipInputStream zin = new ZipInputStream(fin);
@@ -182,7 +184,7 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
             
             
                     double thePerc_unzip = 0;
-                    double thegameIsofileSize_unzip = 950534208;
+                    double thegameIsofileSize_unzip = 650534208;
                     //int toshow_unzip = 0;
                     double tilNowSize_unzip = 0;
             
@@ -198,8 +200,8 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
                     int len;
                     while ((len = zin.read(buffer)) != -1) {
                     tilNowSize_unzip += Double.valueOf(len);
-                          if(thePerc_unzip != (tilNowSize_unzip / thegameIsofileSize_unzip) * 40) {
-                                         thePerc_unzip = (tilNowSize_unzip / thegameIsofileSize_unzip) * 40;
+                          if(thePerc_unzip != (tilNowSize_unzip / thegameIsofileSize_unzip) * 20) {
+                                         thePerc_unzip = (tilNowSize_unzip / thegameIsofileSize_unzip) * 20;
                                          toshow_unzip = (int)thePerc_unzip;
                      toshow_unzip += toshow_copy;  
                              publishProgress(toshow_unzip);
@@ -219,17 +221,17 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
                     } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-    */
+    
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
-   // try{
+    try{
 ////////copy two//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
-    /*
+    
     InputStream in_copy2 = null;
     OutputStream out_copy2 = null;
     try {
                     String storagePath_copy2  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -237,23 +239,23 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
         directory.mkdirs();
                         storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
         in_copy2 = expansionFile.getInputStream("main/psp.zip");
-        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/TEXTURES/FIFA01590/psp.zip");            
+        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");            
         byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
     double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 40534208;
+        double thegameIsofileSize_copy2 = 490534208;
     //int toshow_copy = 0;
     double tilNowSize_copy2 = 0;  
     read_copy2 = in_copy2.read(buffer_copy2);    
         while (read_copy2 > 0) {
     tilNowSize_copy2 += Double.valueOf(read_copy2);
-    if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 10) {
-        thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 10;
+    if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 20) {
+        thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 20;
         toshow_copy2 = (int)thePerc_copy2;  
         //if have unzip
-    //toshow_copy2 += toshow_unzip; 
+    toshow_copy2 += toshow_unzip; 
     //if have'nt unzip
-    toshow_copy2 += toshow_copy;    
+    //toshow_copy2 += toshow_copy;    
     publishProgress(toshow_copy2);
         }       
             out_copy2.write(buffer_copy2, 0, read_copy2);
@@ -274,10 +276,10 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }       
-    */
+    
 ////////copy two//////////////////////////////////////////////////////////////////////////////////////////////              
 ////////unzip two///////////////////////////////////////////////////////////////////////////////////////////////////            
-    /*  
+      
         ZipFile zip2 = new ZipFile(zipFile2);
             FileInputStream fin2 = new FileInputStream(zipFile2);       
             ZipInputStream zin2 = new ZipInputStream(fin2);
@@ -285,7 +287,7 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
         
         
                             double thePerc_unzip2 = 0;
-                    double thegameIsofileSize_unzip2 = 40534208;
+                    double thegameIsofileSize_unzip2 = 500534208;
                     double tilNowSize_unzip2 = 0;
         
             while ((ze2 = zin2.getNextEntry()) != null) {
@@ -296,12 +298,12 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
                 } else {      
                     FileOutputStream fout2 = new FileOutputStream(location2 +File.separator+ ze2.getName());
                     
-                    byte[] buffer2 = new byte[2048];
+                    byte[] buffer2 = new byte[2048 * 9];
                     int len2;
                     while ((len2 = zin2.read(buffer2)) != -1) {
                     tilNowSize_unzip2 += Double.valueOf(len2);
-                          if(thePerc_unzip2 != (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 10) {
-                                         thePerc_unzip2 = (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 10;
+                          if(thePerc_unzip2 != (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 20) {
+                                         thePerc_unzip2 = (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 20;
                                          toshow_unzip2 = (int)thePerc_unzip2;   
                      toshow_unzip2 += toshow_copy2;  
                              publishProgress(toshow_unzip2);
@@ -321,7 +323,7 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
         } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-        */
+        
 ////////unzip two////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
   //  try{
@@ -797,14 +799,14 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
         if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.SandSprogrammingGroup.pes2021.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.SandSprogrammingGroup.gowChains.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
-        //File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP/TEXTURES/FIFA01590"  , "/psp.zip");    
-       // if(pspFileZip.exists()){  
-         //       pspFileZip.delete();
-         //       }   
+        File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP"  , "/psp.zip");    
+        if(pspFileZip.exists()){  
+                pspFileZip.delete();
+                }   
        // File pspFileZip2 = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP/TEXTURES/FIFA01590"  , "/psp2.zip");  
        // if(pspFileZip2.exists()){  
        //         pspFileZip2.delete();
@@ -822,14 +824,19 @@ public Decompress(String zipFile, String location, Context ctx, MediaPlayer medi
             mediaPlayer_menu.pause();
             
 //for tabligh
-    Intent Myintent = new Intent(ctx, InterstitialActivity.class);
+	if (haveNetworkConnection() == true){					
+	Intent Myintent = new Intent(ctx, InterstitialActivity.class);
         ctx.startActivity(Myintent);
-//for tabligh
-    
-        //for money
-      // Intent Myintent = new Intent(ctx, PpssppActivity.class);
-      // ctx.startActivity(Myintent);
-        //for money 
+	}else{
+	Intent Myintent = new Intent(ctx, PpssppActivity.class);
+        ctx.startActivity(Myintent); 			
+	}	
+//for tabligh activity			
+	
+//for money
+	//Intent Myintent = new Intent(ctx, PpssppActivity.class);
+        //ctx.startActivity(Myintent); 		
+//for money
             
 //restarting the game preventing force close            
 //ProcessPhoenix.triggerRebirth(ctx);           
