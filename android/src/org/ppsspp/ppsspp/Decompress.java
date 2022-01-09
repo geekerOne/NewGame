@@ -122,7 +122,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
     try {
     //AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
     
         
         
@@ -231,7 +231,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
     OutputStream out_copy2 = null;
     try {
                     String storagePath_copy2  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
 //normal use                            
   File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -799,7 +799,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.SandSprogrammingGroup.gowChains.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.211030000.com.SandSprogrammingGroup.gowChains.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
