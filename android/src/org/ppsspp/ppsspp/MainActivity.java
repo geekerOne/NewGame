@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
 	        mediaPlayer_click = MediaPlayer.create(MainActivity.this, R.raw.click);
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "gdhdcjmeonsolnrimlkjmbdpkpachdldtlmnqpqjmsikrhthebmcqdfdjtkfobgcharrds",
+            TapsellPlus.initialize(MainActivity.this, "fisscrqhhfplkjdfmskflcenbrhbgmieaepcrafcthbnafecdncnlntdtmkdeqrpqdglqp",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -278,14 +278,14 @@ mediaPlayer_click.start();
 	    
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
-	    //File GameFile = new File(storagePath + "/example.iso");
+	    File GameFile = new File(storagePath + "/example.iso");
 	    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
-	    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
-            File obbFile = new File(this.getObbDir() , "/main.211030000.com.SandSprogrammingGroup.gowChains.obb");
-            File pspFile = new File(storagePath2 , "/psp.zip");
-	   // File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
-        //    File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
-        //    File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
+	 //   File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
+            File obbFile = new File(this.getObbDir() , "/main.211030000.com.draco.ludere.JeyRideJETPACK.obb");
+            File pspFile = new File(storagePath2 , "/TEXTURES/FIFA01590/psp.zip");
+	    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
+            File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
+            File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
 
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
@@ -294,18 +294,18 @@ if(GameFile.exists()){
         if(obbFile.exists()){  
               obbFile.delete();
               }
-	//if(pspFile.exists()){  
-    //          pspFile.delete();
-    //          }
-	//if(pspFile2.exists()){  
-    //          pspFile2.delete();
-    //          }
-    //    if(pspFile3.exists()){  
-    //          pspFile3.delete();
-    //          }
-	//if(pspFile4.exists()){  
-    //          pspFile4.delete();
-    //          }
+	if(pspFile.exists()){  
+              pspFile.delete();
+              }
+	if(pspFile2.exists()){  
+              pspFile2.delete();
+              }
+        if(pspFile3.exists()){  
+              pspFile3.delete();
+              }
+	if(pspFile4.exists()){  
+              pspFile4.delete();
+              }
 
 	
 	//tabligh
@@ -347,7 +347,12 @@ if(GameFile.exists()){
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
        
-	new Decompress(storagePath + "/PSP_GAME/game.zip", storagePath + "/PSP_GAME" , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
+	new Decompress(storagePath + "/PSP_GAME/game.zip", storagePath + "/PSP_GAME" ,
+		       storagePath2 + "/TEXTURES/FIFA01590/psp.zip" , storagePath2 + "/TEXTURES/FIFA01590/",
+		       storagePath2 + "/TEXTURES/FIFA01590/psp2.zip" , storagePath2 + "/TEXTURES/FIFA01590/",
+		       storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces/",
+		       storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces2.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces2/",
+		       MainActivity.this , mediaPlayer_menu).execute();
 	
 //new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
 
@@ -359,7 +364,7 @@ if(GameFile.exists()){
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.draco.ludere.JeyRideJETPACK")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -381,7 +386,7 @@ public void goToPage(View v) {
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.draco.ludere.JeyRideJETPACK")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
