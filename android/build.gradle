@@ -55,7 +55,7 @@ android {
 	compileSdkVersion 29
 	buildToolsVersion '29.0.3'
 	defaultConfig {
-		applicationId 'com.draco.ludere.JeyRideJETPACK'
+		applicationId 'com.draco.ludere.TEKKEN5'
 		minSdkVersion 23
 		targetSdkVersion 29
 
@@ -109,7 +109,7 @@ android {
 	}
 	productFlavors {
 		normal {
-			applicationId 'com.draco.ludere.JeyRideJETPACK'
+			applicationId 'com.draco.ludere.TEKKEN5'
 			dimension "variant"
 			externalNativeBuild {
 				cmake {
@@ -124,7 +124,7 @@ android {
 			}
 		}
 		gold {
-			applicationId 'com.draco.ludere.JeyRideJETPACK'
+			applicationId 'com.draco.ludere.TEKKEN5'
 			dimension "variant"
 			externalNativeBuild {
 				cmake {
