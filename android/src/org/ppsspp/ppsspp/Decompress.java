@@ -146,14 +146,14 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 750534208;
+        double thegameIsofileSize_copy = 1350534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
         while (read > 0) {
     tilNowSize_copy += Double.valueOf(read);
-    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 80) {
-        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 80;
+    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 10) {
+        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 10;
         toshow_copy = (int)thePerc_copy;  
     publishProgress(toshow_copy);
         }       
@@ -225,9 +225,9 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
  */   
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
-  //  try{
+    try{
 ////////copy two//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
-  /*  
+    
     InputStream in_copy2 = null;
     OutputStream out_copy2 = null;
     try {
@@ -281,10 +281,10 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }       
-    */
+    
 ////////copy two//////////////////////////////////////////////////////////////////////////////////////////////              
 ////////unzip two///////////////////////////////////////////////////////////////////////////////////////////////////            
-      /*
+      
         ZipFile zip2 = new ZipFile(zipFile2);
             FileInputStream fin2 = new FileInputStream(zipFile2);       
             ZipInputStream zin2 = new ZipInputStream(fin2);
@@ -328,12 +328,12 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-        */
+        
 ////////unzip two////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
-    //try{
+    try{
 ////////copy three//////////////////////////////////////////////////////////////////////////////////////////////    Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip3 after unziping for deleting file  
-   /*
+   
     InputStream in_copy3 = null;
     OutputStream out_copy3 = null;
     try {
@@ -383,10 +383,10 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }       
-    */
+    
 ////////copy three//////////////////////////////////////////////////////////////////////////////////////////////                
 ////////unzip three///////////////////////////////////////////////////////////////////////////////////////////////////          
-     /*
+     
         ZipFile zip3 = new ZipFile(zipFile3);
             FileInputStream fin3 = new FileInputStream(zipFile3);       
             ZipInputStream zin3 = new ZipInputStream(fin3);
@@ -430,12 +430,12 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-       */ 
+        
 ////////unzip three////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
 
-    //try{
+    try{
 ////////copy four////////////////////////////////////////////////////////////////////////////////////////////// Environment.getExternalStorageDirectory() copy and unzip 4 and check for zip4 after unziping for deleting file  
-   /*
+   
     InputStream in_copy4 = null;
     OutputStream out_copy4 = null;
     try {
@@ -485,10 +485,10 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }       
-    */
+    
 ////////copy four//////////////////////////////////////////////////////////////////////////////////////////////             
 ////////unzip four///////////////////////////////////////////////////////////////////////////////////////////////////           
-      /*
+      
         ZipFile zip4 = new ZipFile(zipFile4);
             FileInputStream fin4 = new FileInputStream(zipFile4);       
             ZipInputStream zin4 = new ZipInputStream(fin4);
@@ -532,12 +532,12 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-        */
+        
 ////////unzip four////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
         
-    //try{
+    try{
 ////////copy five////////////////////////////////////////////////////////////////////////////////////////////// Environment.getExternalStorageDirectory() copy and unzip 4 and check for zip5 after unziping for deleting file  
-   /*
+   
     InputStream in_copy5 = null;
     OutputStream out_copy5 = null;
     try {
@@ -587,10 +587,10 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }       
-    */
+    
 ////////copy five//////////////////////////////////////////////////////////////////////////////////////////////             
 ////////unzip five///////////////////////////////////////////////////////////////////////////////////////////////////           
-      /*  
+       
         ZipFile zip5 = new ZipFile(zipFile5);
             FileInputStream fin5 = new FileInputStream(zipFile5);       
             ZipInputStream zin5 = new ZipInputStream(fin5);
@@ -634,7 +634,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-    */
+    
 ////////unzip five////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
         
 //just for folder games		
@@ -806,7 +806,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.draco.ludere.TEKKEN5.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.draco.ludere.JeyRideJETPACK.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
