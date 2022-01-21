@@ -72,20 +72,20 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     ProgressDialog myProgressDialog;
     Context ctx;
     MediaPlayer mediaPlayer_menu;
-//    public Decompress(String zipFile, String location, String zipFile2, String location2, String zipFile3, String location3, String zipFile4, String location4,String zipFile5, String location5, Context ctx, MediaPlayer mediaPlayer_menu) {
+    public Decompress(String zipFile, String location, String zipFile2, String location2, String zipFile3, String location3, String zipFile4, String location4,String zipFile5, String location5, Context ctx, MediaPlayer mediaPlayer_menu) {
 //public Decompress(String zipFile, String location, String zipFile2, String location2,Context ctx, MediaPlayer mediaPlayer_menu) {
-public Decompress(String zipFile, String location,Context ctx, MediaPlayer mediaPlayer_menu) {
+//public Decompress(String zipFile, String location,Context ctx, MediaPlayer mediaPlayer_menu) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
-       // this.zipFile2 = zipFile2;     
-       // this.location2 = location2;
-       // this.zipFile3 = zipFile3;     
-       // this.location3 = location3;
-       // this.zipFile4 = zipFile4;     
-       // this.location4 = location4;
-       // this.zipFile5 = zipFile5;     
-       // this.location5 = location5;
+        this.zipFile2 = zipFile2;     
+        this.location2 = location2;
+        this.zipFile3 = zipFile3;     
+        this.location3 = location3;
+        this.zipFile4 = zipFile4;     
+        this.location4 = location4;
+        this.zipFile5 = zipFile5;     
+        this.location5 = location5;
         this.ctx = ctx;
         this.mediaPlayer_menu = mediaPlayer_menu;
         dirChecker("","");   
