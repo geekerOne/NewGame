@@ -356,7 +356,7 @@ if(GameFile.exists()){
 */	
 //new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
 
-	new Decompress(storagePath + "/PSP_GAME/game.zip", storagePath + "/PSP_GAME" , storagePath2 + "psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
+	new Decompress(storagePath + "/PSP_GAME/game.zip", storagePath + "/PSP_GAME" , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
 
         }
     }
