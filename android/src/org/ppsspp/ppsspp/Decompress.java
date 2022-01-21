@@ -123,7 +123,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
     try {
     //AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
     
         
         
@@ -232,7 +232,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
     OutputStream out_copy2 = null;
     try {
                     String storagePath_copy2  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -338,7 +338,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
     OutputStream out_copy3 = null;
     try {
                     String storagePath_copy3  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -440,7 +440,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
     OutputStream out_copy4 = null;
     try {
                     String storagePath_copy4  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -542,7 +542,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
     OutputStream out_copy5 = null;
     try {
                     String storagePath_copy5  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 211030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 //normal use                            
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
@@ -806,7 +806,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.211030000.com.draco.ludere.TEKKEN5.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.draco.ludere.TEKKEN5.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
