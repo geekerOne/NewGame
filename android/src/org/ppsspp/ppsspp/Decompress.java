@@ -72,20 +72,20 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     ProgressDialog myProgressDialog;
     Context ctx;
     MediaPlayer mediaPlayer_menu;
-    public Decompress(String zipFile, String location, String zipFile2, String location2, String zipFile3, String location3, String zipFile4, String location4,String zipFile5, String location5, Context ctx, MediaPlayer mediaPlayer_menu) {
-//public Decompress(String zipFile, String location, String zipFile2, String location2,Context ctx, MediaPlayer mediaPlayer_menu) {
+//    public Decompress(String zipFile, String location, String zipFile2, String location2, String zipFile3, String location3, String zipFile4, String location4,String zipFile5, String location5, Context ctx, MediaPlayer mediaPlayer_menu) {
+public Decompress(String zipFile, String location, String zipFile2, String location2,Context ctx, MediaPlayer mediaPlayer_menu) {
 //public Decompress(String zipFile, String location,Context ctx, MediaPlayer mediaPlayer_menu) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
         this.zipFile2 = zipFile2;     
         this.location2 = location2;
-        this.zipFile3 = zipFile3;     
-        this.location3 = location3;
-        this.zipFile4 = zipFile4;     
-        this.location4 = location4;
-        this.zipFile5 = zipFile5;     
-        this.location5 = location5;
+  //      this.zipFile3 = zipFile3;     
+  //      this.location3 = location3;
+  //     this.zipFile4 = zipFile4;     
+  //      this.location4 = location4;
+  //      this.zipFile5 = zipFile5;     
+  //      this.location5 = location5;
         this.ctx = ctx;
         this.mediaPlayer_menu = mediaPlayer_menu;
         dirChecker("","");   
@@ -115,7 +115,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         int toshow_unzip3 = 0;
         int toshow_unzip4 = 0;
         int toshow_unzip5 = 0;
-      //try  {
+      try  {
     //commenet abov try if you want to just copy and not unzip and comment unzip one        
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
     InputStream in = null;
@@ -134,26 +134,26 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                         storagePath = ctx.getFilesDir().getAbsolutePath();
         
         
-       //                       File directory = new File(storagePath+File.separator+"PSP_GAME");
-       //                       directory.mkdirs();
+                              File directory = new File(storagePath+File.separator+"PSP_GAME");
+                              directory.mkdirs();
         
     //with unzip after    
-    //   in = expansionFile.getInputStream("main/game.zip");
-    //   out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
+       in = expansionFile.getInputStream("main/game.zip");
+       out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
         //without unzip after    
-    in = expansionFile.getInputStream("main/example.iso");
-        out = new FileOutputStream(storagePath + "/example.iso");    
+    //in = expansionFile.getInputStream("main/example.iso");
+    //    out = new FileOutputStream(storagePath + "/example.iso");    
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 1350534208;
+        double thegameIsofileSize_copy = 600534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
         while (read > 0) {
     tilNowSize_copy += Double.valueOf(read);
-    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 10) {
-        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 10;
+    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 20) {
+        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 20;
         toshow_copy = (int)thePerc_copy;  
     publishProgress(toshow_copy);
         }       
@@ -177,7 +177,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     }       
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////                      
 ////////unzip one///////////////////////////////////////////////////////////////////////////////////////////////////            
-/*          
+  
             ZipFile zip = new ZipFile(zipFile);
             FileInputStream fin = new FileInputStream(zipFile);       
             ZipInputStream zin = new ZipInputStream(fin);
@@ -185,7 +185,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
             
             
                     double thePerc_unzip = 0;
-                    double thegameIsofileSize_unzip = 650534208;
+                    double thegameIsofileSize_unzip = 600534208;
                     //int toshow_unzip = 0;
                     double tilNowSize_unzip = 0;
             
@@ -222,7 +222,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                     } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
- */   
+    
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
     try{
@@ -234,34 +234,34 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                     String storagePath_copy2  = "";
         ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
 //normal use                            
-//  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
+  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
-  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+"FIFA01590");   
+//  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+"FIFA01590");   
         directory.mkdirs();
                         storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
         in_copy2 = expansionFile.getInputStream("main/psp.zip");
         //normall use
-	    //out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");            
+	    out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");            
        //specific use
-        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/TEXTURES/FIFA01590/psp.zip");
+        //out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/TEXTURES/FIFA01590/psp.zip");
 	    
 	    byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
     double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 40534208;
+        double thegameIsofileSize_copy2 = 540534208;
     //int toshow_copy = 0;
     double tilNowSize_copy2 = 0;  
     read_copy2 = in_copy2.read(buffer_copy2);    
         while (read_copy2 > 0) {
     tilNowSize_copy2 += Double.valueOf(read_copy2);
-    if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 10) {
-        thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 10;
+    if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 20) {
+        thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 20;
         toshow_copy2 = (int)thePerc_copy2;  
         //if have unzip
-    //toshow_copy2 += toshow_unzip; 
+    toshow_copy2 += toshow_unzip; 
     //if have'nt unzip
-    toshow_copy2 += toshow_copy;    
-    publishProgress(toshow_copy2);
+    //toshow_copy2 += toshow_copy;    
+    //publishProgress(toshow_copy2);
         }       
             out_copy2.write(buffer_copy2, 0, read_copy2);
         read_copy2 = in_copy2.read(buffer_copy2);    
@@ -292,7 +292,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         
         
                             double thePerc_unzip2 = 0;
-                    double thegameIsofileSize_unzip2 = 40534208;
+                    double thegameIsofileSize_unzip2 = 540534208;
                     double tilNowSize_unzip2 = 0;
         
             while ((ze2 = zin2.getNextEntry()) != null) {
@@ -307,8 +307,8 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
                     int len2;
                     while ((len2 = zin2.read(buffer2)) != -1) {
                     tilNowSize_unzip2 += Double.valueOf(len2);
-                          if(thePerc_unzip2 != (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 10) {
-                                         thePerc_unzip2 = (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 10;
+                          if(thePerc_unzip2 != (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 20) {
+                                         thePerc_unzip2 = (tilNowSize_unzip2 / thegameIsofileSize_unzip2) * 20;
                                          toshow_unzip2 = (int)thePerc_unzip2;   
                      toshow_unzip2 += toshow_copy2;  
                              publishProgress(toshow_unzip2);
@@ -331,9 +331,9 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         
 ////////unzip two////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
-    try{
+    //try{
 ////////copy three//////////////////////////////////////////////////////////////////////////////////////////////    Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip3 after unziping for deleting file  
-   
+/*   
     InputStream in_copy3 = null;
     OutputStream out_copy3 = null;
     try {
@@ -383,10 +383,10 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }       
-    
+*/    
 ////////copy three//////////////////////////////////////////////////////////////////////////////////////////////                
 ////////unzip three///////////////////////////////////////////////////////////////////////////////////////////////////          
-     
+  /*   
         ZipFile zip3 = new ZipFile(zipFile3);
             FileInputStream fin3 = new FileInputStream(zipFile3);       
             ZipInputStream zin3 = new ZipInputStream(fin3);
@@ -430,12 +430,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-        
+    */    
 ////////unzip three////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////     
 
-    try{
+    //try{
 ////////copy four////////////////////////////////////////////////////////////////////////////////////////////// Environment.getExternalStorageDirectory() copy and unzip 4 and check for zip4 after unziping for deleting file  
-   
+   /*
     InputStream in_copy4 = null;
     OutputStream out_copy4 = null;
     try {
@@ -485,10 +485,10 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }       
-    
+    */
 ////////copy four//////////////////////////////////////////////////////////////////////////////////////////////             
 ////////unzip four///////////////////////////////////////////////////////////////////////////////////////////////////           
-      
+      /*
         ZipFile zip4 = new ZipFile(zipFile4);
             FileInputStream fin4 = new FileInputStream(zipFile4);       
             ZipInputStream zin4 = new ZipInputStream(fin4);
@@ -532,12 +532,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-        
+        */
 ////////unzip four////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
         
-    try{
+    //try{
 ////////copy five////////////////////////////////////////////////////////////////////////////////////////////// Environment.getExternalStorageDirectory() copy and unzip 4 and check for zip5 after unziping for deleting file  
-   
+   /*
     InputStream in_copy5 = null;
     OutputStream out_copy5 = null;
     try {
@@ -587,10 +587,10 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }       
-    
+    */
 ////////copy five//////////////////////////////////////////////////////////////////////////////////////////////             
 ////////unzip five///////////////////////////////////////////////////////////////////////////////////////////////////           
-       
+      /* 
         ZipFile zip5 = new ZipFile(zipFile5);
             FileInputStream fin5 = new FileInputStream(zipFile5);       
             ZipInputStream zin5 = new ZipInputStream(fin5);
@@ -634,12 +634,12 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-    
+    */
 ////////unzip five////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
         
 //just for folder games		
 ////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	
-    /*
+    
     InputStream in_bin = null;
     OutputStream out_bin = null;
     try {
@@ -673,7 +673,7 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }
-    */
+    
 ////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	
 
 ////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
@@ -806,11 +806,11 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
         if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.draco.ludere.JeyRideJETPACK.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.SandSprogrammingGroup.gowChains.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
-        File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP/TEXTURES/FIFA01590"  , "/psp.zip");    
+        File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP"  , "/psp.zip");    
         if(pspFileZip.exists()){  
                 pspFileZip.delete();
                 }   
