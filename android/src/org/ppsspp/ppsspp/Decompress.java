@@ -256,12 +256,15 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
     tilNowSize_copy2 += Double.valueOf(read_copy2);
     if(thePerc_copy2 != (tilNowSize_copy2 / thegameIsofileSize_copy2) * 20) {
         thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * 20;
-        toshow_copy2 = (int)thePerc_copy2;  
+        toshow_copy2 = (int)thePerc_copy2;
+	    
         //if have unzip
     toshow_copy2 += toshow_unzip; 
     //if have'nt unzip
     //toshow_copy2 += toshow_copy;    
-    //publishProgress(toshow_copy2);
+	    
+	    
+    publishProgress(toshow_copy2);
         }       
             out_copy2.write(buffer_copy2, 0, read_copy2);
         read_copy2 = in_copy2.read(buffer_copy2);    
