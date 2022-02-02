@@ -146,7 +146,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 600534208;
+        double thegameIsofileSize_copy = 400534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
@@ -185,7 +185,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
             
             
                     double thePerc_unzip = 0;
-                    double thegameIsofileSize_unzip = 600534208;
+                    double thegameIsofileSize_unzip = 550534208;
                     //int toshow_unzip = 0;
                     double tilNowSize_unzip = 0;
             
@@ -248,7 +248,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
 	    byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
     double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 540534208;
+        double thegameIsofileSize_copy2 = 760534208;
     //int toshow_copy = 0;
     double tilNowSize_copy2 = 0;  
     read_copy2 = in_copy2.read(buffer_copy2);    
@@ -295,7 +295,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         
         
                             double thePerc_unzip2 = 0;
-                    double thegameIsofileSize_unzip2 = 540534208;
+                    double thegameIsofileSize_unzip2 = 800534208;
                     double tilNowSize_unzip2 = 0;
         
             while ((ze2 = zin2.getNextEntry()) != null) {
@@ -642,7 +642,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         
 //just for folder games		
 ////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	
-    
+/*    
     InputStream in_bin = null;
     OutputStream out_bin = null;
     try {
@@ -676,7 +676,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }
-    
+*/    
 ////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	
 
 ////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
@@ -809,7 +809,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.SandSprogrammingGroup.gowChains.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.SandSprogrammingGroup.Tekken7.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
