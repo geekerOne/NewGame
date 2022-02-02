@@ -278,9 +278,10 @@ mediaPlayer_click.start();
 	    
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
-	//    File GameFile = new File(storagePath + "/example.iso");
-	    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
-	    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
+	    File GameFile = new File(storagePath + "/example.iso");
+	    File GameFileZip = new File(storagePath + "/game.zip"); 
+	//    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
+	//    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
             File obbFile = new File(this.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.Tekken7.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
 	    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
@@ -356,7 +357,7 @@ if(GameFile.exists()){
 */	
 //new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
 
-	new Decompress(storagePath + "/PSP_GAME/game.zip", storagePath + "/PSP_GAME" , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
+	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
 
         }
     }
