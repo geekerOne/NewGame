@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
 	        mediaPlayer_click = MediaPlayer.create(MainActivity.this, R.raw.click);
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "gdhdcjmeonsolnrimlkjmbdpkpachdldtlmnqpqjmsikrhthebmcqdfdjtkfobgcharrds",
+            TapsellPlus.initialize(MainActivity.this, "ditrekhikdqnljjolfordhbcbqiegglspmmcoeqgmkmqrmmieebdkprnkcofdhthoddekg",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -281,7 +281,7 @@ mediaPlayer_click.start();
 	//    File GameFile = new File(storagePath + "/example.iso");
 	    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
 	    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
-            File obbFile = new File(this.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.gowChains.obb");
+            File obbFile = new File(this.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.Tekken7.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
 	    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
             File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
@@ -366,7 +366,7 @@ if(GameFile.exists()){
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.Tekken7")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -379,7 +379,7 @@ String url = "mailto: 00sohrabiranpak00@gmail.com";
 Intent intent = new Intent();
 intent.setAction(Intent.ACTION_SENDTO);
 intent.setData(Uri.parse(url));
-intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی");    
+intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی تیکن 7");    
 startActivity(intent);
     }
 
@@ -388,7 +388,7 @@ public void goToPage(View v) {
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.gowChains")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.Tekken7")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
