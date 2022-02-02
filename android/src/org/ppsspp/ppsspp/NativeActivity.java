@@ -265,7 +265,7 @@ public abstract class NativeActivity extends Activity {
 			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
-		this.shortcutParam = storagePath ; //+ "/example.iso";
+		this.shortcutParam = storagePath + "/example.iso";
 	}
 
 	// Unofficial hacks to get a list of SD cards that are not the main "external storage".
@@ -469,8 +469,8 @@ public abstract class NativeActivity extends Activity {
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
 		
-		String shortcut = overrideShortcutParam = storagePath ; // + "/example.iso";
-		overrideShortcutParam = storagePath ; // + "/example.iso";
+		String shortcut = overrideShortcutParam = storagePath + "/example.iso";
+		overrideShortcutParam = storagePath + "/example.iso";
 
 		NativeApp.audioConfig(optimalFramesPerBuffer, optimalSampleRate);
 		NativeApp.init(model, deviceType, languageRegion, apkFilePath, dataDir, extStorageDir, externalFilesDir, additionalStorageDirs, libraryDir, cacheDir, shortcut, Build.VERSION.SDK_INT, Build.BOARD);
