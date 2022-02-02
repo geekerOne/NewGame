@@ -139,7 +139,8 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         
     //with unzip after    
        in = expansionFile.getInputStream("main/game.zip");
-       out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
+       //out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
+       out = new FileOutputStream(storagePath + "/game.zip");
         //without unzip after    
     //in = expansionFile.getInputStream("main/example.iso");
     //    out = new FileOutputStream(storagePath + "/example.iso");    
@@ -805,8 +806,10 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         else
                         storagePath = ctx.getFilesDir().getAbsolutePath();
 
-        File GameFileZip = new File(storagePath+"/PSP_GAME" , "/game.zip"); 
-        if(GameFileZip.exists()){  
+        //File GameFileZip = new File(storagePath+"/PSP_GAME" , "/game.zip"); 
+        File GameFileZip = new File(storagePath , "/game.zip"); 
+        
+	if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
         File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.SandSprogrammingGroup.Tekken7.obb");
