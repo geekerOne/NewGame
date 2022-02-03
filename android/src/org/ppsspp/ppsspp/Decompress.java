@@ -246,7 +246,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
 	   // out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");            
        //specific use
         //out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/TEXTURES/FIFA01590/psp.zip");
-	    out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/TEXTURES/psp.zip");            
+	    out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");            
 	    
 	    byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
