@@ -138,12 +138,12 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
                               directory.mkdirs();
         
     //with unzip after    
-       in = expansionFile.getInputStream("main/game.zip");
+    //   in = expansionFile.getInputStream("main/game.zip");
        //out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
-       out = new FileOutputStream(storagePath + "/game.zip");
+    //   out = new FileOutputStream(storagePath + "/game.zip");
         //without unzip after    
-    //in = expansionFile.getInputStream("main/example.iso");
-    //    out = new FileOutputStream(storagePath + "/example.iso");    
+    in = expansionFile.getInputStream("main/example.iso");
+        out = new FileOutputStream(storagePath + "/example.iso");    
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
@@ -262,9 +262,9 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         toshow_copy2 = (int)thePerc_copy2;
 	    
         //if have unzip
-    toshow_copy2 += toshow_unzip; 
+    //toshow_copy2 += toshow_unzip; 
     //if have'nt unzip
-    //toshow_copy2 += toshow_copy;    
+    toshow_copy2 += toshow_copy;    
 	    
 	    
     publishProgress(toshow_copy2);
