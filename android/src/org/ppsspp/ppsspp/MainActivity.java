@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
 	        mediaPlayer_click = MediaPlayer.create(MainActivity.this, R.raw.click);
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "ditrekhikdqnljjolfordhbcbqiegglspmmcoeqgmkmqrmmieebdkprnkcofdhthoddekg",
+            TapsellPlus.initialize(MainActivity.this, "fttmotnknetggjahtrjbkotnbfjnbgiolbioelmnrtnenahjdlkapleoennmapmhrbjsfc",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -282,8 +282,8 @@ mediaPlayer_click.start();
 	    File GameFileZip = new File(storagePath + "/game.zip"); 
 	//    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
 	//    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
-            File obbFile = new File(this.getObbDir() , "/main.311030000.com.SandSprogrammingGroup.Tekken7.obb");
-            File pspFile = new File(storagePath2 , "/psp.zip");
+            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.NarutoStorm5.obb");
+            File pspFile = new File(storagePath2 , "/TEXTURES/psp.zip");
 	    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
             File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
             File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
@@ -357,7 +357,7 @@ if(GameFile.exists()){
 */	
 //new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
 
-	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
+	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/TEXTURES/psp.zip" , storagePath2 + "/TEXTURES" , MainActivity.this , mediaPlayer_menu).execute();
 
         }
     }
@@ -367,7 +367,7 @@ if(GameFile.exists()){
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.Tekken7")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.NarutoStorm5")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -380,7 +380,7 @@ String url = "mailto: 00sohrabiranpak00@gmail.com";
 Intent intent = new Intent();
 intent.setAction(Intent.ACTION_SENDTO);
 intent.setData(Uri.parse(url));
-intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی تیکن 7");    
+intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی ناروتو استورم 5");    
 startActivity(intent);
     }
 
@@ -389,7 +389,7 @@ public void goToPage(View v) {
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.Tekken7")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.NarutoStorm5")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
