@@ -115,7 +115,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         int toshow_unzip3 = 0;
         int toshow_unzip4 = 0;
         int toshow_unzip5 = 0;
-      try  {
+    //  try  {
     //commenet abov try if you want to just copy and not unzip and comment unzip one        
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
     InputStream in = null;
@@ -123,7 +123,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
     try {
     //AssetManager asM = ctx.getAssets();
         //in = asM.open("game.zip");
-    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
+    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
     
         
         
@@ -147,14 +147,14 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 400534208;
+        double thegameIsofileSize_copy = 620534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
         while (read > 0) {
     tilNowSize_copy += Double.valueOf(read);
-    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 20) {
-        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 20;
+    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 40) {
+        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 40;
         toshow_copy = (int)thePerc_copy;  
     publishProgress(toshow_copy);
         }       
@@ -178,7 +178,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
     }       
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////                      
 ////////unzip one///////////////////////////////////////////////////////////////////////////////////////////////////            
-  
+  /*
             ZipFile zip = new ZipFile(zipFile);
             FileInputStream fin = new FileInputStream(zipFile);       
             ZipInputStream zin = new ZipInputStream(fin);
@@ -223,7 +223,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
                     } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-    
+    */
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
     try{
@@ -233,23 +233,25 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
     OutputStream out_copy2 = null;
     try {
                     String storagePath_copy2  = "";
-        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 311030000, 0);
+        ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 111030000, 0);
 //normal use                            
-  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
+//  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
 //specific use            ->    "/TEXTURES/ULUS10112/psp.zip"             
 //  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+"FIFA01590");   
+  File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"TEXTURES");    
         directory.mkdirs();
                         storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
         in_copy2 = expansionFile.getInputStream("main/psp.zip");
         //normall use
-	    out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");            
+	   // out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");            
        //specific use
         //out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/TEXTURES/FIFA01590/psp.zip");
+	    out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/TEXTURES/psp.zip");            
 	    
 	    byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
     double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 760534208;
+        double thegameIsofileSize_copy2 = 30534208;
     //int toshow_copy = 0;
     double tilNowSize_copy2 = 0;  
     read_copy2 = in_copy2.read(buffer_copy2);    
@@ -296,7 +298,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         
         
                             double thePerc_unzip2 = 0;
-                    double thegameIsofileSize_unzip2 = 800534208;
+                    double thegameIsofileSize_unzip2 = 30534208;
                     double tilNowSize_unzip2 = 0;
         
             while ((ze2 = zin2.getNextEntry()) != null) {
@@ -812,11 +814,12 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
 	if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.311030000.com.SandSprogrammingGroup.Tekken7.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.SandSprogrammingGroup.NarutoStorm5.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
-        File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP"  , "/psp.zip");    
+      //  File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP"  , "/psp.zip");    
+        File pspFileZip = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/PSP/TEXTURES"  , "/psp.zip");    
         if(pspFileZip.exists()){  
                 pspFileZip.delete();
                 }   
