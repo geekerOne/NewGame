@@ -153,8 +153,8 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
     read = in.read(buffer);    
         while (read > 0) {
     tilNowSize_copy += Double.valueOf(read);
-    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 40) {
-        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 40;
+    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 20) {
+        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 20;
         toshow_copy = (int)thePerc_copy;  
     publishProgress(toshow_copy);
         }       
@@ -262,9 +262,9 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         toshow_copy2 = (int)thePerc_copy2;
 	    
         //if have unzip
-    //toshow_copy2 += toshow_unzip; 
+    toshow_copy2 += toshow_unzip; 
     //if have'nt unzip
-    toshow_copy2 += toshow_copy;    
+    //toshow_copy2 += toshow_copy;    
 	    
 	    
     publishProgress(toshow_copy2);
