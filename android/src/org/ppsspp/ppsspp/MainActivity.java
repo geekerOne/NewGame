@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
 	        mediaPlayer_click = MediaPlayer.create(MainActivity.this, R.raw.click);
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "fttmotnknetggjahtrjbkotnbfjnbgiolbioelmnrtnenahjdlkapleoennmapmhrbjsfc",
+            TapsellPlus.initialize(MainActivity.this, "rnlgolshmnbapnbqkdliqmjrlqrdgdolbohjmireeackhchipkchbimoalcenjejpbpnae",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -282,7 +282,7 @@ mediaPlayer_click.start();
 	    File GameFileZip = new File(storagePath + "/game.zip"); 
 	//    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
 	//    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
-            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.NarutoStorm5.obb");
+            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.nba2k21.obb");
             File pspFile = new File(storagePath2 , "/psp.zip");
 	    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
             File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
@@ -367,7 +367,7 @@ if(GameFile.exists()){
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.NarutoStorm5")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.nba2k21")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -380,7 +380,7 @@ String url = "mailto: 00sohrabiranpak00@gmail.com";
 Intent intent = new Intent();
 intent.setAction(Intent.ACTION_SENDTO);
 intent.setData(Uri.parse(url));
-intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی ناروتو استورم 5");    
+intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی بسکتبال 21");    
 startActivity(intent);
     }
 
@@ -389,7 +389,7 @@ public void goToPage(View v) {
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.NarutoStorm5")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.nba2k21")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
