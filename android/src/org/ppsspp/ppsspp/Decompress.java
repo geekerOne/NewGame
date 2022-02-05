@@ -115,7 +115,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         int toshow_unzip3 = 0;
         int toshow_unzip4 = 0;
         int toshow_unzip5 = 0;
-    //  try  {
+      try  {
     //commenet abov try if you want to just copy and not unzip and comment unzip one        
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
     InputStream in = null;
@@ -138,16 +138,16 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
                               directory.mkdirs();
         
     //with unzip after    
-    //   in = expansionFile.getInputStream("main/game.zip");
+       in = expansionFile.getInputStream("main/game.zip");
        //out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
-    //   out = new FileOutputStream(storagePath + "/game.zip");
+       out = new FileOutputStream(storagePath + "/game.zip");
         //without unzip after    
-    in = expansionFile.getInputStream("main/example.iso");
-        out = new FileOutputStream(storagePath + "/example.iso");    
+    //in = expansionFile.getInputStream("main/example.iso");
+      //  out = new FileOutputStream(storagePath + "/example.iso");    
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 620534208;
+        double thegameIsofileSize_copy = 500534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
@@ -178,7 +178,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
     }       
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////                      
 ////////unzip one///////////////////////////////////////////////////////////////////////////////////////////////////            
-  /*
+  
             ZipFile zip = new ZipFile(zipFile);
             FileInputStream fin = new FileInputStream(zipFile);       
             ZipInputStream zin = new ZipInputStream(fin);
@@ -186,7 +186,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
             
             
                     double thePerc_unzip = 0;
-                    double thegameIsofileSize_unzip = 550534208;
+                    double thegameIsofileSize_unzip = 1300534208;
                     //int toshow_unzip = 0;
                     double tilNowSize_unzip = 0;
             
@@ -223,7 +223,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
                     } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-    */
+    
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
     try{
@@ -251,7 +251,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
 	    byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
     double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 30534208;
+        double thegameIsofileSize_copy2 = 130534208;
     //int toshow_copy = 0;
     double tilNowSize_copy2 = 0;  
     read_copy2 = in_copy2.read(buffer_copy2);    
@@ -298,7 +298,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         
         
                             double thePerc_unzip2 = 0;
-                    double thegameIsofileSize_unzip2 = 30534208;
+                    double thegameIsofileSize_unzip2 = 150534208;
                     double tilNowSize_unzip2 = 0;
         
             while ((ze2 = zin2.getNextEntry()) != null) {
@@ -814,7 +814,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
 	if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.SandSprogrammingGroup.NarutoStorm5.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.SandSprogrammingGroup.nba2k21.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
