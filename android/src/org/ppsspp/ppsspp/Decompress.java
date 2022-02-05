@@ -147,7 +147,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 500534208;
+        double thegameIsofileSize_copy = 650534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
@@ -251,7 +251,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
 	    byte[] buffer_copy2 = new byte[1024*10];
         int read_copy2;
     double thePerc_copy2 = 0;
-        double thegameIsofileSize_copy2 = 130534208;
+        double thegameIsofileSize_copy2 = 700534208;
     //int toshow_copy = 0;
     double tilNowSize_copy2 = 0;  
     read_copy2 = in_copy2.read(buffer_copy2);    
@@ -298,7 +298,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         
         
                             double thePerc_unzip2 = 0;
-                    double thegameIsofileSize_unzip2 = 150534208;
+                    double thegameIsofileSize_unzip2 = 700534208;
                     double tilNowSize_unzip2 = 0;
         
             while ((ze2 = zin2.getNextEntry()) != null) {
@@ -814,7 +814,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
 	if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.SandSprogrammingGroup.nba2k21.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.SandSprogrammingGroup.wwe2k22.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
