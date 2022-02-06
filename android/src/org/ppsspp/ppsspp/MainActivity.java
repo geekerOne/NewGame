@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
 	        mediaPlayer_click = MediaPlayer.create(MainActivity.this, R.raw.click);
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "kagogfikffbaibmqdhrbssaotgdmmssrqblbmlimkrcmcphjflikdqfggerbnkhgdipsis",
+            TapsellPlus.initialize(MainActivity.this, "roofdrpjhqgfbrbhonpdbjgqpaqgjeskaigbobjhomhgecmlrnpmtmrjgltccrqbqfpsqm",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -282,11 +282,11 @@ mediaPlayer_click.start();
 	    File GameFileZip = new File(storagePath + "/game.zip"); 
 	//    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
 	//    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
-            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.wwe2k22.obb");
-            File pspFile = new File(storagePath2 , "/psp.zip");
-	    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
-            File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
-            File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
+            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.WWEALLSTARS.obb");
+        //    File pspFile = new File(storagePath2 , "/psp.zip");
+	//    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
+        //    File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
+        //    File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
             
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
@@ -295,6 +295,7 @@ if(GameFile.exists()){
         if(obbFile.exists()){  
               obbFile.delete();
               }
+	/*
 	if(pspFile.exists()){  
               pspFile.delete();
               }
@@ -307,7 +308,7 @@ if(GameFile.exists()){
 	if(pspFile4.exists()){  
               pspFile4.delete();
               }
-
+        */
 	
 	//tabligh
 	if (haveNetworkConnection() == true){					
@@ -355,9 +356,9 @@ if(GameFile.exists()){
 		       storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces2.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces2/",
 		       MainActivity.this , mediaPlayer_menu).execute();
 */	
-//new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
+new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
 
-	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
+//	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
 
         }
     }
@@ -367,7 +368,7 @@ if(GameFile.exists()){
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.wwe2k22")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.WWEALLSTARS")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -380,7 +381,7 @@ String url = "mailto: 00sohrabiranpak00@gmail.com";
 Intent intent = new Intent();
 intent.setAction(Intent.ACTION_SENDTO);
 intent.setData(Uri.parse(url));
-intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی کشتی کج 22");    
+intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی کشتی کج تمام ستاره ها");    
 startActivity(intent);
     }
 
@@ -389,7 +390,7 @@ public void goToPage(View v) {
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.wwe2k22")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.WWEALLSTARS")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
