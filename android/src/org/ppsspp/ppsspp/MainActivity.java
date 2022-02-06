@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
 	        mediaPlayer_click = MediaPlayer.create(MainActivity.this, R.raw.click);
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "roofdrpjhqgfbrbhonpdbjgqpaqgjeskaigbobjhomhgecmlrnpmtmrjgltccrqbqfpsqm",
+            TapsellPlus.initialize(MainActivity.this, "mgffjifodqqlcjpjhhqkdfhrinnemfbtfjdorkotflkojhpknrfitebqgdarcsdkndllol",
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -282,7 +282,7 @@ mediaPlayer_click.start();
 	    File GameFileZip = new File(storagePath + "/game.zip"); 
 	//    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
 	//    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
-            File obbFile = new File(this.getObbDir() , "/main.111030000.com.SandSprogrammingGroup.WWEALLSTARS.obb");
+            File obbFile = new File(this.getObbDir() , "/main.111030000.com.draco.ludere.SPIDERMANTWO.obb");
         //    File pspFile = new File(storagePath2 , "/psp.zip");
 	//    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
         //    File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
@@ -368,7 +368,7 @@ new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , medi
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.WWEALLSTARS")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.draco.ludere.SPIDERMANTWO")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
     }
@@ -381,7 +381,7 @@ String url = "mailto: 00sohrabiranpak00@gmail.com";
 Intent intent = new Intent();
 intent.setAction(Intent.ACTION_SENDTO);
 intent.setData(Uri.parse(url));
-intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی کشتی کج تمام ستاره ها");    
+intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی مرد عنکبوتی 2");    
 startActivity(intent);
     }
 
@@ -390,7 +390,7 @@ public void goToPage(View v) {
 mediaPlayer_click.start();
 /*bazar*/
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.SandSprogrammingGroup.WWEALLSTARS")); 
+intent.setData(Uri.parse("bazaar://details?id=" + "com.draco.ludere.SPIDERMANTWO")); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
     }
