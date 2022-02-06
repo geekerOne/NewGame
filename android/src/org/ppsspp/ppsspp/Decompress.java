@@ -73,13 +73,13 @@ public class Decompress extends AsyncTask<Void, Integer, Void> {
     Context ctx;
     MediaPlayer mediaPlayer_menu;
 //    public Decompress(String zipFile, String location, String zipFile2, String location2, String zipFile3, String location3, String zipFile4, String location4,String zipFile5, String location5, Context ctx, MediaPlayer mediaPlayer_menu) {
-public Decompress(String zipFile, String location, String zipFile2, String location2,Context ctx, MediaPlayer mediaPlayer_menu) {
-//public Decompress(String zipFile, String location,Context ctx, MediaPlayer mediaPlayer_menu) {
+//public Decompress(String zipFile, String location, String zipFile2, String location2,Context ctx, MediaPlayer mediaPlayer_menu) {
+public Decompress(String zipFile, String location,Context ctx, MediaPlayer mediaPlayer_menu) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
-        this.zipFile2 = zipFile2;     
-        this.location2 = location2;
+  //      this.zipFile2 = zipFile2;     
+  //      this.location2 = location2;
   //      this.zipFile3 = zipFile3;     
   //      this.location3 = location3;
   //     this.zipFile4 = zipFile4;     
@@ -115,7 +115,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         int toshow_unzip3 = 0;
         int toshow_unzip4 = 0;
         int toshow_unzip5 = 0;
-      try  {
+     // try  {
     //commenet abov try if you want to just copy and not unzip and comment unzip one        
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
     InputStream in = null;
@@ -138,23 +138,23 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
                               directory.mkdirs();
         
     //with unzip after    
-       in = expansionFile.getInputStream("main/game.zip");
+    //   in = expansionFile.getInputStream("main/game.zip");
        //out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
-       out = new FileOutputStream(storagePath + "/game.zip");
+    //   out = new FileOutputStream(storagePath + "/game.zip");
         //without unzip after    
-    //in = expansionFile.getInputStream("main/example.iso");
-      //  out = new FileOutputStream(storagePath + "/example.iso");    
+    in = expansionFile.getInputStream("main/example.iso");
+        out = new FileOutputStream(storagePath + "/example.iso");    
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 650534208;
+        double thegameIsofileSize_copy = 250534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
         while (read > 0) {
     tilNowSize_copy += Double.valueOf(read);
-    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 20) {
-        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 20;
+    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 80) {
+        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 80;
         toshow_copy = (int)thePerc_copy;  
     publishProgress(toshow_copy);
         }       
@@ -178,7 +178,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
     }       
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////                      
 ////////unzip one///////////////////////////////////////////////////////////////////////////////////////////////////            
-  
+  /*
             ZipFile zip = new ZipFile(zipFile);
             FileInputStream fin = new FileInputStream(zipFile);       
             ZipInputStream zin = new ZipInputStream(fin);
@@ -223,12 +223,12 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
                     } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-    
+    */
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
-    try{
+    //try{
 ////////copy two//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
-    
+    /*
     InputStream in_copy2 = null;
     OutputStream out_copy2 = null;
     try {
@@ -287,10 +287,10 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
     }       
-    
+    */
 ////////copy two//////////////////////////////////////////////////////////////////////////////////////////////              
 ////////unzip two///////////////////////////////////////////////////////////////////////////////////////////////////            
-      
+      /*
         ZipFile zip2 = new ZipFile(zipFile2);
             FileInputStream fin2 = new FileInputStream(zipFile2);       
             ZipInputStream zin2 = new ZipInputStream(fin2);
@@ -334,7 +334,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
         } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-        
+        */
 ////////unzip two////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
     //try{
@@ -814,7 +814,7 @@ public Decompress(String zipFile, String location, String zipFile2, String locat
 	if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.SandSprogrammingGroup.wwe2k22.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.SandSprogrammingGroup.WWEALLSTARS.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
