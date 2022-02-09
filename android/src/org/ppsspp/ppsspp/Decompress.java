@@ -147,7 +147,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 560534208;
+        double thegameIsofileSize_copy = 350534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
@@ -814,7 +814,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
 	if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.draco.ludere.SPIDERMANTWO.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.draco.ludere.MortalKombatX.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
