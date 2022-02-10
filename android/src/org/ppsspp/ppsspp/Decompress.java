@@ -115,7 +115,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
         int toshow_unzip3 = 0;
         int toshow_unzip4 = 0;
         int toshow_unzip5 = 0;
-     // try  {
+      try  {
     //commenet abov try if you want to just copy and not unzip and comment unzip one        
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
     InputStream in = null;
@@ -138,23 +138,23 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
                               directory.mkdirs();
         
     //with unzip after    
-    //   in = expansionFile.getInputStream("main/game.zip");
+       in = expansionFile.getInputStream("main/game.zip");
        //out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
-    //   out = new FileOutputStream(storagePath + "/game.zip");
+       out = new FileOutputStream(storagePath + "/game.zip");
         //without unzip after    
-    in = expansionFile.getInputStream("main/example.iso");
-        out = new FileOutputStream(storagePath + "/example.iso");    
+   // in = expansionFile.getInputStream("main/example.iso");
+   //     out = new FileOutputStream(storagePath + "/example.iso");    
         byte[] buffer = new byte[1024*10];
         int read;
     double thePerc_copy = 0;
-        double thegameIsofileSize_copy = 350534208;
+        double thegameIsofileSize_copy = 550534208;
     //int toshow_copy = 0;
     double tilNowSize_copy = 0;  
     read = in.read(buffer);    
         while (read > 0) {
     tilNowSize_copy += Double.valueOf(read);
-    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 80) {
-        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 80;
+    if(thePerc_copy != (tilNowSize_copy / thegameIsofileSize_copy) * 40) {
+        thePerc_copy = (tilNowSize_copy / thegameIsofileSize_copy) * 40;
         toshow_copy = (int)thePerc_copy;  
     publishProgress(toshow_copy);
         }       
@@ -178,7 +178,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
     }       
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////                      
 ////////unzip one///////////////////////////////////////////////////////////////////////////////////////////////////            
-  /*
+  
             ZipFile zip = new ZipFile(zipFile);
             FileInputStream fin = new FileInputStream(zipFile);       
             ZipInputStream zin = new ZipInputStream(fin);
@@ -186,7 +186,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
             
             
                     double thePerc_unzip = 0;
-                    double thegameIsofileSize_unzip = 1300534208;
+                    double thegameIsofileSize_unzip = 810534208;
                     //int toshow_unzip = 0;
                     double tilNowSize_unzip = 0;
             
@@ -202,8 +202,8 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
                     int len;
                     while ((len = zin.read(buffer)) != -1) {
                     tilNowSize_unzip += Double.valueOf(len);
-                          if(thePerc_unzip != (tilNowSize_unzip / thegameIsofileSize_unzip) * 20) {
-                                         thePerc_unzip = (tilNowSize_unzip / thegameIsofileSize_unzip) * 20;
+                          if(thePerc_unzip != (tilNowSize_unzip / thegameIsofileSize_unzip) * 40) {
+                                         thePerc_unzip = (tilNowSize_unzip / thegameIsofileSize_unzip) * 40;
                                          toshow_unzip = (int)thePerc_unzip;
                      toshow_unzip += toshow_copy;  
                              publishProgress(toshow_unzip);
@@ -223,7 +223,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
                     } catch(Exception e) {       
             Log.e("Decompress", "unzip", e);    
         }    
-    */
+    
 ////////unzip one////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
 
     //try{
@@ -814,7 +814,7 @@ public Decompress(String zipFile, String location,Context ctx, MediaPlayer media
 	if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.draco.ludere.MortalKombatX.obb");
+        File obbFile = new File(ctx.getObbDir() ,"/main.111030000.com.draco.ludere.assasinCreedBlood.obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
