@@ -514,7 +514,7 @@ void NativeInit(int argc, const char *argv[], const char *savegame_dir, const ch
 	// Might also add an option to move it to internal / non-visible storage, but there's
 	// little point, really.
 
-	g_Config.memStickDirectory = Path(external_dir);
+	g_Config.memStickDirectory = Path(g_extFilesDir);
 	g_Config.flash0Directory = Path(external_dir) / "flash0";
 
 	Path memstickDirFile = g_Config.internalDataDirectory / "memstick_dir.txt";
@@ -523,7 +523,7 @@ void NativeInit(int argc, const char *argv[], const char *savegame_dir, const ch
 		if (File::ReadFileToString(true, memstickDirFile, memstickDir)) {
 			Path memstickPath(memstickDir);
 			if (!memstickPath.empty() && File::Exists(memstickPath)) {
-				g_Config.memStickDirectory = memstickPath;
+				g_Config.memStickDirectory = Path(g_extFilesDir);
 				INFO_LOG(SYSTEM, "Memstick Directory from memstick_dir.txt: '%s'", g_Config.memStickDirectory.c_str());
 			} else {
 				ERROR_LOG(SYSTEM, "Couldn't read directory '%s' specified by memstick_dir.txt.", memstickDir.c_str());
@@ -531,7 +531,7 @@ void NativeInit(int argc, const char *argv[], const char *savegame_dir, const ch
 					// TODO: Gotta resolve this somehow...
 					// I think we wanna pop up the memstick dir chooser before any other screen in this case.
 					// For now we just choose a default.
-					g_Config.memStickDirectory = g_Config.defaultCurrentDirectory;
+					g_Config.memStickDirectory = Path(g_extFilesDir);
 				}
 			}
 		}
