@@ -4,6 +4,15 @@ plugins {
 
 apply plugin: 'com.android.application'
 
+def getAppId() {
+    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'config.xml' }
+    return new XmlParser().parse(stringsFile).string.find { it.@name.equals 'config_id' }.text()
+}
+
+def getAppVersion() {
+    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'config.xml' }
+    return new XmlParser().parse(stringsFile).string.find { it.@name.equals 'version_name' }.text()
+}
 
 androidGitVersion {
 	codeFormat = "MNNPPBBBB"
@@ -55,10 +64,13 @@ android {
 	compileSdkVersion 29
 	buildToolsVersion '29.0.3'
 	defaultConfig {
-		applicationId 'com.draco.ludere.assasinCreedBlood'
+		applicationId getAppId()
 		minSdkVersion 23
 		targetSdkVersion 29
 
+                versionCode Integer.parseInt(getAppVersion())
+                versionName getAppVersion()  
+	       
 		ndk {
 			abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
 		}
@@ -109,7 +121,9 @@ android {
 	}
 	productFlavors {
 		normal {
-			applicationId 'com.draco.ludere.assasinCreedBlood'
+			applicationId getAppId()
+			versionCode Integer.parseInt(getAppVersion())
+                        versionName getAppVersion()  
 			dimension "variant"
 			externalNativeBuild {
 				cmake {
@@ -124,7 +138,9 @@ android {
 			}
 		}
 		gold {
-			applicationId 'com.draco.ludere.assasinCreedBlood'
+			applicationId getAppId()
+			versionCode Integer.parseInt(getAppVersion())
+                        versionName getAppVersion()  
 			dimension "variant"
 			externalNativeBuild {
 				cmake {
