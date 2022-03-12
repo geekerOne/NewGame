@@ -28,6 +28,17 @@
     <bool name="is_bazaar">false</bool>
 
     <!-- is it for wii or gamecube(true wii)(false gamecube) -->
-    <bool name="is_wii">false</bool>
+    <bool name="has_psp_folder">false</bool>
+	
+	<!-- game is folder or not -->
+    <bool name="is_game_folder">false</bool>
+	
+	<!-- game file is zip or not -->
+    <bool name="is_game_zip">false</bool>
+	
+	<!-- game file is iso or not -->
+    <bool name="is_game_iso">false</bool>
+	
+	
          
 </resources>
