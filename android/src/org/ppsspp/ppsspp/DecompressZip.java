@@ -58,7 +58,7 @@ import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class DecompressIso extends AsyncTask<Void, Integer, Void> {
+public class DecompressZip extends AsyncTask<Void, Integer, Void> {
 
     private final static String TAG = "Decompress";
     private String zipFile;   
@@ -75,7 +75,7 @@ public class DecompressIso extends AsyncTask<Void, Integer, Void> {
     Context ctx;
     MediaPlayer mediaPlayer_menu;
 
-public DecompressIso(String zipFile, String location, , String zipFile2, String location2, Context ctx, MediaPlayer mediaPlayer_menu) {
+public DecompressZip(String zipFile, String location, , String zipFile2, String location2, Context ctx, MediaPlayer mediaPlayer_menu) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
