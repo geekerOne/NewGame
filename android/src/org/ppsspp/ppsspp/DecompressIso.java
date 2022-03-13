@@ -195,7 +195,7 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
         in_copy2 = asM.open("psp.zip");
       }
 	    
-	File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
+	File directory = new File(storagePath_copy2+File.separator+"PSP");    
         directory.mkdirs();
 	    
 	out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");            
