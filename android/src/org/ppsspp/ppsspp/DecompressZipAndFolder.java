@@ -58,7 +58,7 @@ import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class DecompressZip extends AsyncTask<Void, Integer, Void> {
+public class DecompressZipAndFolder extends AsyncTask<Void, Integer, Void> {
 
     private final static String TAG = "Decompress";
     private String zipFile;   
@@ -75,7 +75,7 @@ public class DecompressZip extends AsyncTask<Void, Integer, Void> {
     Context ctx;
     MediaPlayer mediaPlayer_menu;
 
-public DecompressZip(String zipFile, String location, , String zipFile2, String location2, Context ctx, MediaPlayer mediaPlayer_menu) {
+public DecompressZipAndFolder(String zipFile, String location, , String zipFile2, String location2, Context ctx, MediaPlayer mediaPlayer_menu) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
@@ -136,9 +136,15 @@ public DecompressZip(String zipFile, String location, , String zipFile2, String 
         else
                         storagePath = ctx.getFilesDir().getAbsolutePath();
        
-          out = new FileOutputStream(storagePath + "/game.zip");    
-
-	    byte[] buffer = new byte[32 * 1024];
+	 File directory = new File(storagePath+File.separator+"PSP_GAME");    
+        directory.mkdirs();
+	    
+	  if (ctx.getResources().getBoolean(R.bool.is_game_zip))  
+          out = new FileOutputStream(storagePath + "/game.zip");
+	 else if (ctx.getResources().getBoolean(R.bool.is_game_folder))
+          out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
+	  
+	byte[] buffer = new byte[32 * 1024];
         int read;
     double thePerc_copy = 0;
     double thegameIsofileSize_copy = Double.valueOf(ctx.getResources().getInteger(R.integer.game_zip_size_byte));
@@ -241,7 +247,7 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
         in_copy2 = asM.open("psp.zip");
       }
 	    
-	File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP");    
+	File directory = new File(storagePath_copy2+File.separator+"PSP");    
         directory.mkdirs();
 	    
 	out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/psp.zip");            
