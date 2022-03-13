@@ -1,7 +1,6 @@
-package org.dolphinemu.dolphinemu.ui.main;
+package org.ppsspp.ppsspp;
 import com.jakewharton.processphoenix.ProcessPhoenix;
-import org.dolphinemu.dolphinemu.activities.EmulationActivity;
-import org.dolphinemu.dolphinemu.R;
+import org.ppsspp.ppsspp.R;
 
 
 import java.io.BufferedOutputStream;
