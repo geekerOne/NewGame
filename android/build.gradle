@@ -5,14 +5,15 @@ plugins {
 apply plugin: 'com.android.application'
 
 def getAppId() {
-    def stringsFile = android.res.sourceFiles.find { it.name.equals 'config.xml' }
+    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'config.xml' }
     return new XmlParser().parse(stringsFile).string.find { it.@name.equals 'config_id' }.text()
 }
 
 def getAppVersion() {
-    def stringsFile = android.res.sourceFiles.find { it.name.equals 'config.xml' }
+    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'config.xml' }
     return new XmlParser().parse(stringsFile).string.find { it.@name.equals 'version_name' }.text()
 }
+
 
 androidGitVersion {
 	codeFormat = "MNNPPBBBB"
