@@ -116,8 +116,7 @@ public DecompressIso(String zipFile, String location, , String zipFile2, String 
         int toshow_unzip3 = 0;
         int toshow_unzip4 = 0;
         int toshow_unzip5 = 0;
-     // try  {
-    //commenet abov try if you want to just copy and not unzip and comment unzip one        
+      
 ////////copy one//////////////////////////////////////////////////////////////////////////////////////////////  Environment.getExternalStorageDirectory() copy and unzip 2 and check for zip2 after unziping for deleting file  
     InputStream in = null;
     OutputStream out = null;
