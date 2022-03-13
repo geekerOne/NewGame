@@ -5,7 +5,7 @@ plugins {
 apply plugin: 'com.android.application'
 
 def getAppId() {
-    def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'config.xml' }
+    def stringsFile = android.sourceSets.res.sourceFiles.find { it.name.equals 'config.xml' }
     return new XmlParser().parse(stringsFile).string.find { it.@name.equals 'config_id' }.text()
 }
 
