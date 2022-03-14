@@ -451,8 +451,43 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
         e.printStackTrace();
     }
 ////////copy Cheats const func//////////////////////////////////////////////////////////////////////////////////////////////   
-        	    
-	
+if (getResources().getBoolean(R.bool.is_game_folder)){ 	    
+////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	
+    InputStream in_bin = null;
+    OutputStream out_bin = null;
+    try {
+	    
+	    	                String storagePath_bin  = "";
+		if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
+			storagePath_bin = ctx.getExternalFilesDir(null).getAbsolutePath();
+		else
+                        storagePath_bin = ctx.getFilesDir().getAbsolutePath();  
+	    	AssetManager asM = ctx.getAssets();
+        in_bin = asM.open("umd.bin");
+        out_bin = new FileOutputStream(storagePath_bin + "/UMD_DATA.BIN");
+        byte[] buffer_bin = new byte[1024*10];
+        int read_bin;
+	read_bin = in_bin.read(buffer_bin);    
+        while (read_bin > 0) {
+            out_bin.write(buffer_bin, 0, read_bin);
+	    read_bin = in_bin.read(buffer_bin);    
+        }
+        in_bin.close();
+        in_bin = null;
+        // write the output file (You have now copied the file)
+        out_bin.flush();
+        out_bin.close();
+        out_bin = null;
+    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }
+////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	        	    
+}//if (getResources().getBoolean(R.bool.is_game_folder))
+	    
         return null;
     }
 
