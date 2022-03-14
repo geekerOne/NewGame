@@ -119,12 +119,17 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
         
-		                mediaPlayer_menu = MediaPlayer.create(MainActivity.this, R.raw.menu);
+        if (getResources().getBoolean(R.bool.is_bazaar) == false){      
+      	Button hamibash_button = (Button) findViewById(R.id.hamibash_button); 
+        hamibash_button.setVisibility(View.GONE);
+       }
+		
+		mediaPlayer_menu = MediaPlayer.create(MainActivity.this, R.raw.menu);
 		mediaPlayer_menu.setLooping(true);
 	        mediaPlayer_click = MediaPlayer.create(MainActivity.this, R.raw.click);
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 	    //inserting tapsell Key  	
-            TapsellPlus.initialize(MainActivity.this, "kodmspcbbhclmbeotkbtprjctffjlomeeonmekghnsmfjfddkokobrfkfdpaqsonnpdkkb",
+            TapsellPlus.initialize(MainActivity.this, getResources().getString(R.string.tapsell_key),
 				new TapsellPlusInitListener() {
             @Override
             public void onInitializeSuccess(AdNetworks adNetworks) {
@@ -139,7 +144,7 @@ public class MainActivity extends Activity {
         });
 //tapsell////////////////////////////////////////////////////////////////////////////////		
 		
-		//init first time inv type
+//init first time inv type
 String storagePath  = "";
 if (this.getExternalFilesDir(null).getAbsolutePath() != null)
 storagePath = this.getExternalFilesDir(null).getAbsolutePath();
@@ -148,80 +153,7 @@ storagePath = this.getFilesDir().getAbsolutePath();
 		
 File file = new File(storagePath + "/Records.txt");
 if(file.exists()){      
-/////copy ppsspp.ini if its not the first time app runs!
-    InputStream in_copy2 = null;
-    OutputStream out_copy2 = null;
-    try {
-	//AssetManager asM = ctx.getAssets();
-        //in = asM.open("game.zip");
-	                String storagePath_copy2  = "";
-	//	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
-	//		storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
-	//	else               
-	                            File directory = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
-                                    directory.mkdirs();
-                        storagePath_copy2 = Environment.getExternalStorageDirectory().getAbsolutePath();    
-	in_copy2 = getResources().openRawResource(R.raw.ppsspp);  
-        out_copy2 = new FileOutputStream(storagePath_copy2 + "/PSP/SYSTEM/ppsspp.ini");
-        byte[] buffer_copy2 = new byte[1024*10];
-        int read_copy2;
-	read_copy2 = in_copy2.read(buffer_copy2);    
-        while (read_copy2 > 0) {
-            out_copy2.write(buffer_copy2, 0, read_copy2);
-	    read_copy2 = in_copy2.read(buffer_copy2);    
-        }
-        in_copy2.close();
-        in_copy2 = null;
-
-        // write the output file (You have now copied the file)
-        out_copy2.flush();
-        out_copy2.close();
-        out_copy2 = null;
-    } catch (FileNotFoundException e) {
-               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
-        e.printStackTrace();
-    } catch (IOException e) {
-        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
-        e.printStackTrace();
-    }	 	
-/////copy ppsspp.ini if its not the first time app runs!
-/////copy controls.ini if its not the first time app runs!
-    InputStream in_copy3 = null;
-    OutputStream out_copy3 = null;
-    try {
-	//AssetManager asM = ctx.getAssets();
-        //in = asM.open("game.zip");
-	                String storagePath_copy3  = "";
-	//	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
-	//		storagePath = ctx.getExternalFilesDir(null).getAbsolutePath();
-	//	else               
-	                            File directory2 = new File(Environment.getExternalStorageDirectory()+File.separator+"PSP"+File.separator+"SYSTEM");
-                                    directory2.mkdirs();
-                        storagePath_copy3 = Environment.getExternalStorageDirectory().getAbsolutePath();    
-	in_copy3 = getResources().openRawResource(R.raw.controls);  
-        out_copy3 = new FileOutputStream(storagePath_copy3 + "/PSP/SYSTEM/controls.ini");
-        byte[] buffer_copy3 = new byte[1024*10];
-        int read_copy3;
-	read_copy3 = in_copy3.read(buffer_copy3);    
-        while (read_copy3 > 0) {
-            out_copy3.write(buffer_copy3, 0, read_copy3);
-	    read_copy3 = in_copy3.read(buffer_copy3);    
-        }
-        in_copy3.close();
-        in_copy3 = null;
-
-        // write the output file (You have now copied the file)
-        out_copy3.flush();
-        out_copy3.close();
-        out_copy3 = null;
-    } catch (FileNotFoundException e) {
-               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
-        e.printStackTrace();
-    } catch (IOException e) {
-        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
-        e.printStackTrace();
-    }	 	
-/////copy controls.ini if its not the first time app runs!		
+//nothing
 }else{
 	File checkfile = new File(storagePath, "Records.txt");
 			try {
@@ -278,16 +210,27 @@ mediaPlayer_click.start();
 	    
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
-	    File GameFile = new File(storagePath + "/example.iso");
-	    File GameFileZip = new File(storagePath + "/game.zip"); 
-	//    File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip"); 
-	//    File GameFile = new File(storagePath + "/UMD_DATA.BIN"); 
-            File obbFile = new File(this.getObbDir() , "/main.111030000.com.draco.ludere.assasinCreedBlood.obb");
-        //    File pspFile = new File(storagePath2 , "/psp.zip");
-	//    File pspFile2 = new File(storagePath2 , "/TEXTURES/FIFA01590/psp2.zip");
-        //    File pspFile3 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces.zip");
-        //    File pspFile4 = new File(storagePath2 , "/TEXTURES/FIFA01590/Faces/Faces2.zip");
-            
+           File obbFile = new File(this.getObbDir() , "/main." + getResources().getString(R.string.version_name) + "." + getResources().getString(R.string.config_id) + ".obb");      	
+	   File GameFileZip; 
+           File GameFile;
+           File pspFile; 
+	   
+	    if (getResources().getBoolean(R.bool.is_game_folder)){ 
+	    GameFileZip = new File(storagePath + "/PSP_GAME/game.zip");   
+	    GameFile = new File(storagePath + "/PSP_GAME" + "/PARAM.SFO");	    
+	    }
+	    else if (getResources().getBoolean(R.bool.is_game_zip)){ 
+	    GameFileZip = new File(storagePath + "/game.zip"); 	  
+	    GameFile = new File(storagePath + "/example.iso");	    
+	    }
+	    else if (getResources().getBoolean(R.bool.is_game_iso)){
+	    GameFile = new File(storagePath + "/example.iso");
+	    } 
+	   
+	    if (getResources().getBoolean(R.bool.has_psp_folder)){
+            pspFile = new File(storagePath + "/PSP" , "/psp.zip");     
+	    }    
+	    
 if(GameFile.exists()){  
 	if(GameFileZip.exists()){  
               GameFileZip.delete();
@@ -295,20 +238,11 @@ if(GameFile.exists()){
         if(obbFile.exists()){  
               obbFile.delete();
               }
-	/*
+	if (getResources().getBoolean(R.bool.has_psp_folder)){
 	if(pspFile.exists()){  
               pspFile.delete();
               }
-	if(pspFile2.exists()){  
-              pspFile2.delete();
-              }
-        if(pspFile3.exists()){  
-              pspFile3.delete();
-              }
-	if(pspFile4.exists()){  
-              pspFile4.delete();
-              }
-        */
+	}
 	
 	//tabligh
 	if (haveNetworkConnection() == true){					
@@ -348,40 +282,57 @@ if(GameFile.exists()){
         RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative);
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
-/*       
-	new Decompress(storagePath + "/PSP_GAME/game.zip", storagePath + "/PSP_GAME" ,
-		       storagePath2 + "/TEXTURES/FIFA01590/psp.zip" , storagePath2 + "/TEXTURES/FIFA01590/",
-		       storagePath2 + "/TEXTURES/FIFA01590/psp2.zip" , storagePath2 + "/TEXTURES/FIFA01590/",
-		       storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces/",
-		       storagePath2 + "/TEXTURES/FIFA01590/Faces/Faces2.zip" , storagePath2 + "/TEXTURES/FIFA01590/Faces2/",
-		       MainActivity.this , mediaPlayer_menu).execute();
-*/	
-new Decompress(storagePath + "/game.zip", storagePath , MainActivity.this , mediaPlayer_menu).execute();
 
-//	new Decompress(storagePath + "/game.zip", storagePath , storagePath2 + "/psp.zip" , storagePath2 , MainActivity.this , mediaPlayer_menu).execute();
-
+	if (getResources().getBoolean(R.bool.is_game_folder)){ 
+  	new DecompressZipAndFolder(storagePath + "/PSP_GAME" + "/game.zip", storagePath + "/PSP_GAME" , storagePath + "/PSP"  + "/psp.zip" , storagePath + "/PSP"  , MainActivity.this , mediaPlayer_menu).execute();
+	    }
+	else if (getResources().getBoolean(R.bool.is_game_zip)){ 
+  	new DecompressZipAndFolder(storagePath + "/game.zip", storagePath , storagePath + "/PSP"  + "/psp.zip" , storagePath + "/PSP"  , MainActivity.this , mediaPlayer_menu).execute();
+	    }
+	else if (getResources().getBoolean(R.bool.is_game_iso)){
+  	new DecompressIso(storagePath + "/game.zip", storagePath , storagePath + "/PSP"  + "/psp.zip" , storagePath + "/PSP"  , MainActivity.this , mediaPlayer_menu).execute();
+	    } 
+	
         }
     }
 
-    public void sendMsg(View v) {
+   public void sendMsg(View v) {
+      
 	    		mediaPlayer_click.seekTo(0);	
 mediaPlayer_click.start();
 /*bazar*/
+if (getResources().getBoolean(R.bool.is_bazaar)){      
 Intent intent = new Intent(Intent.ACTION_EDIT); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.draco.ludere.assasinCreedBlood")); 
+intent.setData(Uri.parse("bazaar://details?id=" + getResources().getString(R.string.config_id))); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);
-    }
+}
+/*myket*/      
+else{
+ String url= "myket://comment?id=" + getResources().getString(R.string.config_id);
+Intent intent = new Intent();
+intent.setAction(Intent.ACTION_VIEW);
+intent.setData(Uri.parse(url));
+startActivity(intent);
+      }
+  }
 
 public void sendingEmail(View v) {
 			mediaPlayer_click.seekTo(0);	
 mediaPlayer_click.start();
+String url = "";  
 /*bazar*/
-String url = "mailto: 00sohrabiranpak00@gmail.com";		
+if (getResources().getBoolean(R.bool.is_bazaar)){      
+url = "mailto: 00sohrabiranpak00@gmail.com";	
+}
+/*myket*/
+else{
+url = "mailto: siavashiranpak@gmail.com";		
+} 
 Intent intent = new Intent();
 intent.setAction(Intent.ACTION_SENDTO);
 intent.setData(Uri.parse(url));
-intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی مورتال اساسین کرید اجداد");    
+intent.putExtra(Intent.EXTRA_SUBJECT, "نظر دهی" + getResources().getString(R.string.config_name));    
 startActivity(intent);
     }
 
@@ -389,20 +340,40 @@ public void goToPage(View v) {
 			mediaPlayer_click.seekTo(0);	
 mediaPlayer_click.start();
 /*bazar*/
+if (getResources().getBoolean(R.bool.is_bazaar)){        
 Intent intent = new Intent(Intent.ACTION_VIEW); 
-intent.setData(Uri.parse("bazaar://details?id=" + "com.draco.ludere.assasinCreedBlood")); 
+intent.setData(Uri.parse("bazaar://details?id=" + getResources().getString(R.string.config_id))); 
 intent.setPackage("com.farsitel.bazaar"); 
 startActivity(intent);    
+}
+/*myket*/
+else{
+	String url= "myket://details?id=" + getResources().getString(R.string.config_id);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
+}  
     }
 	
 public void goToGamesPage(View v) {	
-/*bazar*/
 		mediaPlayer_click.seekTo(0);	
 mediaPlayer_click.start();	
+/*bazar*/
+if (getResources().getBoolean(R.bool.is_bazaar)){          
 Intent intent = new Intent(Intent.ACTION_VIEW); 
 intent.setData(Uri.parse("bazaar://collection?slug=by_author&aid=" + "230310009713")); 
 intent.setPackage("com.farsitel.bazaar"); 
-startActivity(intent);   
+startActivity(intent);
+}
+/*myket*/
+else{
+	String url= "myket://developer/" + getResources().getString(R.string.config_id);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
+}  
     }
 	
 public void ourHub(View v) {	
