@@ -475,7 +475,7 @@ public abstract class NativeActivity extends Activity {
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
 		
-		String shortcut;// = overrideShortcutParam = storagePath + "/example.iso";
+		String shortcut = "";// = overrideShortcutParam = storagePath + "/example.iso";
 		//overrideShortcutParam = storagePath + "/example.iso";
 		
 		if (getResources().getBoolean(R.bool.is_game_zip) || getResources().getBoolean(R.bool.is_game_iso)){ 
