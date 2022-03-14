@@ -428,7 +428,7 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
 	if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
-        File obbFile = new File(ctx.getObbDir() , "/main." + ctx.getResources().getString(R.string.version_name) + "." + ctx.getResources().getString(R.string.config_name) + ".obb");
+        File obbFile = new File(ctx.getObbDir() , "/main." + ctx.getResources().getString(R.string.version_name) + "." + ctx.getResources().getString(R.string.config_id) + ".obb");
         if(obbFile.exists()){  
                 obbFile.delete();
                 }   
