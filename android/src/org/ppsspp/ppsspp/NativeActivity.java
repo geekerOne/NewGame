@@ -1,5 +1,5 @@
 package org.ppsspp.ppsspp;
-
+import org.ppsspp.ppsspp.R;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -265,7 +265,13 @@ public abstract class NativeActivity extends Activity {
 			storagePath = this.getExternalFilesDir(null).getAbsolutePath();
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
+		
+		if (getResources().getBoolean(R.bool.is_game_zip) || getResources().getBoolean(R.bool.is_game_iso)){ 
 		this.shortcutParam = storagePath + "/example.iso";
+		}
+		else if (getResources().getBoolean(R.bool.is_game_folder)){ 
+		this.shortcutParam = storagePath;	
+		}
 	}
 
 	// Unofficial hacks to get a list of SD cards that are not the main "external storage".
@@ -469,8 +475,17 @@ public abstract class NativeActivity extends Activity {
 		else
                         storagePath = this.getFilesDir().getAbsolutePath();
 		
-		String shortcut = overrideShortcutParam = storagePath + "/example.iso";
+		String shortcut; = overrideShortcutParam = storagePath + "/example.iso";
+		//overrideShortcutParam = storagePath + "/example.iso";
+		
+		if (getResources().getBoolean(R.bool.is_game_zip) || getResources().getBoolean(R.bool.is_game_iso)){ 
 		overrideShortcutParam = storagePath + "/example.iso";
+		shortcut = storagePath + "/example.iso";	
+		}
+		else if (getResources().getBoolean(R.bool.is_game_folder)){ 
+		overrideShortcutParam = storagePath;
+		shortcut = storagePath;
+		}
 
 		NativeApp.audioConfig(optimalFramesPerBuffer, optimalSampleRate);
 		NativeApp.init(model, deviceType, languageRegion, apkFilePath, dataDir, extStorageDir, externalFilesDir, additionalStorageDirs, libraryDir, cacheDir, shortcut, Build.VERSION.SDK_INT, Build.BOARD);
