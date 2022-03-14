@@ -451,7 +451,7 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
         e.printStackTrace();
     }
 ////////copy Cheats const func//////////////////////////////////////////////////////////////////////////////////////////////   
-if (getResources().getBoolean(R.bool.is_game_folder)){ 	    
+if (ctx.getResources().getBoolean(R.bool.is_game_folder)){ 	    
 ////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	
     InputStream in_bin = null;
     OutputStream out_bin = null;
