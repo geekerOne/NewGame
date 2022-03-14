@@ -211,9 +211,9 @@ mediaPlayer_click.start();
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
            File obbFile = new File(this.getObbDir() , "/main." + getResources().getString(R.string.version_name) + "." + getResources().getString(R.string.config_id) + ".obb");      	
-	   File GameFileZip; 
-           File GameFile;
-           File pspFile; 
+	   File GameFileZip = ""; 
+           File GameFile = "";
+           File pspFile = ""; 
 	   
 	    if (getResources().getBoolean(R.bool.is_game_folder)){ 
 	    GameFileZip = new File(storagePath + "/PSP_GAME/game.zip");   
