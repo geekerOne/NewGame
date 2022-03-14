@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.res4</string>
+    <string name="config_id">com.draco.ludere.TEKKENSIX</string>
     
     <!-- app name -->
-    <string name="config_name">رزیدنت اویل 4 دیسک 1</string>
+    <string name="config_name">تیکن 6</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">eqhjekkaoklekirnmmlimosjlccgqijpnfgkbtcttknqctjgrlpdonprkoqfdsabdqmenc</string>
+    <string name="tapsell_key">fddgfcesnqrrhshbdiaoointqngpprcgopitermdndbehspehaamipmfbbrccakqpdaprs</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">6206e775824c736d325e757f</string>
+    <string name="tapsell_video">6112e641b0b33b3d9e6f19c7</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">6206e788824c736d325e7580</string>
+    <string name="tapsell_banner">6112e668b0b33b3d9e6f19c8</string>
     
     <!-- version code --> 
-    <integer name="version_code">1</integer>
+    <integer name="version_code">12</integer>
 
     <!-- version name -->
-    <string name="version_name">1</string>
+    <string name="version_name">12</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
     <bool name="is_bazaar">false</bool>	
@@ -31,10 +31,10 @@
     <integer name="percent_game_zip_size_byte">1112000000</integer>		
 	
     <!-- size of game --> 
-    <integer name="game_size_byte">1112000000</integer>
+    <integer name="game_size_byte">376000000</integer>
 	
     <!-- percent of game(iso or folder when unzip)  --> 
-    <integer name="percent_game_size_byte">1112000000</integer>			
+    <integer name="percent_game_size_byte">80</integer>			
 	
     <!-- size of zip psp folder --> 
     <integer name="psp_folder_zip_size_byte">1112000000</integer>	
@@ -49,16 +49,16 @@
     <integer name="percent_psp_folder_size_byte">1112000000</integer>	
 
     <!-- has psp folder (Texture and savedata) -->
-    <bool name="has_psp_folder">true</bool>
+    <bool name="has_psp_folder">false</bool>
 	
     <!-- game is folder or not -->
     <bool name="is_game_folder">false</bool>
 	
     <!-- game file is zip or not -->
-    <bool name="is_game_zip">true</bool>
+    <bool name="is_game_zip">false</bool>
 	
     <!-- game file is iso or not -->
-    <bool name="is_game_iso">false</bool>
+    <bool name="is_game_iso">true</bool>
 	
 	
          
