@@ -75,7 +75,7 @@ public class DecompressIso extends AsyncTask<Void, Integer, Void> {
     Context ctx;
     MediaPlayer mediaPlayer_menu;
 
-public DecompressIso(String zipFile, String location, , String zipFile2, String location2, Context ctx, MediaPlayer mediaPlayer_menu) {
+public DecompressIso(String zipFile, String location, String zipFile2, String location2, Context ctx, MediaPlayer mediaPlayer_menu) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
