@@ -75,7 +75,7 @@ public class DecompressZipAndFolder extends AsyncTask<Void, Integer, Void> {
     Context ctx;
     MediaPlayer mediaPlayer_menu;
 
-public DecompressZipAndFolder(String zipFile, String location, , String zipFile2, String location2, Context ctx, MediaPlayer mediaPlayer_menu) {
+public DecompressZipAndFolder(String zipFile, String location, String zipFile2, String location2, Context ctx, MediaPlayer mediaPlayer_menu) {
     super();
         this.zipFile = zipFile;     
         this.location = location;
