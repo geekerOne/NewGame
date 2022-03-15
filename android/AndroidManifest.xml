@@ -48,7 +48,7 @@
 	    
 	    
       <activity android:name=".MainActivity"
-		android:label="@string/app_name"
+		android:label="@string/config_name"
 		android:screenOrientation="landscape" 
 		tools:ignore="LockedOrientationActivity"
                 android:theme="@android:style/Theme.NoTitleBar">
@@ -66,7 +66,7 @@
         <activity
             android:name=".PpssppActivity"
             android:configChanges="locale|keyboard|keyboardHidden|navigation|uiMode"
-            android:label="@string/app_name"
+            android:label="@string/config_name"
 	    android:screenOrientation="landscape" 
 	    tools:ignore="LockedOrientationActivity"  
             android:theme="@style/ppsspp_style">
@@ -113,7 +113,7 @@
         <meta-data android:name="isGame" android:value="true" />
         <activity
             android:name=".ShortcutActivity"
-            android:label="@string/shortcut_name" >
+            android:label="@string/config_name" >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
 
