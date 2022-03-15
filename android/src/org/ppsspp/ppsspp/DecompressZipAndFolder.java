@@ -354,7 +354,7 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
 
 	AssetManager asM = ctx.getAssets();
         in_ppssppIni = asM.open("ppsspp.ini");
-        File directory = new File(storagePath_copy2+File.separator+"PSP"+File.separator+"SYSTEM");    
+        File directory = new File(storagePath_ppssppIni+File.separator+"PSP"+File.separator+"SYSTEM");    
         directory.mkdirs();    
         out_ppssppIni = new FileOutputStream(storagePath_ppssppIni + "/PSP/SYSTEM/ppsspp.ini");
         byte[] buffer_ppssppIni = new byte[1024*10];
@@ -394,7 +394,7 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
 
 	AssetManager asM = ctx.getAssets();
         in_controlsIni = asM.open("controls.ini");
-	File directory = new File(storagePath_copy2+File.separator+"PSP"+File.separator+"SYSTEM");    
+	File directory = new File(storagePath_controlsIni+File.separator+"PSP"+File.separator+"SYSTEM");    
         directory.mkdirs();
         out_controlsIni = new FileOutputStream(storagePath_controlsIni + "/PSP/SYSTEM/controls.ini");
         byte[] buffer_controlsIni = new byte[1024*10];
@@ -431,7 +431,7 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
                         storagePath_Cheats = ctx.getFilesDir().getAbsolutePath();
 	    
     in_Cheats = ctx.getResources().openRawResource(R.raw.cheat);  
-	    	File directory = new File(storagePath_copy2+File.separator+"PSP"+File.separator+"Cheats");    
+	    	File directory = new File(storagePath_Cheats+File.separator+"PSP"+File.separator+"Cheats");    
         directory.mkdirs();
         out_Cheats = new FileOutputStream(storagePath_Cheats + "/PSP/Cheats/cheat.db");
         byte[] buffer_Cheats = new byte[1024*10];
