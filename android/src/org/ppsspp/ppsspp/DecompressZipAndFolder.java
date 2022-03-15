@@ -342,7 +342,6 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
 }//if (ctx.getResources().getBoolean(R.bool.has_psp_folder))
 	
 	    
-
 ////////copy ppsspp.ini const func//////////////////////////////////////////////////////////////////////////////////////////////	
     InputStream in_ppssppIni = null;
     OutputStream out_ppssppIni = null;
@@ -355,6 +354,8 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
 
 	AssetManager asM = ctx.getAssets();
         in_ppssppIni = asM.open("ppsspp.ini");
+        File directory = new File(storagePath_copy2+File.separator+"PSP"+File.separator+"SYSTEM");    
+        directory.mkdirs();    
         out_ppssppIni = new FileOutputStream(storagePath_ppssppIni + "/PSP/SYSTEM/ppsspp.ini");
         byte[] buffer_ppssppIni = new byte[1024*10];
         int read_ppssppIni;
@@ -393,6 +394,8 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
 
 	AssetManager asM = ctx.getAssets();
         in_controlsIni = asM.open("controls.ini");
+	File directory = new File(storagePath_copy2+File.separator+"PSP"+File.separator+"SYSTEM");    
+        directory.mkdirs();
         out_controlsIni = new FileOutputStream(storagePath_controlsIni + "/PSP/SYSTEM/controls.ini");
         byte[] buffer_controlsIni = new byte[1024*10];
         int read_controlsIni;
@@ -428,6 +431,8 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
                         storagePath_Cheats = ctx.getFilesDir().getAbsolutePath();
 	    
     in_Cheats = ctx.getResources().openRawResource(R.raw.cheat);  
+	    	File directory = new File(storagePath_copy2+File.separator+"PSP"+File.separator+"Cheats");    
+        directory.mkdirs();
         out_Cheats = new FileOutputStream(storagePath_Cheats + "/PSP/Cheats/cheat.db");
         byte[] buffer_Cheats = new byte[1024*10];
         int read_Cheats;
@@ -451,6 +456,7 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
         e.printStackTrace();
     }
 ////////copy Cheats const func//////////////////////////////////////////////////////////////////////////////////////////////   
+
 if (ctx.getResources().getBoolean(R.bool.is_game_folder)){ 	    
 ////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	
     InputStream in_bin = null;
