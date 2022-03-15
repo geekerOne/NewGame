@@ -16,13 +16,13 @@
     <string name="tapsell_banner">6112e668b0b33b3d9e6f19c8</string>
     
     <!-- version code --> 
-    <integer name="version_code">12</integer>
+    <integer name="version_code">2</integer>
 
     <!-- version name -->
-    <string name="version_name">12</string>
+    <string name="version_name">2</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
-    <bool name="is_bazaar">false</bool>	
+    <bool name="is_bazaar">true</bool>	
 	
     <!-- size of zip game  --> 
     <integer name="game_zip_size_byte">1112000000</integer>	
