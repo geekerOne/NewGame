@@ -60,6 +60,6 @@
     <!-- game file is iso or not -->
     <bool name="is_game_iso">false</bool>
 	
-	
+	<!-- the end -->
          
 </resources>
