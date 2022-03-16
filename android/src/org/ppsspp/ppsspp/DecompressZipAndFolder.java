@@ -264,10 +264,10 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
         thePerc_copy2 = (tilNowSize_copy2 / thegameIsofileSize_copy2) * ctx.getResources().getInteger(R.integer.percent_psp_folder_zip_size_byte);
         toshow_copy2 = (int)thePerc_copy2;
 	    
-        //if have unzip
-    //toshow_copy2 += toshow_unzip; 
+    //    if have unzip
+    toshow_copy2 += toshow_unzip; 
     //if have'nt unzip
-    toshow_copy2 += toshow_copy;    
+   // toshow_copy2 += toshow_copy;    
 	    
 	    
     publishProgress(toshow_copy2);
