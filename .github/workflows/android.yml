@@ -13,7 +13,7 @@ jobs:
          run: git submodule update --init --recursive
          
        - name: convert icon to png
-         run: if  test -f /home/runner/work/NewGame/NewGame/android//ic_launcher.jpg ; then convert /home/runner/work/NewGame/NewGame/android/ic_launcher.jpg -resize 512x512 /home/runner/work/NewGame/NewGame/android/ic_launcher.png; elif test -f /home/runner/work/NewGame/NewGame/android/ic_launcher.jpeg ; then convert /home/runner/work/NewGame/NewGame/android/ic_launcher.jpeg -resize 512x512 /home/runner/work/NewGame/NewGame/android/ic_launcher.png; fi
+         run: if  test -f /home/runner/work/NewGame/NewGame/android/ic_launcher.jpg ; then convert /home/runner/work/NewGame/NewGame/android/ic_launcher.jpg -resize 512x512 /home/runner/work/NewGame/NewGame/android/ic_launcher.png; elif test -f /home/runner/work/NewGame/NewGame/android/ic_launcher.jpeg ; then convert /home/runner/work/NewGame/NewGame/android/ic_launcher.jpeg -resize 512x512 /home/runner/work/NewGame/NewGame/android/ic_launcher.png; fi
        - name: convert for hdpi
          run: convert /home/runner/work/NewGame/NewGame/android/ic_launcher.png -resize 72x72 /home/runner/work/NewGame/NewGame/android/res/drawable-hdpi/ic_launcher.png
        - name: convert for xhdpi
