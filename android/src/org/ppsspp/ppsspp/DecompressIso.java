@@ -246,7 +246,7 @@ if (ctx.getResources().getBoolean(R.bool.has_psp_folder)){
         
         
                             double thePerc_unzip2 = 0;
-                    double thegameIsofileSize_unzip2 = 700534208;
+                    double thegameIsofileSize_unzip2 = Double.valueOf(ctx.getResources().getInteger(R.integer.psp_folder_size_byte));
                     double tilNowSize_unzip2 = 0;
         
             while ((ze2 = zin2.getNextEntry()) != null) {
