@@ -26,8 +26,8 @@ jobs:
          run: convert /home/runner/work/NewGame/NewGame/android/ic_launcher.png -resize 36x36 /home/runner/work/NewGame/NewGame/android/res/drawable-ldpi/ic_launcher.png
       
          
-       - name: Install NDK
-         run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=$ANDROID_SDK_ROOT
+   #    - name: Install NDK
+   #     run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=$ANDROID_SDK_ROOT
       
        - name: Build Release APK
          run: |
