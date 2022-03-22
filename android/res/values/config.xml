@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.dynastyStrike2</string>
+    <string name="config_id">com.SandSprogrammingGroup.narutoDrive</string>
     
     <!-- app name -->
-    <string name="config_name">افسانه ی جومونگ راه نبرد</string>
+    <string name="config_name">ناروتو کیزونو درایو</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">rnkhscoislndddqkcmigqeeesbqsmahbfifmrtsmefmipmlonlidmjhgchohohetaipggj</string>
+    <string name="tapsell_key">jkotnpqphralafdmobarilckpdlasmgcthhtobtlhcmdbsmgkqjohkjqerlesgsnqbhbag</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">6239cec335374e47f065f5f3</string>
+    <string name="tapsell_video">6239d65fdd7e072ad21c6d41</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">6239ced435374e47f065f5f4</string>
+    <string name="tapsell_banner">6239d66e35374e47f065f5f7</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">80</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">1200000000</integer>
+    <integer name="game_size_byte">1100000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">80</integer>			
