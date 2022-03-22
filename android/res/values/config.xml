@@ -25,16 +25,16 @@
     <bool name="is_bazaar">true</bool>	
 	
     <!-- size of zip game  --> 
-    <integer name="game_zip_size_byte">380000000</integer>	
+    <integer name="game_zip_size_byte">1000000000</integer>	
 	
     <!-- percent of zip game  --> 
-    <integer name="percent_game_zip_size_byte">20</integer>		
+    <integer name="percent_game_zip_size_byte">40</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">1480000000</integer>
+    <integer name="game_size_byte">1680000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
-    <integer name="percent_game_size_byte">80</integer>			
+    <integer name="percent_game_size_byte">40</integer>			
 	
     <!-- size of zip psp folder --> 
     <integer name="psp_folder_zip_size_byte">80000000</integer>	
@@ -55,10 +55,10 @@
     <bool name="is_game_folder">false</bool>
 	
     <!-- game file is zip or not -->
-    <bool name="is_game_zip">false</bool>
+    <bool name="is_game_zip">true</bool>
 	
     <!-- game file is iso or not -->
-    <bool name="is_game_iso">true</bool>
+    <bool name="is_game_iso">false</bool>
 	
 	<!-- the end -->
          
