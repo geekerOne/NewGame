@@ -22,7 +22,7 @@
     <string name="version_name">1</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
-    <bool name="is_bazaar">true</bool>	
+    <bool name="is_bazaar">false</bool>	
 	
     <!-- size of zip game  --> 
     <integer name="game_zip_size_byte">1000000000</integer>	
@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">80</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">1000000000</integer>
+    <integer name="game_size_byte">1200000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">80</integer>			
