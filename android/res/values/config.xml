@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.narutoDrive</string>
+    <string name="config_id">com.draco.ludere.narutoshipoden</string>
     
     <!-- app name -->
-    <string name="config_name">ناروتو کیزونو درایو</string>
+    <string name="config_name">ناروتو شیپودن افسانه ای</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">jkotnpqphralafdmobarilckpdlasmgcthhtobtlhcmdbsmgkqjohkjqerlesgsnqbhbag</string>
+    <string name="tapsell_key">ojrlfsmckklkbkbblbchkjncfehrnffnqbherejdkarhtikqlcdhhfdspofljgegpqblbn</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">6239d65fdd7e072ad21c6d41</string>
+    <string name="tapsell_video">611934399f822c35d4329584</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">6239d66e35374e47f065f5f7</string>
+    <string name="tapsell_banner">611934bb6a52ff296dd94ddd</string>
     
     <!-- version code --> 
-    <integer name="version_code">1</integer>
+    <integer name="version_code">3</integer>
 
     <!-- version name -->
-    <string name="version_name">1</string>
+    <string name="version_name">3</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
-    <bool name="is_bazaar">true</bool>	
+    <bool name="is_bazaar">false</bool>	
 	
     <!-- size of zip game  --> 
     <integer name="game_zip_size_byte">1000000000</integer>	
