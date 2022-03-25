@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.draco.ludere.narutoAkatsuki</string>
+    <string name="config_id">com.SandSprogrammingGroup.TEKKENanime</string>
     
     <!-- app name -->
-    <string name="config_name">ناروتو شیپودن رستاخیز آکاتسوکی</string>
+    <string name="config_name">تیکن انیمه ها</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">qjhahrrqapdpknnfkqpnjtmbqarjpjahjtfooboatimspmfmkkntgqsflpdhgmcalhnbse</string>
+    <string name="tapsell_key">ntradpqppjtrlpafqbkhphqtisjkjlejoopptrmgioiciffkjldennmhsbqiaqrkeillnn</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">6144210c3d43f41b68cd23da</string>
+    <string name="tapsell_video">62390f9d35374e47f065f5dd</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">614421193eb1c0616dcd0f11</string>
+    <string name="tapsell_banner">62390fae6fa7546432422573</string>
     
     <!-- version code --> 
-    <integer name="version_code">3</integer>
+    <integer name="version_code">2</integer>
 
     <!-- version name -->
-    <string name="version_name">3</string>
+    <string name="version_name">2</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
     <bool name="is_bazaar">true</bool>	
@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">80</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">735000000</integer>
+    <integer name="game_size_byte">1350000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">80</integer>			
