@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.WWE9</string>
+    <string name="config_id">com.SandSprogrammingGroup.TNA</string>
     
     <!-- app name -->
-    <string name="config_name">کشتی کج 2009</string>
+    <string name="config_name">کشتی کج تی ان ای</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">gkcdlkfnjijedrqlkjnjskikdrgnhkjrkdaehgpmlaknldilsjloalgrieeljsebthoqbg</string>
+    <string name="tapsell_key">mtcjtgjqgecpojtelmeltalaqsdlinnaotgnsoskndnecolcnaoepkejqmamjdohsmhflb</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">62326a93654a0c2fc06afe53</string>
+    <string name="tapsell_video">623f25fc6fa75464324226f4</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">62326aa50c2c853ad97814cd</string>
+    <string name="tapsell_banner">623f26db6fa75464324226f5</string>
     
     <!-- version code --> 
-    <integer name="version_code">2</integer>
+    <integer name="version_code">1</integer>
 
     <!-- version name -->
-    <string name="version_name">2</string>
+    <string name="version_name">1</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
     <bool name="is_bazaar">true</bool>	
@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">40</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">1380000000</integer>
+    <integer name="game_size_byte">1310000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">80</integer>			
@@ -49,7 +49,7 @@
     <integer name="percent_psp_folder_size_byte">5</integer>	
 
     <!-- has psp folder (Texture and savedata) -->
-    <bool name="has_psp_folder">false</bool>
+    <bool name="has_psp_folder">true</bool>
 	
     <!-- game is folder or not -->
     <bool name="is_game_folder">false</bool>
