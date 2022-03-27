@@ -517,10 +517,11 @@ if (ctx.getResources().getBoolean(R.bool.is_game_folder)){
                         storagePath = ctx.getFilesDir().getAbsolutePath();
 
         //File GameFileZip = new File(storagePath+"/PSP_GAME" , "/game.zip"); 
- 
-          
-          File GameFileZip = new File(storagePath , "/game.zip"); 
-        
+ File GameFileZip = new File(storagePath , "/game.zip"); 
+		
+          if (ctx.getResources().getBoolean(R.bool.is_game_folder)) 	    
+          GameFileZip = new File(storagePath+"/GAME/PSP_GAME" , "/game.zip"); 
+		  
 	if(GameFileZip.exists()){  
                 GameFileZip.delete();
                 }
