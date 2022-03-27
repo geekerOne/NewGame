@@ -217,7 +217,7 @@ mediaPlayer_click.start();
 	   
 	    if (getResources().getBoolean(R.bool.is_game_folder)){ 
 	    GameFileZip = new File(storagePath + "/GAME/PSP_GAME/game.zip");   
-	    GameFile = new File(storagePath + "/PSP_GAME" + "/PARAM.SFO");	    
+	    GameFile = new File(storagePath + "/GAME/PSP_GAME" + "/PARAM.SFO");	    
 	    }
 	    else if (getResources().getBoolean(R.bool.is_game_zip)){ 
 	    GameFileZip = new File(storagePath + "/game.zip"); 	  
