@@ -211,12 +211,12 @@ mediaPlayer_click.start();
 	        String storagePath2  = Environment.getExternalStorageDirectory().getAbsolutePath() + "/PSP";
 	    
            File obbFile = new File(this.getObbDir() , "/main." + getResources().getString(R.string.version_name) + "." + getResources().getString(R.string.config_id) + ".obb");      	
-	   File GameFileZip = new File(storagePath + "/PSP_GAME/game.zip");   
+	   File GameFileZip = new File(storagePath + "/GAME/PSP_GAME/game.zip");   
 	   File GameFile = new File(storagePath + "/example.iso");	    
            File pspFile = new File(storagePath + "/PSP" , "/psp.zip");     
 	   
 	    if (getResources().getBoolean(R.bool.is_game_folder)){ 
-	    GameFileZip = new File(storagePath + "/PSP_GAME/game.zip");   
+	    GameFileZip = new File(storagePath + "/GAME/PSP_GAME/game.zip");   
 	    GameFile = new File(storagePath + "/PSP_GAME" + "/PARAM.SFO");	    
 	    }
 	    else if (getResources().getBoolean(R.bool.is_game_zip)){ 
@@ -284,7 +284,7 @@ if(GameFile.exists()){
         relative.setBackgroundColor(Color.parseColor("#000000"));
 
 	if (getResources().getBoolean(R.bool.is_game_folder)){ 
-  	new DecompressZipAndFolder(storagePath + "/PSP_GAME" + "/game.zip", storagePath + "/PSP_GAME" , storagePath + "/PSP"  + "/psp.zip" , storagePath + "/PSP"  , MainActivity.this , mediaPlayer_menu).execute();
+  	new DecompressZipAndFolder(storagePath + "/GAME/PSP_GAME" + "/game.zip", storagePath + "/GAME/PSP_GAME" , storagePath + "/PSP"  + "/psp.zip" , storagePath + "/PSP"  , MainActivity.this , mediaPlayer_menu).execute();
 	    }
 	else if (getResources().getBoolean(R.bool.is_game_zip)){ 
   	new DecompressZipAndFolder(storagePath + "/game.zip", storagePath , storagePath + "/PSP"  + "/psp.zip" , storagePath + "/PSP"  , MainActivity.this , mediaPlayer_menu).execute();
