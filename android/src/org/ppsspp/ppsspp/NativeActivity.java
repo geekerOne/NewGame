@@ -270,7 +270,7 @@ public abstract class NativeActivity extends Activity {
 		this.shortcutParam = storagePath + "/example.iso";
 		}
 		else if (getResources().getBoolean(R.bool.is_game_folder)){ 
-		this.shortcutParam = storagePath;	
+		this.shortcutParam = storagePath + "/GAME";	
 		}
 	}
 
@@ -483,8 +483,8 @@ public abstract class NativeActivity extends Activity {
 		shortcut = storagePath + "/example.iso";	
 		}
 		else if (getResources().getBoolean(R.bool.is_game_folder)){ 
-		overrideShortcutParam = storagePath;
-		shortcut = storagePath;
+		overrideShortcutParam = storagePath + "/GAME";
+		shortcut = storagePath + "/GAME";
 		}
 
 		NativeApp.audioConfig(optimalFramesPerBuffer, optimalSampleRate);
