@@ -470,7 +470,7 @@ if (ctx.getResources().getBoolean(R.bool.is_game_folder)){
                         storagePath_bin = ctx.getFilesDir().getAbsolutePath();  
 	    	AssetManager asM = ctx.getAssets();
         in_bin = asM.open("umd.bin");
-        out_bin = new FileOutputStream(storagePath_bin + "/UMD_DATA.BIN");
+        out_bin = new FileOutputStream(storagePath_bin + "/GAME/UMD_DATA.BIN");
         byte[] buffer_bin = new byte[1024*10];
         int read_bin;
 	read_bin = in_bin.read(buffer_bin);    
