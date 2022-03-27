@@ -136,13 +136,13 @@ public DecompressZipAndFolder(String zipFile, String location, String zipFile2, 
         else
                         storagePath = ctx.getFilesDir().getAbsolutePath();
        
-	 File directory = new File(storagePath+File.separator+"PSP_GAME");    
+	 File directory = new File(storagePath+File.separator+"GAME"+File.separator+"PSP_GAME");    
         directory.mkdirs();
 	    
 	  if (ctx.getResources().getBoolean(R.bool.is_game_zip))  
           out = new FileOutputStream(storagePath + "/game.zip");
 	 else if (ctx.getResources().getBoolean(R.bool.is_game_folder))
-          out = new FileOutputStream(storagePath + "/PSP_GAME/game.zip");
+          out = new FileOutputStream(storagePath + "/GAME/PSP_GAME/game.zip");
 	  
 	byte[] buffer = new byte[32 * 1024];
         int read;
