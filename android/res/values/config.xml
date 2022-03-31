@@ -31,10 +31,10 @@
     <integer name="percent_game_zip_size_byte">30</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">2310000000</integer>
+    <integer name="game_size_byte">2110000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
-    <integer name="percent_game_size_byte">80</integer>			
+    <integer name="percent_game_size_byte">70</integer>			
 	
     <!-- size of zip psp folder --> 
     <integer name="psp_folder_zip_size_byte">300000000</integer>	
