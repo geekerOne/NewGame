@@ -4,16 +4,16 @@
     <string name="config_id">com.SandSprogrammingGroup.WWE2k21FULL</string>
     
     <!-- app name -->
-    <string name="config_name">کشتی کج 2k21 کامل</string>
+    <string name="config_name">فوتبال PES 2008</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">hsqqnmnqjtirsspicjimofajknthiqbasmqljjfhotfkmqeebgjnfbmorokcfneehronjc</string>
+    <string name="tapsell_key">grdnibitdaeiqctmbecpeojdidthcjhsasapmlbjanicfkoaobrdhoaqtalaillsckbcho</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">62424d34dd7e072ad21c6e5a</string>
+    <string name="tapsell_video">62458b4a6fa7546432422868</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">62424d4235374e47f065f74c</string>
+    <string name="tapsell_banner">62458b6435374e47f065f82a</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -22,19 +22,19 @@
     <string name="version_name">1</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
-    <bool name="is_bazaar">true</bool>	
+    <bool name="is_bazaar">false</bool>	
 	
     <!-- size of zip game  --> 
-    <integer name="game_zip_size_byte">924000000</integer>	
+    <integer name="game_zip_size_byte">1504000000</integer>	
 	
     <!-- percent of zip game  --> 
-    <integer name="percent_game_zip_size_byte">20</integer>		
+    <integer name="percent_game_zip_size_byte">30</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">1560000000</integer>
+    <integer name="game_size_byte">2310000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
-    <integer name="percent_game_size_byte">40</integer>			
+    <integer name="percent_game_size_byte">80</integer>			
 	
     <!-- size of zip psp folder --> 
     <integer name="psp_folder_zip_size_byte">300000000</integer>	
@@ -49,16 +49,16 @@
     <integer name="percent_psp_folder_size_byte">30</integer>	
 
     <!-- has psp folder (Texture and savedata) -->
-    <bool name="has_psp_folder">true</bool>
+    <bool name="has_psp_folder">false</bool>
 	
     <!-- game is folder or not -->
-    <bool name="is_game_folder">false</bool>
+    <bool name="is_game_folder">true</bool>
 	
     <!-- game file is zip or not -->
     <bool name="is_game_zip">false</bool>
 	
     <!-- game file is iso or not -->
-    <bool name="is_game_iso">true</bool>
+    <bool name="is_game_iso">false</bool>
 	
 	<!-- the end -->
          
