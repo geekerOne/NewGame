@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.PES2008</string>
+    <string name="config_id">com.SandSprogrammingGroup.PES2009</string>
     
     <!-- app name -->
-    <string name="config_name">فوتبال PES 2008</string>
+    <string name="config_name">فوتبال PES 2009</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">grdnibitdaeiqctmbecpeojdidthcjhsasapmlbjanicfkoaobrdhoaqtalaillsckbcho</string>
+    <string name="tapsell_key">arlkanrkkebrsgigmrpfjopfrdkisboqcbltttjtpsaaijedgmnoqsdccspietkibgqpln</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">62458b4a6fa7546432422868</string>
+    <string name="tapsell_video">62461b3d35374e47f065f83c</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">62458b6435374e47f065f82a</string>
+    <string name="tapsell_banner">62461b4d6fa7546432422885</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">30</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">2110000000</integer>
+    <integer name="game_size_byte">1300000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">70</integer>			
