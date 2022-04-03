@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.PES2010</string>
+    <string name="config_id">com.SandSprogrammingGroup.PES2011</string>
     
     <!-- app name -->
-    <string name="config_name">فوتبال PES 2010</string>
+    <string name="config_name">فوتبال PES 2011</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">dseeeqtqfqmomskcgtciejpeaekpiadeohnttartnbstnofqtcbdtdjraqtdkojpebpcne</string>
+    <string name="tapsell_key">rktmmtnkfcasadtjslgblossgisocbncdboerkjqffjltnhoaertoebabginjrdbcjnmeq</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">6249b969a442cb0029890765</string>
+    <string name="tapsell_video">6249da8fa442cb0029890770</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">6249b97fa442cb0029890766</string>
+    <string name="tapsell_banner">6249da9940f68f2780ab8580</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -25,13 +25,13 @@
     <bool name="is_bazaar">false</bool>	
 	
     <!-- size of zip game  --> 
-    <integer name="game_zip_size_byte">1004000000</integer>	
+    <integer name="game_zip_size_byte">1434000000</integer>	
 	
     <!-- percent of zip game  --> 
     <integer name="percent_game_zip_size_byte">30</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">1000000000</integer>
+    <integer name="game_size_byte">2200000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">70</integer>			
