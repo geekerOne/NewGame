@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">30</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">2200000000</integer>
+    <integer name="game_size_byte">2000000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">70</integer>			
