@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.PES2011</string>
+    <string name="config_id">com.SandSprogrammingGroup.wwe2k22</string>
     
     <!-- app name -->
-    <string name="config_name">فوتبال PES 2011</string>
+    <string name="config_name">کشتی کج 2k22</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">rktmmtnkfcasadtjslgblossgisocbncdboerkjqffjltnhoaertoebabginjrdbcjnmeq</string>
+    <string name="tapsell_key">kagogfikffbaibmqdhrbssaotgdmmssrqblbmlimkrcmcphjflikdqfggerbnkhgdipsis</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">6249da8fa442cb0029890770</string>
+    <string name="tapsell_video">61fe4f4d1a217276608d2b71</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">6249da9940f68f2780ab8580</string>
+    <string name="tapsell_banner">61fe4f5e50d00f696521a499</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -25,37 +25,37 @@
     <bool name="is_bazaar">false</bool>	
 	
     <!-- size of zip game  --> 
-    <integer name="game_zip_size_byte">1434000000</integer>	
+    <integer name="game_zip_size_byte">700000000</integer>	
 	
     <!-- percent of zip game  --> 
-    <integer name="percent_game_zip_size_byte">30</integer>		
+    <integer name="percent_game_zip_size_byte">20</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">2000000000</integer>
+    <integer name="game_size_byte">1300000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
-    <integer name="percent_game_size_byte">70</integer>			
+    <integer name="percent_game_size_byte">30</integer>			
 	
     <!-- size of zip psp folder --> 
-    <integer name="psp_folder_zip_size_byte">300000000</integer>	
+    <integer name="psp_folder_zip_size_byte">700000000</integer>	
 	
     <!-- percent of zip psp folder  --> 
     <integer name="percent_psp_folder_zip_size_byte">20</integer>	
 	
     <!-- size of psp folder --> 
-    <integer name="psp_folder_size_byte">300000000</integer>
+    <integer name="psp_folder_size_byte">800000000</integer>
 	
     <!-- percent of psp folder  --> 
     <integer name="percent_psp_folder_size_byte">30</integer>	
 
     <!-- has psp folder (Texture and savedata) -->
-    <bool name="has_psp_folder">false</bool>
+    <bool name="has_psp_folder">true</bool>
 	
     <!-- game is folder or not -->
-    <bool name="is_game_folder">true</bool>
+    <bool name="is_game_folder">false</bool>
 	
     <!-- game file is zip or not -->
-    <bool name="is_game_zip">false</bool>
+    <bool name="is_game_zip">true</bool>
 	
     <!-- game file is iso or not -->
     <bool name="is_game_iso">false</bool>
