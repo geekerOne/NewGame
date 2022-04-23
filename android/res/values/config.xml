@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.WWE10</string>
+    <string name="config_id">com.SandSprogrammingGroup.WWE11</string>
     
     <!-- app name -->
-    <string name="config_name">کشتی کج 2010</string>
+    <string name="config_name">کشتی کج 2011</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">shckaedcnngfsgodkfllofbodlckcilcotliftqonasmkcfoscccejlfciscfcgjtcbbnb</string>
+    <string name="tapsell_key">gpggqgretgjnfjnmrofmlfdiknektgedfqejonaanbigaaboslpblenajmcdijjcmftjsm</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">62326ad30c2c853ad97814ce</string>
+    <string name="tapsell_video">62326b25f89e0c6cc3afd317</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">62326af2654a0c2fc06afe54</string>
+    <string name="tapsell_banner">62326b340c2c853ad97814cf</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">20</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">1110000000</integer>
+    <integer name="game_size_byte">1260000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">80</integer>			
