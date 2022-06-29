@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.princeofpersia2</string>
+    <string name="config_id">com.SandSprogrammingGroup.princeofpersia3</string>
     
     <!-- app name -->
-    <string name="config_name">شاهزاده ایرانی 2</string>
+    <string name="config_name">شاهزاده ایرانی 3</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">gflpfttdmhgbcjblknhelaojtghtpraofjoijapbgqoanikeieorirkkjfdhpdntcaorqh</string>
+    <string name="tapsell_key">ecefakafcecdgmqjhkbmahkjksrjtqntsmpcphmrjjqgbflokhlggcnaqgfogdjrdjntlb</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">6216b1fd824c736d325e8063</string>
+    <string name="tapsell_video">6216b187beaa1969c26336c3</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">6216b212824c736d325e8064</string>
+    <string name="tapsell_banner">6216b19b824c736d325e8062</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">20</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">400000000</integer>
+    <integer name="game_size_byte">800000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">80</integer>			
