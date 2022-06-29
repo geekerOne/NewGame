@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.princeofpersia5</string>
+    <string name="config_id">com.SandSprogrammingGroup.pes2012</string>
     
     <!-- app name -->
-    <string name="config_name">شاهزاده ایرانی 5</string>
+    <string name="config_name">فوتبال PES 2012</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">kckjraprjmngkjdbgfhjpfdafrmfiomqcntfkhcrahjdlnqtopfapfqchllqdqrjdepmbo</string>
+    <string name="tapsell_key">ebrdhhqfjbhlfrhetmrjocinbigiakjsmapakiicepeipogpjdtgljqclicatladcnetao</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">6216b12452b43a7843b8428e</string>
+    <string name="tapsell_video">62bc3d7dae66b457b553d0a4</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">6216b138beaa1969c26336c2</string>
+    <string name="tapsell_banner">62bc3d8d4620354c2b965f82</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -25,16 +25,16 @@
     <bool name="is_bazaar">true</bool>	
 	
     <!-- size of zip game  --> 
-    <integer name="game_zip_size_byte">418000000</integer>	
+    <integer name="game_zip_size_byte">500000000</integer>	
 	
     <!-- percent of zip game  --> 
-    <integer name="percent_game_zip_size_byte">20</integer>		
+    <integer name="percent_game_zip_size_byte">50</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">300000000</integer>
+    <integer name="game_size_byte">640000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
-    <integer name="percent_game_size_byte">80</integer>			
+    <integer name="percent_game_size_byte">35</integer>			
 	
     <!-- size of zip psp folder --> 
     <integer name="psp_folder_zip_size_byte">80000000</integer>	
@@ -52,13 +52,13 @@
     <bool name="has_psp_folder">false</bool>
 	
     <!-- game is folder or not -->
-    <bool name="is_game_folder">false</bool>
+    <bool name="is_game_folder">true</bool>
 	
     <!-- game file is zip or not -->
     <bool name="is_game_zip">false</bool>
 	
     <!-- game file is iso or not -->
-    <bool name="is_game_iso">true</bool>
+    <bool name="is_game_iso">false</bool>
 	
 	<!-- the end -->
          
