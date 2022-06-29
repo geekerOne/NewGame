@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.WWE2K20</string>
+    <string name="config_id">com.SandSprogrammingGroup.princeofpersia2</string>
     
     <!-- app name -->
-    <string name="config_name">کشتی کج 2k20</string>
+    <string name="config_name">شاهزاده ایرانی 2</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">nsphhqrnqppptcslhbqqnjskdffqjrqklgmkpailfpdibsbtmchjhapkmceptahelmmjlp</string>
+    <string name="tapsell_key">gflpfttdmhgbcjblknhelaojtghtpraofjoijapbgqoanikeieorirkkjfdhpdntcaorqh</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">623644a40bb0c408a3912b88</string>
+    <string name="tapsell_video">6216b1fd824c736d325e8063</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">623644b5bd133c2e21fc204d</string>
+    <string name="tapsell_banner">6216b212824c736d325e8064</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -31,10 +31,10 @@
     <integer name="percent_game_zip_size_byte">20</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">550000000</integer>
+    <integer name="game_size_byte">400000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
-    <integer name="percent_game_size_byte">40</integer>			
+    <integer name="percent_game_size_byte">80</integer>			
 	
     <!-- size of zip psp folder --> 
     <integer name="psp_folder_zip_size_byte">80000000</integer>	
@@ -49,7 +49,7 @@
     <integer name="percent_psp_folder_size_byte">30</integer>	
 
     <!-- has psp folder (Texture and savedata) -->
-    <bool name="has_psp_folder">true</bool>
+    <bool name="has_psp_folder">false</bool>
 	
     <!-- game is folder or not -->
     <bool name="is_game_folder">false</bool>
