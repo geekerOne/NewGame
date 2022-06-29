@@ -25,7 +25,7 @@
     <bool name="is_bazaar">true</bool>	
 	
     <!-- size of zip game  --> 
-    <integer name="game_zip_size_byte">500000000</integer>	
+    <integer name="game_zip_size_byte">600000000</integer>	
 	
     <!-- percent of zip game  --> 
     <integer name="percent_game_zip_size_byte">50</integer>		
