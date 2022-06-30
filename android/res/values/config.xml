@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.pes2012</string>
+    <string name="config_id">com.SandSprogrammingGroup.pes2013</string>
     
     <!-- app name -->
-    <string name="config_name">فوتبال PES 2012</string>
+    <string name="config_name">فوتبال PES 2013</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">ebrdhhqfjbhlfrhetmrjocinbigiakjsmapakiicepeipogpjdtgljqclicatladcnetao</string>
+    <string name="tapsell_key">ktomaboqrohafkoijoaatedrteqfinkantmosnlhoerfcpsfsjjjirbogmtomtprphcshb</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">62bc3d7dae66b457b553d0a4</string>
+    <string name="tapsell_video">62bc4ce2cd9cb947b4c0bdcd</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">62bc3d8d4620354c2b965f82</string>
+    <string name="tapsell_banner">62bc4d04cd9cb947b4c0bdce</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -31,10 +31,10 @@
     <integer name="percent_game_zip_size_byte">50</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">640000000</integer>
+    <integer name="game_size_byte">540000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
-    <integer name="percent_game_size_byte">35</integer>			
+    <integer name="percent_game_size_byte">85</integer>			
 	
     <!-- size of zip psp folder --> 
     <integer name="psp_folder_zip_size_byte">80000000</integer>	
@@ -52,13 +52,13 @@
     <bool name="has_psp_folder">false</bool>
 	
     <!-- game is folder or not -->
-    <bool name="is_game_folder">true</bool>
+    <bool name="is_game_folder">false</bool>
 	
     <!-- game file is zip or not -->
     <bool name="is_game_zip">false</bool>
 	
     <!-- game file is iso or not -->
-    <bool name="is_game_iso">false</bool>
+    <bool name="is_game_iso">true</bool>
 	
 	<!-- the end -->
          
