@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.megaManPoweredUp</string>
+    <string name="config_id">com.SandSprogrammingGroup.callOfDutyRtv</string>
     
     <!-- app name -->
-    <string name="config_name">مگامن قوی شده</string>
+    <string name="config_name">کال اف دیوتی مسیر پیروزی</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">kialcekqqhrthiorqrqndlfrqkibqirobnmhndbtphobgmmrtloelftolohqcgccqnsheh</string>
+    <string name="tapsell_key">hqctrspofeiofqebfjlrerfohndalojqnopmlcgjhkceifffiipmmgsfhhblhgechietkl</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">62c25cf94620354c2b966130</string>
+    <string name="tapsell_video">62c275839e24ba13d921b7d8</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">62c25d05ae66b457b553d2c0</string>
+    <string name="tapsell_banner">62c2758fcd9cb947b4c0beee</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">50</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">300000000</integer>
+    <integer name="game_size_byte">220000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">85</integer>			
