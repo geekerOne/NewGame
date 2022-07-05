@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.castleDraculaX</string>
+    <string name="config_id">com.SandSprogrammingGroup.XmenLegends2</string>
     
     <!-- app name -->
-    <string name="config_name">کستلونیا دراکولا ایکس</string>
+    <string name="config_name">مردان ایکس افسانه ای 2</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">qbetcrfbinbfjeanjccdgfansmpprdaeobqialfspblokpcmqosfofccalnhisamscgetj</string>
+    <string name="tapsell_key">jghpqlkcgtbtqcqfgrnpphgjmfbjcemklprlqhlcjctrnjbhidcnlqldhpjrgcfgdtkife</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">62c3c3719e24ba13d921b853</string>
+    <string name="tapsell_video">62c3d5c94620354c2b966226</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">62c3c392ae66b457b553d3de</string>
+    <string name="tapsell_banner">62c3d5d6ae66b457b553d3e5</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -31,7 +31,7 @@
     <integer name="percent_game_zip_size_byte">50</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">100000000</integer>
+    <integer name="game_size_byte">333000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">85</integer>			
