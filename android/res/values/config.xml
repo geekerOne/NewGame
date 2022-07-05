@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.XmenLegends2</string>
+    <string name="config_id">com.SandSprogrammingGroup.syphonFilterLooganShadow</string>
     
     <!-- app name -->
-    <string name="config_name">مردان ایکس افسانه ای 2</string>
+    <string name="config_name">سایفون فیلتر سایه ی لوگان</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">jghpqlkcgtbtqcqfgrnpphgjmfbjcemklprlqhlcjctrnjbhidcnlqldhpjrgcfgdtkife</string>
+    <string name="tapsell_key">daofoibpdagjqkfmmplepmcalqmrjfmmpljjhennilqemapitmlsdogkobqcmchabspcpo</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">62c3d5c94620354c2b966226</string>
+    <string name="tapsell_video">62c3e93e9e24ba13d921b85f</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">62c3d5d6ae66b457b553d3e5</string>
+    <string name="tapsell_banner">62c3e9564620354c2b96622f</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -25,16 +25,16 @@
     <bool name="is_bazaar">false</bool>	
 	
     <!-- size of zip game  --> 
-    <integer name="game_zip_size_byte">600000000</integer>	
+    <integer name="game_zip_size_byte">291000000</integer>	
 	
     <!-- percent of zip game  --> 
     <integer name="percent_game_zip_size_byte">50</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">333000000</integer>
+    <integer name="game_size_byte">1170000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
-    <integer name="percent_game_size_byte">85</integer>			
+    <integer name="percent_game_size_byte">45</integer>			
 	
     <!-- size of zip psp folder --> 
     <integer name="psp_folder_zip_size_byte">80000000</integer>	
