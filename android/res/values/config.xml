@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.syphonFilterLooganShadow</string>
+    <string name="config_id">com.SandSprogrammingGroup.syphonDarkMirror</string>
     
     <!-- app name -->
-    <string name="config_name">سایفون فیلتر سایه ی لوگان</string>
+    <string name="config_name">سیفون فیلتر آینه ی تاریک</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">daofoibpdagjqkfmmplepmcalqmrjfmmpljjhennilqemapitmlsdogkobqcmchabspcpo</string>
+    <string name="tapsell_key">klijniapnjeaefeahdpnbelhdmrmbescbssgceereosgpgihondflifpeoioqnsljnccki</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">62c3e93e9e24ba13d921b85f</string>
+    <string name="tapsell_video">62c43cbf9e24ba13d921b87e</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">62c3e9564620354c2b96622f</string>
+    <string name="tapsell_banner">62c43cdb4620354c2b966247</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -31,10 +31,10 @@
     <integer name="percent_game_zip_size_byte">50</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">1170000000</integer>
+    <integer name="game_size_byte">1120000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
-    <integer name="percent_game_size_byte">45</integer>			
+    <integer name="percent_game_size_byte">85</integer>			
 	
     <!-- size of zip psp folder --> 
     <integer name="psp_folder_zip_size_byte">80000000</integer>	
@@ -55,10 +55,10 @@
     <bool name="is_game_folder">false</bool>
 	
     <!-- game file is zip or not -->
-    <bool name="is_game_zip">true</bool>
+    <bool name="is_game_zip">false</bool>
 	
     <!-- game file is iso or not -->
-    <bool name="is_game_iso">false</bool>
+    <bool name="is_game_iso">true</bool>
 	
 	<!-- the end -->
          
