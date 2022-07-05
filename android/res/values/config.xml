@@ -55,10 +55,10 @@
     <bool name="is_game_folder">false</bool>
 	
     <!-- game file is zip or not -->
-    <bool name="is_game_zip">false</bool>
+    <bool name="is_game_zip">true</bool>
 	
     <!-- game file is iso or not -->
-    <bool name="is_game_iso">true</bool>
+    <bool name="is_game_iso">false</bool>
 	
 	<!-- the end -->
          
