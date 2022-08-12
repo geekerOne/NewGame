@@ -116,4 +116,57 @@
      android:textSize="40dp"
      android:textStyle="bold"/>
 
+	
+	<RelativeLayout            
+            android:layout_width="fill_parent"
+            android:layout_height="35dip"
+            android:background="@drawable/background_border"
+	    android:layout_toLeftOf="@id/start_the_game_button" 		
+	     android:layout_below="@+id/send_email">
+		
+		
+	<Button xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/high_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/telenor_logo"
+	    android:text="کیفیت عالی"
+	    android:onClick="high_quality_func"/>
+
+	<Button xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/optimized_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+	    android:text="اجرای بهینه"
+	    android:onClick="optimized_quality_func"/>
+
+
+
+	<Button xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/wide_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+	    android:text="دوربین ps5"
+	    android:onClick="wide_camera_func"/>
+
+        	<Button xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/close_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+	    android:text="دوربین معمولی"
+	    android:onClick="close_camera_func"/>
+		
+		
+</RelativeLayout>
+	
+	
+	
 </RelativeLayout>
