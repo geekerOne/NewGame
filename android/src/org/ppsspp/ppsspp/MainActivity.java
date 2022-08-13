@@ -399,6 +399,28 @@ startActivity(intent);
 mediaPlayer_click.start();
 	this.finishAffinity();	
     }
+	
+	
+    public void optimized_quality_func(View v) {
+      	new config_game_proc("ppssppone.ini","ppsspp.ini",MainActivity.this).execute();
+    }		
+	
+    public void mid_quality_func(View v) {
+      	new config_game_proc("ppsspptwo.ini","ppsspp.ini",MainActivity.this).execute();
+    }	 	
+	
+    public void high_quality_func(View v) {
+      	new config_game_proc("ppssppthree.ini","ppsspp.ini",MainActivity.this).execute();
+    }	    
+	
+    public void wide_camera_func(View v) {
+      	new config_game_proc("EBOOTone.OLD","EBOOT.OLD",MainActivity.this).execute();
+    }	
+	
+    public void close_camera_func(View v) {
+      	new config_game_proc("EBOOTtwo.OLD","EBOOT.OLD",MainActivity.this).execute();
+    }	    
+	    
 //all button codes/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 		
