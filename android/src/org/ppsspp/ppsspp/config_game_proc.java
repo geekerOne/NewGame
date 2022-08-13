@@ -142,7 +142,6 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
     } catch (FileNotFoundException e) {
         e.printStackTrace();
     } catch (IOException e) {
-        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_LONG).show();
         e.printStackTrace();
     }       
 			
@@ -160,7 +159,9 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
         //Log.i(TAG, "Completed. Total size: "+result);
         if(myProgressDialog != null && myProgressDialog.isShowing()){
             myProgressDialog.dismiss();
-        
+              
+		Toast.makeText(MainActivity.this, "تنظیمات اجرا انجام شد", Toast.LENGTH_LONG).show();
+
 	Intent Myintent = new Intent(ctx, MainActivity.class);
         ctx.startActivity(Myintent);
 					
