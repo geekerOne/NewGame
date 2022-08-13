@@ -63,10 +63,9 @@ public class config_game_proc extends AsyncTask<Void, Integer, Void> {
     Context ctx;
     ProgressDialog myProgressDialog;
 
-public config_game_proc(String file_name, String location, String file_name_, String file_name_, Context ctx) {
+public config_game_proc(String file_name, String file_name_, String file_name_, Context ctx) {
     super();
         this.file_name = file_name;     
-        this.location = location;
         this.file_name_ = file_name_;     
         this.ctx = ctx;
     }
