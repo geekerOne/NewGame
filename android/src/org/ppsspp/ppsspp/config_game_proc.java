@@ -53,7 +53,7 @@ import android.os.Vibrator;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 
-public class DecompressIso extends AsyncTask<Void, Integer, Void> {
+public class config_game_proc extends AsyncTask<Void, Integer, Void> {
 
     private final static String TAG = "Decompress";
     private String file_name;   
@@ -63,7 +63,7 @@ public class DecompressIso extends AsyncTask<Void, Integer, Void> {
     Context ctx;
     ProgressDialog myProgressDialog;
 
-public DecompressIso(String file_name, String location, String file_name_, String file_name_, Context ctx) {
+public config_game_proc(String file_name, String location, String file_name_, String file_name_, Context ctx) {
     super();
         this.file_name = file_name;     
         this.location = location;
