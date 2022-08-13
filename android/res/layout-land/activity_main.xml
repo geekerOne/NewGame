@@ -122,54 +122,74 @@
             android:layout_height="200dip"
             android:background="@drawable/background_border"
 	    android:layout_toLeftOf="@id/send_email" 	
-	    android:layout_alignParentTop="true">
+	    android:layout_below="@id/group_games_page">
 		
+     <TextView
+     android:id="@+id/text_of_box"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentTop="true"       
+     android:layout_centerHorizontal="true"   
+     android:textColor="@color/Skyblue"      
+     android:text="تنظیمات اجرا" />
 		
 	<Button xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/high_quality"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_width="90dp"
+            android:layout_height="36dp"
 	    android:text="کیفیت عالی"
+	    android:background="@drawable/selectortwo"	
+ 	    android:layout_marginLeft="4dp"
+	    android:layout_marginTop="45dp"
 	    android:onClick="high_quality_func"/>
 		
 	<Button xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/mid_quality"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="36dp"
             android:layout_below="@id/high_quality"		
             android:layout_alignParentLeft="true"
 	    android:text="کیفیت متوسط"
+	    android:layout_marginTop="5dp"	
+ 	    android:layout_marginLeft="4dp"
+	    android:background="@drawable/selectortwo"
 	    android:onClick="mid_quality_func"/>
 
 	<Button xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/optimized_quality"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="36dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
 	    android:text="اجرای بهینه"
+	    android:background="@drawable/selectortwo"
+ 	    android:layout_marginRight="4dp"	
+	    android:layout_marginTop="45dp"	
 	    android:onClick="optimized_quality_func"/>
 
 
 
 	<Button xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/wide_camera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="36dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
 	    android:text="دوربین ps5"
+	    android:background="@drawable/selectortwo"
+ 	    android:layout_marginRight="4dp"	
+            android:layout_marginBottom="5dp"	
 	    android:onClick="wide_camera_func"/>
 
         	<Button xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/close_camera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="36dp"
 	    android:layout_alignParentBottom="true"		
             android:layout_alignParentLeft="true"
 	    android:text="دوربین معمولی"
+            android:layout_marginLeft="4dp"	
+            android:layout_marginBottom="5dp"				
+	    android:background="@drawable/selectortwo"
 	    android:onClick="close_camera_func"/>
 		
 		
