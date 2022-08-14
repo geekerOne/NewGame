@@ -91,7 +91,7 @@ import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-
+import android.widget.TextView;
 /**
  * This class will respond to android.intent.action.CREATE_SHORTCUT intent from launcher homescreen.
  * Register this class in AndroidManifest.xml.
@@ -279,10 +279,35 @@ if(GameFile.exists()){
         start_the_hub.setVisibility(View.GONE);
 	Button hamibash_button = (Button) findViewById(R.id.hamibash_button); 
         hamibash_button.setVisibility(View.GONE);
+	
+		Button high_quality = (Button) findViewById(R.id.high_quality); 
+        high_quality.setVisibility(View.GONE);
+	
+		Button mid_quality = (Button) findViewById(R.id.mid_quality); 
+        mid_quality.setVisibility(View.GONE);
+	
+		Button optimized_quality = (Button) findViewById(R.id.optimized_quality); 
+        optimized_quality.setVisibility(View.GONE);
+	
+		Button wide_camera = (Button) findViewById(R.id.wide_camera); 
+        wide_camera.setVisibility(View.GONE);
+	
+		Button close_camera = (Button) findViewById(R.id.close_camera); 
+        close_camera.setVisibility(View.GONE);
+	
+	        TextView text_of_box = (TextView) findViewById(R.id.text_of_box);
+	text_of_box.setVisibility(View.GONE);
+	
         RelativeLayout relative = (RelativeLayout) findViewById(R.id.relative);
         relative.setBackgroundResource(0);
         relative.setBackgroundColor(Color.parseColor("#000000"));
 
+	
+	RelativeLayout relativetwo = (RelativeLayout) findViewById(R.id.relativetwo);
+        relativetwo.setBackgroundResource(0);
+        relativetwo.setBackgroundColor(Color.parseColor("#000000"));
+	
+	
 	if (getResources().getBoolean(R.bool.is_game_folder)){ 
   	new DecompressZipAndFolder(storagePath + "/GAME/PSP_GAME" + "/game.zip", storagePath + "/GAME/PSP_GAME" , storagePath + "/PSP"  + "/psp.zip" , storagePath + "/PSP"  , MainActivity.this , mediaPlayer_menu).execute();
 	    }
