@@ -166,7 +166,7 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
         if(myProgressDialog != null && myProgressDialog.isShowing()){
             myProgressDialog.dismiss();
               
-		Toast.makeText(ctx, "تنظیمات اجرا انجام شد", Toast.LENGTH_LONG).show();
+		Toast.makeText(ctx, "تنظیمات اجرا انجام شد", Toast.LENGTH_SHORT).show();
 
 	Intent Myintent = new Intent(ctx, MainActivity.class);
         ctx.startActivity(Myintent);
