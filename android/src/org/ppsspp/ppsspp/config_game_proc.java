@@ -52,6 +52,7 @@ import android.os.PowerManager;
 import android.os.Vibrator;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.widget.Toast;
 
 public class config_game_proc extends AsyncTask<Void, Integer, Void> {
 
@@ -162,7 +163,7 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
         if(myProgressDialog != null && myProgressDialog.isShowing()){
             myProgressDialog.dismiss();
               
-		Toast.makeText(ctx.this, "تنظیمات اجرا انجام شد", Toast.LENGTH_LONG).show();
+		Toast.makeText(ctx, "تنظیمات اجرا انجام شد", Toast.LENGTH_LONG).show();
 
 	Intent Myintent = new Intent(ctx, MainActivity.class);
         ctx.startActivity(Myintent);
