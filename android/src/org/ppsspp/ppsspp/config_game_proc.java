@@ -168,3 +168,5 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
         }
         
     }
+
+}
