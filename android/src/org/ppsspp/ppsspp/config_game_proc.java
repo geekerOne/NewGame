@@ -89,9 +89,6 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
 	    
         InputStream in = null;
         OutputStream out = null;
-      
-        AssetManager asM = ctx.getAssets();
-        in = asM.open(file_name);
 			
 			                    String storagePath  = "";
         if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
@@ -101,6 +98,10 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
 
 			
     try {
+	    
+	AssetManager asM = ctx.getAssets();
+        in = asM.open(file_name);  
+	    
       if (file_name_.equals("ppsspp.ini")){
       
         File directory = new File(storagePath+File.separator+"PSP"+File.separator+"SYSTEM");    
@@ -148,6 +149,8 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
         e.printStackTrace();
     }       
 			
+	    
+	            return null;
 		}
 	
 	
