@@ -121,7 +121,8 @@
             android:layout_width="200dip"
             android:layout_height="200dip"
             android:background="@drawable/background_border"
-	    android:layout_toLeftOf="@id/send_email" 	
+	    android:id="@+id/relativetwo"		
+	    android:layout_toLeftOf="@id/send_email" 				
 	    android:layout_below="@id/group_games_page">
 		
      <TextView
