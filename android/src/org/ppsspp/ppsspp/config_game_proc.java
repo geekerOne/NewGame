@@ -85,10 +85,12 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
     protected Void doInBackground(Void... params){
         int count = 0;
         int toshow_copy = 0;
+	    
+        InputStream in = null;
+        OutputStream out = null;
       
         AssetManager asM = ctx.getAssets();
         in = asM.open(file_name);
-        OutputStream out = null;
 			
 			                    String storagePath  = "";
         if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
