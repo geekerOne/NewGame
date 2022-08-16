@@ -22,7 +22,7 @@
     <string name="version_code_two">511030000</string>	
 	
     <!-- version name -->
-    <string name="version_name">لیگ برتر 1401</string>
+    <string name="version_name">511030000</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
     <bool name="is_bazaar">true</bool>	
