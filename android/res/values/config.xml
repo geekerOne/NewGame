@@ -18,6 +18,9 @@
     <!-- version code --> 
     <integer name="version_code">511030000</integer>
 
+    <!-- version code string --> 
+    <string name="version_code_two">511030000</integer>	
+	
     <!-- version name -->
     <string name="version_name">لیگ برتر 1401</string>
     
