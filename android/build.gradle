@@ -16,7 +16,7 @@ def getAppVersion() {
 
 def getAppVersionCode() {
     def stringsFile = android.sourceSets.main.res.sourceFiles.find { it.name.equals 'config.xml' }
-    return new XmlParser().parse(stringsFile).string.find { it.@name.equals 'version_code' }.text()
+    return new XmlParser().parse(stringsFile).string.find { it.@name.equals 'version_code_two' }.text()
 }
 
 
@@ -73,8 +73,8 @@ android {
 		applicationId getAppId()
 		minSdkVersion 23
 		targetSdkVersion 29
-//Integer.parseInt(getAppVersion())
-                versionCode getAppVersionCode()
+//Integer.parseInt(getAppVersionCode())
+                versionCode Integer.parseInt(getAppVersionCode())
                 versionName getAppVersion()  
 	       
 		ndk {
