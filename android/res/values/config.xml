@@ -25,7 +25,7 @@
     <string name="version_name">511030000</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
-    <bool name="is_bazaar">true</bool>	
+    <bool name="is_bazaar">false</bool>	
 	
     <!-- size of zip game  --> 
     <integer name="game_zip_size_byte">567000000</integer>	
