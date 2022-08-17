@@ -112,10 +112,10 @@ public config_game_proc(String file_name, String file_name_, Context ctx) {
 			}
       else{
 				
-        File directory = new File(storagePath+File.separator+"PSP_GAME"+File.separator+"SYSDIR");    
+        File directory = new File(storagePath+File.separator+"GAME"+File.separator+"PSP_GAME"+File.separator+"SYSDIR");    
         directory.mkdirs();    
 			
-          out = new FileOutputStream(storagePath + "/PSP_GAME/SYSDIR/EBOOT.OLD"); 
+          out = new FileOutputStream(storagePath + "/GAME/PSP_GAME/SYSDIR/EBOOT.OLD"); 
 				  size = 2860000;
       }
 
