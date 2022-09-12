@@ -43,13 +43,13 @@
     <integer name="psp_folder_zip_size_byte">211000000</integer>	
 	
     <!-- percent of zip psp folder  --> 
-    <integer name="percent_psp_folder_zip_size_byte">20</integer>	
+    <integer name="percent_psp_folder_zip_size_byte">1</integer>	
 	
     <!-- size of psp folder --> 
     <integer name="psp_folder_size_byte">211000000</integer>
 	
     <!-- percent of psp folder  --> 
-    <integer name="percent_psp_folder_size_byte">25</integer>	
+    <integer name="percent_psp_folder_size_byte">1</integer>	
 
     <!-- has psp folder (Texture and savedata) -->
     <bool name="has_psp_folder">true</bool>
@@ -65,4 +65,16 @@
 	
 	<!-- the end -->
          
+	
+	    <!-- percent of psp folder  --> 
+    <integer name="num_all_files">1525</integer>	
+	
+	    <!-- percent of psp folder  --> 
+    <integer name="percent_of_assets">35</integer>	
+	
+	
+	    <!-- game file is iso or not -->
+    <bool name="problem_extracting">true</bool>
+	
+	
 </resources>
