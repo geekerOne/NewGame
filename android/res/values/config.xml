@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.pes2021</string>
+    <string name="config_id">com.SandSprogrammingGroup.PESWorldCupQatar</string>
     
     <!-- app name -->
-    <string name="config_name">لیگ برتر 1401</string>
+    <string name="config_name">pes جام جهانی قطر</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">kjpdeciqcfqggjeeoohefidldfbqiitjcqdlejgmpbqinaaknkmnklspiftrjrjrfqajai</string>
+    <string name="tapsell_key">solfbojslichjcgghfrptjpfcnokpgpgcdachlcjlolmkthielgilisdtqntbbfmrgaasa</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">613413d01238e259aa722136</string>
+    <string name="tapsell_video">631ea05b0b782f55c8af3a5e</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">61401430bd8cde0f884b00be</string>
+    <string name="tapsell_banner">631ea06bb013565f14fb9071</string>
     
     <!-- version code --> 
-    <integer name="version_code">511030000</integer>
+    <integer name="version_code">1</integer>
 
     <!-- version code string --> 
-    <string name="version_code_two">511030000</string>	
+    <string name="version_code_two">1</string>	
 	
     <!-- version name -->
-    <string name="version_name">511030000</string>
+    <string name="version_name">1</string>
     
     <!-- is it for cafeBazaar or myket(true bazaar)(false myket) -->
     <bool name="is_bazaar">false</bool>	
 	
     <!-- size of zip game  --> 
-    <integer name="game_zip_size_byte">567000000</integer>	
+    <integer name="game_zip_size_byte">730000000</integer>	
 	
     <!-- percent of zip game  --> 
     <integer name="percent_game_zip_size_byte">20</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">663000000</integer>
+    <integer name="game_size_byte">815000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">20</integer>			
 	
     <!-- size of zip psp folder --> 
-    <integer name="psp_folder_zip_size_byte">507000000</integer>	
+    <integer name="psp_folder_zip_size_byte">451000000</integer>	
 	
     <!-- percent of zip psp folder  --> 
     <integer name="percent_psp_folder_zip_size_byte">20</integer>	
 	
     <!-- size of psp folder --> 
-    <integer name="psp_folder_size_byte">527000000</integer>
+    <integer name="psp_folder_size_byte">461000000</integer>
 	
     <!-- percent of psp folder  --> 
     <integer name="percent_psp_folder_size_byte">25</integer>	
