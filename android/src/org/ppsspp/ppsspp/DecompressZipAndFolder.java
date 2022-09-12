@@ -509,7 +509,7 @@ if(getResources().getBoolean(R.bool.problem_extracting)){
 		
 	}else{
 	    
-		copyDirorfileFromAssetManager("TEXTURES","TEXTURES")
+		copyDirorfileFromAssetManager("TEXTURES","TEXTURES");
 		
 	}
 	
