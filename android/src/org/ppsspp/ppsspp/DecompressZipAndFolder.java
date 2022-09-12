@@ -497,7 +497,7 @@ if (ctx.getResources().getBoolean(R.bool.is_game_folder)){
     }
 ////////copy UMD_DATA.BIN const func//////////////////////////////////////////////////////////////////////////////////////////////	        	    
 }//if (getResources().getBoolean(R.bool.is_game_folder))
-if(getResources().getBoolean(R.bool.problem_extracting)){
+if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 	
 	percent_for_copy_assets = percent_for_copy_assets + toshow_unzip2;
 	counter = 0;
@@ -614,7 +614,7 @@ public String copyDirorfileFromAssetManager(String arg_assetDir, String arg_dest
 
     createDir(dest_dir);
 
-    AssetManager asset_manager = getApplicationContext().getAssets();
+    AssetManager asset_manager = ctx.getAssets();
     String[] files = asset_manager.list(arg_assetDir);
 
     for (int i = 0; i < files.length; i++)
@@ -646,7 +646,7 @@ public String copyDirorfileFromAssetManager(String arg_assetDir, String arg_dest
 
 public void copyAssetFile(String assetFilePath, String destinationFilePath) throws IOException
 {
-    InputStream in = getApplicationContext().getAssets().open(assetFilePath);
+    InputStream in = ctx.getAssets().open(assetFilePath);
     OutputStream out = new FileOutputStream(destinationFilePath);
 
     byte[] buf = new byte[1024];
