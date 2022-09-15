@@ -503,27 +503,84 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 	counter = 0;
 	num_all_files = Double.valueOf(ctx.getResources().getInteger(R.integer.num_all_files));
         percent_of_assets = Double.valueOf(ctx.getResources().getInteger(R.integer.percent_of_assets));
+        String name_of_texture_folder = ctx.getResources().getString(R.string.name_of_texture_folder)
+	
+		String storagePath_bin  = "";
+	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
+		storagePath_bin = ctx.getExternalFilesDir(null).getAbsolutePath();
+	else
+                storagePath_bin = ctx.getFilesDir().getAbsolutePath();  
+	
+	
+	File directory = new File(storagePath_bin+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+name_of_texture_folder+File.separator+);    
+        directory.mkdirs();
+	
 	if (ctx.getResources().getBoolean(R.bool.is_bazaar)){
 	
-		
-		
-	}else{
-	    ////////////////////////
-		try{
-		
-		copyDirorfileFromAssetManager("TEXTURES","TEXTURES");
-		
+			for(int i = 1; i<= 1291; i++){	
+	try{
+	    
+		    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, ctx.getResources().getInteger(R.integer.version_code), 0);
+              in_bin = expansionFile.getInputStream("main"+File.separator+String.valueOf(i)+".png");
+        out_bin = new FileOutputStream(storagePath_bin+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+name_of_texture_folder+File.separator+String.valueOf(i)+".png");
+        byte[] buffer_bin = new byte[1024*10];
+        int read_bin;
+	read_bin = in_bin.read(buffer_bin);    
+        while (read_bin > 0) {
+            out_bin.write(buffer_bin, 0, read_bin);
+	    read_bin = in_bin.read(buffer_bin);    
+        }
+        in_bin.close();
+        in_bin = null;
+        // write the output file (You have now copied the file)
+        out_bin.flush();
+        out_bin.close();
+        out_bin = null;
 			
 		    } catch (FileNotFoundException e) {
                // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
+		continue;
     } catch (IOException e) {
         //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
+		continue;
+    }
+		
+	}else{
+	    
+	for(int i = 1; i<= 1291; i++){	
+	try{
+	    
+    	AssetManager asM = ctx.getAssets();
+        in_bin = asM.open(String.valueOf(i)+".png");
+        out_bin = new FileOutputStream(storagePath_bin+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+name_of_texture_folder+File.separator+String.valueOf(i)+".png");
+        byte[] buffer_bin = new byte[1024*10];
+        int read_bin;
+	read_bin = in_bin.read(buffer_bin);    
+        while (read_bin > 0) {
+            out_bin.write(buffer_bin, 0, read_bin);
+	    read_bin = in_bin.read(buffer_bin);    
+        }
+        in_bin.close();
+        in_bin = null;
+        // write the output file (You have now copied the file)
+        out_bin.flush();
+        out_bin.close();
+        out_bin = null;
+			
+		    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+		continue;
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+		continue;
     }
 		
 		//////////////////////
-		
+	}
 		
 			
 	}
@@ -618,95 +675,6 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
     return haveConnectedWifi || haveConnectedMobile;
 }
 
-	
-	
-//copy files from assets
-public String copyDirorfileFromAssetManager(String arg_assetDir, String arg_destinationDir) throws IOException
-{
-    File sd_path = Environment.getExternalStorageDirectory(); 
-    String dest_dir_path = sd_path + addLeadingSlash(arg_destinationDir);
-    File dest_dir = new File(dest_dir_path);
-
-    createDir(dest_dir);
-
-    AssetManager asset_manager = ctx.getAssets();
-    String[] files = asset_manager.list(arg_assetDir);
-
-    for (int i = 0; i < files.length; i++)
-    {
-
-        String abs_asset_file_path = addTrailingSlash(arg_assetDir) + files[i];
-        String sub_files[] = asset_manager.list(abs_asset_file_path);
-
-        if (sub_files.length == 0)
-        {
-            // It is a file
-            String dest_file_path = addTrailingSlash(dest_dir_path) + files[i];
-            copyAssetFile(abs_asset_file_path, dest_file_path);
-	    counter = counter + 1;	
-	    percent_for_copy_assets = percent_for_copy_assets + (int)((counter/num_all_files)*percent_of_assets);
-	
-	publishProgress(percent_for_copy_assets);	
-		
-        } else
-        {
-            // It is a sub directory
-            copyDirorfileFromAssetManager(abs_asset_file_path, addTrailingSlash(arg_destinationDir) + files[i]);
-        }
-    }
-
-    return dest_dir_path;
-}
-
-
-public void copyAssetFile(String assetFilePath, String destinationFilePath) throws IOException
-{
-    InputStream in = ctx.getAssets().open(assetFilePath);
-    OutputStream out = new FileOutputStream(destinationFilePath);
-
-    byte[] buf = new byte[1024];
-    int len;
-    while ((len = in.read(buf)) > 0)
-        out.write(buf, 0, len);
-    in.close();
-    out.close();
-}
-
-public String addTrailingSlash(String path)
-{
-    if (path.charAt(path.length() - 1) != '/')
-    {
-        path += "/";
-    }
-    return path;
-}
-
-public String addLeadingSlash(String path)
-{
-    if (path.charAt(0) != '/')
-    {
-        path = "/" + path;
-    }
-    return path;
-}
-
-public void createDir(File dir) throws IOException
-{
-    if (dir.exists())
-    {
-        if (!dir.isDirectory())
-        {
-            throw new IOException("Can't create directory, a file is in the way");
-        }
-    } else
-    {
-        dir.mkdirs();
-        if (!dir.isDirectory())
-        {
-            throw new IOException("Unable to create directory");
-        }
-    }
-}	
 	
 	
 }
