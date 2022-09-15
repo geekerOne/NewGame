@@ -67,7 +67,7 @@
          
 	
 	    <!-- percent of psp folder  --> 
-    <integer name="num_all_files">1525</integer>	
+    <integer name="num_all_files">1291</integer>	
 	
 	    <!-- percent of psp folder  --> 
     <integer name="percent_of_assets">35</integer>	
