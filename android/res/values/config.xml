@@ -76,5 +76,8 @@
 	    <!-- game file is iso or not -->
     <bool name="problem_extracting">true</bool>
 	
+	    <!-- tapsell video key -->
+    <string name="name_of_texture_folder">PRFWA10654</string>
+	
 	
 </resources>
