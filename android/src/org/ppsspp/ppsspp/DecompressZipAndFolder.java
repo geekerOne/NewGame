@@ -499,12 +499,13 @@ if (ctx.getResources().getBoolean(R.bool.is_game_folder)){
 }//if (getResources().getBoolean(R.bool.is_game_folder))
 if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 	
-	percent_for_copy_assets = percent_for_copy_assets + toshow_unzip2;
+	
 	counter = 0;
 	num_all_files = Double.valueOf(ctx.getResources().getInteger(R.integer.num_all_files));
         percent_of_assets = Double.valueOf(ctx.getResources().getInteger(R.integer.percent_of_assets));
         String name_of_texture_folder = ctx.getResources().getString(R.string.name_of_texture_folder)
 	int leng = ctx.getResources().getInteger(R.integer.num_all_files);
+	double till_now = 0;
 	
 		String storagePath_bin  = "";
 	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
@@ -538,6 +539,12 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
         out_bin.close();
         out_bin = null;	
 		
+		till_now = (Double.valueOf(i)/num_all_files)*percent_of_assets;
+		percent_for_copy_assets = (int)	till_now;
+		percent_for_copy_assets = percent_for_copy_assets + toshow_unzip2;
+		publishProgress(percent_for_copy_assets);
+		
+		
 		    } catch (FileNotFoundException e) {
                // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
@@ -569,6 +576,11 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
         out_bin.flush();
         out_bin.close();
         out_bin = null;
+		
+		till_now = (Double.valueOf(i)/num_all_files)*percent_of_assets;
+		percent_for_copy_assets = (int)	till_now;
+		percent_for_copy_assets = percent_for_copy_assets + toshow_unzip2;
+		publishProgress(percent_for_copy_assets);
 			
 		    } catch (FileNotFoundException e) {
                // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
