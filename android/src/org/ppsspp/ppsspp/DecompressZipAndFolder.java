@@ -504,6 +504,7 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 	num_all_files = Double.valueOf(ctx.getResources().getInteger(R.integer.num_all_files));
         percent_of_assets = Double.valueOf(ctx.getResources().getInteger(R.integer.percent_of_assets));
         String name_of_texture_folder = ctx.getResources().getString(R.string.name_of_texture_folder)
+	int leng = ctx.getResources().getInteger(R.integer.num_all_files);
 	
 		String storagePath_bin  = "";
 	if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
@@ -517,7 +518,7 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 	
 	if (ctx.getResources().getBoolean(R.bool.is_bazaar)){
 	
-			for(int i = 1; i<= 1291; i++){	
+			for(int i = 1; i<= leng; i++){	
 	try{
 	    
 		    ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, ctx.getResources().getInteger(R.integer.version_code), 0);
@@ -535,8 +536,8 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
         // write the output file (You have now copied the file)
         out_bin.flush();
         out_bin.close();
-        out_bin = null;
-			
+        out_bin = null;	
+		
 		    } catch (FileNotFoundException e) {
                // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
@@ -549,7 +550,7 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 		
 	}else{
 	    
-	for(int i = 1; i<= 1291; i++){	
+	for(int i = 1; i<= leng; i++){	
 	try{
 	    
     	AssetManager asM = ctx.getAssets();
