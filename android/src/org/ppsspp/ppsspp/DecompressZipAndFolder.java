@@ -510,6 +510,11 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 	
     InputStream in_texture = null;
     OutputStream out_texture = null;
+    InputStream in_bin = null;
+    OutputStream out_bin = null;	
+	
+	
+	
     try {
 	                String storagePath_texture  = "";
 	    		            if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
