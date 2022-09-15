@@ -503,7 +503,7 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 	
 	num_all_files = Double.valueOf(ctx.getResources().getInteger(R.integer.num_all_files));
         percent_of_assets = Double.valueOf(ctx.getResources().getInteger(R.integer.percent_of_assets));
-        String name_of_texture_folder = ctx.getResources().getString(R.string.name_of_texture_folder)
+        String name_of_texture_folder = ctx.getResources().getString(R.string.name_of_texture_folder);
 	int leng = ctx.getResources().getInteger(R.integer.num_all_files);
 	
 	
@@ -597,6 +597,7 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 		continue;
     }
 		
+}
 	}else{
 	    
 	for(int i = 1; i<= leng; i++){	
