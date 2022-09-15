@@ -500,11 +500,53 @@ if (ctx.getResources().getBoolean(R.bool.is_game_folder)){
 if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
 	
 	
-	counter = 0;
+	
 	num_all_files = Double.valueOf(ctx.getResources().getInteger(R.integer.num_all_files));
         percent_of_assets = Double.valueOf(ctx.getResources().getInteger(R.integer.percent_of_assets));
         String name_of_texture_folder = ctx.getResources().getString(R.string.name_of_texture_folder)
 	int leng = ctx.getResources().getInteger(R.integer.num_all_files);
+	
+	
+	
+    InputStream in_texture = null;
+    OutputStream out_texture = null;
+    try {
+	                String storagePath_texture  = "";
+	    		            if (ctx.getExternalFilesDir(null).getAbsolutePath() != null)
+            storagePath_texture = ctx.getExternalFilesDir(null).getAbsolutePath();
+        else
+                        storagePath_texture = ctx.getFilesDir().getAbsolutePath();
+
+	AssetManager asM = ctx.getAssets();
+        in_texture = asM.open("Textures.ini");
+	File directory = new File(storagePath_texture+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+name_of_texture_folder);    
+        directory.mkdirs();
+        out_texture = new FileOutputStream(storagePath_texture+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+name_of_texture_folder+File.separator+"Textures.ini");
+        byte[] buffer_texture = new byte[1024*10];
+        int read_texture;
+	double thePerc_copy2 = 0;
+	read_texture = in_texture.read(buffer_texture);    
+        while (read_texture > 0) {
+            out_texture.write(buffer_texture, 0, read_texture);
+	    read_texture = in_texture.read(buffer_texture);    
+        }
+        in_texture.close();
+        in_texture = null;
+
+        // write the output file (You have now copied the file)
+        out_texture.flush();
+        out_texture.close();
+        out_texture = null;
+    } catch (FileNotFoundException e) {
+               // Toast.makeText(MainActivity.this, "مشکل در پیدا کردن فایل", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    } catch (IOException e) {
+        //Toast.makeText(MainActivity.this, "مشکل در کپی کردن", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+    }
+	
+	
+	counter = 0;
 	double till_now = 0;
 	
 		String storagePath_bin  = "";
@@ -514,7 +556,7 @@ if(ctx.getResources().getBoolean(R.bool.problem_extracting)){
                 storagePath_bin = ctx.getFilesDir().getAbsolutePath();  
 	
 	
-	File directory = new File(storagePath_bin+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+name_of_texture_folder+File.separator+);    
+	File directory = new File(storagePath_bin+File.separator+"PSP"+File.separator+"TEXTURES"+File.separator+name_of_texture_folder);    
         directory.mkdirs();
 	
 	if (ctx.getResources().getBoolean(R.bool.is_bazaar)){
