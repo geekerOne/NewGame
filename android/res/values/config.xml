@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- A unique identifier for the app (no spaces or special characters allowed) -->
-    <string name="config_id">com.SandSprogrammingGroup.FIFAWORLDCUP</string>
+    <string name="config_id">com.SandSprogrammingGroup.PESWorldCupQatar</string>
     
     <!-- app name -->
-    <string name="config_name">FIFA جام جهانی قطر</string>
+    <string name="config_name">pes جام جهانی قطر</string>
     
     <!-- tapsell key -->
-    <string name="tapsell_key">cfiiaqgctprjtgcpdesrhabrfbesjdhhahkdaenqrjhbnrmhpriqtqiajqikercnberaac</string>
+    <string name="tapsell_key">solfbojslichjcgghfrptjpfcnokpgpgcdachlcjlolmkthielgilisdtqntbbfmrgaasa</string>
     
     <!-- tapsell video key -->
-    <string name="tapsell_video">631eb5c10b782f55c8af3a5f</string>
+    <string name="tapsell_video">631ea05b0b782f55c8af3a5e</string>
 
     <!-- tapsell banner key -->
-    <string name="tapsell_banner">631eb5ca0b782f55c8af3a60</string>
+    <string name="tapsell_banner">631ea06bb013565f14fb9071</string>
     
     <!-- version code --> 
     <integer name="version_code">1</integer>
@@ -28,13 +28,13 @@
     <bool name="is_bazaar">true</bool>	
 	
     <!-- size of zip game  --> 
-    <integer name="game_zip_size_byte">681000000</integer>	
+    <integer name="game_zip_size_byte">583000000</integer>	
 	
     <!-- percent of zip game  --> 
     <integer name="percent_game_zip_size_byte">20</integer>		
 	
     <!-- size of game(iso or folder when unzip) --> 
-    <integer name="game_size_byte">791000000</integer>
+    <integer name="game_size_byte">790000000</integer>
 	
     <!-- percent of game(iso or folder when unzip or copy)  --> 
     <integer name="percent_game_size_byte">20</integer>			
@@ -65,19 +65,21 @@
 	
 	<!-- the end -->
          
+
+		
+	    <!-- game file is iso or not -->
+    <bool name="problem_extracting">true</bool>
 	
 	    <!-- percent of psp folder  --> 
-    <integer name="num_all_files">1291</integer>	
+    <integer name="num_all_files">3409</integer>	
 	
 	    <!-- percent of psp folder  --> 
     <integer name="percent_of_assets">35</integer>	
 	
-	
-	    <!-- game file is iso or not -->
-    <bool name="problem_extracting">true</bool>
+
 	
 	    <!-- tapsell video key -->
-    <string name="name_of_texture_folder">PRFWA10654</string>
+    <string name="name_of_texture_folder">TM ARTS23</string>
 	
 	
 </resources>
